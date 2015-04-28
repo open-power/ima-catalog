@@ -18,12 +18,14 @@ def read_group(group_dump):
 
 def read_formula(formula_dump):
     formula = {}
-    tlen, formula['flag'], formula['group'] = unpack_from(">HxxIH6x",
+    tlen, formula['flag'], formula['Group'] = unpack_from(">HxxIH6x",
                                                           formula_dump)
+    if formula['flag'] == 0x4:
+        formula['Grouped'] = 'y'
 
-    formula['name'], nlen = read_string(formula_dump[FNAMELEN_OFFSET:])
-    formula['description'], dlen = read_string(formula_dump[(FNAMELEN_OFFSET + nlen):])
-    formula['formula'], flen = read_string(formula_dump[(FNAMELEN_OFFSET + nlen + dlen):])
+    formula['Formula Name'], nlen = read_string(formula_dump[FNAMELEN_OFFSET:])
+    formula['Formula Description'], dlen = read_string(formula_dump[(FNAMELEN_OFFSET + nlen):])
+    formula['Formula'], flen = read_string(formula_dump[(FNAMELEN_OFFSET + nlen + dlen):])
 
     return tlen, formula
 
@@ -64,6 +66,8 @@ def read_groups(dump_file, page_offset, num_pages, num_count, group_type):
 
     return groups
 
-# write_to_csv('formulae.csv', read_groups('81e00610.v7.lid', 0x2d, 0x2, 0x24, 'formulae'))
-# write_to_csv('events.csv', read_groups('81e00610.v7.lid', 0x2, 0x31, 0x532, 'events'))
-# write_to_csv('groups.csv', read_groups('81e00610.v7.lid', 0x2a, 0x5, 0x8b, 'groups'))
+if __name__ == "__main__":
+    # offsets are hardcoded for the new v7 lid file
+    write_to_csv('formulae.csv', read_groups('81e00610.v7.lid', 0x2d, 0x2, 0x24, 'formulae'))
+    write_to_csv('events.csv', read_groups('81e00610.v7.lid', 0x2, 0x31, 0x532, 'events'))
+    write_to_csv('groups.csv', read_groups('81e00610.v7.lid', 0x2a, 0x5, 0x8b, 'groups'))

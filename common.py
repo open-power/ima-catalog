@@ -19,7 +19,7 @@ def pack_text(text):
     # we just need to update the length field to the length of the length
     # field. See catalog proposal document if you don't get this.
 
-    if len(text) == 0:
+    if text == None or len(text) == 0:
         text_bin = struct.pack(">H", 2)
     else:
         l = len(text) + 1 + 2 # a null byte included
