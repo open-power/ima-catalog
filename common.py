@@ -1,4 +1,5 @@
 import struct
+import csv
 
 PAGE_SIZE=4096
 
@@ -55,7 +56,23 @@ def pad_page(dump, page_size):
 def read_string(dump):
     nlen = struct.unpack_from(">H", dump)[0]
 
-    print nlen
+    if nlen == 0:
+        print """ERROR: A string length can never be zero, it should be atleast of
+length 2, which will always include the length of the length field.
+Please check your offsets"""
+        exit(1)
+
     name = struct.unpack_from(">%ds" % (nlen - 2), dump[2:])
 
     return name[0], nlen
+
+def write_to_csv(csv_file, dict_list):
+    f = open(csv_file, 'wt')
+    try:
+        writer = csv.writer(f)
+        # dump the header
+        writer.writerow((dict_list[0].keys()))
+        for d in dict_list:
+            writer.writerow((d.values()))
+    finally:
+        f.close()
