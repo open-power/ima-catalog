@@ -1,0 +1,1331 @@
+domain,counter offset,name,group count,detailed description,flag,record byte offset,record length,primary group index,description
+2,32,HPM_0THRD_NON_IDLE_CCYC,1,,0,192,64,3,Count of constant clock transitions when no qualified threads are executing non-idle code
+2,32,HPM_1THRD_NON_IDLE_CCYC,1,,0,256,64,4,Count of constant clock transitions when exactly one qualified thread is executing non-idle code
+2,24,HPM_1THRD_NON_IDLE_INST,1,,0,256,64,4,Count of instructions when exactly one qualified thread is executing non-idle code
+2,32,HPM_2THRD_NON_IDLE_CCYC,1,,0,320,64,5,Count of constant clock transitions when exactly two qualified threads are executing non-idle code
+2,24,HPM_2THRD_NON_IDLE_INST,1,,0,320,64,5,Count of instructions when exactly two qualified threads are executing non-idle code
+2,32,HPM_32MHZ_CYC,1,,0,128,64,2,Count of 32 MHZ clock transitions. (Time calibration.)
+2,32,HPM_3THRD_NON_IDLE_CCYC,1,,0,384,64,6,Count of constant clock transitions when exactly three qualified threads are executing non-idle code
+2,24,HPM_3THRD_NON_IDLE_INST,1,,0,384,64,6,Count of instructions when exactly three qualified threads are executing non-idle code
+2,32,HPM_4THRD_NON_IDLE_CCYC,1,,0,448,64,7,Count of constant clock transitions when exactly four qualified threads are executing non-idle code
+2,24,HPM_4THRD_NON_IDLE_INST,1,,0,448,64,7,Count of instructions when exactly four qualified threads are executing non-idle code
+2,32,HPM_5THRD_NON_IDLE_CCYC,1,,0,512,64,8,Count of constant clock transitions when exactly five qualified threads are executing non-idle code
+2,24,HPM_5THRD_NON_IDLE_INST,1,,0,512,64,8,Count of instructions when exactly five qualified threads are executing non-idle code
+2,32,HPM_6THRD_NON_IDLE_CCYC,1,,0,576,64,9,Count of constant clock transitions when exactly six qualified threads are executing non-idle code
+2,24,HPM_6THRD_NON_IDLE_INST,1,,0,576,64,9,Count of instructions when exactly six qualified threads are executing non-idle code
+2,32,HPM_7THRD_NON_IDLE_CCYC,1,,0,640,64,10,Count of constant clock transitions when exactly seven qualified threads are executing non-idle code
+2,24,HPM_7THRD_NON_IDLE_INST,1,,0,640,64,10,Count of instructions when exactly seven qualified threads are executing non-idle code
+2,32,HPM_8THRD_NON_IDLE_CCYC,1,,0,704,64,11,Count of constant clock transitions when exactly eight qualified threads are executing non-idle code
+2,24,HPM_8THRD_NON_IDLE_INST,1,,0,704,64,11,Count of instructions when exactly eight qualified threads are executing non-idle code
+2,24,HPM_ANY_THRD_NON_IDLE_PCYC,1,,0,64,64,1,Count of processor cycles when any (logical OR) qualified thread is non-idle
+2,32,HPM_BUS_PUMP_CHIP_CORRECT_PRED,1,,0,1024,64,16,001 Total Chip| correct pred
+2,24,HPM_BUS_PUMP_GROUP_CORRECT_PRED,1,,0,1024,64,16,010 Total Group| correct pred
+2,32,HPM_BUS_PUMP_GROUP_TOO_LARGE,1,,0,1088,64,17,101 Total Group| too large
+2,24,HPM_BUS_PUMP_GROUP_TOO_SMALL,1,,0,1088,64,17,100 Total Group| too small
+2,32,HPM_BUS_PUMP_NON_FABRIC_OP,1,,0,960,64,15,000 Total Non-Fabric op
+2,24,HPM_BUS_PUMP_SYSTEM_CORRECT_PRED,1,,0,960,64,15,011 Total System| correct pred
+2,32,HPM_BUS_PUMP_SYSTEM_TOO_LARGE,1,,0,1152,64,18,111 Total System| too large
+2,24,HPM_BUS_PUMP_SYSTEM_TOO_SMALL,1,,0,1152,64,18,110 Total System| too small
+2,24,HPM_CCYC,1,,0,128,64,2,"Count of clock transitions used for interval measurement. This clock is constant, set at CEC at power up"
+2,32,HPM_CORE_ALL_THRD_NON_IDLE_PCYC,1,,0,64,64,1,Count of processor cycles when all (logical AND) qualified threads are non-idle
+2,24,HPM_CS_1PLUS_PPC_CMPL,1,,0,2752,64,43,One or more architected instructions finished
+2,24,HPM_CS_1PLUS_PPC_CMPL_KERNEL,1,,0,6848,64,43,
+2,24,HPM_CS_1PLUS_PPC_CMPL_USER,1,,0,4800,64,43,
+2,32,HPM_CS_2_GRP_CMPL,1,,0,2496,64,39,Processor cycles in which two groups complete
+2,32,HPM_CS_2_GRP_CMPL_KERNEL,1,,0,6592,64,39,
+2,32,HPM_CS_2_GRP_CMPL_USER,1,,0,4544,64,39,
+2,32,HPM_CS_32MHZ_CYC,1,,0,2240,64,35,Count of 32 MHZ clock transitions qualified by CodeState. (Time calibration.)
+2,32,HPM_CS_32MHZ_CYC_KERNEL,1,,0,6336,64,35,
+2,32,HPM_CS_32MHZ_CYC_USER,1,,0,4288,64,35,
+2,32,HPM_CS_BRU_CMPL,1,,0,2368,64,37,Sum of branch instruction completed across all threads qualified by CodeState
+2,32,HPM_CS_BRU_CMPL_KERNEL,1,,0,6464,64,37,
+2,32,HPM_CS_BRU_CMPL_USER,1,,0,4416,64,37,
+2,24,HPM_CS_BR_MPRED,1,,0,2432,64,38,Branches mispredicted
+2,24,HPM_CS_BR_MPRED_KERNEL,1,,0,6528,64,38,
+2,24,HPM_CS_BR_MPRED_USER,1,,0,4480,64,38,
+2,32,HPM_CS_BR_TAKEN,1,,0,2432,64,38,Taken Branches
+2,32,HPM_CS_BR_TAKEN_KERNEL,1,,0,6528,64,38,
+2,32,HPM_CS_BR_TAKEN_USER,1,,0,4480,64,38,
+2,32,HPM_CS_CMPLU_STALL_PCYC,1,,0,2752,64,43,No groups completed - GCT not empty
+2,32,HPM_CS_CMPLU_STALL_PCYC_KERNEL,1,,0,6848,64,43,
+2,32,HPM_CS_CMPLU_STALL_PCYC_USER,1,,0,4800,64,43,
+2,32,HPM_CS_CORE_GCT_EMPTY_PCYC,1,,0,2624,64,41,Cycles when GCT is empty| proc cycles
+2,32,HPM_CS_CORE_GCT_EMPTY_PCYC_KERNEL,1,,0,6720,64,41,
+2,32,HPM_CS_CORE_GCT_EMPTY_PCYC_USER,1,,0,4672,64,41,
+2,32,HPM_CS_CORE_MODE_SMT2_CCYC,1,,0,2112,64,33,Count of constant clock transitions while core mode is SMT2
+2,32,HPM_CS_CORE_MODE_SMT2_CCYC_KERNEL,1,,0,6208,64,33,
+2,32,HPM_CS_CORE_MODE_SMT2_CCYC_USER,1,,0,4160,64,33,
+2,24,HPM_CS_CORE_MODE_SMT4_CCYC,1,,0,2176,64,34,Count of constant clock transitions while core mode is SMT4
+2,24,HPM_CS_CORE_MODE_SMT4_CCYC_KERNEL,1,,0,6272,64,34,
+2,24,HPM_CS_CORE_MODE_SMT4_CCYC_USER,1,,0,4224,64,34,
+2,32,HPM_CS_CORE_MODE_SMT8_CCYC,1,,0,2176,64,34,Count of constant clock transitions while core mode is SMT8
+2,32,HPM_CS_CORE_MODE_SMT8_CCYC_KERNEL,1,,0,6272,64,34,
+2,32,HPM_CS_CORE_MODE_SMT8_CCYC_USER,1,,0,4224,64,34,
+2,24,HPM_CS_CORE_MODE_ST_CCYC,1,,0,2112,64,33,Count of constant clock transitions while core mode is ST
+2,24,HPM_CS_CORE_MODE_ST_CCYC_KERNEL,1,,0,6208,64,33,
+2,24,HPM_CS_CORE_MODE_ST_CCYC_USER,1,,0,4160,64,33,
+2,24,HPM_CS_CORE_PCYC,1,,0,2240,64,35,"Count of clock transitions used for interval measurement, qualified byCodeState. This clock is constant, set at CEC at power up"
+2,24,HPM_CS_CORE_PCYC_KERNEL,1,,0,6336,64,35,
+2,24,HPM_CS_CORE_PCYC_USER,1,,0,4288,64,35,
+2,24,HPM_CS_DATA_TABLEWALK_PCYC,1,,0,2688,64,42,Data Tablewalk Active cycles
+2,24,HPM_CS_DATA_TABLEWALK_PCYC_KERNEL,1,,0,6784,64,42,
+2,24,HPM_CS_DATA_TABLEWALK_PCYC_USER,1,,0,4736,64,42,
+2,24,HPM_CS_DERAT_MISS,1,,0,3776,64,59,DERAT reload
+2,24,HPM_CS_DERAT_MISS_KERNEL,1,,0,7872,64,59,
+2,24,HPM_CS_DERAT_MISS_USER,1,,0,5824,64,59,
+2,32,HPM_CS_DISP_HELD_PCYC,1,,0,2560,64,40,Instruction dispatch held cycles
+2,32,HPM_CS_DISP_HELD_PCYC_KERNEL,1,,0,6656,64,40,
+2,32,HPM_CS_DISP_HELD_PCYC_USER,1,,0,4608,64,40,
+2,32,HPM_CS_DTLB_MISS_16G,1,,0,3904,64,61,DTLB miss| 16G page
+2,32,HPM_CS_DTLB_MISS_16G_KERNEL,1,,0,8000,64,61,
+2,32,HPM_CS_DTLB_MISS_16G_USER,1,,0,5952,64,61,
+2,24,HPM_CS_DTLB_MISS_16M,1,,0,3904,64,61,DTLB miss| 16M page
+2,24,HPM_CS_DTLB_MISS_16M_KERNEL,1,,0,8000,64,61,
+2,24,HPM_CS_DTLB_MISS_16M_USER,1,,0,5952,64,61,
+2,24,HPM_CS_DTLB_MISS_4K,1,,0,3840,64,60,DTLB miss| 4K page
+2,24,HPM_CS_DTLB_MISS_4K_KERNEL,1,,0,7936,64,60,
+2,24,HPM_CS_DTLB_MISS_4K_USER,1,,0,5888,64,60,
+2,32,HPM_CS_DTLB_MISS_64K,1,,0,3840,64,60,DTLB miss| 64K page
+2,32,HPM_CS_DTLB_MISS_64K_KERNEL,1,,0,7936,64,60,
+2,32,HPM_CS_DTLB_MISS_64K_USER,1,,0,5888,64,60,
+2,32,HPM_CS_DTLB_RELOAD,1,,0,3776,64,59,Sum of dTLB reloads across all threads qualified by CodeState
+2,32,HPM_CS_DTLB_RELOAD_KERNEL,1,,0,7872,64,59,
+2,32,HPM_CS_DTLB_RELOAD_USER,1,,0,5824,64,59,
+2,24,HPM_CS_FLOP,1,,0,2368,64,37,Sum of floating-point instructions finished across threads qualified by CodeState
+2,24,HPM_CS_FLOP_KERNEL,1,,0,6464,64,37,
+2,24,HPM_CS_FLOP_USER,1,,0,4416,64,37,
+2,32,HPM_CS_FLUSH,1,,0,2688,64,42,Core Flush
+2,32,HPM_CS_FLUSH_KERNEL,1,,0,6784,64,42,
+2,32,HPM_CS_FLUSH_USER,1,,0,4736,64,42,
+2,24,HPM_CS_FROM_L2_IFETCH,1,,0,2880,64,45,L2 instruction instruction hit| core-local
+2,24,HPM_CS_FROM_L2_IFETCH_KERNEL,1,,0,6976,64,45,
+2,24,HPM_CS_FROM_L2_IFETCH_USER,1,,0,4928,64,45,
+2,32,HPM_CS_FROM_L2_L3_A_IFETCH,1,,0,3072,64,48,Instruction instruction hit| A-link L2 L3
+2,32,HPM_CS_FROM_L2_L3_A_IFETCH_KERNEL,1,,0,7168,64,48,
+2,32,HPM_CS_FROM_L2_L3_A_IFETCH_USER,1,,0,5120,64,48,
+2,32,HPM_CS_FROM_L2_L3_A_LDATA,1,,0,3456,64,54,Data load hit- A-link L2 L3
+2,32,HPM_CS_FROM_L2_L3_A_LDATA_KERNEL,1,,0,7552,64,54,
+2,32,HPM_CS_FROM_L2_L3_A_LDATA_USER,1,,0,5504,64,54,
+2,24,HPM_CS_FROM_L2_L3_X_IFETCH,1,,0,3072,64,48,Instruction instruction hit| X-link L2 L3
+2,24,HPM_CS_FROM_L2_L3_X_IFETCH_KERNEL,1,,0,7168,64,48,
+2,24,HPM_CS_FROM_L2_L3_X_IFETCH_USER,1,,0,5120,64,48,
+2,24,HPM_CS_FROM_L2_L3_X_LDATA,1,,0,3456,64,54,Data load hit - X-link L2 L3
+2,24,HPM_CS_FROM_L2_L3_X_LDATA_KERNEL,1,,0,7552,64,54,
+2,24,HPM_CS_FROM_L2_L3_X_LDATA_USER,1,,0,5504,64,54,
+2,24,HPM_CS_FROM_L2_LDATA,1,,0,3264,64,51,L2 data load hit - core-local
+2,24,HPM_CS_FROM_L2_LDATA_KERNEL,1,,0,7360,64,51,
+2,24,HPM_CS_FROM_L2_LDATA_USER,1,,0,5312,64,51,
+2,32,HPM_CS_FROM_L3_IFETCH,1,,0,2880,64,45,L3 instruction instruction hit| core-local
+2,32,HPM_CS_FROM_L3_IFETCH_KERNEL,1,,0,6976,64,45,
+2,32,HPM_CS_FROM_L3_IFETCH_USER,1,,0,4928,64,45,
+2,32,HPM_CS_FROM_L3_LDATA,1,,0,3264,64,51,L3 data load hit - core-local
+2,32,HPM_CS_FROM_L3_LDATA_KERNEL,1,,0,7360,64,51,
+2,32,HPM_CS_FROM_L3_LDATA_USER,1,,0,5312,64,51,
+2,24,HPM_CS_FROM_L4_IFETCH,1,,0,3008,64,47,Instruction instruction hit| Chip-Local L4
+2,24,HPM_CS_FROM_L4_IFETCH_KERNEL,1,,0,7104,64,47,
+2,24,HPM_CS_FROM_L4_IFETCH_USER,1,,0,5056,64,47,
+2,24,HPM_CS_FROM_L4_LDATA,1,,0,3392,64,53,Data data hit - Chip-Local L4
+2,24,HPM_CS_FROM_L4_LDATA_KERNEL,1,,0,7488,64,53,
+2,24,HPM_CS_FROM_L4_LDATA_USER,1,,0,5440,64,53,
+2,32,HPM_CS_FROM_L4_MEM_A_DPTEG,1,,0,3968,64,62,Data PTEG L3 miss| off-node source
+2,32,HPM_CS_FROM_L4_MEM_A_DPTEG_KERNEL,1,,0,8064,64,62,
+2,32,HPM_CS_FROM_L4_MEM_A_DPTEG_USER,1,,0,6016,64,62,
+2,32,HPM_CS_FROM_L4_MEM_A_IFETCH,1,,0,3136,64,49,Instruction instruction hit| A-link L4 MEM
+2,32,HPM_CS_FROM_L4_MEM_A_IFETCH_KERNEL,1,,0,7232,64,49,
+2,32,HPM_CS_FROM_L4_MEM_A_IFETCH_USER,1,,0,5184,64,49,
+2,32,HPM_CS_FROM_L4_MEM_A_IPTEG,1,,0,3712,64,58,Instruction PTEG miss satisified by off-node source
+2,32,HPM_CS_FROM_L4_MEM_A_IPTEG_KERNEL,1,,0,7808,64,58,
+2,32,HPM_CS_FROM_L4_MEM_A_IPTEG_USER,1,,0,5760,64,58,
+2,32,HPM_CS_FROM_L4_MEM_A_LDATA,1,,0,3520,64,55,Data load hit- A-link L4 MEM
+2,32,HPM_CS_FROM_L4_MEM_A_LDATA_KERNEL,1,,0,7616,64,55,
+2,32,HPM_CS_FROM_L4_MEM_A_LDATA_USER,1,,0,5568,64,55,
+2,24,HPM_CS_FROM_L4_MEM_X_DPTEG,1,,0,3968,64,62,Data PTEG L3| off-chip but node-local source
+2,24,HPM_CS_FROM_L4_MEM_X_DPTEG_KERNEL,1,,0,8064,64,62,
+2,24,HPM_CS_FROM_L4_MEM_X_DPTEG_USER,1,,0,6016,64,62,
+2,24,HPM_CS_FROM_L4_MEM_X_IFETCH,1,,0,3136,64,49,Instruction instruction hit| X-link L4 MEM
+2,24,HPM_CS_FROM_L4_MEM_X_IFETCH_KERNEL,1,,0,7232,64,49,
+2,24,HPM_CS_FROM_L4_MEM_X_IFETCH_USER,1,,0,5184,64,49,
+2,24,HPM_CS_FROM_L4_MEM_X_IPTEG,1,,0,3712,64,58,Instruction PTEG L3 miss satisified by off-chip- but node-local source
+2,24,HPM_CS_FROM_L4_MEM_X_IPTEG_KERNEL,1,,0,7808,64,58,
+2,24,HPM_CS_FROM_L4_MEM_X_IPTEG_USER,1,,0,5760,64,58,
+2,24,HPM_CS_FROM_L4_MEM_X_LDATA,1,,0,3520,64,55,Data load hit - X-link L4 MEM
+2,24,HPM_CS_FROM_L4_MEM_X_LDATA_KERNEL,1,,0,7616,64,55,
+2,24,HPM_CS_FROM_L4_MEM_X_LDATA_USER,1,,0,5568,64,55,
+2,32,HPM_CS_FROM_MEM_IFETCH,1,,0,3008,64,47,Instruction instruction hit| Chip-Local Memory
+2,32,HPM_CS_FROM_MEM_IFETCH_KERNEL,1,,0,7104,64,47,
+2,32,HPM_CS_FROM_MEM_IFETCH_USER,1,,0,5056,64,47,
+2,32,HPM_CS_FROM_MEM_LDATA,1,,0,3392,64,53,Data data hit - Chip-Local Memory
+2,32,HPM_CS_FROM_MEM_LDATA_KERNEL,1,,0,7488,64,53,
+2,32,HPM_CS_FROM_MEM_LDATA_USER,1,,0,5440,64,53,
+2,32,HPM_CS_FROM_MEM_LOCAL,1,,0,4032,64,63,"Sum of data and instruction cache misses that are satisfied by On-Chip Memory, qualified by CodeState"
+2,32,HPM_CS_FROM_MEM_LOCAL_KERNEL,1,,0,8128,64,63,
+2,32,HPM_CS_FROM_MEM_LOCAL_USER,1,,0,6080,64,63,
+2,24,HPM_CS_FROM_MEM_NON_LOCAL,1,,0,4032,64,63,"Sum of data and instruction cache misses that are satisfied by Off-Chip Memory, qualified by CodeState"
+2,24,HPM_CS_FROM_MEM_NON_LOCAL_KERNEL,1,,0,8128,64,63,
+2,24,HPM_CS_FROM_MEM_NON_LOCAL_USER,1,,0,6080,64,63,
+2,24,HPM_CS_FROM_ON_CHIP_L2_IFETCH,1,,0,2944,64,46,Instruction instruction hit| Chip-Local L2
+2,24,HPM_CS_FROM_ON_CHIP_L2_IFETCH_KERNEL,1,,0,7040,64,46,
+2,24,HPM_CS_FROM_ON_CHIP_L2_IFETCH_USER,1,,0,4992,64,46,
+2,24,HPM_CS_FROM_ON_CHIP_L2_LDATA,1,,0,3328,64,52,Data data hit - Chip-Local L2
+2,24,HPM_CS_FROM_ON_CHIP_L2_LDATA_KERNEL,1,,0,7424,64,52,
+2,24,HPM_CS_FROM_ON_CHIP_L2_LDATA_USER,1,,0,5376,64,52,
+2,32,HPM_CS_FROM_ON_CHIP_L3_IFETCH,1,,0,2944,64,46,Instruction instruction hit| Chip-Local L3
+2,32,HPM_CS_FROM_ON_CHIP_L3_IFETCH_KERNEL,1,,0,7040,64,46,
+2,32,HPM_CS_FROM_ON_CHIP_L3_IFETCH_USER,1,,0,4992,64,46,
+2,32,HPM_CS_FROM_ON_CHIP_L3_LDATA,1,,0,3328,64,52,Data data hit - Chip-Local L3
+2,32,HPM_CS_FROM_ON_CHIP_L3_LDATA_KERNEL,1,,0,7424,64,52,
+2,32,HPM_CS_FROM_ON_CHIP_L3_LDATA_USER,1,,0,5376,64,52,
+2,24,HPM_CS_GRP_CMPL,1,,0,2496,64,39,Groups Completed
+2,24,HPM_CS_GRP_CMPL_KERNEL,1,,0,6592,64,39,
+2,24,HPM_CS_GRP_CMPL_USER,1,,0,4544,64,39,
+2,32,HPM_CS_HPM_CS_ST_FIN,1,,0,3584,64,56,Sum of store instructions finished across all threads qualified by CodeState
+2,32,HPM_CS_HPM_CS_ST_FIN_KERNEL,1,,0,7680,64,56,
+2,32,HPM_CS_HPM_CS_ST_FIN_USER,1,,0,5632,64,56,
+2,24,HPM_CS_HPM_MISS_L1_LDATA,1,,0,3200,64,50,L1 data load demand miss
+2,24,HPM_CS_HPM_MISS_L1_LDATA_KERNEL,1,,0,7296,64,50,
+2,24,HPM_CS_HPM_MISS_L1_LDATA_USER,1,,0,5248,64,50,
+2,24,HPM_CS_IERAT_MISS,1,,0,3648,64,57,IERAT reload
+2,24,HPM_CS_IERAT_MISS_KERNEL,1,,0,7744,64,57,
+2,24,HPM_CS_IERAT_MISS_USER,1,,0,5696,64,57,
+2,32,HPM_CS_IFETCH_DEMAND_PCYC,1,,0,2816,64,44,Processor cycles when a demand ifetch was pending
+2,32,HPM_CS_IFETCH_DEMAND_PCYC_KERNEL,1,,0,6912,64,44,
+2,32,HPM_CS_IFETCH_DEMAND_PCYC_USER,1,,0,4864,64,44,
+2,32,HPM_CS_INST,1,,0,2048,64,32,Sum of instructions finished across threads qualified by CodeState
+2,32,HPM_CS_INST_KERNEL,1,,0,6144,64,32,
+2,32,HPM_CS_INST_USER,1,,0,4096,64,32,
+2,32,HPM_CS_ITLB_RELOAD,1,,0,3648,64,57,Sum of ITLB reloads across all threads qualified by CodeState
+2,32,HPM_CS_ITLB_RELOAD_KERNEL,1,,0,7744,64,57,
+2,32,HPM_CS_ITLB_RELOAD_USER,1,,0,5696,64,57,
+2,24,HPM_CS_L1_MISS_IFETCH,1,,0,2816,64,44,Demand Ifetch L1 miss
+2,24,HPM_CS_L1_MISS_IFETCH_KERNEL,1,,0,6912,64,44,
+2,24,HPM_CS_L1_MISS_IFETCH_USER,1,,0,4864,64,44,
+2,24,HPM_CS_LSU_EMPTY_PCYC,1,,0,2624,64,41,LSU empty proc cycles
+2,24,HPM_CS_LSU_EMPTY_PCYC_KERNEL,1,,0,6720,64,41,
+2,24,HPM_CS_LSU_EMPTY_PCYC_USER,1,,0,4672,64,41,
+2,24,HPM_CS_PCYC,1,,0,2048,64,32,Sum of processor cycles qualified by CodeState. (Processor clock may vary dynamically.)
+2,24,HPM_CS_PCYC_KERNEL,1,,0,6144,64,32,
+2,24,HPM_CS_PCYC_USER,1,,0,4096,64,32,
+2,24,HPM_CS_PPC_DISP,1,,0,2560,64,40,Architected instructions dispatched
+2,24,HPM_CS_PPC_DISP_KERNEL,1,,0,6656,64,40,
+2,24,HPM_CS_PPC_DISP_USER,1,,0,4608,64,40,
+2,32,HPM_CS_PURR,1,,0,2304,64,36,Sum of PURR transitions across all threads qualified by CodeState
+2,32,HPM_CS_PURR_KERNEL,1,,0,6400,64,36,
+2,32,HPM_CS_PURR_USER,1,,0,4352,64,36,
+2,24,HPM_CS_SPURR,1,,0,2304,64,36,Sum of SPURR transitions across all threads qualified by CodeState
+2,24,HPM_CS_SPURR_KERNEL,1,,0,6400,64,36,
+2,24,HPM_CS_SPURR_USER,1,,0,4352,64,36,
+2,24,HPM_CS_ST_MISS_L1,1,,0,3584,64,56,Store Missed L1
+2,24,HPM_CS_ST_MISS_L1_KERNEL,1,,0,7680,64,56,
+2,24,HPM_CS_ST_MISS_L1_USER,1,,0,5632,64,56,
+2,24,HPM_EXT_INT,1,,0,1344,64,21,Count of external interrupts across qualified threads
+2,24,HPM_FREQ_SLEW_DOWN_CCYC,1,,0,896,64,14,Count of constant clock transitions while processor core clock was lower than nominal
+2,32,HPM_FREQ_SLEW_UP_CCYC,1,,0,896,64,14,Count of constant clock transitions while processor core clock was higher than nominal
+2,32,HPM_INST,1,,0,0,64,0,Sum of instructions finished across qualified threads
+2,32,HPM_LARX_FIN,1,,0,832,64,13,Count of # LARX instructions that finished in LSU pipe0
+2,24,HPM_LWSYNC_PCYC,1,,0,1984,64,31,Count of cycles threads were stalled at completion because of a lwsync/isync
+2,32,HPM_MSR_ADJUNCT_CCYC,1,,0,1728,64,27,Count of constant clock transitions when MSR HV=1 & PR=1 (adjunct) Non-Idle Duration
+2,24,HPM_MSR_AJUNCT_INST,1,,0,1728,64,27,Count of Non-Idle instructions executed while in MSR HV=1 & PR=1 (adjunct)
+2,32,HPM_MSR_EXT_INT_DIS_CCYC,1,,0,1344,64,21,MSR EE=0 (ExtIntr Disabled) Duration
+2,32,HPM_MSR_HV_CCYC,1,,0,1664,64,26,Count of constant clock transitions when MSR HV=1 & PR=0 (hypervisor) Non-Idle Duration
+2,24,HPM_MSR_HV_INST,1,,0,1664,64,26,Count of Non-Idle instructions executed while in MSR HV=1 & PR=0 (hypervisor)
+2,32,HPM_MSR_PRIV_CCYC,1,,0,1536,64,24,Count of constant clock transitions when MSR HV=0 & PR=0 (priv) Non-Idle
+2,24,HPM_MSR_PRIV_INST,1,,0,1536,64,24,Non-Idle Instruction count while MSR HV=0 & PR=0 (priv)
+2,32,HPM_MSR_PROB_CCYC,1,,0,1600,64,25,Count of constant clock transitions when MSR HV=0 & PR=1 (problem) Non-Idle Duration
+2,24,HPM_MSR_PROB_INST,1,,0,1600,64,25,Count of Non-Idle instructions executed while in MSR HV=0 & PR=1 (problem state)
+2,32,HPM_MSR_TA_LIC_CCYC,1,,0,1792,64,28,Count of constant clock transitions when MSR US=0 & PR=0 & TA=1 Non-Idle Duration
+2,24,HPM_MSR_TA_LIC_INST,1,,0,1792,64,28,Count of Non-Idle instructions executed while in MSR US=0 & PR=0 & TA=1
+2,24,HPM_MSR_TA_SYSTEM_INST,1,,0,1856,64,29,Count of Non-Idle instructions executed while in MSR US=0 & PR=1 & TA=1
+2,32,HPM_MSR_TA_SYS_CCYC,1,,0,1856,64,29,Count of constant clock transitions when MSR US=0 & PR=1 & TA=1 Non-Idle Duration
+2,32,HPM_MSR_TA_USER_CCYC,1,,0,1920,64,30,Count of constant clock transitions when MSR US=1 & PR=1 & TA=1 Non-Idle Duration
+2,24,HPM_MSR_TA_USER_INST,1,,0,1920,64,30,Count of Non-Idle instructions executed while in MSR US=1 & PR=1 & TA=1
+2,32,HPM_MSR_TRANSMEM_CCYC,1,,0,1408,64,22,MSR TM=1 (TransMem) Duration
+2,24,HPM_MSR_TRANSMEM_INST,1,,0,1408,64,22,MSR TM=1 (TransMem) Instructions
+2,40,HPM_NON_IDLE_INST,1,,0,0,64,0,Sum of all instsructions completed while the processor wasn't idle
+2,48,HPM_NON_IDLE_PCYC,1,,0,0,64,0,Sum of all processor cycles completed while the processor wasn't idle
+2,24,HPM_PCYC,1,,0,0,64,0,Sum of processor cycles across qualified threads. (Processor clock may vary dynamically.)
+2,32,HPM_STCX_FAIL,1,,0,768,64,12,Count of # STCX instructions that failed (did not finish)
+2,24,HPM_STCX_FIN,1,,0,768,64,12,Count of # STCX instructions that finished
+2,32,HPM_SYNC_PCYC,1,,0,1984,64,31,Count of cycles threads were stalled at completion waiting on a hwsync sync ack
+2,24,HPM_TC_1_CCYC,1,,0,1216,64,19,Count of constant clock transitions when zero or one qualified threads are on-line
+2,32,HPM_TC_2_CCYC,1,,0,1216,64,19,Duration of two on-line threads
+2,24,HPM_TC_4_CCYC,1,,0,1280,64,20,Count of constant clock transitions when of three or four on-line threads
+2,32,HPM_TC_8_CCYC,1,,0,1280,64,20,Duration of five to eight on-line threads
+2,24,HPM_THREAD_NAP_CCYC,1,,0,1472,64,23,Sum of constant clock transitions across all qualified threads that are in NAP state
+2,24,HPM_TLBIE,1,,0,832,64,13,Sum of finished TLBIE instructions across qualified threads
+3,0,PM_1LPAR_CYC,1,Number of cycles in single lpar mode,0,0,0,0,Number of cycles in single lpar mode. All threads in the core are assigned to the same lpar
+3,0,PM_1PLUS_PPC_CMPL,1,1 or more ppc insts finished (completed),0,0,0,0,1 or more ppc insts finished
+3,0,PM_1PLUS_PPC_DISP,1,Cycles at least one Instr Dispatched. Could be a group with only microcode. Issue HW016521,0,0,0,0,"Cycles at least one Instr Dispatched,"
+3,0,PM_2LPAR_CYC,1,Number of cycles in 2 lpar mode,0,0,0,0,Cycles in 2-lpar mode. Threads 0-3 belong to Lpar0 and threads 4-7 belong to Lpar1
+3,0,PM_4LPAR_CYC,1,Number of cycles in 4 LPAR mode,0,0,0,0,"Number of cycles in 4 LPAR mode. Threads 0-1 belong to lpar0, threads 2-3 belong to lpar1, threads 4-5 belong to lpar2, and threads 6-7 belong to lpar3"
+3,0,PM_ANY_THRD_RUN_CYC,1,Any thread in run_cycles (was one thread in run_cycles),0,0,0,0,One of threads in run_cycles
+3,0,PM_BACK_BR_CMPL,1,,0,0,0,0,Branch instruction completed with a target address less than current instruction address
+3,0,PM_BANK_CONFLICT,1,,0,0,0,0,Read blocked due to interleave conflict. The ifar logic will detect an interleave conflict and kill the data that was read that cycle
+3,0,PM_BRU_FIN,1,,0,0,0,0,Branch Instruction Finished
+3,0,PM_BR_2PATH,1,,0,0,0,0,two path branch
+3,0,PM_BR_BC+8,1,,0,0,0,0,Pairable BC+8 branch that has not been converted to a Resolve Finished in the BRU pipeline
+3,0,PM_BR_BC+8_CONV,1,,0,0,0,0,Pairable BC+8 branch that was converted to a Resolve Finished in the BRU pipeline
+3,0,PM_BR_CMPL,1,,0,0,0,0,Branch Instruction completed
+3,0,PM_BR_MPRED_CCACHE,1,,0,0,0,0,Conditional Branch Completed that was Mispredicted due to the Count Cache Target Prediction
+3,0,PM_BR_MPRED_CMPL,1,,0,0,0,0,Number of Branch Mispredicts
+3,0,PM_BR_MPRED_CR,1,,0,0,0,0,Conditional Branch Completed that was Mispredicted due to the BHT Direction Prediction (taken/not taken)
+3,0,PM_BR_MPRED_LSTACK,1,,0,0,0,0,Conditional Branch Completed that was Mispredicted due to the Link Stack Target Prediction
+3,0,PM_BR_MPRED_TA,1,,0,0,0,0,Conditional Branch Completed that was Mispredicted due to the Target Address Prediction from the Count Cache or Link Stack. Only XL-form branches that resolved Taken set this event
+3,0,PM_BR_MRK_2PATH,1,,0,0,0,0,marked two path branch
+3,0,PM_BR_PRED_BR0,1,,0,0,0,0,Conditional Branch Completed on BR0 (1st branch in group) in which the HW predicted the Direction or Target
+3,0,PM_BR_PRED_BR1,1,,0,0,0,0,"Conditional Branch Completed on BR1 (2nd branch in group) in which the HW predicted the Direction or Target. Note: BR1 can only be used in Single Thread Mode. In all of the SMT modes, only one branch can complete, thus BR1 is unused"
+3,0,PM_BR_PRED_CCACHE_BR0,1,,0,0,0,0,Conditional Branch Completed on BR0 that used the Count Cache for Target Prediction
+3,0,PM_BR_PRED_CCACHE_BR1,1,,0,0,0,0,Conditional Branch Completed on BR1 that used the Count Cache for Target Prediction
+3,0,PM_BR_PRED_CR_BR0,1,,0,0,0,0,"Conditional Branch Completed on BR0 that had its direction predicted. I-form branches do not set this event. In addition, B-form branches which do not use the BHT do not set this event - these are branches with BO-field set to 'always taken' and branches"
+3,0,PM_BR_PRED_CR_BR1,1,,0,0,0,0,"Conditional Branch Completed on BR1 that had its direction predicted. I-form branches do not set this event. In addition, B-form branches which do not use the BHT do not set this event - these are branches with BO-field set to 'always taken' and branches"
+3,0,PM_BR_PRED_LSTACK_BR0,1,,0,0,0,0,Conditional Branch Completed on BR0 that used the Link Stack for Target Prediction
+3,0,PM_BR_PRED_LSTACK_BR1,1,,0,0,0,0,Conditional Branch Completed on BR1 that used the Link Stack for Target Prediction
+3,0,PM_BR_PRED_TA_BR0,1,,0,0,0,0,Conditional Branch Completed on BR0 that had its target address predicted. Only XL-form branches set this event
+3,0,PM_BR_PRED_TA_BR1,1,,0,0,0,0,Conditional Branch Completed on BR1 that had its target address predicted. Only XL-form branches set this event
+3,0,PM_BR_TAKEN_CMPL,1,Branch Taken,0,0,0,0,New event for Branch Taken
+3,0,PM_BR_UNCOND_BR0,1,,0,0,0,0,"Unconditional Branch Completed on BR0. HW branch prediction was not used for this branch. This can be an I-form branch, a B-form branch with BO-field set to branch always, or a B-form branch which was coverted to a Resolve"
+3,0,PM_BR_UNCOND_BR1,1,,0,0,0,0,"Unconditional Branch Completed on BR1. HW branch prediction was not used for this branch. This can be an I-form branch, a B-form branch with BO-field set to branch always, or a B-form branch which was coverted to a Resolve"
+3,0,PM_CASTOUT_ISSUED,1,,0,0,0,0,Castouts issued
+3,0,PM_CASTOUT_ISSUED_GPR,1,,0,0,0,0,Castouts issued GPR
+3,0,PM_CHIP_PUMP_CPRED,1,,0,0,0,0,"Initial and Final Pump Scope and data sourced across this scope was chip pump (prediction=correct) for all data types ( demand load,data,inst prefetch,inst fetch,xlate (I or d)"
+3,0,PM_CLB_HELD,1,,0,0,0,0,CLB Hold: Any Reason
+3,0,PM_CMPLU_STALL,1,Completion Stall (any reason),0,0,0,0,"No groups completed, GCT not empty"
+3,0,PM_CMPLU_STALL_BRU,1,,0,0,0,0,Completion stall due to a Branch Unit
+3,0,PM_CMPLU_STALL_BRU_CRU,1,,0,0,0,0,Completion stall due to IFU
+3,0,PM_CMPLU_STALL_COQ_FULL,1,,0,0,0,0,Completion stall due to CO q full
+3,0,PM_CMPLU_STALL_DCACHE_MISS,1,,0,0,0,0,Completion stall by Dcache miss
+3,0,PM_CMPLU_STALL_DMISS_L21_L31,1,,0,0,0,0,Completion stall by Dcache miss which resolved on chip ( excluding local L2/L3)
+3,0,PM_CMPLU_STALL_DMISS_L2L3,1,,0,0,0,0,Completion stall by Dcache miss which resolved in L2/L3
+3,0,PM_CMPLU_STALL_DMISS_L2L3_CONFLICT,1,Completion stall due to cache miss resolving in core's L2/L3 with a conflict,0,0,0,0,Completion stall due to cache miss due to L2 l3 conflict
+3,0,PM_CMPLU_STALL_DMISS_L3MISS,1,,0,0,0,0,Completion stall due to cache miss resolving missed the L3
+3,0,PM_CMPLU_STALL_DMISS_LMEM,1,Completion stall due to cache miss resolving in core's Local Memory,0,0,0,0,GCT empty by branch mispredict + IC miss
+3,0,PM_CMPLU_STALL_DMISS_REMOTE,1,Completion stall by Dcache miss which resolved on chip ( excluding local L2/L3),0,0,0,0,Completion stall by Dcache miss which resolved from remote chip (cache or memory)
+3,0,PM_CMPLU_STALL_ERAT_MISS,1,,0,0,0,0,Completion stall due to LSU reject ERAT miss
+3,0,PM_CMPLU_STALL_FLUSH,1,,0,0,0,0,completion stall due to flush by own thread
+3,0,PM_CMPLU_STALL_FXLONG,1,,0,0,0,0,Completion stall due to a long latency fixed point instruction
+3,0,PM_CMPLU_STALL_FXU,1,,0,0,0,0,Completion stall due to FXU
+3,0,PM_CMPLU_STALL_HWSYNC,1,,0,0,0,0,completion stall due to hwsync
+3,0,PM_CMPLU_STALL_LOAD_FINISH,1,,0,0,0,0,Completion stall due to a Load finish
+3,0,PM_CMPLU_STALL_LSU,1,,0,0,0,0,Completion stall by LSU instruction
+3,0,PM_CMPLU_STALL_LWSYNC,1,,0,0,0,0,completion stall due to isync/lwsync
+3,0,PM_CMPLU_STALL_MEM_ECC_DELAY,1,,0,0,0,0,Completion stall due to mem ECC delay
+3,0,PM_CMPLU_STALL_NTCG_FLUSH,1,Completion stall due to reject (load hit store),0,0,0,0,Completion stall due to ntcg flush
+3,0,PM_CMPLU_STALL_OTHER_CMPL,1,Instructions core completed while this thread was stalled,0,0,0,0,
+3,0,PM_CMPLU_STALL_REJECT,1,,0,0,0,0,Completion stall due to LSU reject
+3,0,PM_CMPLU_STALL_REJECT_LHS,1,,0,0,0,0,Completion stall due to reject (load hit store)
+3,0,PM_CMPLU_STALL_REJ_LMQ_FULL,1,,0,0,0,0,Completion stall due to LSU reject LMQ full
+3,0,PM_CMPLU_STALL_SCALAR,1,,0,0,0,0,Completion stall due to VSU scalar instruction
+3,0,PM_CMPLU_STALL_SCALAR_LONG,1,,0,0,0,0,Completion stall due to VSU scalar long latency instruction
+3,0,PM_CMPLU_STALL_STORE,1,Completion stall by stores,0,0,0,0,Completion stall by stores this includes store agen finishes in pipe LS0/LS1 and store data finishes in LS2/LS3
+3,0,PM_CMPLU_STALL_ST_FWD,1,,0,0,0,0,Completion stall due to store forward
+3,0,PM_CMPLU_STALL_THRD,1,Completion stall due to thread conflict,0,0,0,0,Completion Stalled due to thread conflict. Group ready to complete but it was another thread's turn
+3,0,PM_CMPLU_STALL_VECTOR,1,,0,0,0,0,Completion stall due to VSU vector instruction
+3,0,PM_CMPLU_STALL_VECTOR_LONG,1,,0,0,0,0,Completion stall due to VSU vector long instruction
+3,0,PM_CMPLU_STALL_VSU,1,,0,0,0,0,Completion stall due to VSU instruction
+3,0,PM_CO0_BUSY,1,0.0,0,0,0,0,CO mach 0 Busy. Used by PMU to sample ave RC livetime(mach0 used as sample point)
+3,0,PM_CO0_DONE,1,0.0,0,0,0,0,CO mach 0 Busy. Used by PMU to sample ave RC livetime(mach0 used as sample point)
+3,0,PM_CO_DISP_FAIL,1,,0,0,0,0,CO dispatch failed due to all CO machines being busy
+3,0,PM_CO_TM_SC_FOOTPRINT,1,,0,0,0,0,L2 did a cleanifdirty CO to the L3 (ie created an SC line in the L3)
+3,0,PM_CO_USAGE,1,,0,0,0,0,continuous 16 cycle(2to1) window where this signals rotates thru sampling each machine busy. PMU uses this wave to then do 16 cyc count to sample total number of machs running
+3,0,PM_CRU_FIN,1,,0,0,0,0,IFU Finished a (non-branch) instruction
+3,0,PM_CYC,1,,0,0,0,0,Cycles
+3,0,PM_DATA_ALL_CHIP_PUMP_CPRED,1,,0,0,0,0,Initial and Final Pump Scope and data sourced across this scope was chip pump (prediction=correct) for either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_DL2L3_MOD,1,,0,0,0,0,"The processor's data cache was reloaded with Modified (M) data from another chip's L2 or L3 on a different Node or Group (Distant), as this chip due to either a demand load or prefetch"
+3,0,PM_DATA_ALL_FROM_DL2L3_SHR,1,,0,0,0,0,"The processor's data cache was reloaded with Shared (S) data from another chip's L2 or L3 on a different Node or Group (Distant), as this chip due to either a demand load or prefetch"
+3,0,PM_DATA_ALL_FROM_DL4,1,,0,0,0,0,The processor's data cache was reloaded from another chip's L4 on a different Node or Group (Distant) due to either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_DMEM,1,,0,0,0,0,The processor's data cache was reloaded from another chip's memory on the same Node or Group (Distant) due to either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_L2,1,,0,0,0,0,The processor's data cache was reloaded from local core's L2 due to either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_L2.1_MOD,1,,0,0,0,0,The processor's data cache was reloaded with Modified (M) data from another core's L2 on the same chip due to either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_L2.1_SHR,1,,0,0,0,0,The processor's data cache was reloaded with Shared (S) data from another core's L2 on the same chip due to either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_L2MISS_MOD,1,,0,0,0,0,The processor's data cache was reloaded from a localtion other than the local core's L2 due to either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_L2_DISP_CONFLICT_LDHITST,1,,0,0,0,0,The processor's data cache was reloaded from local core's L2 with load hit store conflict due to either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_L2_DISP_CONFLICT_OTHER,1,,0,0,0,0,The processor's data cache was reloaded from local core's L2 with dispatch conflict due to either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_L2_NO_CONFLICT,1,,0,0,0,0,The processor's data cache was reloaded from local core's L2 without conflict due to either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_L3,1,,0,0,0,0,The processor's data cache was reloaded from local core's L3 due to either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_L3.1_ECO_MOD,1,,0,0,0,0,The processor's data cache was reloaded with Modified (M) data from another core's ECO L3 on the same chip due to either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_L3.1_ECO_SHR,1,,0,0,0,0,The processor's data cache was reloaded with Shared (S) data from another core's ECO L3 on the same chip due to either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_L3.1_MOD,1,,0,0,0,0,The processor's data cache was reloaded with Modified (M) data from another core's L3 on the same chip due to either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_L3.1_SHR,1,,0,0,0,0,The processor's data cache was reloaded with Shared (S) data from another core's L3 on the same chip due to either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_L3MISS_MOD,1,,0,0,0,0,The processor's data cache was reloaded from a localtion other than the local core's L3 due to either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_L3_DISP_CONFLICT,1,,0,0,0,0,The processor's data cache was reloaded from local core's L3 with dispatch conflict due to either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_L3_NO_CONFLICT,1,,0,0,0,0,The processor's data cache was reloaded from local core's L3 without conflict due to either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_LL4,1,,0,0,0,0,The processor's data cache was reloaded from the local chip's L4 cache due to either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_LMEM,1,,0,0,0,0,The processor's data cache was reloaded from the local chip's Memory due to either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_MEMORY,1,,0,0,0,0,The processor's data cache was reloaded from a memory location including L4 from local remote or distant due to either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_OFF_CHIP_CACHE,1,,0,0,0,0,The processor's data cache was reloaded either shared or modified data from another core's L2/L3 on a different chip (remote or distant) due to either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_ON_CHIP_CACHE,1,,0,0,0,0,The processor's data cache was reloaded either shared or modified data from another core's L2/L3 on the same chip due to either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_RL2L3_MOD,1,,0,0,0,0,"The processor's data cache was reloaded with Modified (M) data from another chip's L2 or L3 on the same Node or Group (Remote), as this chip due to either a demand load or prefetch"
+3,0,PM_DATA_ALL_FROM_RL2L3_SHR,1,,0,0,0,0,"The processor's data cache was reloaded with Shared (S) data from another chip's L2 or L3 on the same Node or Group (Remote), as this chip due to either a demand load or prefetch"
+3,0,PM_DATA_ALL_FROM_RL4,1,,0,0,0,0,The processor's data cache was reloaded from another chip's L4 on the same Node or Group ( Remote) due to either a demand load or prefetch
+3,0,PM_DATA_ALL_FROM_RMEM,1,,0,0,0,0,The processor's data cache was reloaded from another chip's memory on the same Node or Group ( Remote) due to either a demand load or prefetch
+3,0,PM_DATA_ALL_GRP_PUMP_CPRED,1,,0,0,0,0,Initial and Final Pump Scope and data sourced across this scope was group pump for either a demand load or prefetch
+3,0,PM_DATA_ALL_GRP_PUMP_MPRED,1,,0,0,0,0,"Final Pump Scope(Group) to get data sourced, ended up larger than Initial Pump Scope OR Final Pump Scope(Group) got data from source that was at smaller scope(Chip) Final pump was group pump and initial pump was chip or final and initial pump was group but data was sourced at chip scope levelfor either a demand load or prefetch"
+3,0,PM_DATA_ALL_GRP_PUMP_MPRED_RTY,1,,0,0,0,0,"Final Pump Scope(Group) to get data sourced, ended up larger than Initial Pump Scope (Chip) Final pump was group pump and initial pump was chip pumpfor either a demand load or prefetch"
+3,0,PM_DATA_ALL_PUMP_CPRED,1,,0,0,0,0,Pump prediction correct. Counts across all types of pumps for either a demand load or prefetch
+3,0,PM_DATA_ALL_PUMP_MPRED,1,,0,0,0,0,Pump Mis prediction Counts across all types of pumpsfor a demand load
+3,0,PM_DATA_ALL_SYS_PUMP_CPRED,1,,0,0,0,0,Initial and Final Pump Scope and data sourced across this scope was system pump for either a demand load or prefetch
+3,0,PM_DATA_ALL_SYS_PUMP_MPRED,1,,0,0,0,0,"Final Pump Scope(system) to get data sourced, ended up larger than Initial Pump Scope(Chip/Group) OR Final Pump Scope(system) got data from source that was at smaller scope(Chip/group) Final pump was system pump and initial pump was chip or group or final and initial pump was system but data was sourced at chip/group scope levelfor either a demand load or prefetch"
+3,0,PM_DATA_ALL_SYS_PUMP_MPRED_RTY,1,,0,0,0,0,"Final Pump Scope(system) to get data sourced, ended up larger than Initial Pump Scope (Chip or Group) for either a demand load or prefetch"
+3,0,PM_DATA_CHIP_PUMP_CPRED,1,,0,0,0,0,Initial and Final Pump Scope and data sourced across this scope was chip pump (prediction=correct) for a demand load
+3,0,PM_DATA_FROM_DL2L3_MOD,1,,0,0,0,0,"The processor's data cache was reloaded with Modified (M) data from another chip's L2 or L3 on a different Node or Group (Distant), as this chip due to a demand load"
+3,0,PM_DATA_FROM_DL2L3_SHR,1,,0,0,0,0,"The processor's data cache was reloaded with Shared (S) data from another chip's L2 or L3 on a different Node or Group (Distant), as this chip due to a demand load"
+3,0,PM_DATA_FROM_DL4,1,,0,0,0,0,The processor's data cache was reloaded from another chip's L4 on a different Node or Group (Distant) due to a demand load
+3,0,PM_DATA_FROM_DMEM,1,,0,0,0,0,The processor's data cache was reloaded from another chip's memory on the same Node or Group (Distant) due to a demand load
+3,0,PM_DATA_FROM_L2,1,The processor's data cache was reloaded from local core's L2 due to a demand load or demand load plus prefetch controlled by MMCR1[20],0,0,0,0,The processor's data cache was reloaded from local core's L2 due to a demand load or demand load plus prefetch controlled by MMCR1[16]
+3,0,PM_DATA_FROM_L2.1_MOD,1,,0,0,0,0,The processor's data cache was reloaded with Modified (M) data from another core's L2 on the same chip due to a demand load
+3,0,PM_DATA_FROM_L2.1_SHR,1,,0,0,0,0,The processor's data cache was reloaded with Shared (S) data from another core's L2 on the same chip due to a demand load
+3,0,PM_DATA_FROM_L2MISS,1,,0,0,0,0,Demand LD - L2 Miss (not L2 hit)
+3,0,PM_DATA_FROM_L2MISS_MOD,1,The processor's data cache was reloaded from a localtion other than the local core's L2 due to a demand load or demand load plus prefetch controlled by MMCR1[20],0,0,0,0,The processor's data cache was reloaded from a localtion other than the local core's L2 due to a demand load or demand load plus prefetch controlled by MMCR1[16]
+3,0,PM_DATA_FROM_L2_DISP_CONFLICT_LDHITST,1,,0,0,0,0,The processor's data cache was reloaded from local core's L2 with load hit store conflict due to a demand load
+3,0,PM_DATA_FROM_L2_DISP_CONFLICT_OTHER,1,,0,0,0,0,The processor's data cache was reloaded from local core's L2 with dispatch conflict due to a demand load
+3,0,PM_DATA_FROM_L2_MEPF,1,,0,0,0,0,The processor's data cache was reloaded from local core's L2 hit without dispatch conflicts on Mepf state. due to a demand load
+3,0,PM_DATA_FROM_L2_NO_CONFLICT,1,The processor's data cache was reloaded from local core's L2 without conflict due to a demand load or demand load plus prefetch controlled by MMCR1[20],0,0,0,0,The processor's data cache was reloaded from local core's L2 without conflict due to a demand load or demand load plus prefetch controlled by MMCR1[16]
+3,0,PM_DATA_FROM_L3,1,,0,0,0,0,The processor's data cache was reloaded from local core's L3 due to a demand load
+3,0,PM_DATA_FROM_L3.1_ECO_MOD,1,,0,0,0,0,The processor's data cache was reloaded with Modified (M) data from another core's ECO L3 on the same chip due to a demand load
+3,0,PM_DATA_FROM_L3.1_ECO_SHR,1,,0,0,0,0,The processor's data cache was reloaded with Shared (S) data from another core's ECO L3 on the same chip due to a demand load
+3,0,PM_DATA_FROM_L3.1_MOD,1,,0,0,0,0,The processor's data cache was reloaded with Modified (M) data from another core's L3 on the same chip due to a demand load
+3,0,PM_DATA_FROM_L3.1_SHR,1,The processor's data cache was reloaded with Shared (S) data from another core's L3 on the same chip due to a demand load or demand load plus prefetch controlled by MMCR1[20],0,0,0,0,The processor's data cache was reloaded with Shared (S) data from another core's L3 on the same chip due to a demand load or demand load plus prefetch controlled by MMCR1[16]
+3,0,PM_DATA_FROM_L3MISS,1,,0,0,0,0,Demand LD - L3 Miss (not L2 hit and not L3 hit)
+3,0,PM_DATA_FROM_L3MISS_MOD,1,,0,0,0,0,The processor's data cache was reloaded from a localtion other than the local core's L3 due to a demand load
+3,0,PM_DATA_FROM_L3_DISP_CONFLICT,1,,0,0,0,0,The processor's data cache was reloaded from local core's L3 with dispatch conflict due to a demand load
+3,0,PM_DATA_FROM_L3_MEPF,1,,0,0,0,0,The processor's data cache was reloaded from local core's L3 without dispatch conflicts hit on Mepf state. due to a demand load
+3,0,PM_DATA_FROM_L3_NO_CONFLICT,1,The processor's data cache was reloaded from local core's L3 without conflict due to a demand load or demand load plus prefetch controlled by MMCR1[20],0,0,0,0,The processor's data cache was reloaded from local core's L3 without conflict due to a demand load or demand load plus prefetch controlled by MMCR1[16]
+3,0,PM_DATA_FROM_LL4,1,The processor's data cache was reloaded from the local chip's L4 cache due to a demand load or demand load plus prefetch controlled by MMCR1[20],0,0,0,0,The processor's data cache was reloaded from the local chip's L4 cache due to a demand load or demand load plus prefetch controlled by MMCR1[16]
+3,0,PM_DATA_FROM_LMEM,1,,0,0,0,0,The processor's data cache was reloaded from the local chip's Memory due to a demand load
+3,0,PM_DATA_FROM_MEM,1,Data cache reload from memory (including L4),0,0,0,0,data from Memory
+3,0,PM_DATA_FROM_MEMORY,1,,0,0,0,0,The processor's data cache was reloaded from a memory location including L4 from local remote or distant due to a demand load
+3,0,PM_DATA_FROM_OFF_CHIP_CACHE,1,,0,0,0,0,The processor's data cache was reloaded either shared or modified data from another core's L2/L3 on a different chip (remote or distant) due to a demand load
+3,0,PM_DATA_FROM_ON_CHIP_CACHE,1,The processor's data cache was reloaded either shared or modified data from another core's L2/L3 on the same chip due to a demand load or demand load plus prefetch controlled by MMCR1[20],0,0,0,0,The processor's data cache was reloaded either shared or modified data from another core's L2/L3 on the same chip due to a demand load or demand load plus prefetch controlled by MMCR1[16]
+3,0,PM_DATA_FROM_RL2L3_MOD,1,,0,0,0,0,"The processor's data cache was reloaded with Modified (M) data from another chip's L2 or L3 on the same Node or Group (Remote), as this chip due to a demand load"
+3,0,PM_DATA_FROM_RL2L3_SHR,1,"The processor's data cache was reloaded with Shared (S) data from another chip's L2 or L3 on the same Node or Group (Remote), as this chip due to a demand load or demand load plus prefetch controlled by MMCR1[20]",0,0,0,0,"The processor's data cache was reloaded with Shared (S) data from another chip's L2 or L3 on the same Node or Group (Remote), as this chip due to a demand load or demand load plus prefetch controlled by MMCR1[16]"
+3,0,PM_DATA_FROM_RL4,1,,0,0,0,0,The processor's data cache was reloaded from another chip's L4 on the same Node or Group ( Remote) due to a demand load
+3,0,PM_DATA_FROM_RMEM,1,,0,0,0,0,The processor's data cache was reloaded from another chip's memory on the same Node or Group ( Remote) due to a demand load
+3,0,PM_DATA_GRP_PUMP_CPRED,1,,0,0,0,0,Initial and Final Pump Scope and data sourced across this scope was group pump for a demand load
+3,0,PM_DATA_GRP_PUMP_MPRED,1,,0,0,0,0,"Final Pump Scope(Group) to get data sourced, ended up larger than Initial Pump Scope OR Final Pump Scope(Group) got data from source that was at smaller scope(Chip) Final pump was group pump and initial pump was chip or final and initial pump was group but data was sourced at chip scope levelfor a demand load"
+3,0,PM_DATA_GRP_PUMP_MPRED_RTY,1,,0,0,0,0,"Final Pump Scope(Group) to get data sourced, ended up larger than Initial Pump Scope (Chip) Final pump was group pump and initial pump was chip pumpfor a demand load"
+3,0,PM_DATA_PUMP_CPRED,1,,0,0,0,0,Pump prediction correct. Counts across all types of pumps for a demand load
+3,0,PM_DATA_PUMP_MPRED,1,,0,0,0,0,Pump Mis prediction Counts across all types of pumpsfor a demand load
+3,0,PM_DATA_SYS_PUMP_CPRED,1,,0,0,0,0,Initial and Final Pump Scope and data sourced across this scope was system pump for a demand load
+3,0,PM_DATA_SYS_PUMP_MPRED,1,,0,0,0,0,"Final Pump Scope(system) to get data sourced, ended up larger than Initial Pump Scope(Chip/Group) OR Final Pump Scope(system) got data from source that was at smaller scope(Chip/group) Final pump was system pump and initial pump was chip or group or final and initial pump was system but data was sourced at chip/group scope levelfor a demand load"
+3,0,PM_DATA_SYS_PUMP_MPRED_RTY,1,,0,0,0,0,"Final Pump Scope(system) to get data sourced, ended up larger than Initial Pump Scope (Chip or Group) for a demand load"
+3,0,PM_DATA_TABLEWALK_CYC,1,Data Tablewalk Active,0,0,0,0,Tablwalk Cycles (could be 1 or 2 active)
+3,0,PM_DC_COLLISIONS,1,,0,0,0,0,DATA Cache collisions
+3,0,PM_DC_PREF_STREAM_ALLOC,1,,0,0,0,0,Stream marked valid. The stream could have been allocated through the hardware prefetch mechanism or through software. This is combined ls0 and ls1
+3,0,PM_DC_PREF_STREAM_CONF,1,,0,0,0,0,A demand load referenced a line in an active prefetch stream. The stream could have been allocated through the hardware prefetch mechanism or through software. Combine up + down
+3,0,PM_DC_PREF_STREAM_FUZZY_CONF,1,,0,0,0,0,"A demand load referenced a line in an active fuzzy prefetch stream. The stream could have been allocated through the hardware prefetch mechanism or through software.Fuzzy stream confirm (out of order effects, or pf cant keep up)"
+3,0,PM_DC_PREF_STREAM_STRIDED_CONF,1,A demand load referenced a line in an active strided prefetch stream. The stream could have been allocated through the hardware prefetch mechanism or through software.,0,0,0,0,A demand load referenced a line in an active strided prefetch stream. The stream could have been allocated through the hardware prefetch mechanism or through software
+3,0,PM_DERAT_MISS_16G,1,,0,0,0,0,Data ERAT Miss (Data TLB Access) page size 16G
+3,0,PM_DERAT_MISS_16M,1,,0,0,0,0,Data ERAT Miss (Data TLB Access) page size 16M
+3,0,PM_DERAT_MISS_4K,1,,0,0,0,0,Data ERAT Miss (Data TLB Access) page size 4K
+3,0,PM_DERAT_MISS_64K,1,,0,0,0,0,Data ERAT Miss (Data TLB Access) page size 64K
+3,0,PM_DFU,1,,0,0,0,0,Finish DFU (all finish)
+3,0,PM_DFU_DCFFIX,1,,0,0,0,0,"Convert from fixed opcode finish (dcffix,dcffixq)"
+3,0,PM_DFU_DENBCD,1,,0,0,0,0,"BCD->DPD opcode finish (denbcd, denbcdq)"
+3,0,PM_DFU_MC,1,,0,0,0,0,Finish DFU multicycle
+3,0,PM_DISP_CLB_HELD_BAL,1,,0,0,0,0,Dispatch/CLB Hold: Balance
+3,0,PM_DISP_CLB_HELD_RES,1,,0,0,0,0,Dispatch/CLB Hold: Resource
+3,0,PM_DISP_CLB_HELD_SB,1,,0,0,0,0,Dispatch/CLB Hold: Scoreboard
+3,0,PM_DISP_CLB_HELD_SYNC,1,,0,0,0,0,Dispatch/CLB Hold: Sync type instruction
+3,0,PM_DISP_CLB_HELD_TLBIE,1,,0,0,0,0,Dispatch Hold: Due to TLBIE
+3,0,PM_DISP_HELD,1,,0,0,0,0,Dispatch Held
+3,0,PM_DISP_HELD_IQ_FULL,1,,0,0,0,0,Dispatch held due to Issue q full
+3,0,PM_DISP_HELD_MAP_FULL,1,Dispatch held due to Mapper full,0,0,0,0,Dispatch for this thread was held because the Mappers were full
+3,0,PM_DISP_HELD_SRQ_FULL,1,,0,0,0,0,Dispatch held due SRQ no room
+3,0,PM_DISP_HELD_SYNC_HOLD,1,,0,0,0,0,Dispatch held due to SYNC hold
+3,0,PM_DISP_WT,1,"Dispatched Starved (not held, nothing to dispatch)",0,0,0,0,Dispatched Starved
+3,0,PM_DPTEG_FROM_DL2L3_MOD,1,,0,0,0,0,"A Page Table Entry was loaded into the TLB with Modified (M) data from another chip's L2 or L3 on a different Node or Group (Distant), as this chip due to a data side request"
+3,0,PM_DPTEG_FROM_DL2L3_SHR,1,,0,0,0,0,"A Page Table Entry was loaded into the TLB with Shared (S) data from another chip's L2 or L3 on a different Node or Group (Distant), as this chip due to a data side request"
+3,0,PM_DPTEG_FROM_DL4,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from another chip's L4 on a different Node or Group (Distant) due to a data side request
+3,0,PM_DPTEG_FROM_DMEM,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from another chip's memory on the same Node or Group (Distant) due to a data side request
+3,0,PM_DPTEG_FROM_L2,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L2 due to a data side request
+3,0,PM_DPTEG_FROM_L2.1_MOD,1,,0,0,0,0,A Page Table Entry was loaded into the TLB with Modified (M) data from another core's L2 on the same chip due to a data side request
+3,0,PM_DPTEG_FROM_L2.1_SHR,1,,0,0,0,0,A Page Table Entry was loaded into the TLB with Shared (S) data from another core's L2 on the same chip due to a data side request
+3,0,PM_DPTEG_FROM_L2MISS,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from a localtion other than the local core's L2 due to a data side request
+3,0,PM_DPTEG_FROM_L2_DISP_CONFLICT_LDHITST,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L2 with load hit store conflict due to a data side request
+3,0,PM_DPTEG_FROM_L2_DISP_CONFLICT_OTHER,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L2 with dispatch conflict due to a data side request
+3,0,PM_DPTEG_FROM_L2_MEPF,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L2 hit without dispatch conflicts on Mepf state. due to a data side request
+3,0,PM_DPTEG_FROM_L2_NO_CONFLICT,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L2 without conflict due to a data side request
+3,0,PM_DPTEG_FROM_L3,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L3 due to a data side request
+3,0,PM_DPTEG_FROM_L3.1_ECO_MOD,1,,0,0,0,0,A Page Table Entry was loaded into the TLB with Modified (M) data from another core's ECO L3 on the same chip due to a data side request
+3,0,PM_DPTEG_FROM_L3.1_ECO_SHR,1,,0,0,0,0,A Page Table Entry was loaded into the TLB with Shared (S) data from another core's ECO L3 on the same chip due to a data side request
+3,0,PM_DPTEG_FROM_L3.1_MOD,1,,0,0,0,0,A Page Table Entry was loaded into the TLB with Modified (M) data from another core's L3 on the same chip due to a data side request
+3,0,PM_DPTEG_FROM_L3.1_SHR,1,,0,0,0,0,A Page Table Entry was loaded into the TLB with Shared (S) data from another core's L3 on the same chip due to a data side request
+3,0,PM_DPTEG_FROM_L3MISS,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from a localtion other than the local core's L3 due to a data side request
+3,0,PM_DPTEG_FROM_L3_DISP_CONFLICT,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L3 with dispatch conflict due to a data side request
+3,0,PM_DPTEG_FROM_L3_MEPF,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L3 without dispatch conflicts hit on Mepf state. due to a data side request
+3,0,PM_DPTEG_FROM_L3_NO_CONFLICT,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L3 without conflict due to a data side request
+3,0,PM_DPTEG_FROM_LL4,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from the local chip's L4 cache due to a data side request
+3,0,PM_DPTEG_FROM_LMEM,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from the local chip's Memory due to a data side request
+3,0,PM_DPTEG_FROM_MEMORY,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from a memory location including L4 from local remote or distant due to a data side request
+3,0,PM_DPTEG_FROM_OFF_CHIP_CACHE,1,,0,0,0,0,A Page Table Entry was loaded into the TLB either shared or modified data from another core's L2/L3 on a different chip (remote or distant) due to a data side request
+3,0,PM_DPTEG_FROM_ON_CHIP_CACHE,1,,0,0,0,0,A Page Table Entry was loaded into the TLB either shared or modified data from another core's L2/L3 on the same chip due to a data side request
+3,0,PM_DPTEG_FROM_RL2L3_MOD,1,,0,0,0,0,"A Page Table Entry was loaded into the TLB with Modified (M) data from another chip's L2 or L3 on the same Node or Group (Remote), as this chip due to a data side request"
+3,0,PM_DPTEG_FROM_RL2L3_SHR,1,,0,0,0,0,"A Page Table Entry was loaded into the TLB with Shared (S) data from another chip's L2 or L3 on the same Node or Group (Remote), as this chip due to a data side request"
+3,0,PM_DPTEG_FROM_RL4,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from another chip's L4 on the same Node or Group ( Remote) due to a data side request
+3,0,PM_DPTEG_FROM_RMEM,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from another chip's memory on the same Node or Group ( Remote) due to a data side request
+3,0,PM_DSLB_MISS,1,,0,0,0,0,Data SLB Miss - Total of all segment sizes
+3,0,PM_DTLB_MISS,1,Data PTEG Reloaded (DTLB Miss),0,0,0,0,Data PTEG reload
+3,0,PM_DTLB_MISS_16G,1,,0,0,0,0,Data TLB Miss page size 16G
+3,0,PM_DTLB_MISS_16M,1,,0,0,0,0,Data TLB Miss page size 16M
+3,0,PM_DTLB_MISS_4K,1,,0,0,0,0,Data TLB Miss page size 4k
+3,0,PM_DTLB_MISS_64K,1,,0,0,0,0,Data TLB Miss page size 64K
+3,0,PM_EAT_FORCE_MISPRED,1,,0,0,0,0,XL-form branch was mispredicted due to the predicted target address missing from EAT. The EAT forces a mispredict in this case since there is no predicated target to validate. This is a rare case that may occur when the EAT is full and a branch is issue
+3,0,PM_EAT_FULL_CYC,1,Cycles No room in EATSet on bank conflict and case where no ibuffers available,0,0,0,0,Cycles No room in EAT
+3,0,PM_EE_OFF_EXT_INT,1,,0,0,0,0,Ee off and external interrupt
+3,0,PM_EXT_INT,1,,0,0,0,0,external interrupt
+3,0,PM_FAV_TBEGIN,1,,0,0,0,0,Dispatch time Favored tbegin
+3,0,PM_FLOP,1,Floating Point Operations Finished,0,0,0,0,Floating Point Operation Finished
+3,0,PM_FLOP_SUM_SCALAR,1,,0,0,0,0,flops summary scalar instructions
+3,0,PM_FLOP_SUM_VEC,1,,0,0,0,0,flops summary vector instructions
+3,0,PM_FLUSH,1,,0,0,0,0,Flush (any type)
+3,0,PM_FLUSH_BR_MPRED,1,,0,0,0,0,Flush caused by branch mispredict
+3,0,PM_FLUSH_COMPLETION,1,,0,0,0,0,Completion Flush
+3,0,PM_FLUSH_DISP,1,,0,0,0,0,Dispatch flush
+3,0,PM_FLUSH_DISP_SB,1,,0,0,0,0,Dispatch Flush: Scoreboard
+3,0,PM_FLUSH_DISP_SYNC,1,,0,0,0,0,Dispatch Flush: Sync
+3,0,PM_FLUSH_DISP_TLBIE,1,,0,0,0,0,Dispatch Flush: TLBIE
+3,0,PM_FLUSH_LSU,1,,0,0,0,0,Flush initiated by LSU
+3,0,PM_FLUSH_PARTIAL,1,,0,0,0,0,Partial flush
+3,0,PM_FPU0_FCONV,1,,0,0,0,0,Convert instruction executed
+3,0,PM_FPU0_FEST,1,,0,0,0,0,Estimate instruction executed
+3,0,PM_FPU0_FRSP,1,,0,0,0,0,Round to single precision instruction executed
+3,0,PM_FPU1_FCONV,1,,0,0,0,0,Convert instruction executed
+3,0,PM_FPU1_FEST,1,,0,0,0,0,Estimate instruction executed
+3,0,PM_FPU1_FRSP,1,,0,0,0,0,Round to single precision instruction executed
+3,0,PM_FREQ_DOWN,1,Frequency is being slewed down due to Power Management,0,0,0,0,Power Management: Below Threshold B
+3,0,PM_FREQ_UP,1,Frequency is being slewed up due to Power Management,0,0,0,0,Power Management: Above Threshold A
+3,0,PM_FUSION_TOC_GRP0_1,1,,0,0,0,0,One pair of instructions fused with TOC in Group0
+3,0,PM_FUSION_TOC_GRP0_2,1,,0,0,0,0,Two pairs of instructions fused with TOCin Group0
+3,0,PM_FUSION_TOC_GRP0_3,1,,0,0,0,0,Three pairs of instructions fused with TOC in Group0
+3,0,PM_FUSION_TOC_GRP1_1,1,,0,0,0,0,One pair of instructions fused with TOX in Group1
+3,0,PM_FUSION_VSX_GRP0_1,1,,0,0,0,0,One pair of instructions fused with VSX in Group0
+3,0,PM_FUSION_VSX_GRP0_2,1,,0,0,0,0,Two pairs of instructions fused with VSX in Group0
+3,0,PM_FUSION_VSX_GRP0_3,1,,0,0,0,0,Three pairs of instructions fused with VSX in Group0
+3,0,PM_FUSION_VSX_GRP1_1,1,,0,0,0,0,One pair of instructions fused with VSX in Group1
+3,0,PM_FXU0_BUSY_FXU1_IDLE,1,,0,0,0,0,fxu0 busy and fxu1 idle
+3,0,PM_FXU0_FIN,1,FXU0 Finished,0,0,0,0,The fixed point unit Unit 0 finished an instruction. Instructions that finish may not necessary complete
+3,0,PM_FXU1_BUSY_FXU0_IDLE,1,fxu0 idle and fxu1 busy.,0,0,0,0,fxu0 idle and fxu1 busy
+3,0,PM_FXU1_FIN,1,,0,0,0,0,FXU1 Finished
+3,0,PM_FXU_BUSY,1,fxu0 busy and fxu1 busy.,0,0,0,0,fxu0 busy and fxu1 busy
+3,0,PM_FXU_IDLE,1,,0,0,0,0,fxu0 idle and fxu1 idle
+3,0,PM_GCT_EMPTY_CYC,1,,0,0,0,0,No itags assigned either thread (GCT Empty)
+3,0,PM_GCT_NOSLOT_BR_MPRED,1,,0,0,0,0,Gct empty fo this thread due to branch mispred
+3,0,PM_GCT_NOSLOT_BR_MPRED_ICMISS,1,,0,0,0,0,Gct empty fo this thread due to Icache Miss and branch mispred
+3,0,PM_GCT_NOSLOT_CYC,1,"Pipeline empty (No itags assigned , no GCT slots used)",0,0,0,0,No itags assigned
+3,0,PM_GCT_NOSLOT_DISP_HELD_ISSQ,1,,0,0,0,0,Gct empty fo this thread due to dispatch hold on this thread due to Issue q full
+3,0,PM_GCT_NOSLOT_DISP_HELD_MAP,1,,0,0,0,0,Gct empty fo this thread due to dispatch hold on this thread due to Mapper full
+3,0,PM_GCT_NOSLOT_DISP_HELD_OTHER,1,,0,0,0,0,Gct empty fo this thread due to dispatch hold on this thread due to sync
+3,0,PM_GCT_NOSLOT_DISP_HELD_SRQ,1,,0,0,0,0,Gct empty fo this thread due to dispatch hold on this thread due to SRQ full
+3,0,PM_GCT_NOSLOT_IC_L3MISS,1,,0,0,0,0,Gct empty fo this thread due to icach l3 miss
+3,0,PM_GCT_NOSLOT_IC_MISS,1,,0,0,0,0,Gct empty fo this thread due to Icache Miss
+3,0,PM_GCT_UTIL_1-2_ENTRIES,1,,0,0,0,0,GCT Utilization 1-2 entries
+3,0,PM_GCT_UTIL_11-14_ENTRIES,1,,0,0,0,0,GCT Utilization 11+ entries
+3,0,PM_GCT_UTIL_14-17_ENTRIES,1,,0,0,0,0,GCT Utilization 14 17 entries
+3,0,PM_GCT_UTIL_17+_ENTRIES,1,,0,0,0,0,GCT Utilization 17+ entries
+3,0,PM_GCT_UTIL_3-6_ENTRIES,1,,0,0,0,0,GCT Utilization 3-6 entries
+3,0,PM_GCT_UTIL_7-10_ENTRIES,1,,0,0,0,0,GCT Utilization 7-10 entries
+3,0,PM_GRP_BR_MPRED_NONSPEC,1,Group experienced Non-speculative br mispredicct,0,0,0,0,Group experienced non-speculative branch redirect
+3,0,PM_GRP_CMPL,1,,0,0,0,0,group completed
+3,0,PM_GRP_DISP,1,dispatch_success (Group Dispatched),0,0,0,0,group dispatch
+3,0,PM_GRP_IC_MISS_NONSPEC,1,Group experi enced Non-specu lative I cache miss,0,0,0,0,Group experienced non-speculative I cache miss
+3,0,PM_GRP_MRK,1,Instruction marked in idu,0,0,0,0,Instruction Marked
+3,0,PM_GRP_NON_FULL_GROUP,1,,0,0,0,0,"GROUPs where we did not have 6 non branch instructions in the group(ST mode), in SMT mode 3 non branches"
+3,0,PM_GRP_PUMP_CPRED,1,,0,0,0,0,"Initial and Final Pump Scope and data sourced across this scope was group pump for all data types ( demand load,inst fetch,xlate (I or d)"
+3,0,PM_GRP_PUMP_MPRED,1,,0,0,0,0,"Final Pump Scope(Group) to get data sourced, ended up larger than Initial Pump Scope OR Final Pump Scope(Group) got data from source that was at smaller scope(Chip) Final pump was group pump and initial pump was chip or final and initial pump was group but data was sourced at chip scope levelfor all data types ( demand load,inst fetch,xlate (I or d)"
+3,0,PM_GRP_PUMP_MPRED_RTY,1,,0,0,0,0,"Final Pump Scope(Group) to get data sourced, ended up larger than Initial Pump Scope (Chip) Final pump was group pump and initial pump was chip pumpfor all data types ( demand load,inst fetch,xlate (I or d)"
+3,0,PM_GRP_TERM_2ND_BRANCH,1,,0,0,0,0,"There were enough instructions in the Ibuffer, but 2nd branch ends group"
+3,0,PM_GRP_TERM_FPU_AFTER_BR,1,,0,0,0,0,"There were enough instructions in the Ibuffer, but FPU OP IN same group after a branch terminates a group, cant do partial flushes"
+3,0,PM_GRP_TERM_NOINST,1,,0,0,0,0,"Do not fill every slot in the group, Not enough instructions in the Ibuffer. This includes cases where the group started with enough instructions, but some got knocked out by a cache miss or branch redirect (which would also empty the Ibuffer)"
+3,0,PM_GRP_TERM_OTHER,1,,0,0,0,0,"There were enough instructions in the Ibuffer, but the group terminated early for some other reason, most likely due to a First or Last"
+3,0,PM_GRP_TERM_SLOT_LIMIT,1,,0,0,0,0,"There were enough instructions in the Ibuffer, but 3 src RA/RB/RC , 2 way crack caused a group termination"
+3,0,PM_HV_CYC,1,,0,0,0,0,cycles in hypervisor mode
+3,0,PM_IBUF_FULL_CYC,1,Cycles No room in ibufffully qualified tranfer (if5 valid),0,0,0,0,Cycles No room in ibuff
+3,0,PM_ICMISS_INVALIDATED_LINE,1,,0,0,0,0,"threaded version, IC Misses where we got EA dir hit but no sector valids were on. ICBI took line out"
+3,0,PM_IC_DEMAND_CYC,1,Demand ifetch pending,0,0,0,0,Cycles when a demand ifetch was pending
+3,0,PM_IC_DEMAND_L2_BHT_REDIRECT,1,,0,0,0,0,"L2 I cache demand request due to BHT redirect, branch redirect ( 2 bubbles 3 cycles)"
+3,0,PM_IC_DEMAND_L2_BR_REDIRECT,1,,0,0,0,0,L2 I cache demand request due to branch Mispredict ( 15 cycle path)
+3,0,PM_IC_DEMAND_REQ,1,,0,0,0,0,Demand Instruction fetch request
+3,0,PM_IC_INVALIDATE,1,,0,0,0,0,Ic line invalidated
+3,0,PM_IC_PREF_CANCEL_HIT,1,,0,0,0,0,Prefetch Canceled due to icache hit
+3,0,PM_IC_PREF_CANCEL_L2,1,,0,0,0,0,L2 Squashed request
+3,0,PM_IC_PREF_CANCEL_PAGE,1,,0,0,0,0,Prefetch Canceled due to page boundary
+3,0,PM_IC_PREF_REQ,1,,0,0,0,0,Instruction prefetch requests
+3,0,PM_IC_PREF_WRITE,1,,0,0,0,0,Instruction prefetch written into IL1
+3,0,PM_IC_RELOAD_PRIVATE,1,,0,0,0,0,"Reloading line was brought in private for a specific thread. Most lines are brought in shared for all eight thrreads. If RA does not match then invalidates and then brings it shared to other thread. In P7 line brought in private , then line was invalidat"
+3,0,PM_IERAT_RELOAD,1,IERAT Reloaded (Miss),0,0,0,0,Cycles Instruction ERAT was reloaded
+3,0,PM_IERAT_RELOAD_16M,1,,0,0,0,0,IERAT Reloaded (Miss) for a 16M page
+3,0,PM_IERAT_RELOAD_4K,1,IERAT Reloaded (Miss) for a 4k page,0,0,0,0,IERAT Miss (Not implemented as DI on POWER6)
+3,0,PM_IERAT_RELOAD_64K,1,,0,0,0,0,IERAT Reloaded (Miss) for a 64k page
+3,0,PM_IFETCH_THROTTLE,1,Cycles instruction fecth was throttled in IFU,0,0,0,0,Cycles in which Instruction fetch throttle was active
+3,0,PM_IFU_L2_TOUCH,1,,0,0,0,0,L2 touch to update MRU on a line
+3,0,PM_INST_CHIP_PUMP_CPRED,1,,0,0,0,0,Initial and Final Pump Scope and data sourced across this scope was chip pump (prediction=correct) for an instruction fetch
+3,0,PM_INST_CMPL,1,# PPC Instructions Finished (completed),0,0,0,0,Number of PowerPC Instructions that completed
+3,0,PM_INST_DISP,1,,0,0,0,0,# PPC Dispatched
+3,0,PM_INST_FROM_DL2L3_MOD,1,,0,0,0,0,"The processor's Instruction cache was reloaded with Modified (M) data from another chip's L2 or L3 on a different Node or Group (Distant), as this chip due to a instruction fetch"
+3,0,PM_INST_FROM_DL2L3_SHR,1,,0,0,0,0,"The processor's Instruction cache was reloaded with Shared (S) data from another chip's L2 or L3 on a different Node or Group (Distant), as this chip due to a instruction fetch"
+3,0,PM_INST_FROM_DL4,1,,0,0,0,0,The processor's Instruction cache was reloaded from another chip's L4 on a different Node or Group (Distant) due to a instruction fetch
+3,0,PM_INST_FROM_DMEM,1,,0,0,0,0,The processor's Instruction cache was reloaded from another chip's memory on the same Node or Group (Distant) due to a instruction fetch
+3,0,PM_INST_FROM_L1,1,,0,0,0,0,Instruction fetches from L1
+3,0,PM_INST_FROM_L2,1,,0,0,0,0,The processor's Instruction cache was reloaded from local core's L2 due to a instruction fetch
+3,0,PM_INST_FROM_L2.1_MOD,1,,0,0,0,0,The processor's Instruction cache was reloaded with Modified (M) data from another core's L2 on the same chip due to a instruction fetch
+3,0,PM_INST_FROM_L2.1_SHR,1,,0,0,0,0,The processor's Instruction cache was reloaded with Shared (S) data from another core's L2 on the same chip due to a instruction fetch
+3,0,PM_INST_FROM_L2MISS,1,,0,0,0,0,The processor's Instruction cache was reloaded from a localtion other than the local core's L2 due to a instruction fetch
+3,0,PM_INST_FROM_L2_DISP_CONFLICT_LDHITST,1,,0,0,0,0,The processor's Instruction cache was reloaded from local core's L2 with load hit store conflict due to a instruction fetch
+3,0,PM_INST_FROM_L2_DISP_CONFLICT_OTHER,1,,0,0,0,0,The processor's Instruction cache was reloaded from local core's L2 with dispatch conflict due to a instruction fetch
+3,0,PM_INST_FROM_L2_MEPF,1,,0,0,0,0,The processor's Instruction cache was reloaded from local core's L2 hit without dispatch conflicts on Mepf state. due to a instruction fetch
+3,0,PM_INST_FROM_L2_NO_CONFLICT,1,,0,0,0,0,The processor's Instruction cache was reloaded from local core's L2 without conflict due to a instruction fetch
+3,0,PM_INST_FROM_L3,1,,0,0,0,0,The processor's Instruction cache was reloaded from local core's L3 due to a instruction fetch
+3,0,PM_INST_FROM_L3.1_ECO_MOD,1,,0,0,0,0,The processor's Instruction cache was reloaded with Modified (M) data from another core's ECO L3 on the same chip due to a instruction fetch
+3,0,PM_INST_FROM_L3.1_ECO_SHR,1,,0,0,0,0,The processor's Instruction cache was reloaded with Shared (S) data from another core's ECO L3 on the same chip due to a instruction fetch
+3,0,PM_INST_FROM_L3.1_MOD,1,,0,0,0,0,The processor's Instruction cache was reloaded with Modified (M) data from another core's L3 on the same chip due to a instruction fetch
+3,0,PM_INST_FROM_L3.1_SHR,1,,0,0,0,0,The processor's Instruction cache was reloaded with Shared (S) data from another core's L3 on the same chip due to a instruction fetch
+3,0,PM_INST_FROM_L3MISS,1,Inst from L3 miss,0,0,0,0,new
+3,0,PM_INST_FROM_L3MISS_MOD,1,,0,0,0,0,The processor's Instruction cache was reloaded from a localtion other than the local core's L3 due to a instruction fetch
+3,0,PM_INST_FROM_L3_DISP_CONFLICT,1,,0,0,0,0,The processor's Instruction cache was reloaded from local core's L3 with dispatch conflict due to a instruction fetch
+3,0,PM_INST_FROM_L3_MEPF,1,,0,0,0,0,The processor's Instruction cache was reloaded from local core's L3 without dispatch conflicts hit on Mepf state. due to a instruction fetch
+3,0,PM_INST_FROM_L3_NO_CONFLICT,1,,0,0,0,0,The processor's Instruction cache was reloaded from local core's L3 without conflict due to a instruction fetch
+3,0,PM_INST_FROM_LL4,1,,0,0,0,0,The processor's Instruction cache was reloaded from the local chip's L4 cache due to a instruction fetch
+3,0,PM_INST_FROM_LMEM,1,,0,0,0,0,The processor's Instruction cache was reloaded from the local chip's Memory due to a instruction fetch
+3,0,PM_INST_FROM_MEMORY,1,,0,0,0,0,The processor's Instruction cache was reloaded from a memory location including L4 from local remote or distant due to a instruction fetch
+3,0,PM_INST_FROM_OFF_CHIP_CACHE,1,,0,0,0,0,The processor's Instruction cache was reloaded either shared or modified data from another core's L2/L3 on a different chip (remote or distant) due to a instruction fetch
+3,0,PM_INST_FROM_ON_CHIP_CACHE,1,,0,0,0,0,The processor's Instruction cache was reloaded either shared or modified data from another core's L2/L3 on the same chip due to a instruction fetch
+3,0,PM_INST_FROM_RL2L3_MOD,1,,0,0,0,0,"The processor's Instruction cache was reloaded with Modified (M) data from another chip's L2 or L3 on the same Node or Group (Remote), as this chip due to a instruction fetch"
+3,0,PM_INST_FROM_RL2L3_SHR,1,,0,0,0,0,"The processor's Instruction cache was reloaded with Shared (S) data from another chip's L2 or L3 on the same Node or Group (Remote), as this chip due to a instruction fetch"
+3,0,PM_INST_FROM_RL4,1,,0,0,0,0,The processor's Instruction cache was reloaded from another chip's L4 on the same Node or Group ( Remote) due to a instruction fetch
+3,0,PM_INST_FROM_RMEM,1,,0,0,0,0,The processor's Instruction cache was reloaded from another chip's memory on the same Node or Group ( Remote) due to a instruction fetch
+3,0,PM_INST_GRP_PUMP_CPRED,1,,0,0,0,0,Initial and Final Pump Scope and data sourced across this scope was group pump for an instruction fetch
+3,0,PM_INST_GRP_PUMP_MPRED,1,,0,0,0,0,"Final Pump Scope(Group) to get data sourced, ended up larger than Initial Pump Scope OR Final Pump Scope(Group) got data from source that was at smaller scope(Chip) Final pump was group pump and initial pump was chip or final and initial pump was group but data was sourced at chip scope levelfor an instruction fetch"
+3,0,PM_INST_GRP_PUMP_MPRED_RTY,1,,0,0,0,0,"Final Pump Scope(Group) to get data sourced, ended up larger than Initial Pump Scope (Chip) Final pump was group pump and initial pump was chip pumpfor an instruction fetch"
+3,0,PM_INST_IMC_MATCH_CMPL,1,IMC Match Count,0,0,0,0,IMC Match Count ( Not architected in P8)
+3,0,PM_INST_IMC_MATCH_DISP,1,IMC Matches dispatched,0,0,0,0,Matched Instructions Dispatched
+3,0,PM_INST_PUMP_CPRED,1,,0,0,0,0,Pump prediction correct. Counts across all types of pumpsfor an instruction fetch
+3,0,PM_INST_PUMP_MPRED,1,,0,0,0,0,Pump Mis prediction Counts across all types of pumpsfor an instruction fetch
+3,0,PM_INST_SYS_PUMP_CPRED,1,,0,0,0,0,Initial and Final Pump Scope and data sourced across this scope was system pump for an instruction fetch
+3,0,PM_INST_SYS_PUMP_MPRED,1,,0,0,0,0,"Final Pump Scope(system) to get data sourced, ended up larger than Initial Pump Scope(Chip/Group) OR Final Pump Scope(system) got data from source that was at smaller scope(Chip/group) Final pump was system pump and initial pump was chip or group or final and initial pump was system but data was sourced at chip/group scope levelfor an instruction fetch"
+3,0,PM_INST_SYS_PUMP_MPRED_RTY,1,,0,0,0,0,"Final Pump Scope(system) to get data sourced, ended up larger than Initial Pump Scope (Chip or Group) for an instruction fetch"
+3,0,PM_IOPS_CMPL,1,IOPS Completed,0,0,0,0,Internal Operations completed
+3,0,PM_IOPS_DISP,1,IOPS dispatched,0,0,0,0,Internal Operations dispatched
+3,0,PM_IPTEG_FROM_DL2L3_MOD,1,,0,0,0,0,"A Page Table Entry was loaded into the TLB with Modified (M) data from another chip's L2 or L3 on a different Node or Group (Distant), as this chip due to a instruction side request"
+3,0,PM_IPTEG_FROM_DL2L3_SHR,1,,0,0,0,0,"A Page Table Entry was loaded into the TLB with Shared (S) data from another chip's L2 or L3 on a different Node or Group (Distant), as this chip due to a instruction side request"
+3,0,PM_IPTEG_FROM_DL4,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from another chip's L4 on a different Node or Group (Distant) due to a instruction side request
+3,0,PM_IPTEG_FROM_DMEM,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from another chip's memory on the same Node or Group (Distant) due to a instruction side request
+3,0,PM_IPTEG_FROM_L2,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L2 due to a instruction side request
+3,0,PM_IPTEG_FROM_L2.1_MOD,1,,0,0,0,0,A Page Table Entry was loaded into the TLB with Modified (M) data from another core's L2 on the same chip due to a instruction side request
+3,0,PM_IPTEG_FROM_L2.1_SHR,1,,0,0,0,0,A Page Table Entry was loaded into the TLB with Shared (S) data from another core's L2 on the same chip due to a instruction side request
+3,0,PM_IPTEG_FROM_L2MISS,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from a localtion other than the local core's L2 due to a instruction side request
+3,0,PM_IPTEG_FROM_L2_DISP_CONFLICT_LDHITST,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L2 with load hit store conflict due to a instruction side request
+3,0,PM_IPTEG_FROM_L2_DISP_CONFLICT_OTHER,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L2 with dispatch conflict due to a instruction side request
+3,0,PM_IPTEG_FROM_L2_MEPF,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L2 hit without dispatch conflicts on Mepf state. due to a instruction side request
+3,0,PM_IPTEG_FROM_L2_NO_CONFLICT,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L2 without conflict due to a instruction side request
+3,0,PM_IPTEG_FROM_L3,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L3 due to a instruction side request
+3,0,PM_IPTEG_FROM_L3.1_ECO_MOD,1,,0,0,0,0,A Page Table Entry was loaded into the TLB with Modified (M) data from another core's ECO L3 on the same chip due to a instruction side request
+3,0,PM_IPTEG_FROM_L3.1_ECO_SHR,1,,0,0,0,0,A Page Table Entry was loaded into the TLB with Shared (S) data from another core's ECO L3 on the same chip due to a instruction side request
+3,0,PM_IPTEG_FROM_L3.1_MOD,1,,0,0,0,0,A Page Table Entry was loaded into the TLB with Modified (M) data from another core's L3 on the same chip due to a instruction side request
+3,0,PM_IPTEG_FROM_L3.1_SHR,1,,0,0,0,0,A Page Table Entry was loaded into the TLB with Shared (S) data from another core's L3 on the same chip due to a instruction side request
+3,0,PM_IPTEG_FROM_L3MISS,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from a localtion other than the local core's L3 due to a instruction side request
+3,0,PM_IPTEG_FROM_L3_DISP_CONFLICT,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L3 with dispatch conflict due to a instruction side request
+3,0,PM_IPTEG_FROM_L3_MEPF,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L3 without dispatch conflicts hit on Mepf state. due to a instruction side request
+3,0,PM_IPTEG_FROM_L3_NO_CONFLICT,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L3 without conflict due to a instruction side request
+3,0,PM_IPTEG_FROM_LL4,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from the local chip's L4 cache due to a instruction side request
+3,0,PM_IPTEG_FROM_LMEM,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from the local chip's Memory due to a instruction side request
+3,0,PM_IPTEG_FROM_MEMORY,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from a memory location including L4 from local remote or distant due to a instruction side request
+3,0,PM_IPTEG_FROM_OFF_CHIP_CACHE,1,,0,0,0,0,A Page Table Entry was loaded into the TLB either shared or modified data from another core's L2/L3 on a different chip (remote or distant) due to a instruction side request
+3,0,PM_IPTEG_FROM_ON_CHIP_CACHE,1,,0,0,0,0,A Page Table Entry was loaded into the TLB either shared or modified data from another core's L2/L3 on the same chip due to a instruction side request
+3,0,PM_IPTEG_FROM_RL2L3_MOD,1,,0,0,0,0,"A Page Table Entry was loaded into the TLB with Modified (M) data from another chip's L2 or L3 on the same Node or Group (Remote), as this chip due to a instruction side request"
+3,0,PM_IPTEG_FROM_RL2L3_SHR,1,,0,0,0,0,"A Page Table Entry was loaded into the TLB with Shared (S) data from another chip's L2 or L3 on the same Node or Group (Remote), as this chip due to a instruction side request"
+3,0,PM_IPTEG_FROM_RL4,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from another chip's L4 on the same Node or Group ( Remote) due to a instruction side request
+3,0,PM_IPTEG_FROM_RMEM,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from another chip's memory on the same Node or Group ( Remote) due to a instruction side request
+3,0,PM_ISIDE_DISP,1,,0,0,0,0,All i-side dispatch attempts
+3,0,PM_ISIDE_DISP_FAIL,1,,0,0,0,0,All i-side dispatch attempts that failed due to a addr collision with another machine
+3,0,PM_ISIDE_DISP_FAIL_OTHER,1,,0,0,0,0,All i-side dispatch attempts that failed due to a reason other than addrs collision
+3,0,PM_ISIDE_L2MEMACC,1,,0,0,0,0,valid when first beat of data comes in for an i-side fetch where data came from mem(or L4)
+3,0,PM_ISIDE_MRU_TOUCH,1,,0,0,0,0,Iside L2 MRU touch
+3,0,PM_ISLB_MISS,1,Instruction SLB Miss - Total of all segment sizesSRQ sync duration,0,0,0,0,Instruction SLB Miss - Total of all segment sizes
+3,0,PM_ISU_REF_FX0,1,,0,0,0,0,FX0 ISU reject
+3,0,PM_ISU_REF_FX1,1,,0,0,0,0,FX1 ISU reject
+3,0,PM_ISU_REF_LS0,1,,0,0,0,0,LS0 ISU reject
+3,0,PM_ISU_REF_LS1,1,,0,0,0,0,LS1 ISU reject
+3,0,PM_ISU_REF_LS2,1,,0,0,0,0,LS2 ISU reject
+3,0,PM_ISU_REF_LS3,1,,0,0,0,0,LS3 ISU reject
+3,0,PM_ISU_REJECTS_ALL,1,,0,0,0,0,All isu rejects could be more than 1 per cycle
+3,0,PM_ISU_REJECT_RES_NA,1,,0,0,0,0,ISU reject due to resource not available
+3,0,PM_ISU_REJECT_SAR_BYPASS,1,,0,0,0,0,Reject because of SAR bypass
+3,0,PM_ISU_REJECT_SRC_NA,1,,0,0,0,0,ISU reject due to source not available
+3,0,PM_ISU_REJ_VS0,1,,0,0,0,0,VS0 ISU reject
+3,0,PM_ISU_REJ_VS1,1,,0,0,0,0,VS1 ISU reject
+3,0,PM_ISYNC,1,,0,0,0,0,Isync count per thread
+3,0,PM_ITLB_MISS,1,ITLB Reloaded,0,0,0,0,ITLB Reloaded (always zero on POWER6)
+3,0,PM_L1MISS_LAT_EXC_1024,1,Reload latency exceeded 1024 cyc,0,0,0,0,L1 misses that took longer than 1024 cyles to resolve (miss to reload)
+3,0,PM_L1MISS_LAT_EXC_2048,1,Reload latency exceeded 2048 cyc,0,0,0,0,L1 misses that took longer than 2048 cyles to resolve (miss to reload)
+3,0,PM_L1MISS_LAT_EXC_256,1,Reload latency exceeded 256 cyc,0,0,0,0,L1 misses that took longer than 256 cyles to resolve (miss to reload)
+3,0,PM_L1MISS_LAT_EXC_32,1,Reload latency exceeded 32 cyc,0,0,0,0,L1 misses that took longer than 32 cyles to resolve (miss to reload)
+3,0,PM_L1PF_L2MEMACC,1,,0,0,0,0,valid when first beat of data comes in for an L1pref where data came from mem(or L4)
+3,0,PM_L1_DCACHE_RELOADED_ALL,1,,0,0,0,0,L1 data cache reloaded for demand or prefetch
+3,0,PM_L1_DCACHE_RELOAD_VALID,1,,0,0,0,0,DL1 reloaded due to Demand Load
+3,0,PM_L1_DEMAND_WRITE,1,,0,0,0,0,Instruction Demand sectors wriittent into IL1
+3,0,PM_L1_ICACHE_MISS,1,,0,0,0,0,Demand iCache Miss
+3,0,PM_L1_ICACHE_RELOADED_ALL,1,,0,0,0,0,"Counts all Icache reloads includes demand, prefetchm prefetch turned into demand and demand turned into prefetch"
+3,0,PM_L1_ICACHE_RELOADED_PREF,1,,0,0,0,0,Counts all Icache prefetch reloads ( includes demand turned into prefetch)
+3,0,PM_L2_CASTOUT_MOD,1,,0,0,0,0,"L2 Castouts - Modified (M, Mu, Me)"
+3,0,PM_L2_CASTOUT_SHR,1,,0,0,0,0,"L2 Castouts - Shared (T, Te, Si, S)"
+3,0,PM_L2_CHIP_PUMP,1,,0,0,0,0,RC requests that were local on chip pump attempts
+3,0,PM_L2_DC_INV,1,,0,0,0,0,Dcache invalidates from L2
+3,0,PM_L2_DISP_ALL_L2MISS,1,,0,0,0,0,All successful Ld/St dispatches for this thread that were an L2miss
+3,0,PM_L2_GROUP_PUMP,1,,0,0,0,0,RC requests that were on Node Pump attempts
+3,0,PM_L2_GRP_GUESS_CORRECT,1,,0,0,0,0,L2 guess grp and guess was correct (data intra-6chip AND ^on-chip)
+3,0,PM_L2_GRP_GUESS_WRONG,1,,0,0,0,0,L2 guess grp and guess was not correct (ie data on-chip OR beyond-6chip)
+3,0,PM_L2_IC_INV,1,,0,0,0,0,Icache Invalidates from L2
+3,0,PM_L2_INST,1,,0,0,0,0,All successful I-side dispatches for this thread (excludes i_l2mru_tch reqs)
+3,0,PM_L2_INST_MISS,1,,0,0,0,0,All successful i-side dispatches that were an L2miss for this thread (excludes i_l2mru_tch reqs)
+3,0,PM_L2_LD,1,,0,0,0,0,All successful D-side Load dispatches for this thread
+3,0,PM_L2_LD_DISP,1,,0,0,0,0,All successful load dispatches
+3,0,PM_L2_LD_HIT,1,,0,0,0,0,All successful load dispatches that were L2 hits
+3,0,PM_L2_LD_MISS,1,,0,0,0,0,All successful D-Side Load dispatches that were an L2miss for this thread
+3,0,PM_L2_LOC_GUESS_CORRECT,1,,0,0,0,0,L2 guess loc and guess was correct (ie data local)
+3,0,PM_L2_LOC_GUESS_WRONG,1,,0,0,0,0,L2 guess loc and guess was not correct (ie data not on chip)
+3,0,PM_L2_RCLD_DISP,1,,0,0,0,0,L2 RC load dispatch attempt
+3,0,PM_L2_RCLD_DISP_FAIL_ADDR,1,,0,0,0,0,L2 RC load dispatch attempt failed due to address collision with RC/CO/SN/SQ
+3,0,PM_L2_RCLD_DISP_FAIL_OTHER,1,,0,0,0,0,L2 RC load dispatch attempt failed due to other reasons
+3,0,PM_L2_RCST_DISP,1,,0,0,0,0,L2 RC store dispatch attempt
+3,0,PM_L2_RCST_DISP_FAIL_ADDR,1,,0,0,0,0,L2 RC store dispatch attempt failed due to address collision with RC/CO/SN/SQ
+3,0,PM_L2_RCST_DISP_FAIL_OTHER,1,,0,0,0,0,L2 RC store dispatch attempt failed due to other reasons
+3,0,PM_L2_RC_ST_DONE,1,,0,0,0,0,RC did st to line that was Tx or Sx
+3,0,PM_L2_RTY_LD,1,,0,0,0,0,RC retries on PB for any load from core
+3,0,PM_L2_RTY_ST,1,,0,0,0,0,RC retries on PB for any store from core
+3,0,PM_L2_SN_M_RD_DONE,1,,0,0,0,0,SNP dispatched for a read and was M
+3,0,PM_L2_SN_M_WR_DONE,1,,0,0,0,0,SNP dispatched for a write and was M
+3,0,PM_L2_SN_SX_I_DONE,1,,0,0,0,0,SNP dispatched and went from Sx or Tx to Ix
+3,0,PM_L2_ST,1,,0,0,0,0,All successful D-side store dispatches for this thread
+3,0,PM_L2_ST_DISP,1,,0,0,0,0,All successful store dispatches
+3,0,PM_L2_ST_HIT,1,,0,0,0,0,All successful store dispatches that were L2Hits
+3,0,PM_L2_ST_MISS,1,,0,0,0,0,All successful D-Side Store dispatches that were an L2miss for this thread
+3,0,PM_L2_SYS_GUESS_CORRECT,1,,0,0,0,0,L2 guess sys and guess was correct (ie data beyond-6chip)
+3,0,PM_L2_SYS_GUESS_WRONG,1,,0,0,0,0,L2 guess sys and guess was not correct (ie data ^beyond-6chip)
+3,0,PM_L2_SYS_PUMP,1,,0,0,0,0,RC requests that were system pump attempts
+3,0,PM_L2_TM_REQ_ABORT,1,,0,0,0,0,TM abort
+3,0,PM_L2_TM_ST_ABORT_SISTER,1,,0,0,0,0,TM marked store abort
+3,0,PM_L3_CINJ,1,,0,0,0,0,l3 ci of cache inject
+3,0,PM_L3_CI_HIT,1,,0,0,0,0,L3 Castins Hit (total count
+3,0,PM_L3_CI_MISS,1,,0,0,0,0,L3 castins miss (total count
+3,0,PM_L3_CI_USAGE,1,,0,0,0,0,rotating sample of 16 CI or CO actives
+3,0,PM_L3_CO,1,,0,0,0,0,l3 castout occuring ( does not include casthrough or log writes (cinj/dmaw)
+3,0,PM_L3_CO0_BUSY,1,0.0,0,0,0,0,"lifetime, sample of CO machine 0 valid"
+3,0,PM_L3_CO0_DONE,1,0.0,0,0,0,0,"lifetime, sample of CO machine 0 valid"
+3,0,PM_L3_CO_L31,1,,0,0,0,0,L3 CO to L3.1 OR of port 0 and 1 ( lossy)
+3,0,PM_L3_CO_LCO,1,,0,0,0,0,Total L3 castouts occurred on LCO
+3,0,PM_L3_CO_MEM,1,,0,0,0,0,L3 CO to memory OR of port 0 and 1 ( lossy)
+3,0,PM_L3_CO_MEPF,1,,0,0,0,0,L3 CO of line in Mep state ( includes casthrough
+3,0,PM_L3_GRP_GUESS_CORRECT,1,,0,0,0,0,Initial scope=group and data from same group (near) (pred successful)
+3,0,PM_L3_GRP_GUESS_WRONG_HIGH,1,,0,0,0,0,Initial scope=group but data from local node. Predition too high
+3,0,PM_L3_GRP_GUESS_WRONG_LOW,1,,0,0,0,0,Initial scope=group but data from outside group (far or rem). Prediction too Low
+3,0,PM_L3_HIT,1,,0,0,0,0,L3 Hits
+3,0,PM_L3_L2_CO_HIT,1,,0,0,0,0,L2 castout hits
+3,0,PM_L3_L2_CO_MISS,1,,0,0,0,0,L2 castout miss
+3,0,PM_L3_LAT_CI_HIT,1,,0,0,0,0,L3 Lateral Castins Hit
+3,0,PM_L3_LAT_CI_MISS,1,,0,0,0,0,L3 Lateral Castins Miss
+3,0,PM_L3_LD_HIT,1,,0,0,0,0,L3 demand LD Hits
+3,0,PM_L3_LD_MISS,1,,0,0,0,0,L3 demand LD Miss
+3,0,PM_L3_LD_PREF,1,,0,0,0,0,L3 Load Prefetches
+3,0,PM_L3_LOC_GUESS_CORRECT,1,,0,0,0,0,initial scope=node/chip and data from local node (local) (pred successful)
+3,0,PM_L3_LOC_GUESS_WRONG,1,,0,0,0,0,Initial scope=node but data from out side local node (near or far or rem). Prediction too Low
+3,0,PM_L3_MISS,1,,0,0,0,0,L3 Misses
+3,0,PM_L3_P0_CO_L31,1,,0,0,0,0,l3 CO to L3.1 (lco) port 0
+3,0,PM_L3_P0_CO_MEM,1,,0,0,0,0,l3 CO to memory port 0
+3,0,PM_L3_P0_CO_RTY,1,,0,0,0,0,L3 CO received retry port 0
+3,0,PM_L3_P0_GRP_PUMP,1,,0,0,0,0,L3 pf sent with grp scope port 0
+3,0,PM_L3_P0_LCO_DATA,1,,0,0,0,0,lco sent with data port 0
+3,0,PM_L3_P0_LCO_NO_DATA,1,,0,0,0,0,dataless l3 lco sent port 0
+3,0,PM_L3_P0_LCO_RTY,1,,0,0,0,0,L3 LCO received retry port 0
+3,0,PM_L3_P0_NODE_PUMP,1,,0,0,0,0,L3 pf sent with nodal scope port 0
+3,0,PM_L3_P0_PF_RTY,1,,0,0,0,0,L3 PF received retry port 0
+3,0,PM_L3_P0_SN_HIT,1,,0,0,0,0,L3 snoop hit port 0
+3,0,PM_L3_P0_SN_INV,1,,0,0,0,0,Port0 snooper detects someone doing a store to a line thats Sx
+3,0,PM_L3_P0_SN_MISS,1,,0,0,0,0,L3 snoop miss port 0
+3,0,PM_L3_P0_SYS_PUMP,1,,0,0,0,0,L3 pf sent with sys scope port 0
+3,0,PM_L3_P1_CO_L31,1,,0,0,0,0,l3 CO to L3.1 (lco) port 1
+3,0,PM_L3_P1_CO_MEM,1,,0,0,0,0,l3 CO to memory port 1
+3,0,PM_L3_P1_CO_RTY,1,,0,0,0,0,L3 CO received retry port 1
+3,0,PM_L3_P1_GRP_PUMP,1,,0,0,0,0,L3 pf sent with grp scope port 1
+3,0,PM_L3_P1_LCO_DATA,1,,0,0,0,0,lco sent with data port 1
+3,0,PM_L3_P1_LCO_NO_DATA,1,,0,0,0,0,dataless l3 lco sent port 1
+3,0,PM_L3_P1_LCO_RTY,1,,0,0,0,0,L3 LCO received retry port 1
+3,0,PM_L3_P1_NODE_PUMP,1,,0,0,0,0,L3 pf sent with nodal scope port 1
+3,0,PM_L3_P1_PF_RTY,1,,0,0,0,0,L3 PF received retry port 1
+3,0,PM_L3_P1_SN_HIT,1,,0,0,0,0,L3 snoop hit port 1
+3,0,PM_L3_P1_SN_INV,1,,0,0,0,0,Port1 snooper detects someone doing a store to a line thats Sx
+3,0,PM_L3_P1_SN_MISS,1,,0,0,0,0,L3 snoop miss port 1
+3,0,PM_L3_P1_SYS_PUMP,1,,0,0,0,0,L3 pf sent with sys scope port 1
+3,0,PM_L3_PF0_BUSY,1,0.0,0,0,0,0,"lifetime, sample of PF machine 0 valid"
+3,0,PM_L3_PF0_DONE,1,0.0,0,0,0,0,"lifetime, sample of PF machine 0 valid"
+3,0,PM_L3_PF_HIT_L3,1,,0,0,0,0,l3 pf hit in l3
+3,0,PM_L3_PF_MISS_L3,1,,0,0,0,0,L3 Prefetch missed in L3
+3,0,PM_L3_PF_OFF_CHIP_CACHE,1,,0,0,0,0,L3 Prefetch from Off chip cache
+3,0,PM_L3_PF_OFF_CHIP_MEM,1,,0,0,0,0,L3 Prefetch from Off chip memory
+3,0,PM_L3_PF_ON_CHIP_CACHE,1,,0,0,0,0,L3 Prefetch from On chip cache
+3,0,PM_L3_PF_ON_CHIP_MEM,1,,0,0,0,0,L3 Prefetch from On chip memory
+3,0,PM_L3_PF_USAGE,1,,0,0,0,0,rotating sample of 32 PF actives
+3,0,PM_L3_PREF_ALL,1,,0,0,0,0,Total HW L3 prefetches(Load+store)
+3,0,PM_L3_RD0_BUSY,1,0.0,0,0,0,0,"lifetime, sample of RD machine 0 valid"
+3,0,PM_L3_RD0_DONE,1,0.0,0,0,0,0,"lifetime, sample of RD machine 0 valid"
+3,0,PM_L3_RD_USAGE,1,,0,0,0,0,rotating sample of 16 RD actives
+3,0,PM_L3_SN0_BUSY,1,0.0,0,0,0,0,"lifetime, sample of snooper machine 0 valid"
+3,0,PM_L3_SN0_DONE,1,0.0,0,0,0,0,"lifetime, sample of snooper machine 0 valid"
+3,0,PM_L3_SN_USAGE,1,,0,0,0,0,rotating sample of 8 snoop valids
+3,0,PM_L3_ST_PREF,1,,0,0,0,0,L3 store Prefetches
+3,0,PM_L3_SW_PREF,1,,0,0,0,0,Data stream touchto L3
+3,0,PM_L3_SYS_GUESS_CORRECT,1,,0,0,0,0,Initial scope=system and data from outside group (far or rem)(pred successful)
+3,0,PM_L3_SYS_GUESS_WRONG,1,,0,0,0,0,Initial scope=system but data from local or near. Predction too high
+3,0,PM_L3_TRANS_PF,1,,0,0,0,0,L3 Transient prefetch
+3,0,PM_L3_WI0_BUSY,1,X,0,0,0,0,"lifetime, sample of WI machine 0 valid"
+3,0,PM_L3_WI0_DONE,1,X,0,0,0,0,"lifetime, sample of WI machine 0 valid"
+3,0,PM_L3_WI_USAGE,1,,0,0,0,0,rotating sample of 8 WI actives
+3,0,PM_LARX_FIN,1,,0,0,0,0,Larx finished
+3,0,PM_LD_CMPL,1,,0,0,0,0,count of Loads completed
+3,0,PM_LD_L3MISS_PEND_CYC,1,,0,0,0,0,Cycles L3 miss was pending for this thread
+3,0,PM_LD_MISS_L1,1,,0,0,0,0,Load Missed L1
+3,0,PM_LD_REF_L1,1,,0,0,0,0,Load Ref count combined for all units
+3,0,PM_LD_REF_L1_LSU0,1,"LS0 L1 D cache load references counted at finish, gated by rejectLSU0 L1 D cache load references",0,0,0,0,"LS0 L1 D cache load references counted at finish, gated by reject"
+3,0,PM_LD_REF_L1_LSU1,1,"LS1 L1 D cache load references counted at finish, gated by rejectLSU1 L1 D cache load references",0,0,0,0,"LS1 L1 D cache load references counted at finish, gated by reject"
+3,0,PM_LD_REF_L1_LSU2,1,,0,0,0,0,"LS2 L1 D cache load references counted at finish, gated by reject"
+3,0,PM_LD_REF_L1_LSU3,1,,0,0,0,0,"LS3 L1 D cache load references counted at finish, gated by reject"
+3,0,PM_LINK_STACK_INVALID_PTR,1,,0,0,0,0,"A flush were LS ptr is invalid, results in a pop , A lot of interrupts between push and pops"
+3,0,PM_LINK_STACK_WRONG_ADD_PRED,1,,0,0,0,0,"Link stack predicts wrong address, because of link stack design limitation"
+3,0,PM_LS0_ERAT_MISS_PREF,1,,0,0,0,0,LS0 Erat miss due to prefetch
+3,0,PM_LS0_L1_PREF,1,,0,0,0,0,LS0 L1 cache data prefetches
+3,0,PM_LS0_L1_SW_PREF,1,,0,0,0,0,"Software L1 Prefetches, including SW Transient Prefetches"
+3,0,PM_LS1_ERAT_MISS_PREF,1,,0,0,0,0,LS1 Erat miss due to prefetch
+3,0,PM_LS1_L1_PREF,1,,0,0,0,0,LS1 L1 cache data prefetches
+3,0,PM_LS1_L1_SW_PREF,1,,0,0,0,0,"Software L1 Prefetches, including SW Transient Prefetches"
+3,0,PM_LSU0_FLUSH_LRQ,1,LS0 Flush: LRQLSU0 unaligned load flushes,0,0,0,0,LS0 Flush: LRQ
+3,0,PM_LSU0_FLUSH_SRQ,1,LS0 Flush: SRQLSU0 LRQ flushes,0,0,0,0,LS0 Flush: SRQ
+3,0,PM_LSU0_FLUSH_ULD,1,,0,0,0,0,LS0 Flush: Unaligned Load
+3,0,PM_LSU0_FLUSH_UST,1,,0,0,0,0,LS0 Flush: Unaligned Store
+3,0,PM_LSU0_L1_CAM_CANCEL,1,,0,0,0,0,ls0 l1 tm cam cancel
+3,0,PM_LSU0_LARX_FIN,1,,0,0,0,0,Larx finished in LSU pipe0
+3,0,PM_LSU0_LMQ_LHR_MERGE,1,,0,0,0,0,LS0 Load Merged with another cacheline request
+3,0,PM_LSU0_NCLD,1,LS0 Non-cachable Loads counted at finishLSU0 non-cacheable loads,0,0,0,0,LS0 Non-cachable Loads counted at finish
+3,0,PM_LSU0_PRIMARY_ERAT_HIT,1,,0,0,0,0,Primary ERAT hit
+3,0,PM_LSU0_REJECT,1,,0,0,0,0,LSU0 reject
+3,0,PM_LSU0_SRQ_STFWD,1,,0,0,0,0,LS0 SRQ forwarded data to a load
+3,0,PM_LSU0_STORE_REJECT,1,,0,0,0,0,ls0 store reject
+3,0,PM_LSU0_TMA_REQ_L2,1,,0,0,0,0,"addrs only req to L2 only on the first one,Indication that Load footprint is not expanding"
+3,0,PM_LSU0_TM_L1_HIT,1,,0,0,0,0,Load tm hit in L1
+3,0,PM_LSU0_TM_L1_MISS,1,,0,0,0,0,Load tm L1 miss
+3,0,PM_LSU1_FLUSH_LRQ,1,LS1 Flush: LRQLSU1 unaligned load flushes,0,0,0,0,LS1 Flush: LRQ
+3,0,PM_LSU1_FLUSH_SRQ,1,LS1 Flush: SRQLSU1 LRQ flushes,0,0,0,0,LS1 Flush: SRQ
+3,0,PM_LSU1_FLUSH_ULD,1,,0,0,0,0,LS 1 Flush: Unaligned Load
+3,0,PM_LSU1_FLUSH_UST,1,,0,0,0,0,LS1 Flush: Unaligned Store
+3,0,PM_LSU1_L1_CAM_CANCEL,1,,0,0,0,0,ls1 l1 tm cam cancel
+3,0,PM_LSU1_LARX_FIN,1,,0,0,0,0,Larx finished in LSU pipe1
+3,0,PM_LSU1_LMQ_LHR_MERGE,1,,0,0,0,0,LS1 Load Merge with another cacheline request
+3,0,PM_LSU1_NCLD,1,LS1 Non-cachable Loads counted at finishLSU1 non-cacheable loads,0,0,0,0,LS1 Non-cachable Loads counted at finish
+3,0,PM_LSU1_PRIMARY_ERAT_HIT,1,,0,0,0,0,Primary ERAT hit
+3,0,PM_LSU1_REJECT,1,,0,0,0,0,LSU1 reject
+3,0,PM_LSU1_SRQ_STFWD,1,,0,0,0,0,LS1 SRQ forwarded data to a load
+3,0,PM_LSU1_STORE_REJECT,1,,0,0,0,0,ls1 store reject
+3,0,PM_LSU1_TMA_REQ_L2,1,,0,0,0,0,"addrs only req to L2 only on the first one,Indication that Load footprint is not expanding"
+3,0,PM_LSU1_TM_L1_HIT,1,,0,0,0,0,Load tm hit in L1
+3,0,PM_LSU1_TM_L1_MISS,1,,0,0,0,0,Load tm L1 miss
+3,0,PM_LSU2_FLUSH_LRQ,1,LS02Flush: LRQLSU0 unaligned store flushes,0,0,0,0,LS02Flush: LRQ
+3,0,PM_LSU2_FLUSH_SRQ,1,LS2 Flush: SRQLSU0 SRQ lhs flushes,0,0,0,0,LS2 Flush: SRQ
+3,0,PM_LSU2_FLUSH_ULD,1,,0,0,0,0,LS3 Flush: Unaligned Load
+3,0,PM_LSU2_L1_CAM_CANCEL,1,,0,0,0,0,ls2 l1 tm cam cancel
+3,0,PM_LSU2_LARX_FIN,1,,0,0,0,0,Larx finished in LSU pipe2
+3,0,PM_LSU2_LDF,1,,0,0,0,0,LS2 Scalar Loads
+3,0,PM_LSU2_LDX,1,,0,0,0,0,LS0 Vector Loads
+3,0,PM_LSU2_LMQ_LHR_MERGE,1,LS0 Load Merged with another cacheline requestData SLB misses,0,0,0,0,LS0 Load Merged with another cacheline request
+3,0,PM_LSU2_PRIMARY_ERAT_HIT,1,,0,0,0,0,Primary ERAT hit
+3,0,PM_LSU2_REJECT,1,,0,0,0,0,LSU2 reject
+3,0,PM_LSU2_SRQ_STFWD,1,LS2 SRQ forwarded data to a loadLSU0 SRQ store forwarded,0,0,0,0,LS2 SRQ forwarded data to a load
+3,0,PM_LSU2_TMA_REQ_L2,1,,0,0,0,0,"addrs only req to L2 only on the first one,Indication that Load footprint is not expanding"
+3,0,PM_LSU2_TM_L1_HIT,1,,0,0,0,0,Load tm hit in L1
+3,0,PM_LSU2_TM_L1_MISS,1,,0,0,0,0,Load tm L1 miss
+3,0,PM_LSU3_FLUSH_LRQ,1,LS3 Flush: LRQLSU1 unaligned store flushes,0,0,0,0,LS3 Flush: LRQ
+3,0,PM_LSU3_FLUSH_SRQ,1,LS13 Flush: SRQLSU1 SRQ lhs flushes,0,0,0,0,LS13 Flush: SRQ
+3,0,PM_LSU3_FLUSH_ULD,1,,0,0,0,0,LS 14Flush: Unaligned Load
+3,0,PM_LSU3_L1_CAM_CANCEL,1,,0,0,0,0,ls3 l1 tm cam cancel
+3,0,PM_LSU3_LARX_FIN,1,,0,0,0,0,Larx finished in LSU pipe3
+3,0,PM_LSU3_LDF,1,,0,0,0,0,LS3 Scalar Loads
+3,0,PM_LSU3_LDX,1,,0,0,0,0,LS1 Vector Loads
+3,0,PM_LSU3_LMQ_LHR_MERGE,1,LS1 Load Merge with another cacheline requestInstruction SLB misses,0,0,0,0,LS1 Load Merge with another cacheline request
+3,0,PM_LSU3_PRIMARY_ERAT_HIT,1,,0,0,0,0,Primary ERAT hit
+3,0,PM_LSU3_REJECT,1,,0,0,0,0,LSU3 reject
+3,0,PM_LSU3_SRQ_STFWD,1,LS3 SRQ forwarded data to a loadLSU1 SRQ store forwarded,0,0,0,0,LS3 SRQ forwarded data to a load
+3,0,PM_LSU3_TMA_REQ_L2,1,,0,0,0,0,"addrs only req to L2 only on the first one,Indication that Load footprint is not expanding"
+3,0,PM_LSU3_TM_L1_HIT,1,,0,0,0,0,Load tm hit in L1
+3,0,PM_LSU3_TM_L1_MISS,1,,0,0,0,0,Load tm L1 miss
+3,0,PM_LSU_DERAT_MISS,1,DERAT Reloaded (Miss),0,0,0,0,DERAT Reloaded due to a DERAT miss
+3,0,PM_LSU_FIN,1,,0,0,0,0,LSU Finished an instruction (up to 2 per cycle)
+3,0,PM_LSU_FOUR_TABLEWALK_CYC,1,"Cycles when four tablewalks pending on this threadCycles LMQ full,",0,0,0,0,Cycles when four tablewalks pending on this thread
+3,0,PM_LSU_FX_FIN,1,,0,0,0,0,LSU Finished a FX operation (up to 2 per cycle
+3,0,PM_LSU_LMQ_FULL_CYC,1,,0,0,0,0,LMQ full
+3,0,PM_LSU_LMQ_S0_ALLOC,1,LSU,0,0,0,0,"Per thread - use edge detect to count allocates On a per thread basis, level signal indicating Slot 0 is valid. By instrumenting a single slot we can calculate service time for that slot. Previous machines required a separate signal indicating the slot was allocated. Because any signal can be routed to any counter in P8, we can count level in one PMC and edge detect in another PMC using the same signal"
+3,0,PM_LSU_LMQ_S0_VALID,1,LSU,0,0,0,0,"Per thread - use edge detect to count allocates On a per thread basis, level signal indicating Slot 0 is valid. By instrumenting a single slot we can calculate service time for that slot. Previous machines required a separate signal indicating the slot was allocated. Because any signal can be routed to any counter in P8, we can count level in one PMC and edge detect in another PMC using the same signal"
+3,0,PM_LSU_LMQ_SRQ_EMPTY_ALL_CYC,1,ALL threads lsu empty (lmq and srq empty). Issue HW016541,0,0,0,0,ALL threads lsu empty (lmq and srq empty)
+3,0,PM_LSU_LMQ_SRQ_EMPTY_CYC,1,,0,0,0,0,LSU empty (lmq and srq empty)
+3,0,PM_LSU_LRQ_S0_ALLOC,1,LSU,0,0,0,0,"Per thread - use edge detect to count allocates On a per thread basis, level signal indicating Slot 0 is valid. By instrumenting a single slot we can calculate service time for that slot. Previous machines required a separate signal indicating the slot was allocated. Because any signal can be routed to any counter in P8, we can count level in one PMC and edge detect in another PMC using the same signal"
+3,0,PM_LSU_LRQ_S0_VALID,1,LSU,0,0,0,0,"Per thread - use edge detect to count allocates On a per thread basis, level signal indicating Slot 0 is valid. By instrumenting a single slot we can calculate service time for that slot. Previous machines required a separate signal indicating the slot was allocated. Because any signal can be routed to any counter in P8, we can count level in one PMC and edge detect in another PMC using the same signal"
+3,0,PM_LSU_LRQ_S43_ALLOC,1,LSU,0,0,0,0,
+3,0,PM_LSU_LRQ_S43_VALID,1,LSU,0,0,0,0,
+3,0,PM_LSU_MRK_DERAT_MISS,1,,0,0,0,0,DERAT Reloaded (Miss)
+3,0,PM_LSU_NCST,1,,0,0,0,0,Non-cachable Stores sent to nest
+3,0,PM_LSU_REJECT,1,,0,0,0,0,LSU Reject (up to 4 per cycle)
+3,0,PM_LSU_REJECT_ERAT_MISS,1,,0,0,0,0,LSU Reject due to ERAT (up to 4 per cycles)
+3,0,PM_LSU_REJECT_LHS,1,,0,0,0,0,LSU Reject due to LHS (up to 4 per cycle)
+3,0,PM_LSU_REJECT_LMQ_FULL,1,,0,0,0,0,LSU reject due to LMQ full ( 4 per cycle)
+3,0,PM_LSU_SET_MPRED,1,,0,0,0,0,Line already in cache at reload time
+3,0,PM_LSU_SRQ_EMPTY_CYC,1,All threads srq empty,0,0,0,0,ALL threads srq empty
+3,0,PM_LSU_SRQ_FULL_CYC,1,SRQ is Full,0,0,0,0,Storage Queue is full and is blocking dispatch
+3,0,PM_LSU_SRQ_S0_ALLOC,1,LSU,0,0,0,0,"Per thread - use edge detect to count allocates On a per thread basis, level signal indicating Slot 0 is valid. By instrumenting a single slot we can calculate service time for that slot. Previous machines required a separate signal indicating the slot was allocated. Because any signal can be routed to any counter in P8, we can count level in one PMC and edge detect in another PMC using the same signal"
+3,0,PM_LSU_SRQ_S0_VALID,1,LSU,0,0,0,0,"Per thread - use edge detect to count allocates On a per thread basis, level signal indicating Slot 0 is valid. By instrumenting a single slot we can calculate service time for that slot. Previous machines required a separate signal indicating the slot was allocated. Because any signal can be routed to any counter in P8, we can count level in one PMC and edge detect in another PMC using the same signal"
+3,0,PM_LSU_SRQ_S39_ALLOC,1,LSU,0,0,0,0,
+3,0,PM_LSU_SRQ_S39_VALID,1,LSU,0,0,0,0,
+3,0,PM_LSU_SRQ_SYNC,1,LSU,0,0,0,0,
+3,0,PM_LSU_SRQ_SYNC_CYC,1,LSU,0,0,0,0,
+3,0,PM_LSU_TWO_TABLEWALK_CYC,1,,0,0,0,0,Cycles when two tablewalks pending on this thread
+3,0,PM_LWSYNC,1,,0,0,0,0,lwsync count (easier to use than IMC)
+3,0,PM_LWSYNC_HELD,1,,0,0,0,0,LWSYNC held at dispatch
+3,0,PM_MEM_CO,1,,0,0,0,0,Memory castouts from this lpar
+3,0,PM_MEM_LOC_THRESH_IFU,1,,0,0,0,0,Local Memory above threshold for IFU speculation control
+3,0,PM_MEM_LOC_THRESH_LSU_HIGH,1,,0,0,0,0,Local memory above threshold for LSU medium
+3,0,PM_MEM_LOC_THRESH_LSU_MED,1,,0,0,0,0,Local memory above theshold for data prefetch
+3,0,PM_MEM_PREF,1,,0,0,0,0,Memory prefetch for this lpar
+3,0,PM_MEM_READ,1,,0,0,0,0,Reads from Memory from this lpar (includes data/inst/xlate/l1prefetch/inst prefetch)
+3,0,PM_MEM_RWITM,1,,0,0,0,0,Memory rwitm for this lpar
+3,0,PM_MRK_BACK_BR_CMPL,1,,0,0,0,0,Marked branch instruction completed with a target address less than current instruction address
+3,0,PM_MRK_BRU_FIN,1,,0,0,0,0,bru marked instr finish
+3,0,PM_MRK_BR_CMPL,1,,0,0,0,0,Branch Instruction completed
+3,0,PM_MRK_BR_MPRED_CMPL,1,,0,0,0,0,Marked Branch Mispredicted
+3,0,PM_MRK_BR_TAKEN_CMPL,1,Marked Branch Taken,0,0,0,0,Marked Branch Taken completed
+3,0,PM_MRK_CRU_FIN,1,IFU non-branch marked instruction finished,0,0,0,0,IFU non-branch finished
+3,0,PM_MRK_DATA_FROM_DL2L3_MOD,1,,0,0,0,0,"The processor's data cache was reloaded with Modified (M) data from another chip's L2 or L3 on a different Node or Group (Distant), as this chip due to a marked load"
+3,0,PM_MRK_DATA_FROM_DL2L3_MOD_CYC,1,,0,0,0,0,"Duration in cycles to reload with Modified (M) data from another chip's L2 or L3 on a different Node or Group (Distant), as this chip due to a marked load"
+3,0,PM_MRK_DATA_FROM_DL2L3_SHR,1,,0,0,0,0,"The processor's data cache was reloaded with Shared (S) data from another chip's L2 or L3 on a different Node or Group (Distant), as this chip due to a marked load"
+3,0,PM_MRK_DATA_FROM_DL2L3_SHR_CYC,1,,0,0,0,0,"Duration in cycles to reload with Shared (S) data from another chip's L2 or L3 on a different Node or Group (Distant), as this chip due to a marked load"
+3,0,PM_MRK_DATA_FROM_DL4,1,,0,0,0,0,The processor's data cache was reloaded from another chip's L4 on a different Node or Group (Distant) due to a marked load
+3,0,PM_MRK_DATA_FROM_DL4_CYC,1,,0,0,0,0,Duration in cycles to reload from another chip's L4 on a different Node or Group (Distant) due to a marked load
+3,0,PM_MRK_DATA_FROM_DMEM,1,,0,0,0,0,The processor's data cache was reloaded from another chip's memory on the same Node or Group (Distant) due to a marked load
+3,0,PM_MRK_DATA_FROM_DMEM_CYC,1,,0,0,0,0,Duration in cycles to reload from another chip's memory on the same Node or Group (Distant) due to a marked load
+3,0,PM_MRK_DATA_FROM_L2,1,,0,0,0,0,The processor's data cache was reloaded from local core's L2 due to a marked load
+3,0,PM_MRK_DATA_FROM_L2.1_MOD,1,,0,0,0,0,The processor's data cache was reloaded with Modified (M) data from another core's L2 on the same chip due to a marked load
+3,0,PM_MRK_DATA_FROM_L2.1_MOD_CYC,1,,0,0,0,0,Duration in cycles to reload with Modified (M) data from another core's L2 on the same chip due to a marked load
+3,0,PM_MRK_DATA_FROM_L2.1_SHR,1,,0,0,0,0,The processor's data cache was reloaded with Shared (S) data from another core's L2 on the same chip due to a marked load
+3,0,PM_MRK_DATA_FROM_L2.1_SHR_CYC,1,,0,0,0,0,Duration in cycles to reload with Shared (S) data from another core's L2 on the same chip due to a marked load
+3,0,PM_MRK_DATA_FROM_L2MISS,1,,0,0,0,0,Data cache reload L2 miss
+3,0,PM_MRK_DATA_FROM_L2MISS_CYC,1,,0,0,0,0,Duration in cycles to reload from a localtion other than the local core's L2 due to a marked load
+3,0,PM_MRK_DATA_FROM_L2_CYC,1,,0,0,0,0,Duration in cycles to reload from local core's L2 due to a marked load
+3,0,PM_MRK_DATA_FROM_L2_DISP_CONFLICT_LDHITST,1,,0,0,0,0,The processor's data cache was reloaded from local core's L2 with load hit store conflict due to a marked load
+3,0,PM_MRK_DATA_FROM_L2_DISP_CONFLICT_LDHITST_CYC,1,,0,0,0,0,Duration in cycles to reload from local core's L2 with load hit store conflict due to a marked load
+3,0,PM_MRK_DATA_FROM_L2_DISP_CONFLICT_OTHER,1,,0,0,0,0,The processor's data cache was reloaded from local core's L2 with dispatch conflict due to a marked load
+3,0,PM_MRK_DATA_FROM_L2_DISP_CONFLICT_OTHER_CYC,1,,0,0,0,0,Duration in cycles to reload from local core's L2 with dispatch conflict due to a marked load
+3,0,PM_MRK_DATA_FROM_L2_MEPF,1,,0,0,0,0,The processor's data cache was reloaded from local core's L2 hit without dispatch conflicts on Mepf state. due to a marked load
+3,0,PM_MRK_DATA_FROM_L2_MEPF_CYC,1,,0,0,0,0,Duration in cycles to reload from local core's L2 hit without dispatch conflicts on Mepf state. due to a marked load
+3,0,PM_MRK_DATA_FROM_L2_NO_CONFLICT,1,,0,0,0,0,The processor's data cache was reloaded from local core's L2 without conflict due to a marked load
+3,0,PM_MRK_DATA_FROM_L2_NO_CONFLICT_CYC,1,,0,0,0,0,Duration in cycles to reload from local core's L2 without conflict due to a marked load
+3,0,PM_MRK_DATA_FROM_L3,1,,0,0,0,0,The processor's data cache was reloaded from local core's L3 due to a marked load
+3,0,PM_MRK_DATA_FROM_L3.1_ECO_MOD,1,,0,0,0,0,The processor's data cache was reloaded with Modified (M) data from another core's ECO L3 on the same chip due to a marked load
+3,0,PM_MRK_DATA_FROM_L3.1_ECO_MOD_CYC,1,,0,0,0,0,Duration in cycles to reload with Modified (M) data from another core's ECO L3 on the same chip due to a marked load
+3,0,PM_MRK_DATA_FROM_L3.1_ECO_SHR,1,,0,0,0,0,The processor's data cache was reloaded with Shared (S) data from another core's ECO L3 on the same chip due to a marked load
+3,0,PM_MRK_DATA_FROM_L3.1_ECO_SHR_CYC,1,,0,0,0,0,Duration in cycles to reload with Shared (S) data from another core's ECO L3 on the same chip due to a marked load
+3,0,PM_MRK_DATA_FROM_L3.1_MOD,1,,0,0,0,0,The processor's data cache was reloaded with Modified (M) data from another core's L3 on the same chip due to a marked load
+3,0,PM_MRK_DATA_FROM_L3.1_MOD_CYC,1,,0,0,0,0,Duration in cycles to reload with Modified (M) data from another core's L3 on the same chip due to a marked load
+3,0,PM_MRK_DATA_FROM_L3.1_SHR,1,,0,0,0,0,The processor's data cache was reloaded with Shared (S) data from another core's L3 on the same chip due to a marked load
+3,0,PM_MRK_DATA_FROM_L3.1_SHR_CYC,1,,0,0,0,0,Duration in cycles to reload with Shared (S) data from another core's L3 on the same chip due to a marked load
+3,0,PM_MRK_DATA_FROM_L3MISS,1,,0,0,0,0,The processor's data cache was reloaded from a localtion other than the local core's L3 due to a marked load
+3,0,PM_MRK_DATA_FROM_L3MISS_CYC,1,,0,0,0,0,Duration in cycles to reload from a localtion other than the local core's L3 due to a marked load
+3,0,PM_MRK_DATA_FROM_L3_CYC,1,,0,0,0,0,Duration in cycles to reload from local core's L3 due to a marked load
+3,0,PM_MRK_DATA_FROM_L3_DISP_CONFLICT,1,,0,0,0,0,The processor's data cache was reloaded from local core's L3 with dispatch conflict due to a marked load
+3,0,PM_MRK_DATA_FROM_L3_DISP_CONFLICT_CYC,1,,0,0,0,0,Duration in cycles to reload from local core's L3 with dispatch conflict due to a marked load
+3,0,PM_MRK_DATA_FROM_L3_MEPF,1,,0,0,0,0,The processor's data cache was reloaded from local core's L3 without dispatch conflicts hit on Mepf state. due to a marked load
+3,0,PM_MRK_DATA_FROM_L3_MEPF_CYC,1,,0,0,0,0,Duration in cycles to reload from local core's L3 without dispatch conflicts hit on Mepf state. due to a marked load
+3,0,PM_MRK_DATA_FROM_L3_NO_CONFLICT,1,,0,0,0,0,The processor's data cache was reloaded from local core's L3 without conflict due to a marked load
+3,0,PM_MRK_DATA_FROM_L3_NO_CONFLICT_CYC,1,,0,0,0,0,Duration in cycles to reload from local core's L3 without conflict due to a marked load
+3,0,PM_MRK_DATA_FROM_LL4,1,,0,0,0,0,The processor's data cache was reloaded from the local chip's L4 cache due to a marked load
+3,0,PM_MRK_DATA_FROM_LL4_CYC,1,,0,0,0,0,Duration in cycles to reload from the local chip's L4 cache due to a marked load
+3,0,PM_MRK_DATA_FROM_LMEM,1,,0,0,0,0,The processor's data cache was reloaded from the local chip's Memory due to a marked load
+3,0,PM_MRK_DATA_FROM_LMEM_CYC,1,,0,0,0,0,Duration in cycles to reload from the local chip's Memory due to a marked load
+3,0,PM_MRK_DATA_FROM_MEM,1,,0,0,0,0,The processor's data cache was reloaded from a memory location including L4 from local remote or distant due to a marked load
+3,0,PM_MRK_DATA_FROM_MEMORY,1,,0,0,0,0,The processor's data cache was reloaded from a memory location including L4 from local remote or distant due to a marked load
+3,0,PM_MRK_DATA_FROM_MEMORY_CYC,1,,0,0,0,0,Duration in cycles to reload from a memory location including L4 from local remote or distant due to a marked load
+3,0,PM_MRK_DATA_FROM_OFF_CHIP_CACHE,1,,0,0,0,0,The processor's data cache was reloaded either shared or modified data from another core's L2/L3 on a different chip (remote or distant) due to a marked load
+3,0,PM_MRK_DATA_FROM_OFF_CHIP_CACHE_CYC,1,,0,0,0,0,Duration in cycles to reload either shared or modified data from another core's L2/L3 on a different chip (remote or distant) due to a marked load
+3,0,PM_MRK_DATA_FROM_ON_CHIP_CACHE,1,,0,0,0,0,The processor's data cache was reloaded either shared or modified data from another core's L2/L3 on the same chip due to a marked load
+3,0,PM_MRK_DATA_FROM_ON_CHIP_CACHE_CYC,1,,0,0,0,0,Duration in cycles to reload either shared or modified data from another core's L2/L3 on the same chip due to a marked load
+3,0,PM_MRK_DATA_FROM_RL2L3_MOD,1,,0,0,0,0,"The processor's data cache was reloaded with Modified (M) data from another chip's L2 or L3 on the same Node or Group (Remote), as this chip due to a marked load"
+3,0,PM_MRK_DATA_FROM_RL2L3_MOD_CYC,1,,0,0,0,0,"Duration in cycles to reload with Modified (M) data from another chip's L2 or L3 on the same Node or Group (Remote), as this chip due to a marked load"
+3,0,PM_MRK_DATA_FROM_RL2L3_SHR,1,,0,0,0,0,"The processor's data cache was reloaded with Shared (S) data from another chip's L2 or L3 on the same Node or Group (Remote), as this chip due to a marked load"
+3,0,PM_MRK_DATA_FROM_RL2L3_SHR_CYC,1,,0,0,0,0,"Duration in cycles to reload with Shared (S) data from another chip's L2 or L3 on the same Node or Group (Remote), as this chip due to a marked load"
+3,0,PM_MRK_DATA_FROM_RL4,1,,0,0,0,0,The processor's data cache was reloaded from another chip's L4 on the same Node or Group ( Remote) due to a marked load
+3,0,PM_MRK_DATA_FROM_RL4_CYC,1,,0,0,0,0,Duration in cycles to reload from another chip's L4 on the same Node or Group ( Remote) due to a marked load
+3,0,PM_MRK_DATA_FROM_RMEM,1,,0,0,0,0,The processor's data cache was reloaded from another chip's memory on the same Node or Group ( Remote) due to a marked load
+3,0,PM_MRK_DATA_FROM_RMEM_CYC,1,,0,0,0,0,Duration in cycles to reload from another chip's memory on the same Node or Group ( Remote) due to a marked load
+3,0,PM_MRK_DCACHE_RELOAD_INTV,1,,0,0,0,0,Combined Intervention event
+3,0,PM_MRK_DERAT_MISS,1,,0,0,0,0,Erat Miss (TLB Access) All page sizes
+3,0,PM_MRK_DERAT_MISS_16G,1,,0,0,0,0,Marked Data ERAT Miss (Data TLB Access) page size 16G
+3,0,PM_MRK_DERAT_MISS_16M,1,,0,0,0,0,Marked Data ERAT Miss (Data TLB Access) page size 16M
+3,0,PM_MRK_DERAT_MISS_4K,1,,0,0,0,0,Marked Data ERAT Miss (Data TLB Access) page size 4K
+3,0,PM_MRK_DERAT_MISS_64K,1,,0,0,0,0,Marked Data ERAT Miss (Data TLB Access) page size 64K
+3,0,PM_MRK_DFU_FIN,1,,0,0,0,0,Decimal Unit marked Instruction Finish
+3,0,PM_MRK_DPTEG_FROM_DL2L3_MOD,1,,0,0,0,0,"A Page Table Entry was loaded into the TLB with Modified (M) data from another chip's L2 or L3 on a different Node or Group (Distant), as this chip due to a marked data side request"
+3,0,PM_MRK_DPTEG_FROM_DL2L3_SHR,1,,0,0,0,0,"A Page Table Entry was loaded into the TLB with Shared (S) data from another chip's L2 or L3 on a different Node or Group (Distant), as this chip due to a marked data side request"
+3,0,PM_MRK_DPTEG_FROM_DL4,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from another chip's L4 on a different Node or Group (Distant) due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_DMEM,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from another chip's memory on the same Node or Group (Distant) due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_L2,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L2 due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_L2.1_MOD,1,,0,0,0,0,A Page Table Entry was loaded into the TLB with Modified (M) data from another core's L2 on the same chip due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_L2.1_SHR,1,,0,0,0,0,A Page Table Entry was loaded into the TLB with Shared (S) data from another core's L2 on the same chip due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_L2MISS,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from a localtion other than the local core's L2 due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_L2_DISP_CONFLICT_LDHITST,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L2 with load hit store conflict due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_L2_DISP_CONFLICT_OTHER,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L2 with dispatch conflict due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_L2_MEPF,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L2 hit without dispatch conflicts on Mepf state. due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_L2_NO_CONFLICT,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L2 without conflict due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_L3,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L3 due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_L3.1_ECO_MOD,1,,0,0,0,0,A Page Table Entry was loaded into the TLB with Modified (M) data from another core's ECO L3 on the same chip due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_L3.1_ECO_SHR,1,,0,0,0,0,A Page Table Entry was loaded into the TLB with Shared (S) data from another core's ECO L3 on the same chip due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_L3.1_MOD,1,,0,0,0,0,A Page Table Entry was loaded into the TLB with Modified (M) data from another core's L3 on the same chip due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_L3.1_SHR,1,,0,0,0,0,A Page Table Entry was loaded into the TLB with Shared (S) data from another core's L3 on the same chip due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_L3MISS,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from a localtion other than the local core's L3 due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_L3_DISP_CONFLICT,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L3 with dispatch conflict due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_L3_MEPF,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L3 without dispatch conflicts hit on Mepf state. due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_L3_NO_CONFLICT,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from local core's L3 without conflict due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_LL4,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from the local chip's L4 cache due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_LMEM,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from the local chip's Memory due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_MEMORY,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from a memory location including L4 from local remote or distant due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_OFF_CHIP_CACHE,1,,0,0,0,0,A Page Table Entry was loaded into the TLB either shared or modified data from another core's L2/L3 on a different chip (remote or distant) due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_ON_CHIP_CACHE,1,,0,0,0,0,A Page Table Entry was loaded into the TLB either shared or modified data from another core's L2/L3 on the same chip due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_RL2L3_MOD,1,,0,0,0,0,"A Page Table Entry was loaded into the TLB with Modified (M) data from another chip's L2 or L3 on the same Node or Group (Remote), as this chip due to a marked data side request"
+3,0,PM_MRK_DPTEG_FROM_RL2L3_SHR,1,,0,0,0,0,"A Page Table Entry was loaded into the TLB with Shared (S) data from another chip's L2 or L3 on the same Node or Group (Remote), as this chip due to a marked data side request"
+3,0,PM_MRK_DPTEG_FROM_RL4,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from another chip's L4 on the same Node or Group ( Remote) due to a marked data side request
+3,0,PM_MRK_DPTEG_FROM_RMEM,1,,0,0,0,0,A Page Table Entry was loaded into the TLB from another chip's memory on the same Node or Group ( Remote) due to a marked data side request
+3,0,PM_MRK_DTLB_MISS,1,,0,0,0,0,Marked dtlb miss
+3,0,PM_MRK_DTLB_MISS_16G,1,,0,0,0,0,Marked Data TLB Miss page size 16G
+3,0,PM_MRK_DTLB_MISS_16M,1,,0,0,0,0,Marked Data TLB Miss page size 16M
+3,0,PM_MRK_DTLB_MISS_4K,1,,0,0,0,0,Marked Data TLB Miss page size 4k
+3,0,PM_MRK_DTLB_MISS_64K,1,,0,0,0,0,Marked Data TLB Miss page size 64K
+3,0,PM_MRK_FAB_RSP_BKILL,1,,0,0,0,0,Marked store had to do a bkill
+3,0,PM_MRK_FAB_RSP_BKILL_CYC,1,,0,0,0,0,cycles L2 RC took for a bkill
+3,0,PM_MRK_FAB_RSP_CLAIM_RTY,1,,0,0,0,0,Sampled store did a rwitm and got a rty
+3,0,PM_MRK_FAB_RSP_DCLAIM,1,,0,0,0,0,Marked store had to do a dclaim
+3,0,PM_MRK_FAB_RSP_DCLAIM_CYC,1,,0,0,0,0,cycles L2 RC took for a dclaim
+3,0,PM_MRK_FAB_RSP_MATCH,1,,0,0,0,0,ttype and cresp matched as specified in MMCR1
+3,0,PM_MRK_FAB_RSP_MATCH_CYC,1,,0,0,0,0,cresp/ttype match cycles
+3,0,PM_MRK_FAB_RSP_RD_RTY,1,,0,0,0,0,Sampled L2 reads retry count
+3,0,PM_MRK_FAB_RSP_RD_T_INTV,1,,0,0,0,0,Sampled Read got a T intervention
+3,0,PM_MRK_FAB_RSP_RWITM_CYC,1,,0,0,0,0,cycles L2 RC took for a rwitm
+3,0,PM_MRK_FAB_RSP_RWITM_RTY,1,,0,0,0,0,Sampled store did a rwitm and got a rty
+3,0,PM_MRK_FILT_MATCH,1,,0,0,0,0,Marked filter Match
+3,0,PM_MRK_FIN_STALL_CYC,1,,0,0,0,0,Marked instruction Finish Stall cycles (marked finish after NTC) (use edge detect to count #)
+3,0,PM_MRK_FXU_FIN,1,,0,0,0,0,fxu marked instr finish
+3,0,PM_MRK_GRP_CMPL,1,,0,0,0,0,marked instruction finished (completed)
+3,0,PM_MRK_GRP_IC_MISS,1,,0,0,0,0,Marked Group experienced I cache miss
+3,0,PM_MRK_GRP_NTC,1,Marked group ntc cycles,0,0,0,0,
+3,0,PM_MRK_INST_CMPL,1,,0,0,0,0,marked instruction completed
+3,0,PM_MRK_INST_DECODED,1,marked instruction decoded. Name from ISU?,0,0,0,0,marked instruction decoded
+3,0,PM_MRK_INST_DISP,1,Marked Instruction dispatched,0,0,0,0,The thread has dispatched a randomly sampled marked instruction
+3,0,PM_MRK_INST_FIN,1,marked instr finish any unit,0,0,0,0,marked instruction finished
+3,0,PM_MRK_INST_FROM_L3MISS,1,,0,0,0,0,
+3,0,PM_MRK_INST_ISSUED,1,,0,0,0,0,Marked instruction issued
+3,0,PM_MRK_INST_TIMEO,1,,0,0,0,0,marked Instruction finish timeout (instruction lost)
+3,0,PM_MRK_L1_ICACHE_MISS,1,Marked L1 Icache Miss,0,0,0,0,sampled Instruction suffered an icache Miss
+3,0,PM_MRK_L1_RELOAD_VALID,1,,0,0,0,0,Marked demand reload
+3,0,PM_MRK_L2_RC_DISP,1,,0,0,0,0,Marked Instruction RC dispatched in L2
+3,0,PM_MRK_L2_RC_DONE,1,,0,0,0,0,Marked RC done
+3,0,PM_MRK_LARX_FIN,1,,0,0,0,0,Larx finished
+3,0,PM_MRK_LD_MISS_EXPOSED_CYC,1,,0,0,0,0,Marked Load exposed Miss (use edge detect to count #)
+3,0,PM_MRK_LD_MISS_L1,1,,0,0,0,0,Marked DL1 Demand Miss counted at exec time
+3,0,PM_MRK_LD_MISS_L1_CYC,1,,0,0,0,0,Marked ld latency
+3,0,PM_MRK_LSU_FIN,1,,0,0,0,0,lsu marked instr finish
+3,0,PM_MRK_LSU_FLUSH,1,,0,0,0,0,Flush: (marked) : All Cases
+3,0,PM_MRK_LSU_FLUSH_LRQ,1,Flush: (marked) LRQMarked LRQ flushes,0,0,0,0,Flush: (marked) LRQ
+3,0,PM_MRK_LSU_FLUSH_SRQ,1,Flush: (marked) SRQMarked SRQ lhs flushes,0,0,0,0,Flush: (marked) SRQ
+3,0,PM_MRK_LSU_FLUSH_ULD,1,Flush: (marked) Unaligned LoadMarked unaligned load flushes,0,0,0,0,Flush: (marked) Unaligned Load
+3,0,PM_MRK_LSU_FLUSH_UST,1,Flush: (marked) Unaligned StoreMarked unaligned store flushes,0,0,0,0,Flush: (marked) Unaligned Store
+3,0,PM_MRK_LSU_REJECT,1,,0,0,0,0,LSU marked reject (up to 2 per cycle)
+3,0,PM_MRK_LSU_REJECT_ERAT_MISS,1,,0,0,0,0,LSU marked reject due to ERAT (up to 2 per cycle)
+3,0,PM_MRK_NTF_FIN,1,,0,0,0,0,Marked next to finish instruction finished
+3,0,PM_MRK_RUN_CYC,1,,0,0,0,0,Marked run cycles
+3,0,PM_MRK_SRC_PREF_TRACK_EFF,1,,0,0,0,0,Marked src pref track was effective
+3,0,PM_MRK_SRC_PREF_TRACK_INEFF,1,,0,0,0,0,Prefetch tracked was ineffective for marked src
+3,0,PM_MRK_SRC_PREF_TRACK_MOD,1,,0,0,0,0,Prefetch tracked was moderate for marked src
+3,0,PM_MRK_SRC_PREF_TRACK_MOD_L2,1,,0,0,0,0,Marked src Prefetch Tracked was moderate (source L2)
+3,0,PM_MRK_SRC_PREF_TRACK_MOD_L3,1,,0,0,0,0,Prefetch tracked was moderate (L3 hit) for marked src
+3,0,PM_MRK_STALL_CMPLU_CYC,1,Marked Group Completion Stall cycles (use edge detect to count #),0,0,0,0,Marked Group completion Stall
+3,0,PM_MRK_STCX_FAIL,1,,0,0,0,0,marked stcx failed
+3,0,PM_MRK_ST_CMPL,1,Marked store completed,0,0,0,0,marked store completed and sent to nest
+3,0,PM_MRK_ST_CMPL_INT,1,marked store complete (data home) with intervention,0,0,0,0,marked store finished with intervention
+3,0,PM_MRK_ST_DRAIN_TO_L2DISP_CYC,1,,0,0,0,0,cycles to drain st from core to L2
+3,0,PM_MRK_ST_FWD,1,,0,0,0,0,Marked st forwards
+3,0,PM_MRK_ST_L2DISP_TO_CMPL_CYC,1,,0,0,0,0,cycles from L2 rc disp to l2 rc completion
+3,0,PM_MRK_ST_NEST,1,,0,0,0,0,Marked store sent to nest
+3,0,PM_MRK_TGT_PREF_TRACK_EFF,1,,0,0,0,0,Marked target pref track was effective
+3,0,PM_MRK_TGT_PREF_TRACK_INEFF,1,,0,0,0,0,Prefetch tracked was ineffective for marked target
+3,0,PM_MRK_TGT_PREF_TRACK_MOD,1,,0,0,0,0,Prefetch tracked was moderate for marked target
+3,0,PM_MRK_TGT_PREF_TRACK_MOD_L2,1,,0,0,0,0,Marked target Prefetch Tracked was moderate (source L2)
+3,0,PM_MRK_TGT_PREF_TRACK_MOD_L3,1,,0,0,0,0,Prefetch tracked was moderate (L3 hit) for marked target
+3,0,PM_MRK_VSU_FIN,1,vsu (fpu) marked instr finish,0,0,0,0,VSU marked instr finish
+3,0,PM_NESTED_TEND,1,,0,0,0,0,Completion time nested tend
+3,0,PM_NEST_REF_CLK,1,,0,0,0,0,Nest reference clocks
+3,0,PM_NON_FAV_TBEGIN,1,,0,0,0,0,Dispatch time non favored tbegin
+3,0,PM_NON_TM_RST_SC,1,,0,0,0,0,non tm snp rst tm sc
+3,0,PM_NTCG_ALL_FIN,1,Ccycles after all instructions have finished to group completed,0,0,0,0,Cycles after all instructions have finished to group completed
+3,0,PM_OUTER_TBEGIN,1,,0,0,0,0,Completion time outer tbegin
+3,0,PM_OUTER_TEND,1,,0,0,0,0,Completion time outer tend
+3,0,PM_PMC1_OVERFLOW,1,,0,0,0,0,Overflow from counter 1
+3,0,PM_PMC2_OVERFLOW,1,,0,0,0,0,Overflow from counter 2
+3,0,PM_PMC2_REWIND,1,,0,0,0,0,PMC2 Rewind Event (did not match condition)
+3,0,PM_PMC2_SAVED,1,PMC2 Rewind Value saved (matched condition),0,0,0,0,PMC2 Rewind Value saved
+3,0,PM_PMC3_OVERFLOW,1,,0,0,0,0,Overflow from counter 3
+3,0,PM_PMC4_OVERFLOW,1,,0,0,0,0,Overflow from counter 4
+3,0,PM_PMC4_REWIND,1,PMC4 Rewind Event (did not match condition),0,0,0,0,PMC4 Rewind Event
+3,0,PM_PMC4_SAVED,1,,0,0,0,0,PMC4 Rewind Value saved (matched condition)
+3,0,PM_PMC5_OVERFLOW,1,,0,0,0,0,Overflow from counter 5
+3,0,PM_PMC6_OVERFLOW,1,,0,0,0,0,Overflow from counter 6
+3,0,PM_PPC_CMPL,1,,0,0,0,0,# PPC Instructions Finished (completed)
+3,0,PM_PREF_TRACKED,1,,0,0,0,0,Total number of Prefetch Operations that were tracked
+3,0,PM_PREF_TRACK_EFF,1,,0,0,0,0,Prefetch Tracked was effective
+3,0,PM_PREF_TRACK_INEFF,1,,0,0,0,0,Prefetch tracked was ineffective
+3,0,PM_PREF_TRACK_MOD,1,,0,0,0,0,Prefetch tracked was moderate
+3,0,PM_PREF_TRACK_MOD_L2,1,,0,0,0,0,Prefetch Tracked was moderate (source L2)
+3,0,PM_PREF_TRACK_MOD_L3,1,,0,0,0,0,Prefetch tracked was moderate (L3)
+3,0,PM_PROBE_NOP_DISP,1,,0,0,0,0,ProbeNops dispatched
+3,0,PM_PTE_PREFETCH,1,,0,0,0,0,PTE prefetches
+3,0,PM_PUMP_CPRED,1,,0,0,0,0,"Pump prediction correct. Counts across all types of pumpsfor all data types ( demand load,inst fetch,xlate (I or d)"
+3,0,PM_PUMP_MPRED,1,,0,0,0,0,"Pump Mis prediction Counts across all types of pumpsfor all data types ( demand load,inst fetch,xlate (I or d)"
+3,0,PM_RC0_BUSY,1,0.0,0,0,0,0,RC mach 0 Busy. Used by PMU to sample ave RC livetime(mach0 used as sample point)
+3,0,PM_RC0_DONE,1,0.0,0,0,0,0,RC mach 0 Busy. Used by PMU to sample ave RC livetime(mach0 used as sample point)
+3,0,PM_RC_LIFETIME_EXC_1024,1,Reload latency exceeded 1024 cyc,0,0,0,0,sampled instruction dpteg came from beyond L3
+3,0,PM_RC_LIFETIME_EXC_2048,1,,0,0,0,0,Threshold counter exceeded a value of 2048
+3,0,PM_RC_LIFETIME_EXC_256,1,Threshold counter exceed a count of 256,0,0,0,0,Number of times a sampled RC machine was active for more than 256 cycles
+3,0,PM_RC_LIFETIME_EXC_32,1,Reload latency exceeded 32 cyc,0,0,0,0,L1 misses that took longer than 32 cyles to resolve (miss to reload)
+3,0,PM_RC_USAGE,1,,0,0,0,0,continuous 16 cycle(2to1) window where this signals rotates thru sampling each machine busy. PMU uses this wave to then do 16 cyc count to sample total number of machs running
+3,0,PM_RD_CLEARING_SC,1,,0,0,0,0,rd clearing sc
+3,0,PM_RD_FORMING_SC,1,,0,0,0,0,rd forming sc
+3,0,PM_RD_HIT_PF,1,,0,0,0,0,rd machine hit l3 pf machine
+3,0,PM_REAL_SRQ_FULL,1,,0,0,0,0,Out of real srq entries
+3,0,PM_RUN_CYC,1,,0,0,0,0,Run_cycles
+3,0,PM_RUN_CYC_SMT2_MODE,1,,0,0,0,0,Cycles run latch is set and core is in SMT2 mode
+3,0,PM_RUN_CYC_SMT2_SHRD_MODE,1,Cycles run latch is set and core is in SMT2-shared mode,0,0,0,0,cycles this threads run latch is set and the core is in SMT2 shared mode
+3,0,PM_RUN_CYC_SMT2_SPLIT_MODE,1,,0,0,0,0,Cycles run latch is set and core is in SMT2-split mode
+3,0,PM_RUN_CYC_SMT4_MODE,1,Cycles run latch is set and core is in SMT4 mode,0,0,0,0,cycles this threads run latch is set and the core is in SMT4 mode
+3,0,PM_RUN_CYC_SMT8_MODE,1,,0,0,0,0,Cycles run latch is set and core is in SMT8 mode
+3,0,PM_RUN_CYC_ST_MODE,1,,0,0,0,0,Cycles run latch is set and core is in ST mode
+3,0,PM_RUN_INST_CMPL,1,,0,0,0,0,Run_Instructions
+3,0,PM_RUN_PURR,1,,0,0,0,0,Run_PURR
+3,0,PM_RUN_SPURR,1,,0,0,0,0,Run SPURR
+3,0,PM_SEC_ERAT_HIT,1,,0,0,0,0,secondary ERAT Hit
+3,0,PM_SHL_CREATED,1,,0,0,0,0,Store-Hit-Load Table Entry Created
+3,0,PM_SHL_ST_CONVERT,1,,0,0,0,0,Store-Hit-Load Table Read Hit with entry Enabled
+3,0,PM_SHL_ST_DISABLE,1,,0,0,0,0,Store-Hit-Load Table Read Hit with entry Disabled (entry was disabled due to the entry shown to not prevent the flush)
+3,0,PM_SN0_BUSY,1,0.0,0,0,0,0,SN mach 0 Busy. Used by PMU to sample ave RC livetime(mach0 used as sample point)
+3,0,PM_SN0_DONE,1,0.0,0,0,0,0,SN mach 0 Busy. Used by PMU to sample ave RC livetime(mach0 used as sample point)
+3,0,PM_SNOOP_TLBIE,1,TLBIE snoopSnoop TLBIE,0,0,0,0,TLBIE snoop
+3,0,PM_SNP_TM_HIT_M,1,,0,0,0,0,snp tm st hit m mu
+3,0,PM_SNP_TM_HIT_T,1,,0,0,0,0,snp tm_st_hit t tn te
+3,0,PM_SN_USAGE,1,,0,0,0,0,continuous 16 cycle(2to1) window where this signals rotates thru sampling each machine busy. PMU uses this wave to then do 16 cyc count to sample total number of machs running
+3,0,PM_STALL_END_GCT_EMPTY,1,,0,0,0,0,Count ended because GCT went empty
+3,0,PM_STCX_FAIL,1,,0,0,0,0,stcx failed
+3,0,PM_STCX_LSU,1,,0,0,0,0,STCX executed reported at sent to nest
+3,0,PM_ST_CAUSED_FAIL,1,,0,0,0,0,Non TM St caused any thread to fail
+3,0,PM_ST_CMPL,1,,0,0,0,0,Store completion count
+3,0,PM_ST_FIN,1,Store Instructions Finished (store sent to nest),0,0,0,0,Store Instructions Finished
+3,0,PM_ST_FWD,1,,0,0,0,0,Store forwards that finished
+3,0,PM_ST_MISS_L1,1,,0,0,0,0,Store Missed L1
+3,0,PM_SUSPENDED,1,,0,0,0,0,Counter OFF
+3,0,PM_SWAP_CANCEL,1,,0,0,0,0,"SWAP cancel , rtag not available"
+3,0,PM_SWAP_CANCEL_GPR,1,,0,0,0,0,"SWAP cancel , rtag not available for gpr"
+3,0,PM_SWAP_COMPLETE,1,,0,0,0,0,swap cast in completed
+3,0,PM_SWAP_COMPLETE_GPR,1,,0,0,0,0,swap cast in completed fpr gpr
+3,0,PM_SYNC_MRK_BR_LINK,1,,0,0,0,0,Marked Branch and link branch that can cause a synchronous interrupt
+3,0,PM_SYNC_MRK_BR_MPRED,1,,0,0,0,0,Marked Branch mispredict that can cause a synchronous interrupt
+3,0,PM_SYNC_MRK_FX_DIVIDE,1,,0,0,0,0,Marked fixed point divide that can cause a synchronous interrupt
+3,0,PM_SYNC_MRK_L2HIT,1,,0,0,0,0,Marked L2 Hits that can throw a synchronous interrupt
+3,0,PM_SYNC_MRK_L2MISS,1,,0,0,0,0,Marked L2 Miss that can throw a synchronous interrupt
+3,0,PM_SYNC_MRK_L3MISS,1,,0,0,0,0,Marked L3 misses that can throw a synchronous interrupt
+3,0,PM_SYNC_MRK_PROBE_NOP,1,,0,0,0,0,Marked probeNops which can cause synchronous interrupts
+3,0,PM_SYS_PUMP_CPRED,1,,0,0,0,0,"Initial and Final Pump Scope and data sourced across this scope was system pump for all data types ( demand load,inst fetch,xlate (I or d)"
+3,0,PM_SYS_PUMP_MPRED,1,,0,0,0,0,"Final Pump Scope(system) to get data sourced, ended up larger than Initial Pump Scope(Chip/Group) OR Final Pump Scope(system) got data from source that was at smaller scope(Chip/group) Final pump was system pump and initial pump was chip or group or final and initial pump was system but data was sourced at chip/group scope levelfor all data types ( demand load,inst fetch,xlate (I or d)"
+3,0,PM_SYS_PUMP_MPRED_RTY,1,,0,0,0,0,"Final Pump Scope(system) to get data sourced, ended up larger than Initial Pump Scope (Chip or Group) for all data types ( demand load,inst fetch,xlate (I or d)"
+3,0,PM_TABLEWALK_CYC,1,Tablewalk Active,0,0,0,0,Cycles when a tablewalk (I or D) is active
+3,0,PM_TABLEWALK_CYC_PREF,1,,0,0,0,0,tablewalk qualified for pte prefetches
+3,0,PM_TABORT_TRECLAIM,1,,0,0,0,0,"Completion time tabortnoncd, tabortcd, treclaim"
+3,0,PM_TB_BIT_TRANS,1,,0,0,0,0,timebase event
+3,0,PM_TEND_PEND_CYC,1,,0,0,0,0,TEND latency per thread
+3,0,PM_THRD_ALL_RUN_CYC,1,,0,0,0,0,All Threads in Run_cycles (was both threads in run_cycles)
+3,0,PM_THRD_CONC_RUN_INST,1,Concurrent Run Instructions,0,0,0,0,PPC Instructions Finished when both threads in run_cycles
+3,0,PM_THRD_GRP_CMPL_BOTH_CYC,1,Two threads finished same cycle (gated by run latch),0,0,0,0,Cycles group completed on both completion slots by any thread
+3,0,PM_THRD_PRIO_0_1_CYC,1,,0,0,0,0,Cycles thread running at priority level 0 or 1
+3,0,PM_THRD_PRIO_2_3_CYC,1,,0,0,0,0,Cycles thread running at priority level 2 or 3
+3,0,PM_THRD_PRIO_4_5_CYC,1,,0,0,0,0,Cycles thread running at priority level 4 or 5
+3,0,PM_THRD_PRIO_6_7_CYC,1,,0,0,0,0,Cycles thread running at priority level 6 or 7
+3,0,PM_THRD_REBAL_CYC,1,,0,0,0,0,cycles rebalance was active
+3,0,PM_THRESH_EXC_1024,1,,0,0,0,0,Threshold counter exceeded a value of 1024
+3,0,PM_THRESH_EXC_128,1,,0,0,0,0,Threshold counter exceeded a value of 128
+3,0,PM_THRESH_EXC_2048,1,,0,0,0,0,Threshold counter exceeded a value of 2048
+3,0,PM_THRESH_EXC_256,1,,0,0,0,0,Threshold counter exceed a count of 256
+3,0,PM_THRESH_EXC_32,1,,0,0,0,0,Threshold counter exceeded a value of 32
+3,0,PM_THRESH_EXC_4096,1,,0,0,0,0,Threshold counter exceed a count of 4096
+3,0,PM_THRESH_EXC_512,1,,0,0,0,0,Threshold counter exceeded a value of 512
+3,0,PM_THRESH_EXC_64,1,Threshold counter exceeded a value of 64,0,0,0,0,IFU non-branch finished
+3,0,PM_THRESH_MET,1,,0,0,0,0,threshold exceeded
+3,0,PM_THRESH_NOT_MET,1,,0,0,0,0,Threshold counter did not meet threshold
+3,0,PM_TLBIE_FIN,1,,0,0,0,0,tlbie finished
+3,0,PM_TLB_MISS,1,,0,0,0,0,TLB Miss (I + D)
+3,0,PM_TM_CAM_OVERFLOW,1,,0,0,0,0,l3 tm cam overflow during L2 co of SC
+3,0,PM_TM_CAP_OVERFLOW,1,,0,0,0,0,TM Footprint Capactiy Overflow
+3,0,PM_TM_FAIL_CONF_NON_TM,1,,0,0,0,0,TEXAS fail reason @ completion
+3,0,PM_TM_FAIL_CON_TM,1,,0,0,0,0,TEXAS fail reason @ completion
+3,0,PM_TM_FAIL_DISALLOW,1,,0,0,0,0,TM fail disallow
+3,0,PM_TM_FAIL_FOOTPRINT_OVERFLOW,1,,0,0,0,0,TEXAS fail reason @ completion
+3,0,PM_TM_FAIL_NON_TX_CONFLICT,1,,0,0,0,0,Non transactional conflict from LSU whtver gets repoted to texas
+3,0,PM_TM_FAIL_SELF,1,,0,0,0,0,TEXAS fail reason @ completion
+3,0,PM_TM_FAIL_TLBIE,1,,0,0,0,0,TLBIE hit bloom filter
+3,0,PM_TM_FAIL_TX_CONFLICT,1,,0,0,0,0,"Transactional conflict from LSU, whatever gets reported to texas"
+3,0,PM_TM_FAV_CAUSED_FAIL,1,,0,0,0,0,TM Load (fav) caused another thread to fail
+3,0,PM_TM_LD_CAUSED_FAIL,1,,0,0,0,0,Non TM Ld caused any thread to fail
+3,0,PM_TM_LD_CONF,1,,0,0,0,0,TM Load (fav or non-fav) ran into conflict (failed)
+3,0,PM_TM_RST_SC,1,,0,0,0,0,tm snp rst tm sc
+3,0,PM_TM_SC_CO,1,,0,0,0,0,l3 castout tm Sc line
+3,0,PM_TM_ST_CAUSED_FAIL,1,,0,0,0,0,TM Store (fav or non-fav) caused another thread to fail
+3,0,PM_TM_ST_CONF,1,,0,0,0,0,TM Store (fav or non-fav) ran into conflict (failed)
+3,0,PM_TM_TBEGIN,1,,0,0,0,0,Tm tbegin
+3,0,PM_TM_TRANS_RUN_CYC,1,,0,0,0,0,run cycles in transactional state
+3,0,PM_TM_TRANS_RUN_INST,1,,0,0,0,0,Instructions completed in transactional state
+3,0,PM_TM_TRESUME,1,,0,0,0,0,Tm resume
+3,0,PM_TM_TSUSPEND,1,,0,0,0,0,Tm tend
+3,0,PM_TM_TX_PASS_RUN_CYC,1,run cycles spent in successful transactions,0,0,0,0,cycles spent in successful transactions
+3,0,PM_TM_TX_PASS_RUN_INST,1,run instructions spent in successful transactions,0,0,0,0,
+3,0,PM_UP_PREF_L3,1,,0,0,0,0,Micropartition prefetch
+3,0,PM_UP_PREF_POINTER,1,,0,0,0,0,Micrpartition pointer prefetches
+3,0,PM_UTHROTTLE,1,Cycles instruction issue was throttled,0,0,0,0,Cycles in which instruction issue throttle was active in ISU
+3,0,PM_VSU0_16FLOP,1,,0,0,0,0,"Sixteen flops operation (SP vector versions of fdiv,fsqrt)"
+3,0,PM_VSU0_1FLOP,1,"one flop (fadd, fmul, fsub, fcmp, fsel, fabs, fnabs, fres, fsqrte, fneg) operation finishedDecode into 1,2,4 FLOP according to instr IOP, multiplied by #vector elements according to route( eg x1, x2, x4) Only if instr sends finish to ISU",0,0,0,0,"one flop (fadd, fmul, fsub, fcmp, fsel, fabs, fnabs, fres, fsqrte, fneg) operation finished"
+3,0,PM_VSU0_2FLOP,1,,0,0,0,0,"two flops operation (scalar fmadd, fnmadd, fmsub, fnmsub and DP vector versions of single flop instructions)"
+3,0,PM_VSU0_4FLOP,1,,0,0,0,0,"four flops operation (scalar fdiv, fsqrt; DP vector version of fmadd, fnmadd, fmsub, fnmsub; SP vector versions of single flop instructions)"
+3,0,PM_VSU0_8FLOP,1,,0,0,0,0,"eight flops operation (DP vector versions of fdiv,fsqrt and SP vector versions of fmadd,fnmadd,fmsub,fnmsub)"
+3,0,PM_VSU0_COMPLEX_ISSUED,1,,0,0,0,0,Complex VMX instruction issued
+3,0,PM_VSU0_CY_ISSUED,1,,0,0,0,0,Cryptographic instruction RFC02196 Issued
+3,0,PM_VSU0_DD_ISSUED,1,,0,0,0,0,64BIT Decimal Issued
+3,0,PM_VSU0_DP_2FLOP,1,,0,0,0,0,"DP vector version of fmul, fsub, fcmp, fsel, fabs, fnabs, fres ,fsqrte, fneg"
+3,0,PM_VSU0_DP_FMA,1,,0,0,0,0,"DP vector version of fmadd,fnmadd,fmsub,fnmsub"
+3,0,PM_VSU0_DP_FSQRT_FDIV,1,,0,0,0,0,"DP vector versions of fdiv,fsqrt"
+3,0,PM_VSU0_DQ_ISSUED,1,,0,0,0,0,128BIT Decimal Issued
+3,0,PM_VSU0_EX_ISSUED,1,,0,0,0,0,Direct move 32/64b VRFtoGPR RFC02206 Issued
+3,0,PM_VSU0_FIN,1,,0,0,0,0,VSU0 Finished an instruction
+3,0,PM_VSU0_FMA,1,,0,0,0,0,"two flops operation (fmadd, fnmadd, fmsub, fnmsub) Scalar instructions only!"
+3,0,PM_VSU0_FPSCR,1,,0,0,0,0,Move to/from FPSCR type instruction issued on Pipe 0
+3,0,PM_VSU0_FSQRT_FDIV,1,,0,0,0,0,"four flops operation (fdiv,fsqrt) Scalar Instructions only!"
+3,0,PM_VSU0_PERMUTE_ISSUED,1,,0,0,0,0,Permute VMX Instruction Issued
+3,0,PM_VSU0_SCALAR_DP_ISSUED,1,,0,0,0,0,Double Precision scalar instruction issued on Pipe0
+3,0,PM_VSU0_SIMPLE_ISSUED,1,,0,0,0,0,Simple VMX instruction issued
+3,0,PM_VSU0_SINGLE,1,,0,0,0,0,FPU single precision
+3,0,PM_VSU0_SQ,1,,0,0,0,0,Store Vector Issued
+3,0,PM_VSU0_STF,1,,0,0,0,0,FPU store (SP or DP) issued on Pipe0
+3,0,PM_VSU0_VECTOR_DP_ISSUED,1,,0,0,0,0,Double Precision vector instruction issued on Pipe0
+3,0,PM_VSU0_VECTOR_SP_ISSUED,1,,0,0,0,0,Single Precision vector instruction issued (executed)
+3,0,PM_VSU1_16FLOP,1,,0,0,0,0,"Sixteen flops operation (SP vector versions of fdiv,fsqrt)"
+3,0,PM_VSU1_1FLOP,1,,0,0,0,0,"one flop (fadd, fmul, fsub, fcmp, fsel, fabs, fnabs, fres, fsqrte, fneg) operation finished"
+3,0,PM_VSU1_2FLOP,1,,0,0,0,0,"two flops operation (scalar fmadd, fnmadd, fmsub, fnmsub and DP vector versions of single flop instructions)"
+3,0,PM_VSU1_4FLOP,1,,0,0,0,0,"four flops operation (scalar fdiv, fsqrt; DP vector version of fmadd, fnmadd, fmsub, fnmsub; SP vector versions of single flop instructions)"
+3,0,PM_VSU1_8FLOP,1,,0,0,0,0,"eight flops operation (DP vector versions of fdiv,fsqrt and SP vector versions of fmadd,fnmadd,fmsub,fnmsub)"
+3,0,PM_VSU1_COMPLEX_ISSUED,1,,0,0,0,0,Complex VMX instruction issued
+3,0,PM_VSU1_CY_ISSUED,1,,0,0,0,0,Cryptographic instruction RFC02196 Issued
+3,0,PM_VSU1_DD_ISSUED,1,,0,0,0,0,64BIT Decimal Issued
+3,0,PM_VSU1_DP_2FLOP,1,,0,0,0,0,"DP vector version of fmul, fsub, fcmp, fsel, fabs, fnabs, fres ,fsqrte, fneg"
+3,0,PM_VSU1_DP_FMA,1,,0,0,0,0,"DP vector version of fmadd,fnmadd,fmsub,fnmsub"
+3,0,PM_VSU1_DP_FSQRT_FDIV,1,,0,0,0,0,"DP vector versions of fdiv,fsqrt"
+3,0,PM_VSU1_DQ_ISSUED,1,,0,0,0,0,128BIT Decimal Issued
+3,0,PM_VSU1_EX_ISSUED,1,,0,0,0,0,Direct move 32/64b VRFtoGPR RFC02206 Issued
+3,0,PM_VSU1_FIN,1,,0,0,0,0,VSU1 Finished an instruction
+3,0,PM_VSU1_FMA,1,,0,0,0,0,"two flops operation (fmadd, fnmadd, fmsub, fnmsub) Scalar instructions only!"
+3,0,PM_VSU1_FPSCR,1,,0,0,0,0,Move to/from FPSCR type instruction issued on Pipe 0
+3,0,PM_VSU1_FSQRT_FDIV,1,,0,0,0,0,"four flops operation (fdiv,fsqrt) Scalar Instructions only!"
+3,0,PM_VSU1_PERMUTE_ISSUED,1,,0,0,0,0,Permute VMX Instruction Issued
+3,0,PM_VSU1_SCALAR_DP_ISSUED,1,,0,0,0,0,Double Precision scalar instruction issued on Pipe1
+3,0,PM_VSU1_SIMPLE_ISSUED,1,,0,0,0,0,Simple VMX instruction issued
+3,0,PM_VSU1_SINGLE,1,,0,0,0,0,FPU single precision
+3,0,PM_VSU1_SQ,1,,0,0,0,0,Store Vector Issued
+3,0,PM_VSU1_STF,1,,0,0,0,0,FPU store (SP or DP) issued on Pipe1
+3,0,PM_VSU1_VECTOR_DP_ISSUED,1,,0,0,0,0,Double Precision vector instruction issued on Pipe1
+3,0,PM_VSU1_VECTOR_SP_ISSUED,1,,0,0,0,0,Single Precision vector instruction issued (executed)
+1,24,PM_PB_CYC,1,,0,0,128,0,Total PowerBus Cycles
+1,32,PM_MCD_CHECK_RTY_DINC,1,,0,0,128,0,Total number of Retries With Domain Increment indication seen on Port0 and Port1 of MCD
+1,40,PM_PB_INT_DATA_XFER,1,,0,0,128,0,Total internal PB Bandwidth
+1,48,PM_PB_EXT_DATA_XFER,1,,0,0,128,0,Total external PB Bandwidth
+1,64,PM_PB_CYC_LAST_SAMPLE,1,,0,0,128,0,
+1,72,PM_MCD_CHECK_RTY_DINC_LAST_SAMPLE,1,,0,0,128,0,
+1,80,PM_PB_INT_DATA_XFER_LAST_SAMPLE,1,,0,0,128,0,
+1,88,PM_PB_EXT_DATA_XFER_LAST_SAMPLE,1,,0,0,128,0,
+1,24,PM_PB_SYS_PUMP,1,,0,128,128,1,Sum of System Pumps on P0 and P1
+1,32,PM_PB_NODE_PUMP,1,,0,128,128,1,Sum of Node Pumps on P0 and P1
+1,40,PM_PB_SYS_PUMP_RTY,1,,0,128,128,1,Total number of System pump Retries seen on P0 and P1
+1,48,PM_PB_NODE_PUMP_RTY,1,,0,128,128,1,Total number of Node pump Retries seen on P0 and P1
+1,64,PM_PB_SYS_PUMP_LAST_SAMPLE,1,,0,128,128,1,
+1,72,PM_PB_NODE_PUMP_LAST_SAMPLE,1,,0,128,128,1,
+1,80,PM_PB_SYS_PUMP_RTY_LAST_SAMPLE,1,,0,128,128,1,
+1,88,PM_PB_NODE_PUMP_RTY_LAST_SAMPLE,1,,0,128,128,1,
+1,24,PM_MCS_UP_128B_DATA_XFER_MC0,1,,0,256,128,2,Total Read Bandwidth seen on both MCS of MC0
+1,32,PM_MCS_UP_128B_DATA_XFER_MC1,1,,0,256,128,2,Total Read Bandwidth seen on both MCS of MC1
+1,40,PM_MCS_UP_128B_DATA_XFER_MC2,1,,0,256,128,2,Total Read Bandwidth seen on both MCS of MC2
+1,48,PM_MCS_UP_128B_DATA_XFER_MC3,1,,0,256,128,2,Total Read Bandwidth seen on both MCS of MC3
+1,64,PM_MCS_UP_128B_DATA_XFER_MC0_LAST_SAMPLE,1,,0,256,128,2,
+1,72,PM_MCS_UP_128B_DATA_XFER_MC1_LAST_SAMPLE,1,,0,256,128,2,
+1,80,PM_MCS_UP_128B_DATA_XFER_MC2_LAST_SAMPLE,1,,0,256,128,2,
+1,88,PM_MCS_UP_128B_DATA_XFER_MC3_LAST_SAMPLE,1,,0,256,128,2,
+1,24,PM_MCS_DOWN_128B_DATA_XFER_MC0,1,,0,384,128,3,Total Write Bandwidth seen on both MCS of MC0
+1,32,PM_MCS_DOWN_128B_DATA_XFER_MC1,1,,0,384,128,3,Total Write Bandwidth seen on both MCS of MC1
+1,40,PM_MCS_DOWN_128B_DATA_XFER_MC2,1,,0,384,128,3,Total Write Bandwidth seen on both MCS of MC2
+1,48,PM_MCS_DOWN_128B_DATA_XFER_MC3,1,,0,384,128,3,Total Write Bandwidth seen on both MCS of MC3
+1,64,PM_MCS_DOWN_128B_DATA_XFER_MC0_LAST_SAMPLE,1,,0,384,128,3,
+1,72,PM_MCS_DOWN_128B_DATA_XFER_MC1_LAST_SAMPLE,1,,0,384,128,3,
+1,80,PM_MCS_DOWN_128B_DATA_XFER_MC2_LAST_SAMPLE,1,,0,384,128,3,
+1,88,PM_MCS_DOWN_128B_DATA_XFER_MC3_LAST_SAMPLE,1,,0,384,128,3,
+1,24,PM_XLINK0_IN_DATA_CYC,1,,0,512,128,4,Total X-Link0 inbound data cycles
+1,32,PM_XLINK1_IN_DATA_CYC,1,,0,512,128,4,Total X-Link1 inbound data cycles
+1,40,PM_XLINK2_IN_DATA_CYC,1,,0,512,128,4,Total X-Link2 inbound data cycles
+1,48,PM_XLINK_CYCLES,2,,0,512,128,4,Xlinks Cycle counts
+1,64,PM_XLINK0_IN_DATA_CYC_LAST_SAMPLE,1,,0,512,128,4,
+1,72,PM_XLINK1_IN_DATA_CYC_LAST_SAMPLE,1,,0,512,128,4,
+1,80,PM_XLINK2_IN_DATA_CYC_LAST_SAMPLE,1,,0,512,128,4,
+1,88,PM_XLINK_CYCLES_LAST_SAMPLE,2,,0,512,128,4,
+1,24,PM_XLINK0_IN_IDL_CYC,1,,0,640,128,5,Total X-Link0 inbound Idle cycles
+1,32,PM_XLINK1_IN_IDL_CYC,1,,0,640,128,5,Total X-Link1 inbound Idle cycles
+1,40,PM_XLINK2_IN_IDL_CYC,1,,0,640,128,5,Total X-Link2 inbound Idle cycles
+1,64,PM_XLINK0_IN_IDL_CYC_LAST_SAMPLE,1,,0,640,128,5,
+1,72,PM_XLINK1_IN_IDL_CYC_LAST_SAMPLE,1,,0,640,128,5,
+1,80,PM_XLINK2_IN_IDL_CYC_LAST_SAMPLE,1,,0,640,128,5,
+1,24,PM_ALINK0_IN_DATA_CYC,1,,0,768,128,6,Total A-Link0 inbound data cycles
+1,32,PM_ALINK1_IN_DATA_CYC,1,,0,768,128,6,Total A-Link1 inbound data cycles
+1,40,PM_ALINK2_IN_DATA_CYC,1,,0,768,128,6,Total A-Link2 inbound data cycles
+1,48,PM_ALINK_CYCLES,2,,0,768,128,6,Alinks Cycle counts
+1,64,PM_ALINK0_IN_DATA_CYC_LAST_SAMPLE,1,,0,768,128,6,
+1,72,PM_ALINK1_IN_DATA_CYC_LAST_SAMPLE,1,,0,768,128,6,
+1,80,PM_ALINK2_IN_DATA_CYC_LAST_SAMPLE,1,,0,768,128,6,
+1,88,PM_ALINK_CYCLES_LAST_SAMPLE,2,,0,768,128,6,
+1,24,PM_ALINK0_IN_IDL_CYC,1,,0,896,128,7,Total A-Link0 inbound Idle cycles
+1,32,PM_ALINK1_IN_IDL_CYC,1,,0,896,128,7,Total A-Link1 inbound Idle cycles
+1,40,PM_ALINK2_IN_IDL_CYC,1,,0,896,128,7,Total A-Link2 inbound Idle cycles
+1,64,PM_ALINK0_IN_IDL_CYC_LAST_SAMPLE,1,,0,896,128,7,
+1,72,PM_ALINK1_IN_IDL_CYC_LAST_SAMPLE,1,,0,896,128,7,
+1,80,PM_ALINK2_IN_IDL_CYC_LAST_SAMPLE,1,,0,896,128,7,
+1,24,PM_PHB_ANY_DMA_RCV_PHB0,1,,0,1024,128,8,"DMA (any, read or write) BW received from the PCIE link for PHB 0"
+1,32,PM_PHB_CYC_CNT_PHB0,1,,0,1024,128,8,Count PHB0 clock cycles
+1,40,PM_PHB_ANY_TCE_MISS_PHB0,1,,0,1024,128,8,Total TCE Cache Miss any(Read or Write) for PHB 0
+1,48,PM_PHB_MSI_INTR_PHB0,1,,0,1024,128,8,Total MSI interrupt received from PCIE link for PHB 0
+1,64,PM_PHB_ANY_DMA_RCV_PHB0_LAST_SAMPLE,1,,0,1024,128,8,
+1,72,PM_PHB_CYC_CNT_PHB0_LAST_SAMPLE,1,,0,1024,128,8,
+1,80,PM_PHB_ANY_TCE_MISS_PHB0_LAST_SAMPLE,1,,0,1024,128,8,
+1,88,PM_PHB_MSI_INTR_PHB0_LAST_SAMPLE,1,,0,1024,128,8,
+1,24,PM_PHB_ANY_DMA_RCV_PHB1,1,,0,1152,128,9,"DMA (any, read or write) BW received from the PCIE link for PHB 1"
+1,32,PM_PHB_CYC_CNT_PHB1,1,,0,1152,128,9,Count PHB1 clock cycles
+1,40,PM_PHB_ANY_TCE_MISS_PHB1,1,,0,1152,128,9,Total TCE Cache Miss any(Read or Write) for PHB 1
+1,48,PM_PHB_MSI_INTR_PHB1,1,,0,1152,128,9,Total MSI interrupt received from PCIE link for PHB 1
+1,64,PM_PHB_ANY_DMA_RCV_PHB1_LAST_SAMPLE,1,,0,1152,128,9,
+1,72,PM_PHB_CYC_CNT_PHB1_LAST_SAMPLE,1,,0,1152,128,9,
+1,80,PM_PHB_ANY_TCE_MISS_PHB1_LAST_SAMPLE,1,,0,1152,128,9,
+1,88,PM_PHB_MSI_INTR_PHB1_LAST_SAMPLE,1,,0,1152,128,9,
+1,24,PM_PHB_ANY_DMA_RCV_PHB2,1,,0,1280,128,10,"DMA (any, read or write) BW received from the PCIE link for PHB 2"
+1,32,PM_PHB_CYC_CNT_PHB2,1,,0,1280,128,10,Count PHB2 clock cycles
+1,40,PM_PHB_ANY_TCE_MISS_PHB2,1,,0,1280,128,10,Total TCE Cache Miss any(Read or Write) for PHB 2
+1,48,PM_PHB_MSI_INTR_PHB2,1,,0,1280,128,10,Total MSI interrupt received from PCIE link for PHB 2
+1,64,PM_PHB_ANY_DMA_RCV_PHB2_LAST_SAMPLE,1,,0,1280,128,10,
+1,72,PM_PHB_CYC_CNT_PHB2_LAST_SAMPLE,1,,0,1280,128,10,
+1,80,PM_PHB_ANY_TCE_MISS_PHB2_LAST_SAMPLE,1,,0,1280,128,10,
+1,88,PM_PHB_MSI_INTR_PHB2_LAST_SAMPLE,1,,0,1280,128,10,
