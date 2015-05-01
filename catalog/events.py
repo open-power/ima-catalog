@@ -28,15 +28,12 @@ def pack_events(events_csv):
         for row in reader:
             if chip_offset == -1 and int(row['domain']) == 1:
                 chip_offset = len(events)
-                print chip_offset
 
             if core_offset == -1 and int(row['domain']) == 2:
                 core_offset = len(events)
-                print core_offset
 
             if pmu_offset == -1 and int(row['domain']) == 3:
                 pmu_offset = len(events)
-                print pmu_offset
 
             count += 1
             event['domain'] = int(row['domain'])
