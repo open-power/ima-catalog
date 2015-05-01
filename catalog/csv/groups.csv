@@ -127,7 +127,7 @@ domain,name,schema index,event group length,flag,event count,event group offset,
 2,HPM_TC_1_CCYC,0,64,0,4,1216,"(247, 248, 241, 242, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)",
 2,HPM_TC_4_CCYC,0,64,0,4,1280,"(249, 250, 241, 242, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)",
 2,HPM_THREAD_NAP_CCYC,0,64,0,4,1472,"(251, 65535, 241, 242, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)",
-1,,1,128,0,8,0,"(0, 1, 2, 2, 3, 4, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0)",
+1,PowerBus_BW,1,128,0,8,0,"(0, 1, 2, 2, 3, 4, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0)","PowerBus Data Bandwidth, Total Retry With Domain Increment"
 1,Pumps_and_Retries,1,128,0,8,128,"(8, 9, 10, 11, 12, 13, 14, 15, 0, 0, 0, 0, 0, 0, 0, 0)",Total Pumps and retries
 1,MCS_Read_BW,1,128,0,8,256,"(16, 17, 18, 19, 20, 21, 22, 23, 0, 0, 0, 0, 0, 0, 0, 0)",Memory Controller Read Bandwidth
 1,MCS_Write_BW,1,128,0,8,384,"(24, 25, 26, 27, 28, 29, 30, 31, 0, 0, 0, 0, 0, 0, 0, 0)",Memory Controller Write Bandwidth
