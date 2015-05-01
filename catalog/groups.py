@@ -19,7 +19,20 @@ def pack_groups(groups_csv):
         reader = csv.DictReader(csvfile)
         group = {}
         count = 0
+        core_offset = -1
+        chip_offset = -1
+        pmu_offset = -1
+
         for row in reader:
+            if chip_offset == -1 and int(row['domain']) == 1:
+                chip_offset = len(groups)
+
+            if core_offset == -1 and int(row['domain']) == 2:
+                core_offset = len(groups)
+
+            if pmu_offset == -1 and int(row['domain']) == 3:
+                pmu_offset = len(groups)
+
             count += 1
             group['flag'] = int(row['flag'])
             group['domain'] = int(row['domain'])
@@ -33,10 +46,10 @@ def pack_groups(groups_csv):
 
             groups += group_pack(group)
 
-        return pad_page(groups, PAGE_SIZE), count
+        return pad_page(groups, PAGE_SIZE), count, (chip_offset, core_offset, pmu_offset)
 
 if __name__ == "__main__":
-    groups = pack_groups('groups.csv')
+    groups, count, offsets = pack_groups('groups.csv')
     if len(groups) == 0:
         print "Error in generating groups binary dump"
 

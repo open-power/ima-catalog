@@ -16,8 +16,8 @@ def dump_schema(cat_file):
     return s
 
 def create_catalog(version, old_lid):
-    events, enum = pack_events('events.csv')
-    groups, gnum  = pack_groups('groups.csv')
+    events, enum, event_offsets = pack_events('events.csv')
+    groups, gnum, group_offsets  = pack_groups('groups.csv')
     formulae, fnum = pack_formulae('formulae.csv')
     # we will not create the schema now, will extract the schema from the
     # existing catalog file.
@@ -37,6 +37,15 @@ def create_catalog(version, old_lid):
                          1, 1, 4, events_offset, events_length, enum,
                          groups_offset, groups_length, gnum, formulae_offset,
                          formulae_length, fnum)
+    core_event_offset = event_offsets[1]
+    chip_event_offset = event_offsets[0]
+    pmu_event_offset = event_offsets[2]
+    core_group_offset = group_offsets[1]
+    chip_group_offset = group_offsets[0]
+    pmu_group_offset  = 0xffffffff # invalid -  we don't have pmu groups
+    header += struct.pack(">IIIIII8x", core_event_offset, pmu_event_offset,
+                          chip_event_offset, core_group_offset,
+                          pmu_group_offset, chip_group_offset)
 
     return pad_page(header, PAGE_SIZE) + schema + events + groups + formulae
 

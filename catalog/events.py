@@ -22,7 +22,22 @@ def pack_events(events_csv):
         reader = csv.DictReader(csvfile)
         event = {}
         count = 0
+        core_offset = -1
+        chip_offset = -1
+        pmu_offset = -1
         for row in reader:
+            if chip_offset == -1 and int(row['domain']) == 1:
+                chip_offset = len(events)
+                print chip_offset
+
+            if core_offset == -1 and int(row['domain']) == 2:
+                core_offset = len(events)
+                print core_offset
+
+            if pmu_offset == -1 and int(row['domain']) == 3:
+                pmu_offset = len(events)
+                print pmu_offset
+
             count += 1
             event['domain'] = int(row['domain'])
             event['record_byte_offset'] = int(row['record byte offset'])
@@ -37,14 +52,14 @@ def pack_events(events_csv):
 
             events += event_pack(event)
 
-        return pad_page(events, PAGE_SIZE), count
+        return pad_page(events, PAGE_SIZE), count, (chip_offset, core_offset, pmu_offset)
 
 if __name__ == "__main__":
-    events = pack_events('events.csv')
+    events, count, offsets = pack_events('events.csv')
     if len(events) == 0:
         print "Error in generating events binary dump"
 
     f = open('events.bin', 'w')
     f.write(events)
     f.close()
-    hexdump(events, " ", 16)
+#    hexdump(events, " ", 16)
