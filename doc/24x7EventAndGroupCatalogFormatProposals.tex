@@ -66,10 +66,10 @@ Phil Vitale (\texttt{vit@us.ibm.com}) \\
 
 \section{Introduction}
 The 24x7 Event and Group catalog is the performance counter consumer's
-translator from “Event Name” to “Counter Data” through the PowerVM
+translator from ``Event Name'' to ``Counter Data'' through the PowerVM
 H\_Get24x7Data hcall. Data available in the event entry or group entry in the
 catalog is passed through the hcall so that the PowerVM can return the correct
-data from the 24x7 “In Memory Accumulators”.
+data from the 24x7 ``In Memory Accumulators''.
 
 Clients looking for a specific counter's data, search the events array for a
 matching event name. When found, the event entry will contain an IMA Group
@@ -157,7 +157,7 @@ Reserved & 0x78 & char[8] \\
 \hline
 \end{tabular}
 
-\textit{Design Note:} The “Length” field and “Version Number” size and offset is fixed
+\textit{Design Note:} The ``Length'' field and ``Version Number'' size and offset is fixed
 since the hypervisor will fill in the Length when the catalog is read from the
 fsp flash lid table and will compare the Version Number for consistency on each
 hypervisor call. The offset to the events and groups are relative to the main
@@ -215,13 +215,13 @@ filled with '0xffffffff' to mark it as invalid.
   \hline
   Group Count & 0x12 & uint16 - Number of groups which this event is a part of \\
   \hline
-  Event Name Field Length & 0x14 & uint16 – (n1) This length includes the length
+  Event Name Field Length & 0x14 & uint16 - (n1) This length includes the length
                                    of the Event Name Field Length field \\
   \hline
   Event Name & 0x14 + 2 & char[] - Variable (zero-terminated ASCII padded to
                           half-word length) \\
   \hline
-  Event Description Field Length & 0x14 + n1 & uint16 – (n2) If there there is no
+  Event Description Field Length & 0x14 + n1 & uint16 - (n2) If there there is no
                                                Event Description or the Event
                                                Description is the same as the
                                                Event Name, then this length
@@ -251,26 +251,26 @@ filled with '0xffffffff' to mark it as invalid.
 
 \subsection{Event Data Entry Notes}
 \begin{itemize}
-\item The “Event Name Field Length”, “Event Description Field Length” and “Event
-  Detailed Description Field Length” fields INCLUDE the length of the length
+\item The ``Event Name Field Length'', ``Event Description Field Length'' and ``Event
+  Detailed Description Field Length'' fields INCLUDE the length of the length
   field. To point to the start of the next field's length add the current
   field's length. Thus a field length value of 2 indicates the text string is
   empty.
 \item For events that are being accumulated in chip groups, each event will have
-  an accumulated counter value and a “Last Sample Increment” value. The short
-  name for the event which returns the “Last Sample Increment” will merely be
-  the accumulated counter's Event Name with the “\_SAMPLE” suffix added. The
-  “Last Sample Increment” event data will not have an event description or a
+  an accumulated counter value and a ``Last Sample Increment'' value. The short
+  name for the event which returns the ``Last Sample Increment'' will merely be
+  the accumulated counter's Event Name with the ``\_SAMPLE'' suffix added. The
+  ``Last Sample Increment'' event data will not have an event description or a
   detailed event description.
 \item There are two, special core level events: HPM\_NON\_IDLE\_INST and
   HPMC\_NON\_IDLE\_PCYC which are available in all core groups in the
   GRS\_COUNTER\_3 and GRS\_COUNTER\_4 schema ENUM positions.
 \item For some events that are being accumulated in core groups, those events
-  will have counter versions available which are filtered by “context
-  state”. For those events with a “filtered by user” state counter available,
+  will have counter versions available which are filtered by ``context
+  state''. For those events with a ``filtered by user'' state counter available,
   the event name will have the suffix \_USER appended. For those events with a
-  “filtered by kernel” state counter available, the event name will have the
-  suffix \_KERNEL appended. The “filtered” event data will not have an event
+  ``filtered by kernel'' state counter available, the event name will have the
+  suffix \_KERNEL appended. The ``filtered'' event data will not have an event
   description or a detailed event description.
 \end{itemize}
 
@@ -301,8 +301,8 @@ filled with '0xffffffff' to mark it as invalid.
   \item Caveat-State
   \item Broken-State
   \end{itemize}
-  } & 0x04 & uint32 - (binary composition) NOTE: The “State” flags are merely
-               a composite of the events in this group. The “worst” event will
+  } & 0x04 & uint32 - (binary composition) NOTE: The ``State'' flags are merely
+               a composite of the events in this group. The ``worst'' event will
                dictate the state of this group. \\
   \hline
   IMA Group Record Domain & 0x08 & uint8 - ( Chip = 1 / Core = 2 ) \\
@@ -314,20 +314,20 @@ filled with '0xffffffff' to mark it as invalid.
   \hline
   Byte length of entire Event Group Record & 0x0C & uint16 \\
   \hline
-  Group Schema Index & 0x0E & uint8 – Use this index to find the schema which
+  Group Schema Index & 0x0E & uint8 - Use this index to find the schema which
                               describes the layout of this group's structure. \\
   \hline
   Event Count & 0x0F & uint8 - ( between 1 and 16 ) \\
   \hline
   Event Indexes & 0x10 & uint16[16] - (Index into Event Data array) \\
   \hline
-  Group Name Field Length & 0x30 & uint16 – (n1) This length includes the length
+  Group Name Field Length & 0x30 & uint16 - (n1) This length includes the length
                                    of the Group Name Field Length field \\
   \hline
   Group Name & 0x30 + 2 & char[] - Variable (zero-terminated ASCII padded to
                           half-word length) \\
   \hline
-  Group Description Field Length & 0x30 + n1 & uint16 – (n2) If there there is no
+  Group Description Field Length & 0x30 + n1 & uint16 - (n2) If there there is no
                                                Group Description or the Group
                                                Description is the same as the
                                                Group Name, then this length
@@ -341,11 +341,11 @@ filled with '0xffffffff' to mark it as invalid.
 
 \subsection{Group Data Entry Notes}
 \begin{itemize}
-\item The “Group Name Field Length” and “Group Description Field Length” fields
+\item The ``Group Name Field Length'' and ``Group Description Field Length'' fields
   INCLUDE the length of the length field. To point to the start of the next
   field's length add the current field's length. Thus a field length value of 2
   indicates the text string is empty.
-\item The Event Indexes array may contain “FREE” or “Unassigned” slots for
+\item The Event Indexes array may contain ``FREE'' or ``Unassigned'' slots for
   future events. These slots will be recognized by the value -1 (0xFFFF) as the
   Event Index.
 \end{itemize}
@@ -449,12 +449,12 @@ lengths.
     Field Enum & 0x00 & uint16 \\ \hline
     Offset into Event Counter Group Record & 0x02 & uint16 \\ \hline
     Field Length in Bytes & 0x04 & uint16 \\ \hline
-    Flags/Reserved & 0x06 & uint16 – (binary composition) \\ \hline
+    Flags/Reserved & 0x06 & uint16 - (binary composition) \\ \hline
   \end{tabular}
   \caption{Group Record Schema Field}
 \end{table}
 
-The “Field Enum” values will be consistent as the hardware design changes. If
+The ``Field Enum'' values will be consistent as the hardware design changes. If
 any part of the structure changes, the Schema Version Id will change.
 
 OS implementations are free to define fixed structures that will only apply to
@@ -513,7 +513,7 @@ known schema versions.
   \item Reserved
   \end{itemize}
   } & 0x04 & uint32 (binary composition) NOTE: The ``State'' flags are
-             merely a composite of the events in this formula. The “worst”
+             merely a composite of the events in this formula. The ``worst''
              event will dictate the state of thisformula. \\ \hline
   Group & 0x08 & uint16 (if flag Grouped is TRUE) This is the group index where
                  all the formula's dependent events can be found. \\ \hline
@@ -521,9 +521,9 @@ known schema versions.
   Formula Name Field Length & 0x10 & uint16 (n1) - This length includes the
                                      length of the Formula Name Field Length
                                      field \\ \hline
-  Formula Name & 0x10 & + 2 char[] Variable (zero-terminated ASCII padded to
+  Formula Name & 0x10 + 2 & char[] Variable (zero-terminated ASCII padded to
                         half-word length) \\ \hline
-  Formula Description Field Length & 0x10 & + n1 uint16 (n2) - This length
+  Formula Description Field Length & 0x10 + n1 & uint16 (n2) - This length
                                             includes the length of the Formula
                                             Description Field Length field \\
   \hline
@@ -565,11 +565,11 @@ Where:
 \item Operand is either a text Event Name which can be found among the Event
   Data records, another Formula Name, a constant in standard floating point
   representation or a symbolic constant familiar to performance analysts such as
-  'delta-timebase', 'delta-cycles', 'delta-instructions', and 'delta-seconds'.
-\item Operator is any of the standard mathematical text characters: '+', '-',
-  '*', or '/', or these lowercase, three-character mathematical abbreviations:
-  'mod', 'rem', 'sqr', or 'x\^{}y', or these three-character stack manipulators:
-  'swp', 'rot', and 'dup'.
+  `delta-timebase', `delta-cycles', `delta-instructions', and `delta-seconds'.
+\item Operator is any of the standard mathematical text characters: `+', `-',
+  `*', or `/', or these lowercase, three-character mathematical abbreviations:
+  `mod', `rem', `sqr', or `x\^{}y', or these three-character stack manipulators:
+  `swp', `rot', and `dup'.
 
 \end{itemize}
 Note that most operators require two operands, but some only require one.
@@ -586,7 +586,7 @@ register), placing the result back on the bottom of the stack. When the formula
 interpretation is complete, the final result will be left at the bottom of the
 stack.
 
-\textit{Note:} Existing pmlist data represents formulas using standard “infix”
+\textit{Note:} Existing pmlist data represents formulas using standard ``infix''
 notation. For example:
 
 \begin{verbatim}
@@ -662,8 +662,8 @@ Click on the document name to open the document in the web browser.
   Addition of the Group Index and Group Count fields to the Eventdata catalog
   record \\
   } \\ \hline
-  v012 & 2013-03-28 & Added the concept of "derived metrics" through "named
-                      formulas" using an additional "Formula Data" table. \\ \hline
+  v012 & 2013-03-28 & Added the concept of ``derived metrics'' through ``named
+                      formulas'' using an additional ``Formula Data'' table. \\ \hline
   v0.13 & 2013-04-22 & Added build date-stamp to catalog. Clarified that there
                        may be several schemas to describe the various chip event
                        group records. Added a group record length to the event
