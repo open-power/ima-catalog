@@ -2,18 +2,18 @@ Formula Name,Group,Grouped,flag,Formula Description,Formula,Unit
 MCD_RETRY_DINC_PERSEC,0,y,4,Total number of Retries per second With Domain Increment indication seen on Port0 and Port1 of MCD,(PM_MCD_CHECK_RTY_DINC/PM_PB_CYC) * PB_Freq,
 TOTAL_INT_PB_BW,0,y,4,Total internal PB Bandwidth,((PM_PB_INT_DATA_XFER * 512) / PM_PB_CYC) * PB_Freq,bytes/sec
 TOTAL_EXT_PB_BW,0,y,4,Total external PB Bandwidth,((PM_PB_EXT_DATA_XFER * 512) / PM_PB_CYC) * PB_Freq,bytes/sec
-TOTAL_SYSTEM_PUMPS_PERSEC,0,0,((PM_PB_SYS_PUMP) / PM_PB_CYC) * PB_Freq,bytes/sec,
-TOTAL_NODE_PUMPS_PERSEC,0,0,((PM_PB_NODE_PUMP) / PM_PB_CYC) * PB_Freq,bytes/sec,
-TOTAL_SYSTEM_PUMP_RETRY_PERSEC,0,0,((PM_PB_SYS_PUMP_RTY) / PM_PB_CYC) * PB_Freq,bytes/sec,
-TOTAL_NODE_PUMP_RETRY_PERSEC,0,0,((PM_PB_NODE_PUMP_RTY) / PM_PB_CYC) * PB_Freq,bytes/sec,
-TOTAL_MC0_READ_BW,0,0,PM_MCS_UP_128B_DATA_XFER*128*PB_Freq)/ PM_PB_CYC,bytes/sec,
-TOTAL_MC1_READ_BW,0,0,PM_MCS_UP_128B_DATA_XFER*128*PB_Freq)/ PM_PB_CYC,bytes/sec,
-TOTAL_MC2_READ_BW,0,0,PM_MCS_UP_128B_DATA_XFER*128*PB_Freq)/ PM_PB_CYC,bytes/sec,
-TOTAL_MC3_READ_BW,0,0,PM_MCS_UP_128B_DATA_XFER*128*PB_Freq)/ PM_PB_CYC,bytes/sec,
-TOTAL_MC0_WRITE_BW,0,0,PM_MCS_DOWN_128B_DATA_XFER_MC0*128*PB_Freq)/ PM_PB_CYC,bytes/sec,
-TOTAL_MC1_WRITE_BW,0,0,PM_MCS_DOWN_128B_DATA_XFER_MC1*128*PB_Freq)/ PM_PB_CYC,bytes/sec,
-TOTAL_MC2_WRITE_BW,0,0,PM_MCS_DOWN_128B_DATA_XFER_MC2*128*PB_Freq)/ PM_PB_CYC,bytes/sec,
-TOTAL_MC3_WRITE_BW,0,0,PM_MCS_DOWN_128B_DATA_XFER_MC3*128*PB_Freq)/ PM_PB_CYC,bytes/sec,
+TOTAL_SYSTEM_PUMPS_PERSEC,1,n,0,Sum of System Pumps on P0 and P1,((PM_PB_SYS_PUMP) / PM_PB_CYC) * PB_Freq,bytes/sec
+TOTAL_NODE_PUMPS_PERSEC,1,n,0,Sum of Node Pumps on P0 and P1,((PM_PB_NODE_PUMP) / PM_PB_CYC) * PB_Freq,bytes/sec
+TOTAL_SYSTEM_PUMP_RETRY_PERSEC,1,n,0,Total number of System pump Retries seen on P0 and P1,((PM_PB_SYS_PUMP_RTY) / PM_PB_CYC) * PB_Freq,bytes/sec
+TOTAL_NODE_PUMP_RETRY_PERSEC,1,n,0,Total number of Node pump Retries seen on P0 and P1,((PM_PB_NODE_PUMP_RTY) / PM_PB_CYC) * PB_Freq,bytes/sec
+TOTAL_MC0_READ_BW,2,n,0,Total Read Bandwidth seen on both MCS of MC0,PM_MCS_UP_128B_DATA_XFER*128*PB_Freq)/ PM_PB_CYC,bytes/sec
+TOTAL_MC1_READ_BW,2,n,0,Total Read Bandwidth seen on both MCS of MC1,PM_MCS_UP_128B_DATA_XFER*128*PB_Freq)/ PM_PB_CYC,bytes/sec
+TOTAL_MC2_READ_BW,2,n,0,Total Read Bandwidth seen on both MCS of MC2,PM_MCS_UP_128B_DATA_XFER*128*PB_Freq)/ PM_PB_CYC,bytes/sec
+TOTAL_MC3_READ_BW,2,n,0,Total Read Bandwidth seen on both MCS of MC3,PM_MCS_UP_128B_DATA_XFER*128*PB_Freq)/ PM_PB_CYC,bytes/sec
+TOTAL_MC0_WRITE_BW,3,n,0,Total Write Bandwidth seen on both MCS of MC0,PM_MCS_DOWN_128B_DATA_XFER_MC0*128*PB_Freq)/ PM_PB_CYC,bytes/sec
+TOTAL_MC1_WRITE_BW,3,n,0,Total Write Bandwidth seen on both MCS of MC1,PM_MCS_DOWN_128B_DATA_XFER_MC1*128*PB_Freq)/ PM_PB_CYC,bytes/sec
+TOTAL_MC2_WRITE_BW,3,n,0,Total Write Bandwidth seen on both MCS of MC2,PM_MCS_DOWN_128B_DATA_XFER_MC2*128*PB_Freq)/ PM_PB_CYC,bytes/sec
+TOTAL_MC3_WRITE_BW,3,n,0,Total Write Bandwidth seen on both MCS of MC3,PM_MCS_DOWN_128B_DATA_XFER_MC3*128*PB_Freq)/ PM_PB_CYC,bytes/sec
 TOTAL_INBOUND_XLINK0_BW,4,y,4,Total X-Link0 inbound data cycles,(PM_XLINK0_IN_DATA_CYC * 8 * XBUS_Freq) / PM_XLINK_CYCLES,bytes/sec
 TOTAL_INBOUND_XLINK1_BW,4,y,4,Total X-Link1 inbound data cycles,(PM_XLINK1_IN_DATA_CYC * 8 * XBUS_Freq) / PM_XLINK_CYCLES,bytes/sec
 TOTAL_INBOUND_XLINK2_BW,4,y,4,Total X-Link2 inbound data cycles,(PM_XLINK2_IN_DATA_CYC * 8 * XBUS_Freq) / PM_XLINK_CYCLES,bytes/sec

@@ -8,8 +8,7 @@ def formula_pack(formula):
     # First pack the header
     header = pack(">xxIH6x", formula['flag'], formula['group'])
 
-    st = header + pack_text(formula['name']) + pack_text(formula['desc']) + pack_text(formula['formula'])
-
+    st = header + pack_text(formula['name']) + pack_text(formula['desc']) + pack_text(formula['formula']) + pack_text(formula['unit'])
     t = pad16(st)               # this also adds the length
 
     return t
@@ -27,12 +26,13 @@ def pack_formulae(formulae_csv):
             formula['name'] = row['Formula Name']
             formula['desc'] = row['Formula Description']
             formula['formula'] = row['Formula']
+            formula['unit'] = row['Unit']
+            formula['group'] = int(row['Group'])
+
             if row['Grouped'] == 'y':
                 formula['flag'] = 0x04
-                formula['group'] = int(row['Group'])
             else:
                 formula['flag'] = 0
-                formula['group'] = 0
 
             formulae += formula_pack(formula)
 
