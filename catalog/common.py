@@ -1,5 +1,6 @@
 import struct
 import csv
+import os
 
 PAGE_SIZE=4096
 
@@ -69,7 +70,7 @@ Please check your offsets"""
 def write_to_csv(csv_file, dict_list):
     f = open(csv_file, 'wt')
     try:
-        writer = csv.writer(f)
+        writer = csv.writer(f, lineterminator=os.linesep)
         # dump the header
         writer.writerow((dict_list[0].keys()))
         for d in dict_list:
