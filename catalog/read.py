@@ -1,5 +1,6 @@
 from struct import *
 from common import *
+import sys
 
 GNAMELEN_OFFSET = 0x30
 ENAMELEN_OFFSET = 0x14
@@ -22,10 +23,13 @@ def read_formula(formula_dump):
                                                           formula_dump)
     if formula['flag'] == 0x4:
         formula['Grouped'] = 'y'
+    else:
+        formula['Grouped'] = 'n'
 
     formula['Formula Name'], nlen = read_string(formula_dump[FNAMELEN_OFFSET:])
     formula['Formula Description'], dlen = read_string(formula_dump[(FNAMELEN_OFFSET + nlen):])
     formula['Formula'], flen = read_string(formula_dump[(FNAMELEN_OFFSET + nlen + dlen):])
+    formula['Unit'], ulen = read_string(formula_dump[(FNAMELEN_OFFSET + nlen + dlen + flen):])
 
     return tlen, formula
 
@@ -67,7 +71,28 @@ def read_groups(dump_file, page_offset, num_pages, num_count, group_type):
     return groups
 
 if __name__ == "__main__":
-    # offsets are hardcoded for the new v7 lid file
-    write_to_csv('formulae.csv', read_groups('81e00610.v7.lid', 0x2d, 0x2, 0x24, 'formulae'))
-    write_to_csv('events.csv', read_groups('81e00610.v7.lid', 0x2, 0x31, 0x532, 'events'))
-    write_to_csv('groups.csv', read_groups('81e00610.v7.lid', 0x2a, 0x5, 0x8b, 'groups'))
+    if len(sys.argv) < 2:
+        print "Require a lid file to read from"
+        exit(1)
+
+    lid_file = sys.argv[1]
+
+    f = open(lid_file, 'r')
+    dump = f.read(PAGE_SIZE)
+    f.close()
+
+    desc, length, version, build_date, schema_offset, schema_len, schema_len, \
+    event_offset, event_len, event_count, group_offset, group_len, \
+    group_count, formula_offset, formula_len, formula_count = unpack_from(">IIQ16s32xHHHxxHHHxxHHHxxHHHxx",
+                                                                          dump)
+
+    signature = struct.unpack('4s', struct.pack('>I', desc))[0]
+    if signature != "24x7":
+        print "Not a catalog file"
+        exit(1)
+
+    print "File Signature: %s\nLength: %d\nVersion: %lu\nBuild Date: %s" % (signature, length, version, build_date)
+
+    write_to_csv('formulae.csv', read_groups(lid_file, formula_offset, formula_len, formula_count, 'formulae'))
+    write_to_csv('events.csv', read_groups(lid_file, event_offset, event_len, event_count, 'events'))
+    write_to_csv('groups.csv', read_groups(lid_file, group_offset, group_len, group_count, 'groups'))

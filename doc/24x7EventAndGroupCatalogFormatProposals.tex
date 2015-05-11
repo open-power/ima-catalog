@@ -537,6 +537,13 @@ known schema versions.
                                  intended to comply with a formula syntax that
                                  should make parsing and interpretation
                                  easier... see Formula Syntax below \\ \hline
+  Unit Field Length & 0x10 + n1 + n2 + n3 & uint16 (n4) - This length includes
+                                            the length of the Unit Length field
+  \\ \hline
+  Unit & 0x10 + n1 + n2 + n3 + 2 & char[] Variable (zero-terminated ASCII padded to
+                                   half-word length) This is the unit of the
+                                   result of the formula \\ \hline
+
 \end{tabular}
 
 \subsection{Formula Entry Notes}
