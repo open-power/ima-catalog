@@ -5,10 +5,10 @@ import csv
 from common import *
 
 def event_pack(event):
-    header = pack(">xxBxHHHIHH", event['domain'], event['record_byte_offset'],
-                  event['record_length'], event['counter_offset'],
-                  event['flag'], event['primary_group_index'],
-                  event['group_count'])
+    header = pack(">HBxHHHIHH", event['formula_index'], event['domain'],
+                  event['record_byte_offset'], event['record_length'],
+                  event['counter_offset'], event['flag'],
+                  event['primary_group_index'], event['group_count'])
 
     e = header + pack_text(event['name']) + pack_text(event['description'])
     e += pack_text(event['detailed_description'])
@@ -36,6 +36,10 @@ def pack_events(events_csv):
                 pmu_offset = len(events)
 
             count += 1
+            if row['formula index'] == "-1":
+                event['formula_index'] = 0xffff
+            else:
+                event['formula_index'] = int(row['formula index'])
             event['domain'] = int(row['domain'])
             event['record_byte_offset'] = int(row['record byte offset'])
             event['record_length'] = int(row['record length'])

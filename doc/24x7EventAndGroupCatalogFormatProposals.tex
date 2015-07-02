@@ -180,7 +180,7 @@ filled with '0xffffffff' to mark it as invalid.
                                              with a length which is an even
                                              multiple of 16 \\
   \hline
-  Reserved & 0x02 & char[2] \\
+  Formula Index & 0x02 & uint16 The index to the corresponding formula \\
   \hline
   IMA Group Record Domain & 0x04 & uint8 - ( Chip = 1 / Core = 2 / Thread PMU = 3
                                    ) \\
@@ -206,8 +206,6 @@ filled with '0xffffffff' to mark it as invalid.
     \item Mask Bits ("gated-by" MSR states, info only)
     \end{itemize}
   } & 0x0C & uint32 - (binary composition) \\
-  \hline
-  Reserved & 0x0C & uint32 - (binary composition) \\
   \hline
   Primary Group Index & 0x10 & uint16 - Index into the Group Data array where
                                either the first or best group which contains this
@@ -684,6 +682,8 @@ Click on the document name to open the document in the web browser.
 
   v0.16 & 2015-04-27 & santosiv@in.ibm.com - New fields in Page 0 structure and
                        a new domain for the thread groups \\ \hline
+  v0.17 & 2015-05-20 & Make the char reserved[2] field in the event structure to
+                       hold the corresponding formula indices. \\ \hline
 \end{tabular}
 \end{center}
 \end{document}
