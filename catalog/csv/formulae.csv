@@ -14,12 +14,12 @@ TOTAL_MC0_WRITE_BW,3,n,0,Total Write Bandwidth seen on both MCS of MC0,(PM_MCS_D
 TOTAL_MC1_WRITE_BW,3,n,0,Total Write Bandwidth seen on both MCS of MC1,(PM_MCS_DOWN_128B_DATA_XFER_MC1*128*PB_Freq)/ PM_PB_CYC,bytes/sec
 TOTAL_MC2_WRITE_BW,3,n,0,Total Write Bandwidth seen on both MCS of MC2,(PM_MCS_DOWN_128B_DATA_XFER_MC2*128*PB_Freq)/ PM_PB_CYC,bytes/sec
 TOTAL_MC3_WRITE_BW,3,n,0,Total Write Bandwidth seen on both MCS of MC3,(PM_MCS_DOWN_128B_DATA_XFER_MC3*128*PB_Freq)/ PM_PB_CYC,bytes/sec
-TOTAL_INBOUND_XLINK0_BW,4,y,4,Total X-Link0 inbound data cycles,(PM_XLINK0_IN_DATA_CYC * 8 * XBUS_Freq) / PM_XLINK_CYCLES,bytes/sec
-TOTAL_INBOUND_XLINK1_BW,4,y,4,Total X-Link1 inbound data cycles,(PM_XLINK1_IN_DATA_CYC * 8 * XBUS_Freq) / PM_XLINK_CYCLES,bytes/sec
-TOTAL_INBOUND_XLINK3_BW,4,y,4,Total X-Link2 inbound data cycles,(PM_XLINK3_IN_DATA_CYC * 8 * XBUS_Freq) / PM_XLINK_CYCLES,bytes/sec
-TOTAL_XLINK0_UTILISATION%,5,y,4,Total X-Link0 inbound Idle cycles,(1 - PM_XLINK0_IN_IDL_CYC/PM_XLINK_CYCLES)*100,%
-TOTAL_XLINK1_UTILISATION%,5,y,4,Total X-Link1 inbound Idle cycles,(1 - PM_XLINK1_IN_IDL_CYC/PM_XLINK_CYCLES)*100,%
-TOTAL_XLINK3_UTILISATION%,5,y,4,Total X-Link3 inbound Idle cycles,(1 - PM_XLINK3_IN_IDL_CYC/PM_XLINK_CYCLES)*100,%
+TOTAL_INBOUND_XLINK0_BW,4,y,4,Total X-Link0 inbound data cycles,(PM_XLINK0_OUT_DATA_CYC * 8 * XBUS_Freq) / PM_XLINK_CYCLES,bytes/sec
+TOTAL_INBOUND_XLINK1_BW,4,y,4,Total X-Link1 inbound data cycles,(PM_XLINK1_OUT_DATA_CYC * 8 * XBUS_Freq) / PM_XLINK_CYCLES,bytes/sec
+TOTAL_INBOUND_XLINK3_BW,4,y,4,Total X-Link2 inbound data cycles,(PM_XLINK3_OUT_DATA_CYC * 8 * XBUS_Freq) / PM_XLINK_CYCLES,bytes/sec
+TOTAL_XLINK0_UTILISATION%,5,y,4,Total X-Link0 inbound Idle cycles,(PM_XLINK_CYCLES - PM_XLINK0_OUT_IDL_CYC/2) / PM_XLINK_CYCLES * 100,%
+TOTAL_XLINK1_UTILISATION%,5,y,4,Total X-Link1 inbound Idle cycles,(PM_XLINK_CYCLES - PM_XLINK1_OUT_IDL_CYC/2) / PM_XLINK_CYCLES * 100,%
+TOTAL_XLINK3_UTILISATION%,5,y,4,Total X-Link3 inbound Idle cycles,(PM_XLINK_CYCLES - PM_XLINK3_OUT_IDL_CYC/2) / PM_XLINK_CYCLES * 100,%
 TOTAL_INBOUND_ALINK0_BW,6,y,4,Total A-Link0 inbound data cycles,(PM_ALINK0_IN_DATA_CYC * 8 * ABUS_Freq) / PM_ALINK_CYCLES,bytes/sec
 TOTAL_INBOUND_ALINK1_BW,6,y,4,Total A-Link1 inbound data cycles,(PM_ALINK1_IN_DATA_CYC * 8 * ABUS_Freq) / PM_ALINK_CYCLES,bytes/sec
 TOTAL_INBOUND_ALINK2_BW,6,y,4,Total A-Link2 inbound data cycles,(PM_ALINK2_IN_DATA_CYC * 8 * ABUS_Freq) / PM_ALINK_CYCLES,bytes/sec
