@@ -1,3 +1,14 @@
+#!/usr/bin/python
+#
+# Copyright (C) 2016 Santosh Sivaraj <santosiv@in.ibm.com>
+# Copyright (C) 2016 Rajarshi Das <drajarshi@in.ibm.com>
+# Copyright (C) 2016 IBM Corporation
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version
+# 2 of the License, or (at your option) any later version.
+
 import struct
 import time
 import sys
@@ -6,6 +17,7 @@ from common import *
 from events import pack_events
 from groups import pack_groups
 from formulae import pack_formulae
+from generate_dts import gen_dts
 
 def dump_schema(cat_file):
     f = open(cat_file)
@@ -52,7 +64,11 @@ def create_catalog(version, old_lid):
 if __name__ == "__main__":
     if len(sys.argv) <= 3:
         print "Usage: ./%s version old_lid out_file" % (sys.argv[0])
+        print "\nThe new LID and DTS files will be named as <out_file>.lid and <out_file>.dts"
         exit(1)
+
+    lid_filename = str(sys.argv[3]) + '.lid'
+    dts_filename = str(sys.argv[3]) + '.dts'
 
     # get the version for the new build, and older catalog file to extract the
     # schema data
@@ -60,6 +76,9 @@ if __name__ == "__main__":
     padlen = 64 - len(c) / PAGE_SIZE
     c += struct.pack('%dx' % (padlen * PAGE_SIZE))
 
-    f = open(sys.argv[3], 'wt')
+    f = open(lid_filename, 'wt')
     f.write(c)
     f.close()
+
+    # Specify input filename (new lid), verbose flag, and dts output filename
+    gen_dts(lid_filename, False, dts_filename)
