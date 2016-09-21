@@ -35,9 +35,12 @@ def read_formula(formula_dump):
 
 def read_event(event_dump):
     event = {}
-    elen, event['domain'], event['record byte offset'], event['record length'], \
+    elen, event['formala index'], event['domain'], event['record byte offset'], event['record length'], \
         event['counter offset'], event['flag'], event['primary group index'], \
-        event['group count'] = unpack_from(">HxxBxHHHIHH", event_dump)
+        event['group count'] = unpack_from(">HHBxHHHIHH", event_dump)
+
+    if event['formala index'] == 0xffff:
+        event['formala index'] = '-1';
 
     event['name'], nlen = read_string(event_dump[ENAMELEN_OFFSET:])
     event['description'], dlen = read_string(event_dump[(ENAMELEN_OFFSET + nlen):])
