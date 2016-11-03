@@ -1,0 +1,132 @@
+
+/dts-v1/;
+
+/ {
+	name = "";
+	compatible = "ibm,opal-in-memory-counters";
+	#address-cells = <0x1>;
+	#size-cells = <0x1>;
+	ima-nest-offset = <0x320000>;
+	ima-nest-size = <0x30000>;
+	version-id = "";
+
+	mcs {
+		compatible = "ibm,ima-counters-nest";
+		ranges;
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		mcs-0@118 {
+			event-name = "PM_MCS_UP_128B_DATA_XFER_MC0" ;
+			reg = <0x118 0x8>;
+			unit = "MiB" ;
+			scale = "1.2207e-4" ;
+			desc = "Total Read Bandwidth seen on both MCS of MC0" ;
+		};
+		mcs-1@120 {
+			event-name = "PM_MCS_UP_128B_DATA_XFER_MC1" ;
+			reg = <0x120 0x8>;
+			unit = "MiB" ;
+			scale = "1.2207e-4" ;
+			desc = "Total Read Bandwidth seen on both MCS of MC1" ;
+		};
+		mcs-2@128 {
+			event-name = "PM_MCS_UP_128B_DATA_XFER_MC2" ;
+			reg = <0x128 0x8>;
+			unit = "MiB" ;
+			scale = "1.2207e-4" ;
+			desc = "Total Read Bandwidth seen on both MCS of MC2" ;
+		};
+		mcs-3@130 {
+			event-name = "PM_MCS_UP_128B_DATA_XFER_MC3" ;
+			reg = <0x130 0x8>;
+			unit = "MiB" ;
+			scale = "1.2207e-4" ;
+			desc = "Total Read Bandwidth seen on both MCS of MC3" ;
+		};
+		mcs-4@140 {
+			event-name = "PM_MCS_UP_128B_DATA_XFER_MC0_LAST_SAMPLE" ;
+			reg = <0x140 0x8>;
+			unit = "MiB" ;
+			scale = "1.2207e-4" ;
+			desc = "" ;
+		};
+		mcs-5@148 {
+			event-name = "PM_MCS_UP_128B_DATA_XFER_MC1_LAST_SAMPLE" ;
+			reg = <0x148 0x8>;
+			unit = "MiB" ;
+			scale = "1.2207e-4" ;
+			desc = "" ;
+		};
+		mcs-6@150 {
+			event-name = "PM_MCS_UP_128B_DATA_XFER_MC2_LAST_SAMPLE" ;
+			reg = <0x150 0x8>;
+			unit = "MiB" ;
+			scale = "1.2207e-4" ;
+			desc = "" ;
+		};
+		mcs-7@158 {
+			event-name = "PM_MCS_UP_128B_DATA_XFER_MC3_LAST_SAMPLE" ;
+			reg = <0x158 0x8>;
+			unit = "MiB" ;
+			scale = "1.2207e-4" ;
+			desc = "" ;
+		};
+		mcs-8@198 {
+			event-name = "PM_MCS_DOWN_128B_DATA_XFER_MC0" ;
+			reg = <0x198 0x8>;
+			unit = "MiB" ;
+			scale = "1.2207e-4" ;
+			desc = "Total Write Bandwidth seen on both MCS of MC0" ;
+		};
+		mcs-9@1a0 {
+			event-name = "PM_MCS_DOWN_128B_DATA_XFER_MC1" ;
+			reg = <0x1a0 0x8>;
+			unit = "MiB" ;
+			scale = "1.2207e-4" ;
+			desc = "Total Write Bandwidth seen on both MCS of MC1" ;
+		};
+		mcs-10@1a8 {
+			event-name = "PM_MCS_DOWN_128B_DATA_XFER_MC2" ;
+			reg = <0x1a8 0x8>;
+			unit = "MiB" ;
+			scale = "1.2207e-4" ;
+			desc = "Total Write Bandwidth seen on both MCS of MC2" ;
+		};
+		mcs-11@1b0 {
+			event-name = "PM_MCS_DOWN_128B_DATA_XFER_MC3" ;
+			reg = <0x1b0 0x8>;
+			unit = "MiB" ;
+			scale = "1.2207e-4" ;
+			desc = "Total Write Bandwidth seen on both MCS of MC3" ;
+		};
+		mcs-12@1c0 {
+			event-name = "PM_MCS_DOWN_128B_DATA_XFER_MC0_LAST_SAMPLE" ;
+			reg = <0x1c0 0x8>;
+			unit = "MiB" ;
+			scale = "1.2207e-4" ;
+			desc = "" ;
+		};
+		mcs-13@1c8 {
+			event-name = "PM_MCS_DOWN_128B_DATA_XFER_MC1_LAST_SAMPLE" ;
+			reg = <0x1c8 0x8>;
+			unit = "MiB" ;
+			scale = "1.2207e-4" ;
+			desc = "" ;
+		};
+		mcs-14@1d0 {
+			event-name = "PM_MCS_DOWN_128B_DATA_XFER_MC2_LAST_SAMPLE" ;
+			reg = <0x1d0 0x8>;
+			unit = "MiB" ;
+			scale = "1.2207e-4" ;
+			desc = "" ;
+		};
+		mcs-15@1d8 {
+			event-name = "PM_MCS_DOWN_128B_DATA_XFER_MC3_LAST_SAMPLE" ;
+			reg = <0x1d8 0x8>;
+			unit = "MiB" ;
+			scale = "1.2207e-4" ;
+			desc = "" ;
+		};
+	};
+};
