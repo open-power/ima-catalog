@@ -2,6 +2,7 @@
 #
 # Copyright (C) 2016 Madhavan Srinivasan <maddy@linux.vnet.ibm.com>, IBM
 #           (C) 2016 Hemant K. Shaw <hemant@linux.vnet.ibm.com>
+#           (C) 2016 Rajarshi Das <drajarshi@in.ibm.com>
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -12,6 +13,7 @@ import sys, getopt
 import string
 from struct import *
 from collections import namedtuple
+import os
 
 event_domain_1 = []	#Chip IMA events
 event_domain_2 = []	#Core IMA event (PDBAR)
@@ -35,8 +37,6 @@ nest_unit_names = ["mcs", "powerbus", "xlink", "alink","phb"]
 nest_mcs_scale = "1.2207e-4"
 nest_mcs_unit = "MiB"
 core_ima_scale = "128"
-
-pvr_list = ["4D0200"]
 
 # Filter out the raw (non-ascii) byes
 def get_name(st):
@@ -182,19 +182,26 @@ class Groups:
                 self.offset += self._group.len
 
 
-def dt_event(tabs, name, reg, size, unit, scale, desc):
+def dt_event(tabs, name, reg, size, unit, scale, desc, nodename): # Simplified node name
     s = ""
-    s += '\t' * tabs +'%s@%x {\n'% (name, reg)
+    s += '\t' * tabs +'%s@%x {\n'% (nodename, reg)
+    s += '\t' * (tabs+1) + 'event-name = "%s" ;\n' % (name)
     s += '\t' * (tabs+1) + 'reg = <0x%x 0x%x>;\n'%(reg,size)
     if unit != '' and unit.strip() :
-        s += '\t' * (tabs+1) + 'unit = "%s" ;\n'%(unit)
+	s += '\t' * (tabs+1) + 'unit = "%s" ;\n'%(unit)
     if scale != '' and scale.strip() :
-        s += '\t' * (tabs+1) + 'scale = "%s" ;\n'%(scale)
-    s += '\t' * (tabs + 1) + 'desc = "%s" ;\n' % (desc)
-    s += '\t' * tabs + '};'
+	s += '\t' * (tabs+1) + 'scale = "%s" ;\n'%(scale)
+        s += '\t' * (tabs + 1) + 'desc = "%s" ;\n' % (desc)
+	s += '\t' * tabs + '};'
     return s
 
 def dt_unit(tabs,unit,events, compat):
+    xlink_cyc_event_added = False
+    xlink_cyc_last_sample_event_added = False
+    alink_cyc_event_added = False
+    alink_cyc_last_sample_event_added = False
+    event_count = 0
+
     s = ""
     tabs += 1
     s += '\t' * tabs +'%s {\n'% (nest_unit_names[unit])
@@ -210,8 +217,29 @@ def dt_unit(tabs,unit,events, compat):
         event_unit = nest_mcs_unit
     for i in events:
         event = event_domain_1[i]
+        if event[0] == 'PM_XLINK_CYCLES' and xlink_cyc_event_added == True:
+            continue
+        if event[0] == 'PM_XLINK_CYCLES_LAST_SAMPLE' and \
+           xlink_cyc_last_sample_event_added == True:
+            continue
+        if event[0] == 'PM_ALINK_CYCLES' and alink_cyc_event_added == True:
+            continue
+        if event[0] == 'PM_ALINK_CYCLES_LAST_SAMPLE' and \
+           alink_cyc_last_sample_event_added == True:
+            continue
+
+        nodename = nest_unit_names[unit] + "-" + str(event_count)
         s += dt_event((tabs), event[0], event[1], 8, event_unit,
-                      event_scale, event[2])
+                      event_scale, event[2], nodename)
+        event_count = event_count + 1
+        if event[0] == 'PM_XLINK_CYCLES':
+            xlink_cyc_event_added = True
+        if event[0] == 'PM_XLINK_CYCLES_LAST_SAMPLE':
+            xlink_cyc_last_sample_event_added = True
+        if event[0] == 'PM_ALINK_CYCLES':
+            alink_cyc_event_added = True
+        if event[0] == 'PM_ALINK_CYCLES_LAST_SAMPLE':
+            alink_cyc_last_sample_event_added = True
         s += "\n"
 
     s += '\t' * (tabs-1) + "};\n"
@@ -219,15 +247,18 @@ def dt_unit(tabs,unit,events, compat):
 
 def core_ima_dt_unit(tabs, events):
     s = ""
-    tabs += 1
-    s += '\t' * tabs + '%s {\n' % ("core_ima")
+    groupname = "core-ima"
+    s += '\t' * tabs + '%s {\n' % (groupname)
     tabs +=1
-    s += '\t' * tabs + "compatble = \"%s\";\n" % "ibm,nest-counters-core-ima"
+    s += '\t' * tabs + "compatible = \"%s\";\n" % "ibm,ima-counters-core"
     s += '\t' * tabs + "ranges;\n"
     s += '\t' * tabs + "#address-cells = <0x1>;\n"
     s += '\t' * tabs + "#size-cells = <0x1>;\n\n"
+    event_count = 0
     for i in events:
-        s += dt_event(tabs, i[0], i[1], 8, '', core_ima_scale, i[2])
+        nodename = groupname + "-" + str(event_count)
+        s += dt_event(tabs, i[0], i[1], 8, '', core_ima_scale, i[2], nodename)
+        event_count = event_count + 1
         s += "\n"
 
     s += '\t' * (tabs - 1) + "};\n"
@@ -235,22 +266,40 @@ def core_ima_dt_unit(tabs, events):
 
 def thread_ima_dt_unit(tabs, events):
     s = ""
-    tabs += 1
-    s += '\t' * tabs + '%s {\n' % ("thread_ima")
+    groupname = "thread-ima"
+    s += '\t' * tabs + '%s {\n' % (groupname)
     tabs +=1
-    s += '\t' * tabs + "compatble = \"%s\";\n" % "ibm,nest-counters-thread-ima"
+    s += '\t' * tabs + "compatible = \"%s\";\n" % "ibm,ima-counters-thread"
     s += '\t' * tabs + "ranges;\n"
     s += '\t' * tabs + "#address-cells = <0x1>;\n"
     s += '\t' * tabs + "#size-cells = <0x1>;\n\n"
+    event_count = 0
     for i in events:
-        s += dt_event(tabs, i[0], i[1], 8, '', '', i[2])
+        nodename = groupname + "-" + str(event_count)
+        s += dt_event(tabs, i[0], i[1], 8, '', '', i[2], nodename)
+        event_count = event_count + 1
         s += "\n"
 
     s += '\t' * (tabs - 1) + "};\n"
     return s
 
 
-def gen_dts(ifname, verbose, ofname):
+def gen_dtb(ofname, odtbfname):
+    dtb_command = "dtc -I dts -O dtb -o " + odtbfname + " ./" + ofname
+
+    if odtbfname == '':
+	print 'Output DTB filename missing. Specify -d <DTB filename> and retry. Exiting.'
+	exit(-1)
+
+    try:
+        os.system(dtb_command)
+    except:
+        print 'Error in dtb command: {}'.format(dtb_command)
+
+    print 'Generated DTB file: {}'.format(odtbfname)
+
+
+def gen_dts(ifname, verbose, ofname, unitname, pvrname, threadima, coreima):
     try:
         fn = open(ifname, "rb")
     except:
@@ -262,6 +311,9 @@ def gen_dts(ifname, verbose, ofname):
     except:
         print 'Output filename missing. Specify -o <output file name> and retry.. Exiting.'
         exit(-1)
+
+    if pvrname == '': # pvr name was not specified.
+        pvrname = "4D0200"
 
     # the page0 catalog is 128 bytes long
     page0 = Page0(fn.read(128))
@@ -276,8 +328,13 @@ def gen_dts(ifname, verbose, ofname):
 \tname = "";
 \tcompatible = \"ibm,opal-in-memory-counters\";
 \t#address-cells = <0x1>;
-\t#size-cells = <0x1>;\n
+\t#size-cells = <0x1>;
+\tima-nest-offset = <0x320000>;
+\tima-nest-size = <0x30000>;
+\tversion-id = \"\";\n
 """
+
+    pvr_list = pvrname.split(',')
 
     for pvr in pvr_list:
         pvr_str = '\tpvr@' + pvr + ' {'
@@ -289,40 +346,85 @@ def gen_dts(ifname, verbose, ofname):
 \t\tima-nest-size = <0x30000>;
 \t\tversion-id = \"\";
 """
-        s += pvr_str
-        s += pvr_node
-        s += '\t\ttarget-pvr = <0x' + pvr + '>;\n\n'
-        tabs = 1
-        for i in range(len(nest_units)):
-            if i < len(nest_unit_names):
-                if (len(group_chip[i])):
-                    s += dt_unit(tabs,i,group_chip[i], "ibm,nest-counters-chip-ima")
-        s += core_ima_dt_unit(1, event_domain_2)
-        s += thread_ima_dt_unit(1, event_domain_2_a)
-        s += "\t};\n"
-        s += "};\n"
+        tabs = 0
 
-    # print s
+        if pvr not in '4E0100': # P9 DD1 parts. No Nest units for now.
+            for i in range(len(nest_units)):
+                if unitname != 'all' and unitname != '': # specific unit indicated. Print that unit only
+                    if nest_unit_names[i] == unitname:
+                        if i < len(nest_unit_names):
+                            if (len(group_chip[i])):
+                                s += dt_unit(tabs,i,group_chip[i], "ibm,ima-counters-nest")
+                        break
+                elif unitname == 'all': # Include all NEST units
+                    if i < len(nest_unit_names):
+                        if (len(group_chip[i])):
+                            s += dt_unit(tabs,i,group_chip[i], "ibm,ima-counters-nest")
+                else: # no unit name was explicitly specified. Assume 'mcs' if pvrname is 4D0200
+                    if pvrname == '4D0200':
+                        if nest_unit_names[i] == 'mcs':
+                            if i < len(nest_unit_names):
+                                if (len(group_chip[i])):
+                                    s += dt_unit(tabs,i,group_chip[i], "ibm,ima-counters-nest")
+                            break
+                    else: # pvrname is not 4D0200. Print all NEST units
+                        if i < len(nest_unit_names):
+                            if (len(group_chip[i])):
+                                s += dt_unit(tabs,i,group_chip[i], "ibm,ima-counters-nest")
+        else: # for P9 DD1 (4E0100) print core and thread ima by default
+            coreima = "yes"
+            threadima = "yes"
+
+        if coreima == "yes":
+            s += core_ima_dt_unit(1, event_domain_2)
+
+        if threadima == "yes":
+            s += thread_ima_dt_unit(1, event_domain_2_a)
+
+    s += "};\n"
 
     of.write(s)
     of.close
+    print 'Generated DTS file: {}'.format(ofname)
 
 if __name__ == "__main__":
     ifname = "" # input file name
     ofname = "" # output file name
     verbose = False
+    coreima = "no" # Do not print core ima by default (if no unit was explicitly specified)
+    threadima = "no" # Do not print thread ima by default (if no unit was explicitly specified)
+    pvrname = ""
+    unitname = ""
+    odtbfname = "" # output dtb file name
 
-    options, remainder = getopt.getopt(sys.argv[1:], 'i:vo:', ['input=',
-							       'verbose',
-							       'output',
-    ])
+    options, remainder = getopt.getopt(sys.argv[1:], 'c:d:i:p:t:u:vo:',
+                                       ['coreima=',
+					'outputdtb=',
+					'input=',
+					'pvr=',
+					'threadima=',
+					'unit=',
+					'verbose',
+					'output='
+                                       ])
 
     for opt, arg in options:
-        if opt in ('-i', '--input'):
-            ifname = arg
-        elif opt in ('-v', '--verbose'):
-            verbose = True
-        elif opt in ('-o', '--output'):
-            ofname = arg
+	if opt in ('-c', '--core'):
+	    coreima = arg
+	elif opt in ('-i', '--input'):
+	    ifname = arg
+	elif opt in ('-p', '--pvr'):
+	    pvrname = arg
+	elif opt in ('-t', '--thread'):
+	    threadima = arg
+	elif opt in ('-u', '--unit'):
+	    unitname = arg
+	elif opt in ('-v', '--verbose'):
+	    verbose = True
+	elif opt in ('-o', '--output'):
+	    ofname = arg
+	elif opt in ('-d', '--outputdtb'):
+	    odtbfname = arg
 
-    gen_dts(ifname, verbose, ofname)
+    gen_dts(ifname, verbose, ofname, unitname, pvrname, coreima, threadima)
+    gen_dtb(ofname, odtbfname)

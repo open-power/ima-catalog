@@ -62,13 +62,35 @@ def create_catalog(version, old_lid):
     return pad_page(header, PAGE_SIZE) + schema + events + groups + formulae
 
 if __name__ == "__main__":
+    unitname = ''
+    pvr = ''
+    coreimaflag = ''
+    threadimaflag = ''
+
     if len(sys.argv) <= 3:
-        print "Usage: ./%s version old_lid out_file" % (sys.argv[0])
-        print "\nThe new LID and DTS files will be named as <out_file>.lid and <out_file>.dts"
+        print "In order to generate a new catalog LID and new DTS file:\n"
+        print "Usage: ./%s version old_lid new_prefix <unitname> <pvrname> <threadima> <coreima> \n" % (sys.argv[0])
+        print "e.g. ./%s        8  v8.3.lid  e8100910 mcs 4D0200 yes yes \n" % (sys.argv[0])
+        print "The arguments marked in <> are optional. \n"
+        print "The new LID and DTS files will be named as <new_prefix>.lid and <new_prefix>.dts"
         exit(1)
 
+    print 'Arguments specified:\n'
+    print 'Version: ' + str(sys.argv[1]) + ' Old LID file: ' + str(sys.argv[2])
+
     lid_filename = str(sys.argv[3]) + '.lid'
+    print 'New LID file: {}'.format(lid_filename)
     dts_filename = str(sys.argv[3]) + '.dts'
+    print 'DTS file: {}'.format(dts_filename)
+
+    if len(sys.argv) == 5:
+        unitname = str(sys.argv[4])
+    if len(sys.argv) == 6:
+        pvr  = str(sys.argv[5])
+    if len(sys.argv) == 7:
+        coreimaflag  = str(sys.argv[6])
+    if len(sys.argv) == 8:
+        threadimaflag = str(sys.argv[7])
 
     # get the version for the new build, and older catalog file to extract the
     # schema data
@@ -80,5 +102,6 @@ if __name__ == "__main__":
     f.write(c)
     f.close()
 
-    # Specify input filename (new lid), verbose flag, and dts output filename
-    gen_dts(lid_filename, False, dts_filename)
+    # Specify input filename (new lid), verbose flag, dts output filename ,
+    # unit to fetch, pvr id, core ima (yes or no), thread ima (yes or no)
+    gen_dts(lid_filename, False, dts_filename, unitname, pvr, coreimaflag, threadimaflag)
