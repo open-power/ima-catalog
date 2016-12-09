@@ -1,5 +1,14 @@
-# This file packages all events into a binary file, which will be a part of the
-# catalog file.
+#!/usr/bin/python
+#
+# Pack all events into a binary file, which will be a part of the catalog
+# (binary) file.
+#
+# Copyright (C) 2016 Santosh Sivaraj <santosiv@in.ibm.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+
 from struct import *
 import csv
 from common import *

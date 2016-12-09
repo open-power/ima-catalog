@@ -1,13 +1,14 @@
 #!/usr/bin/python
 #
+# Generate IMA performance events catalog
+#
 # Copyright (C) 2016 Santosh Sivaraj <santosiv@in.ibm.com>
 # Copyright (C) 2016 Rajarshi Das <drajarshi@in.ibm.com>
 # Copyright (C) 2016 IBM Corporation
 #
-# This program is free software; you can redistribute it and/or
-# modify it under the terms of the GNU General Public License
-# as published by the Free Software Foundation; either version
-# 2 of the License, or (at your option) any later version.
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
 
 import struct
 import time
