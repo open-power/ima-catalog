@@ -601,9 +601,9 @@
 			reg = <0x298 0x8>;
 			desc = "Number of TM transactions that passed" ;
 		};
-		event@1fd8 {
+		event@2d8 {
 			event-name = "CPM_TM_ABORTS" ;
-			reg = <0x1fd8 0x8>;
+			reg = <0x2d8 0x8>;
 			desc = "Number of TM transactions aborted" ;
 		};
 		event@58 {
@@ -846,9 +846,9 @@
 			reg = <0xed8 0x8>;
 			desc = "The number of DERAT misses" ;
 		};
-		event@1ed8 {
+		event@1e98 {
 			event-name = "CPM_CS_DERAT_MISS_KERNEL" ;
-			reg = <0x1ed8 0x8>;
+			reg = <0x1e98 0x8>;
 			desc = "The number of DERAT misses in kernel state" ;
 		};
 		event@16d8 {
@@ -876,9 +876,9 @@
 			reg = <0xf60 0x8>;
 			desc = "The number of data TLB misses for 16G page size" ;
 		};
-		event@1f60 {
+		event@1f20 {
 			event-name = "CPM_CS_DTLB_MISS_16G_KERNEL" ;
-			reg = <0x1f60 0x8>;
+			reg = <0x1f20 0x8>;
 			desc = "The number of data TLB misses for 16G page size in kernel state" ;
 		};
 		event@1760 {
@@ -891,9 +891,9 @@
 			reg = <0xf58 0x8>;
 			desc = "The number of data TLB misses for 16M page size" ;
 		};
-		event@1f58 {
+		event@1f18 {
 			event-name = "CPM_CS_DTLB_MISS_16M_KERNEL" ;
-			reg = <0x1f58 0x8>;
+			reg = <0x1f18 0x8>;
 			desc = "The number of data TLB misses for 16M page size in kernel state" ;
 		};
 		event@1758 {
@@ -906,9 +906,9 @@
 			reg = <0xf18 0x8>;
 			desc = "The number of data TLB misses for 4K page size" ;
 		};
-		event@1f18 {
+		event@1ed8 {
 			event-name = "CPM_CS_DTLB_MISS_4K_KERNEL" ;
-			reg = <0x1f18 0x8>;
+			reg = <0x1ed8 0x8>;
 			desc = "The number of data TLB misses for 4K page size in kernel state" ;
 		};
 		event@1718 {
@@ -921,9 +921,9 @@
 			reg = <0xf20 0x8>;
 			desc = "The number of data TLB misses for 64K page size" ;
 		};
-		event@1f20 {
+		event@1ee0 {
 			event-name = "CPM_CS_DTLB_MISS_64K_KERNEL" ;
-			reg = <0x1f20 0x8>;
+			reg = <0x1ee0 0x8>;
 			desc = "The number of data TLB misses for 64K page size in kernel state" ;
 		};
 		event@1720 {
@@ -936,9 +936,9 @@
 			reg = <0xee0 0x8>;
 			desc = "The number of data TLB reloads" ;
 		};
-		event@1ee0 {
+		event@1ea0 {
 			event-name = "CPM_CS_DTLB_RELOAD_KERNEL" ;
-			reg = <0x1ee0 0x8>;
+			reg = <0x1ea0 0x8>;
 			desc = "The number of data TLB reloads in kernel state" ;
 		};
 		event@16e0 {
@@ -1011,9 +1011,9 @@
 			reg = <0xda0 0x8>;
 			desc = "The number of data loads from level 2 or level 3 cache through A-link" ;
 		};
-		event@1da0 {
+		event@1d60 {
 			event-name = "CPM_CS_FROM_L2_L3_A_LDATA_KERNEL" ;
-			reg = <0x1da0 0x8>;
+			reg = <0x1d60 0x8>;
 			desc = "The number of data loads from level 2 or level 3 cache through A-link in kernel state" ;
 		};
 		event@15a0 {
@@ -1041,9 +1041,9 @@
 			reg = <0xd98 0x8>;
 			desc = "The number of data loads from a level 2 or level 3 cache across X-link" ;
 		};
-		event@1d98 {
+		event@1d58 {
 			event-name = "CPM_CS_FROM_L2_L3_X_LDATA_KERNEL" ;
-			reg = <0x1d98 0x8>;
+			reg = <0x1d58 0x8>;
 			desc = "The number of data loads from a level 2 or level 3 cache across X-link in kernel state" ;
 		};
 		event@1598 {
@@ -1116,10 +1116,10 @@
 			reg = <0xd58 0x8>;
 			desc = "The number of level 4 data loads from local level 4 cache" ;
 		};
-		event@1d58 {
-			event-name = "CPM_CS_FROM_L4_LDATA_KERNEL" ;
-			reg = <0x1d58 0x8>;
-			desc = "The number of level 4 data loads from local level 4 cache in kernel state" ;
+		event@1260 {
+			event-name = "CPM_CS_CORE_ICT_EMPTY_PCYC_USER" ;
+			reg = <0x1260 0x8>;
+			desc = "The number of processor cycles the ICT was empty in user state" ;
 		};
 		event@1558 {
 			event-name = "CPM_CS_FROM_L4_LDATA_USER" ;
@@ -1131,9 +1131,9 @@
 			reg = <0xfa0 0x8>;
 			desc = "The number of data PTEG misses that are satisfied from level 4 cache of memory across A-link" ;
 		};
-		event@1fa0 {
+		event@1f60 {
 			event-name = "CPM_CS_FROM_L4_MEM_A_DPTEG_KERNEL" ;
-			reg = <0x1fa0 0x8>;
+			reg = <0x1f60 0x8>;
 			desc = "The number of data PTEG misses that are satisfied from level 4 cache of memory across A-link in kernel state" ;
 		};
 		event@17a0 {
@@ -1161,9 +1161,9 @@
 			reg = <0xea0 0x8>;
 			desc = "The number of instruction PTEG misses that are satisfied from level 4 cache of memory across A-link" ;
 		};
-		event@1ea0 {
+		event@1e60 {
 			event-name = "CPM_CS_FROM_L4_MEM_A_IPTEG_KERNEL" ;
-			reg = <0x1ea0 0x8>;
+			reg = <0x1e60 0x8>;
 			desc = "The number of instruction PTEG misses that are satisfied from level 4 cache of memory across A-link in kernel state" ;
 		};
 		event@16a0 {
@@ -1176,9 +1176,9 @@
 			reg = <0xde0 0x8>;
 			desc = "The number of data loads from level 4 cache or memory across A-link" ;
 		};
-		event@1de0 {
+		event@1da0 {
 			event-name = "CPM_CS_FROM_L4_MEM_A_LDATA_KERNEL" ;
-			reg = <0x1de0 0x8>;
+			reg = <0x1da0 0x8>;
 			desc = "The number of data loads from level 4 cache or memory across A-link in kernel state" ;
 		};
 		event@15e0 {
@@ -1191,9 +1191,9 @@
 			reg = <0xf98 0x8>;
 			desc = "The number of instruction PTEG L3 misses that are satisfied by off-chip but node-local source" ;
 		};
-		event@1f98 {
+		event@1f58 {
 			event-name = "CPM_CS_FROM_L4_MEM_X_DPTEG_KERNEL" ;
-			reg = <0x1f98 0x8>;
+			reg = <0x1f58 0x8>;
 			desc = "The number of instruction PTEG L3 misses that are satisfied by off-chip but node-local source in kernel state" ;
 		};
 		event@1798 {
@@ -1221,9 +1221,9 @@
 			reg = <0xe98 0x8>;
 			desc = "The number of instruction PTEG L3 misses that are satisfied by off-chip- but node-local source" ;
 		};
-		event@1e98 {
+		event@1e58 {
 			event-name = "CPM_CS_FROM_L4_MEM_X_IPTEG_KERNEL" ;
-			reg = <0x1e98 0x8>;
+			reg = <0x1e58 0x8>;
 			desc = "The number of instruction PTEG L3 misses that are satisfied by off-chip- but node-local source in kernel state" ;
 		};
 		event@1698 {
@@ -1236,9 +1236,9 @@
 			reg = <0xdd8 0x8>;
 			desc = "The number of data load from a level 4 cache or memory across X-link" ;
 		};
-		event@1dd8 {
+		event@1d98 {
 			event-name = "CPM_CS_FROM_L4_MEM_X_LDATA_KERNEL" ;
-			reg = <0x1dd8 0x8>;
+			reg = <0x1d98 0x8>;
 			desc = "The number of data load from a level 4 cache or memory across X-link in kernel state" ;
 		};
 		event@15d8 {
@@ -1266,10 +1266,10 @@
 			reg = <0xd60 0x8>;
 			desc = "The number of data loads from local memory" ;
 		};
-		event@1d60 {
-			event-name = "CPM_CS_FROM_MEM_LDATA_KERNEL" ;
-			reg = <0x1d60 0x8>;
-			desc = "The number of data loads from local memory in kernel state" ;
+		event@358 {
+			event-name = "CPM_TLBIE" ;
+			reg = <0x358 0x8>;
+			desc = "The number of TLBIE instructions that finished" ;
 		};
 		event@1560 {
 			event-name = "CPM_CS_FROM_MEM_LDATA_USER" ;
@@ -1281,9 +1281,9 @@
 			reg = <0xfe0 0x8>;
 			desc = "The number of data and instruction misses that are satisfied by local memory" ;
 		};
-		event@1fe0 {
+		event@1fa0 {
 			event-name = "CPM_CS_FROM_MEM_LOCAL_KERNEL" ;
-			reg = <0x1fe0 0x8>;
+			reg = <0x1fa0 0x8>;
 			desc = "The number of data and instruction misses that are satisfied by local memory in kernel state" ;
 		};
 		event@17e0 {
@@ -1386,9 +1386,9 @@
 			reg = <0xe20 0x8>;
 			desc = "The number of all store instructions finished" ;
 		};
-		event@1e20 {
+		event@1de0 {
 			event-name = "CPM_CS_CPM_CS_ST_FIN_KERNEL" ;
-			reg = <0x1e20 0x8>;
+			reg = <0x1de0 0x8>;
 			desc = "The number of all store instructions finished in kernel state" ;
 		};
 		event@1620 {
@@ -1416,9 +1416,9 @@
 			reg = <0xe58 0x8>;
 			desc = "The number of IERAT reloads" ;
 		};
-		event@1e58 {
+		event@1e18 {
 			event-name = "CPM_CS_IERAT_MISS_KERNEL" ;
-			reg = <0x1e58 0x8>;
+			reg = <0x1e18 0x8>;
 			desc = "The number of IERAT reloads in kernel state" ;
 		};
 		event@1658 {
@@ -1461,9 +1461,9 @@
 			reg = <0xe60 0x8>;
 			desc = "The number of instruction TLB reloads" ;
 		};
-		event@1e60 {
+		event@1e20 {
 			event-name = "CPM_CS_ITLB_RELOAD_KERNEL" ;
-			reg = <0x1e60 0x8>;
+			reg = <0x1e20 0x8>;
 			desc = "The number of instruction TLB reloads in kernel state" ;
 		};
 		event@1660 {
@@ -1566,9 +1566,9 @@
 			reg = <0xe18 0x8>;
 			desc = "The number of stores that missed level 1 cache" ;
 		};
-		event@1e18 {
+		event@1dd8 {
 			event-name = "CPM_CS_ST_MISS_L1_KERNEL" ;
-			reg = <0x1e18 0x8>;
+			reg = <0x1dd8 0x8>;
 			desc = "The number of stores that missed level 1 cache in kernel state" ;
 		};
 		event@1618 {
@@ -1750,16 +1750,6 @@
 			event-name = "CPM_THREAD_NAP_STATE_LOSS_CCYC" ;
 			reg = <0x5d8 0x8>;
 			desc = "The sum of all constant clock cycles across all SMT threads in Power Savings mode (DD1). The sum of all constant clock cycles across all SMT threads in Power Saving mode where the thread state is not saved (DD2 only). The current event name is for DD2. The event name is CPM_THREAD_NAP_CCYC for DD1" ;
-		};
-		event@358 {
-			event-name = "CPM_TLBIE" ;
-			reg = <0x358 0x8>;
-			desc = "The number of TLBIE instructions that finished" ;
-		};
-		event@1260 {
-			event-name = "CPM_CS_CORE_ICT_EMPTY_PCYC_USER" ;
-			reg = <0x1260 0x8>;
-			desc = "The number of processor cycles the ICT was empty in user state" ;
 		};
 	};
 	thread {
@@ -1863,9 +1853,9 @@
 			reg = <0x298 0x8>;
 			desc = "Number of TM transactions that passed" ;
 		};
-		event@1fd8 {
+		event@2d8 {
 			event-name = "CPM_TM_ABORTS" ;
-			reg = <0x1fd8 0x8>;
+			reg = <0x2d8 0x8>;
 			desc = "Number of TM transactions aborted" ;
 		};
 		event@58 {
@@ -2108,9 +2098,9 @@
 			reg = <0xed8 0x8>;
 			desc = "The number of DERAT misses" ;
 		};
-		event@1ed8 {
+		event@1e98 {
 			event-name = "CPM_CS_DERAT_MISS_KERNEL" ;
-			reg = <0x1ed8 0x8>;
+			reg = <0x1e98 0x8>;
 			desc = "The number of DERAT misses in kernel state" ;
 		};
 		event@16d8 {
@@ -2138,9 +2128,9 @@
 			reg = <0xf60 0x8>;
 			desc = "The number of data TLB misses for 16G page size" ;
 		};
-		event@1f60 {
+		event@1f20 {
 			event-name = "CPM_CS_DTLB_MISS_16G_KERNEL" ;
-			reg = <0x1f60 0x8>;
+			reg = <0x1f20 0x8>;
 			desc = "The number of data TLB misses for 16G page size in kernel state" ;
 		};
 		event@1760 {
@@ -2153,9 +2143,9 @@
 			reg = <0xf58 0x8>;
 			desc = "The number of data TLB misses for 16M page size" ;
 		};
-		event@1f58 {
+		event@1f18 {
 			event-name = "CPM_CS_DTLB_MISS_16M_KERNEL" ;
-			reg = <0x1f58 0x8>;
+			reg = <0x1f18 0x8>;
 			desc = "The number of data TLB misses for 16M page size in kernel state" ;
 		};
 		event@1758 {
@@ -2168,9 +2158,9 @@
 			reg = <0xf18 0x8>;
 			desc = "The number of data TLB misses for 4K page size" ;
 		};
-		event@1f18 {
+		event@1ed8 {
 			event-name = "CPM_CS_DTLB_MISS_4K_KERNEL" ;
-			reg = <0x1f18 0x8>;
+			reg = <0x1ed8 0x8>;
 			desc = "The number of data TLB misses for 4K page size in kernel state" ;
 		};
 		event@1718 {
@@ -2183,9 +2173,9 @@
 			reg = <0xf20 0x8>;
 			desc = "The number of data TLB misses for 64K page size" ;
 		};
-		event@1f20 {
+		event@1ee0 {
 			event-name = "CPM_CS_DTLB_MISS_64K_KERNEL" ;
-			reg = <0x1f20 0x8>;
+			reg = <0x1ee0 0x8>;
 			desc = "The number of data TLB misses for 64K page size in kernel state" ;
 		};
 		event@1720 {
@@ -2198,9 +2188,9 @@
 			reg = <0xee0 0x8>;
 			desc = "The number of data TLB reloads" ;
 		};
-		event@1ee0 {
+		event@1ea0 {
 			event-name = "CPM_CS_DTLB_RELOAD_KERNEL" ;
-			reg = <0x1ee0 0x8>;
+			reg = <0x1ea0 0x8>;
 			desc = "The number of data TLB reloads in kernel state" ;
 		};
 		event@16e0 {
@@ -2273,9 +2263,9 @@
 			reg = <0xda0 0x8>;
 			desc = "The number of data loads from level 2 or level 3 cache through A-link" ;
 		};
-		event@1da0 {
+		event@1d60 {
 			event-name = "CPM_CS_FROM_L2_L3_A_LDATA_KERNEL" ;
-			reg = <0x1da0 0x8>;
+			reg = <0x1d60 0x8>;
 			desc = "The number of data loads from level 2 or level 3 cache through A-link in kernel state" ;
 		};
 		event@15a0 {
@@ -2303,9 +2293,9 @@
 			reg = <0xd98 0x8>;
 			desc = "The number of data loads from a level 2 or level 3 cache across X-link" ;
 		};
-		event@1d98 {
+		event@1d58 {
 			event-name = "CPM_CS_FROM_L2_L3_X_LDATA_KERNEL" ;
-			reg = <0x1d98 0x8>;
+			reg = <0x1d58 0x8>;
 			desc = "The number of data loads from a level 2 or level 3 cache across X-link in kernel state" ;
 		};
 		event@1598 {
@@ -2378,10 +2368,10 @@
 			reg = <0xd58 0x8>;
 			desc = "The number of level 4 data loads from local level 4 cache" ;
 		};
-		event@1d58 {
-			event-name = "CPM_CS_FROM_L4_LDATA_KERNEL" ;
-			reg = <0x1d58 0x8>;
-			desc = "The number of level 4 data loads from local level 4 cache in kernel state" ;
+		event@1260 {
+			event-name = "CPM_CS_CORE_ICT_EMPTY_PCYC_USER" ;
+			reg = <0x1260 0x8>;
+			desc = "The number of processor cycles the ICT was empty in user state" ;
 		};
 		event@1558 {
 			event-name = "CPM_CS_FROM_L4_LDATA_USER" ;
@@ -2393,9 +2383,9 @@
 			reg = <0xfa0 0x8>;
 			desc = "The number of data PTEG misses that are satisfied from level 4 cache of memory across A-link" ;
 		};
-		event@1fa0 {
+		event@1f60 {
 			event-name = "CPM_CS_FROM_L4_MEM_A_DPTEG_KERNEL" ;
-			reg = <0x1fa0 0x8>;
+			reg = <0x1f60 0x8>;
 			desc = "The number of data PTEG misses that are satisfied from level 4 cache of memory across A-link in kernel state" ;
 		};
 		event@17a0 {
@@ -2423,9 +2413,9 @@
 			reg = <0xea0 0x8>;
 			desc = "The number of instruction PTEG misses that are satisfied from level 4 cache of memory across A-link" ;
 		};
-		event@1ea0 {
+		event@1e60 {
 			event-name = "CPM_CS_FROM_L4_MEM_A_IPTEG_KERNEL" ;
-			reg = <0x1ea0 0x8>;
+			reg = <0x1e60 0x8>;
 			desc = "The number of instruction PTEG misses that are satisfied from level 4 cache of memory across A-link in kernel state" ;
 		};
 		event@16a0 {
@@ -2438,9 +2428,9 @@
 			reg = <0xde0 0x8>;
 			desc = "The number of data loads from level 4 cache or memory across A-link" ;
 		};
-		event@1de0 {
+		event@1da0 {
 			event-name = "CPM_CS_FROM_L4_MEM_A_LDATA_KERNEL" ;
-			reg = <0x1de0 0x8>;
+			reg = <0x1da0 0x8>;
 			desc = "The number of data loads from level 4 cache or memory across A-link in kernel state" ;
 		};
 		event@15e0 {
@@ -2453,9 +2443,9 @@
 			reg = <0xf98 0x8>;
 			desc = "The number of instruction PTEG L3 misses that are satisfied by off-chip but node-local source" ;
 		};
-		event@1f98 {
+		event@1f58 {
 			event-name = "CPM_CS_FROM_L4_MEM_X_DPTEG_KERNEL" ;
-			reg = <0x1f98 0x8>;
+			reg = <0x1f58 0x8>;
 			desc = "The number of instruction PTEG L3 misses that are satisfied by off-chip but node-local source in kernel state" ;
 		};
 		event@1798 {
@@ -2483,9 +2473,9 @@
 			reg = <0xe98 0x8>;
 			desc = "The number of instruction PTEG L3 misses that are satisfied by off-chip- but node-local source" ;
 		};
-		event@1e98 {
+		event@1e58 {
 			event-name = "CPM_CS_FROM_L4_MEM_X_IPTEG_KERNEL" ;
-			reg = <0x1e98 0x8>;
+			reg = <0x1e58 0x8>;
 			desc = "The number of instruction PTEG L3 misses that are satisfied by off-chip- but node-local source in kernel state" ;
 		};
 		event@1698 {
@@ -2498,9 +2488,9 @@
 			reg = <0xdd8 0x8>;
 			desc = "The number of data load from a level 4 cache or memory across X-link" ;
 		};
-		event@1dd8 {
+		event@1d98 {
 			event-name = "CPM_CS_FROM_L4_MEM_X_LDATA_KERNEL" ;
-			reg = <0x1dd8 0x8>;
+			reg = <0x1d98 0x8>;
 			desc = "The number of data load from a level 4 cache or memory across X-link in kernel state" ;
 		};
 		event@15d8 {
@@ -2528,10 +2518,10 @@
 			reg = <0xd60 0x8>;
 			desc = "The number of data loads from local memory" ;
 		};
-		event@1d60 {
-			event-name = "CPM_CS_FROM_MEM_LDATA_KERNEL" ;
-			reg = <0x1d60 0x8>;
-			desc = "The number of data loads from local memory in kernel state" ;
+		event@358 {
+			event-name = "CPM_TLBIE" ;
+			reg = <0x358 0x8>;
+			desc = "The number of TLBIE instructions that finished" ;
 		};
 		event@1560 {
 			event-name = "CPM_CS_FROM_MEM_LDATA_USER" ;
@@ -2543,9 +2533,9 @@
 			reg = <0xfe0 0x8>;
 			desc = "The number of data and instruction misses that are satisfied by local memory" ;
 		};
-		event@1fe0 {
+		event@1fa0 {
 			event-name = "CPM_CS_FROM_MEM_LOCAL_KERNEL" ;
-			reg = <0x1fe0 0x8>;
+			reg = <0x1fa0 0x8>;
 			desc = "The number of data and instruction misses that are satisfied by local memory in kernel state" ;
 		};
 		event@17e0 {
@@ -2648,9 +2638,9 @@
 			reg = <0xe20 0x8>;
 			desc = "The number of all store instructions finished" ;
 		};
-		event@1e20 {
+		event@1de0 {
 			event-name = "CPM_CS_CPM_CS_ST_FIN_KERNEL" ;
-			reg = <0x1e20 0x8>;
+			reg = <0x1de0 0x8>;
 			desc = "The number of all store instructions finished in kernel state" ;
 		};
 		event@1620 {
@@ -2678,9 +2668,9 @@
 			reg = <0xe58 0x8>;
 			desc = "The number of IERAT reloads" ;
 		};
-		event@1e58 {
+		event@1e18 {
 			event-name = "CPM_CS_IERAT_MISS_KERNEL" ;
-			reg = <0x1e58 0x8>;
+			reg = <0x1e18 0x8>;
 			desc = "The number of IERAT reloads in kernel state" ;
 		};
 		event@1658 {
@@ -2723,9 +2713,9 @@
 			reg = <0xe60 0x8>;
 			desc = "The number of instruction TLB reloads" ;
 		};
-		event@1e60 {
+		event@1e20 {
 			event-name = "CPM_CS_ITLB_RELOAD_KERNEL" ;
-			reg = <0x1e60 0x8>;
+			reg = <0x1e20 0x8>;
 			desc = "The number of instruction TLB reloads in kernel state" ;
 		};
 		event@1660 {
@@ -2828,9 +2818,9 @@
 			reg = <0xe18 0x8>;
 			desc = "The number of stores that missed level 1 cache" ;
 		};
-		event@1e18 {
+		event@1dd8 {
 			event-name = "CPM_CS_ST_MISS_L1_KERNEL" ;
-			reg = <0x1e18 0x8>;
+			reg = <0x1dd8 0x8>;
 			desc = "The number of stores that missed level 1 cache in kernel state" ;
 		};
 		event@1618 {
@@ -3012,16 +3002,6 @@
 			event-name = "CPM_THREAD_NAP_STATE_LOSS_CCYC" ;
 			reg = <0x5d8 0x8>;
 			desc = "The sum of all constant clock cycles across all SMT threads in Power Savings mode (DD1). The sum of all constant clock cycles across all SMT threads in Power Saving mode where the thread state is not saved (DD2 only). The current event name is for DD2. The event name is CPM_THREAD_NAP_CCYC for DD1" ;
-		};
-		event@358 {
-			event-name = "CPM_TLBIE" ;
-			reg = <0x358 0x8>;
-			desc = "The number of TLBIE instructions that finished" ;
-		};
-		event@1260 {
-			event-name = "CPM_CS_CORE_ICT_EMPTY_PCYC_USER" ;
-			reg = <0x1260 0x8>;
-			desc = "The number of processor cycles the ICT was empty in user state" ;
 		};
 	};
 };
