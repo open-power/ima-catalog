@@ -1757,6 +1757,7 @@
 		ranges;
 		#address-cells = <0x1>;
 		#size-cells = <0x1>;
+		scale = "128";
 
 		event@e0 {
 			event-name = "CPM_0THRD_NON_IDLE_PCYC" ;
