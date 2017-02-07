@@ -1,6 +1,14 @@
 #!/bin/bash
 #
+# Build script to create DTBs from In Memory Accumulation (IMA) Catalog repository.
+#
+# For a given platform, we could have multiple DTS (Device Tree Source) file.
+# Build script first builds DTB (Device Tree Binary) file from DTS using dtc
+# compiler. It then packs generated DTBs to one single binary file called
+# "ima_catalog.bin". This "ima_catalog.bin" is what is flashed to PNOR partition.
+#
 # Based on "openpower/capp-ucode" build.sh script.
+#
 
 #
 # #define PNOR_SUBPART_HEADER_SIZE 0x1000
@@ -18,8 +26,8 @@
 
 #
 # Two parameters are passed to this script
-# 1)Path to host-tools
-# 2)Platform to build
+# 1)Path to host-tools -- we need this for the dtc and xz commands.
+# 2)Platform to build  -- We need this to pick the right DTS file.
 #
 
 declare -a ima_arr
@@ -31,6 +39,10 @@ declare -a POWER8=('81E00610.4D0100.dts' '81E00610.4D0200.dts')
 declare -a POWER8_PVR=(0x4d0100 0x4d0200)
 declare -a POWER8_FILENAME=(0x4d0100.bin 0x4d0200.bin)
 
+declare -a POWER9=('81E00612.4E0100.dts')
+declare -a POWER9_PVR=(0x4e0100)
+declare -a POWER9_FILENAME=(0x4e0100.bin)
+
 align() {
     echo $(( (($1 + ($alignment - 1))) & ~($alignment - 1) ))
 }
@@ -39,6 +51,10 @@ if [ "$2" == "POWER8" ]; then
    ima_arr=("${POWER8[@]}")
    ima_pvr=("${POWER8_PVR[@]}")
    ima_file=("${POWER8_FILENAME[@]}")
+elif [ "$2" == "POWER9" ]; then
+   ima_arr=("${POWER9[@]}")
+   ima_pvr=("${POWER9_PVR[@]}")
+   ima_file=("${POWER9_FILENAME[@]}")
 fi
 
 entries=$((${#ima_arr[@]}))
@@ -55,7 +71,11 @@ if [ $entries -gt 0 ]; then
 	mv ${ima_file[${i}]}.xz ${ima_file[${i}]}
 
 	size=$( stat -c %s ${ima_file[${i}]} )
-	pad=$(( 8000 - $(($size))))
+	if [ "$2" == "POWER8" ]; then
+	    pad=$(( 8000 - $(($size))))
+	else
+	    pad=$(( 32768 - $(($size))))
+	fi
 	dd if=/dev/zero count=$pad bs=1 >> ${ima_file[${i}]}
     done
 fi
@@ -96,7 +116,7 @@ for i in $(seq 0 $(($NUMBEROFTOCENTRIES - 1 ))) ; do
         section=$sections
     fi
 
-    # Add TOC entry for every PHB3 to
+    # Add TOC entry for every DTB to
     printf "0: %.8x" ${ima_pvr[$i]} | xxd -r -g0 >> $TMPFILE
     printf "0: %.8x" ${sectionoffset[$section]} | xxd -r -g0 >> $TMPFILE
     printf "0: %.8x" ${sectionsize[$section]} | xxd -r -g0 >> $TMPFILE
