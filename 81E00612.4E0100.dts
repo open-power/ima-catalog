@@ -240,6 +240,435 @@ NEST_PHB: nest-phb-events {
 		reg = <0x2328 0x8>;
 		events = < &NEST_PHB >;
 	};
+NEST_MBA: nest-mba-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@0 {
+			event-name = "ACT_READ" ;
+			reg = <0x0 0x8>;
+			desc = "ACT for read in MBA" ;
+		};
+		event@8 {
+			event-name = "ACT_WRITE" ;
+			reg = <0x8 0x8>;
+			desc = "ACT for write in MBA" ;
+		};
+		event@10 {
+			event-name = "CAS_READ" ;
+			reg = <0x10 0x8>;
+			desc = "CAS for read in MBA" ;
+		};
+		event@18 {
+			event-name = "CAS_WRITE" ;
+			reg = <0x18 0x8>;
+			desc = "CAS for write in MBA" ;
+		};
+		event@28 {
+			event-name = "RRQ_FULL" ;
+			reg = <0x28 0x8>;
+			desc = "RRQ full in MBA" ;
+		};
+		event@30 {
+			event-name = "REF_ALL" ;
+			reg = <0x30 0x8>;
+			desc = "Total number of Refresh (HP and LP) in MBA" ;
+		};
+	};
+	mba0 {
+		compatible = "ibm,imc-counters-nest";
+		events-prefix = "PM_MBA0_";
+		reg = <0x792 0x8>;
+		events = < &NEST_MBA >;
+	};
+	mba1 {
+		compatible = "ibm,imc-counters-nest";
+		events-prefix = "PM_MBA1_";
+		reg = <0x920 0x8>;
+		events = < &NEST_MBA >;
+	};
+	mba2 {
+		compatible = "ibm,imc-counters-nest";
+		events-prefix = "PM_MBA2_";
+		reg = <0x1048 0x8>;
+		events = < &NEST_MBA >;
+	};
+	mba3 {
+		compatible = "ibm,imc-counters-nest";
+		events-prefix = "PM_MBA3_";
+		reg = <0x1176 0x8>;
+		events = < &NEST_MBA >;
+	};
+NEST_MCD: nest-mcd-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@0 {
+			event-name = "SLICE0_RTYDINC" ;
+			reg = <0x0 0x8>;
+			desc = "A check type command on PowerBus port 0 where a rty_dinc is issued" ;
+		};
+		event@8 {
+			event-name = "SLICE2_RTYDINC" ;
+			reg = <0x8 0x8>;
+			desc = "check type command on PowerBus port 2 where a rty_dinc is issued" ;
+		};
+		event@10 {
+			event-name = "RECOVERY_SKIP" ;
+			reg = <0x10 0x8>;
+			desc = "Recovery of a granule/ group vector was skipped because no dirty granules were found data read" ;
+		};
+		event@18 {
+			event-name = "RECOVERY_SET_HIT" ;
+			reg = <0x18 0x8>;
+			desc = "Set type powerbus command from a vector hit a cache line in the granule(s) being recovered" ;
+		};
+	};
+	mcd0 {
+		compatible = "ibm,imc-counters-nest";
+		events-prefix = "PM_MCD0_";
+		reg = <0x1816 0x8>;
+		events = < &NEST_MCD >;
+	};
+	mcd1 {
+		compatible = "ibm,imc-counters-nest";
+		events-prefix = "PM_MCD1_";
+		reg = <0x1944 0x8>;
+		events = < &NEST_MCD >;
+	};
+NEST_CAPP: nest-capp-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@0 {
+			event-name = "APC_SN_HIT_APC" ;
+			reg = <0x0 0x8>;
+			desc = "snoop on either addr pipeline hits an apcfsm" ;
+		};
+		event@8 {
+			event-name = "APC_UOP_SEND_PB_CMD" ;
+			reg = <0x8 0x8>;
+			desc = "APC uOP command for sending PB Command" ;
+		};
+		event@10 {
+			event-name = "APC_UOP_LCO" ;
+			reg = <0x10 0x8>;
+			desc = "APC uOP command for LCO" ;
+		};
+		event@18 {
+			event-name = "APC_UOP_DATA_XFER" ;
+			reg = <0x18 0x8>;
+			desc = "APC uOP command for Data transfer" ;
+		};
+		event@28 {
+			event-name = "XPT_MSG_SENT" ;
+			reg = <0x28 0x8>;
+			desc = "Message buffer sent due to timer expired and Buffer Threshold not hit" ;
+		};
+		event@30 {
+			event-name = "XPT_MSG_SENT_LE_16" ;
+			reg = <0x30 0x8>;
+			desc = "Message buffer of tsize less than or equal to 16 bytes sent" ;
+		};
+		event@38 {
+			event-name = "XPT_MSG_SENT_GT_16_LE_64" ;
+			reg = <0x38 0x8>;
+			desc = "Message buffer of tsize greater than 16 bytes but less than or equal to 64 bytes sent" ;
+		};
+		event@40 {
+			event-name = "XPT_MSG_SENT_GT_64_LE_128" ;
+			reg = <0x40 0x8>;
+			desc = "Message buffer of tsize greater than 64 bytes but less than or equal to 128 bytes sent" ;
+		};
+	};
+	capp0 {
+		compatible = "ibm,imc-counters-nest";
+		events-prefix = "PM_CAPP_";
+		reg = <0x2456 0x8>;
+		events = < &NEST_CAPP >;
+	};
+NEST_NVLINK: nest-nvlink-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@0 {
+			event-name = "ATS_TCE_TRANS_REQ" ;
+			reg = <0x0 0x8>;
+			desc = "TCE Translation Request" ;
+		};
+		event@8 {
+			event-name = "ATS_TCE_MISS" ;
+			reg = <0x8 0x8>;
+			desc = "TCE Miss" ;
+		};
+		event@10 {
+			event-name = "ATS_NOTRANS_TCE_TRANS" ;
+			reg = <0x10 0x8>;
+			desc = "No-Translate Mode TCE Translation" ;
+		};
+		event@18 {
+			event-name = "ATS_CACHE_RERUN_MISS" ;
+			reg = <0x18 0x8>;
+			desc = "TCE Cache Rerun Miss" ;
+		};
+		event@28 {
+			event-name = "ATR_CHECKOUT_D" ;
+			reg = <0x28 0x8>;
+			desc = "ATR Demand Checkout" ;
+		};
+		event@30 {
+			event-name = "ATR_CHECKOUT_P" ;
+			reg = <0x30 0x8>;
+			desc = "ATR Prefetch Checkout" ;
+		};
+		event@38 {
+			event-name = "ATR_ATSD_TLBI_RVCD" ;
+			reg = <0x38 0x8>;
+			desc = "ATSD TLBI Received" ;
+		};
+		event@40 {
+			event-name = "ATR_ATSD_SENT" ;
+			reg = <0x40 0x8>;
+			desc = "ATSD Sent" ;
+		};
+		event@80 {
+			event-name = "NPCQ0_DWNGRD_REQ0" ;
+			reg = <0x80 0x8>;
+			desc = "Downgrade Request to Brick 0" ;
+		};
+		event@88 {
+			event-name = "NPCQ0_ATSD_REQ0" ;
+			reg = <0x88 0x8>;
+			desc = "ATSD Request to Brick 0" ;
+		};
+		event@90 {
+			event-name = "NPCQ0_DWNGRD_REQ1" ;
+			reg = <0x90 0x8>;
+			desc = "Downgrade Request to Brick 1" ;
+		};
+		event@98 {
+			event-name = "NPCQ0_ATSD_REQ1" ;
+			reg = <0x98 0x8>;
+			desc = "ATSD Request to Brick 1" ;
+		};
+		event@a8 {
+			event-name = "NPCQ1_DWNGRD_REQ0" ;
+			reg = <0xa8 0x8>;
+			desc = "Downgrade Request to Brick 0" ;
+		};
+		event@b0 {
+			event-name = "NPCQ1_ATSD_REQ0" ;
+			reg = <0xb0 0x8>;
+			desc = "ATSD Request to Brick 0" ;
+		};
+		event@b8 {
+			event-name = "NPCQ1_DWNGRD_REQ1" ;
+			reg = <0xb8 0x8>;
+			desc = "Downgrade Request to Brick 1" ;
+		};
+		event@c0 {
+			event-name = "NPCQ1_ATSD_REQ1" ;
+			reg = <0xc0 0x8>;
+			desc = "ATSD Request to Brick 1" ;
+		};
+		event@100 {
+			event-name = "NPCQ2_DWNGRD_REQ0" ;
+			reg = <0x100 0x8>;
+			desc = "Downgrade Request to Brick 0" ;
+		};
+		event@108 {
+			event-name = "NPCQ2_ATSD_REQ0" ;
+			reg = <0x108 0x8>;
+			desc = "ATSD Request to Brick 0" ;
+		};
+		event@110 {
+			event-name = "NPCQ2_DWNGRD_REQ1" ;
+			reg = <0x110 0x8>;
+			desc = "Downgrade Request to Brick 1" ;
+		};
+		event@118 {
+			event-name = "NPCQ2_ATSD_REQ1" ;
+			reg = <0x118 0x8>;
+			desc = "ATSD Request to Brick 1" ;
+		};
+		event@180 {
+			event-name = "NTL1_DATA_FLIT_SENT" ;
+			reg = <0x180 0x8>;
+			desc = "Data FLIT Sent" ;
+		};
+		event@188 {
+			event-name = "NTL1_PROBE_RESP_DATA" ;
+			reg = <0x188 0x8>;
+			desc = "Probe Response w/ Data Sent" ;
+		};
+		event@190 {
+			event-name = "NTL1_TRANS_RESP_DATA" ;
+			reg = <0x190 0x8>;
+			desc = "Transdone Response w/ Data Sent" ;
+		};
+		event@198 {
+			event-name = "NTL1_DATA_FLIT_RCVD" ;
+			reg = <0x198 0x8>;
+			desc = "Data FLIT Received " ;
+		};
+		event@1a8 {
+			event-name = "NTL2_DATA_FLIT_SENT" ;
+			reg = <0x1a8 0x8>;
+			desc = "Data FLIT Sent" ;
+		};
+		event@1b0 {
+			event-name = "NTL2_PROBE_RESP_DATA" ;
+			reg = <0x1b0 0x8>;
+			desc = "Probe Response w/ Data Sent" ;
+		};
+		event@1b8 {
+			event-name = "NTL2_TRANS_RESP_DATA" ;
+			reg = <0x1b8 0x8>;
+			desc = "Transdone Response w/ Data Sent" ;
+		};
+		event@1c0 {
+			event-name = "NTL2_DATA_FLIT_RCVD" ;
+			reg = <0x1c0 0x8>;
+			desc = "Data FLIT Received " ;
+		};
+		event@200 {
+			event-name = "NTL3_DATA_FLIT_SENT" ;
+			reg = <0x200 0x8>;
+			desc = "Data FLIT Sent" ;
+		};
+		event@208 {
+			event-name = "NTL3_PROBE_RESP_DATA" ;
+			reg = <0x208 0x8>;
+			desc = "Probe Response w/ Data Sent" ;
+		};
+		event@210 {
+			event-name = "NTL3_TRANS_RESP_DATA" ;
+			reg = <0x210 0x8>;
+			desc = "Transdone Response w/ Data Sent" ;
+		};
+		event@218 {
+			event-name = "NTL3_DATA_FLIT_RCVD" ;
+			reg = <0x218 0x8>;
+			desc = "Data FLIT Received " ;
+		};
+		event@228 {
+			event-name = "NTL4_DATA_FLIT_SENT" ;
+			reg = <0x228 0x8>;
+			desc = "Data FLIT Sent" ;
+		};
+		event@230 {
+			event-name = "NTL4_PROBE_RESP_DATA" ;
+			reg = <0x230 0x8>;
+			desc = "Probe Response w/ Data Sent" ;
+		};
+		event@238 {
+			event-name = "NTL4_TRANS_RESP_DATA" ;
+			reg = <0x238 0x8>;
+			desc = "Transdone Response w/ Data Sent" ;
+		};
+		event@240 {
+			event-name = "NTL4_DATA_FLIT_RCVD" ;
+			reg = <0x240 0x8>;
+			desc = "Data FLIT Received " ;
+		};
+		event@280 {
+			event-name = "NTL5_DATA_FLIT_SENT" ;
+			reg = <0x280 0x8>;
+			desc = "Data FLIT Sent" ;
+		};
+		event@288 {
+			event-name = "NTL5_PROBE_RESP_DATA" ;
+			reg = <0x288 0x8>;
+			desc = "Probe Response w/ Data Sent" ;
+		};
+		event@290 {
+			event-name = "NTL5_TRANS_RESP_DATA" ;
+			reg = <0x290 0x8>;
+			desc = "Transdone Response w/ Data Sent" ;
+		};
+		event@298 {
+			event-name = "NTL5_DATA_FLIT_RCVD" ;
+			reg = <0x298 0x8>;
+			desc = "Data FLIT Received " ;
+		};
+		event@2a8 {
+			event-name = "NTL6_DATA_FLIT_SENT" ;
+			reg = <0x2a8 0x8>;
+			desc = "Data FLIT Sent" ;
+		};
+		event@2b0 {
+			event-name = "NTL6_PROBE_RESP_DATA" ;
+			reg = <0x2b0 0x8>;
+			desc = "Probe Response w/ Data Sent" ;
+		};
+		event@2b8 {
+			event-name = "NTL6_TRANS_RESP_DATA" ;
+			reg = <0x2b8 0x8>;
+			desc = "Transdone Response w/ Data Sent" ;
+		};
+		event@2c0 {
+			event-name = "NTL6_DATA_FLIT_RCVD" ;
+			reg = <0x2c0 0x8>;
+			desc = "Data FLIT Received " ;
+		};
+	};
+	nvlink0 {
+		compatible = "ibm,imc-counters-nest";
+		events-prefix = "PM_NPU_";
+		reg = <0x2584 0x8>;
+		events = < &NEST_NVLINK >;
+	};
+NEST_NX: nest-nx-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@0 {
+			event-name = "ERAT_LOOKUP" ;
+			reg = <0x0 0x8>;
+			desc = "Number of ERAT lookups" ;
+		};
+		event@8 {
+			event-name = "ERAT_MISS" ;
+			reg = <0x8 0x8>;
+			desc = "Number of ERAT misses" ;
+		};
+		event@10 {
+			event-name = "ERAT_STALLED_CICO_BUFFERS" ;
+			reg = <0x10 0x8>;
+			desc = "ERAT stalled due to Checkin/Checkout buffers full" ;
+		};
+		event@18 {
+			event-name = "DMA_STALL" ;
+			reg = <0x18 0x8>;
+			desc = "number of DMA stalls" ;
+		};
+		event@28 {
+			event-name = "PBI_RD_SENT" ;
+			reg = <0x28 0x8>;
+			desc = "PBI command to Read from the Write SM sent" ;
+		};
+		event@30 {
+			event-name = "PBI_WR_SENT" ;
+			reg = <0x30 0x8>;
+			desc = "PBI command to write from the Write SM sent" ;
+		};
+		event@38 {
+			event-name = "PBI_RCV_RETRY01" ;
+			reg = <0x38 0x8>;
+			desc = "One of the master engines (read" ;
+		};
+		event@40 {
+			event-name = "PBI_RCV_RETRY23" ;
+			reg = <0x40 0x8>;
+			desc = "One of the master engines (read" ;
+		};
+	};
+	nx0 {
+		compatible = "ibm,imc-counters-nest";
+		events-prefix = "PM_NX_";
+		reg = <0x3352 0x8>;
+		events = < &NEST_NX >;
+	};
 CORE_THREAD: core-thread-events {
 		#address-cells = <0x1>;
 		#size-cells = <0x1>;
