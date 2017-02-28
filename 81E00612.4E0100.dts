@@ -1549,32 +1549,32 @@ CORE_THREAD: core-thread-events {
 			desc = "The number of processor cycles in privileged mode with MSR HV=0 & PR=0" ;
 		};
 		event@e08 {
-			event-name = "CS_" ;
+			event-name = "CS_CPM_CS_ST_FIN" ;
 			reg = <0xe08 0x8>;
 			desc = "The number of all store instructions finished" ;
 		};
 		event@1dc8 {
-			event-name = "CS_" ;
+			event-name = "CS_CPM_CS_ST_FIN_KERNEL" ;
 			reg = <0x1dc8 0x8>;
 			desc = "The number of all store instructions finished in kernel state" ;
 		};
 		event@1608 {
-			event-name = "CS_" ;
+			event-name = "CS_CPM_CS_ST_FIN_USER" ;
 			reg = <0x1608 0x8>;
 			desc = "The number of all store instructions finished in user state" ;
 		};
 		event@c80 {
-			event-name = "CS_" ;
+			event-name = "CS_CPM_MISS_L1_LDATA" ;
 			reg = <0xc80 0x8>;
 			desc = "The number of level 1 data misses" ;
 		};
 		event@1c80 {
-			event-name = "CS_" ;
+			event-name = "CS_CPM_MISS_L1_LDATA_KERNEL" ;
 			reg = <0x1c80 0x8>;
 			desc = "The number of level 1 data misses in kernel state" ;
 		};
 		event@1480 {
-			event-name = "CS_" ;
+			event-name = "CS_CPM_MISS_L1_LDATA_USER" ;
 			reg = <0x1480 0x8>;
 			desc = "The number of level 1 data misses in user state" ;
 		};
@@ -1922,14 +1922,14 @@ CORE_THREAD: core-thread-events {
 	core {
 		compatible = "ibm,imc-counters-core";
 		events-prefix = "CPM_";
-		scale = "128";
+		scale = "512";
 		reg = <0x18 0x8>;
 		events = < &CORE_THREAD >;
 	};
 	thread {
 		compatible = "ibm,imc-counters-thread";
 		events-prefix = "CPM_";
-		scale = "128";
+		scale = "512";
 		reg = <0x18 0x8>;
 		events = < &CORE_THREAD >;
 	};
