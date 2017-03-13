@@ -34,6 +34,16 @@ declare -a ima_arr
 declare -a ima_pvr
 declare -a ima_file
 
+usage () { 
+	echo "Usage: $0  <Path to dtc/xz> <platform to build \"POWER8 or POWER9\">" 1>&2;
+	exit 0;
+}
+
+if [ $# -le 1 ]
+   then
+	usage
+fi
+
 #Catalog files to pickup for a given platform
 declare -a POWER8=('81E00610.4D0100.dts' '81E00610.4D0200.dts')
 declare -a POWER8_PVR=(0x4d0100 0x4d0200)
