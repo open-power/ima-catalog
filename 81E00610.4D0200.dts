@@ -2,121 +2,60 @@
 /dts-v1/;
 
 / {
-	name = "";
-	compatible = "ibm,opal-in-memory-counters";
-	#address-cells = <0x1>;
-	#size-cells = <0x1>;
-	ima-nest-offset = <0x320000>;
-	ima-nest-size = <0x30000>;
-	ranges;
-	version-id = "";
+        name = "";
+        compatible = "ibm,opal-in-memory-counters";
+        #address-cells = <0x1>;
+        #size-cells = <0x1>;
+        imc-nest-offset = <0x320000>;
+        imc-nest-size = <0x30000>;
+        version-id = <0xd>;
 
-	mcs0 {
-		compatible = "ibm,ima-counters-nest";
-		ranges;
+NEST_MCS: nest-mcs-events {
 		#address-cells = <0x1>;
 		#size-cells = <0x1>;
+
+		event@18 {
+			event-name = "UP_128B_DATA_XFER" ;
+			reg = <0x18 0x8>;
+			desc = "Total Read Bandwidth seen on both MCS" ;
+		};
+		event@98 {
+			event-name = "DOWN_128B_DATA_XFER" ;
+			reg = <0x98 0x8>;
+			desc = "Total Write Bandwidth seen on both MCS" ;
+		};
+	};
+	mcs0 {
+		compatible = "ibm,imc-counters-nest";
+		events-prefix = "PM_MCS0_";
 		unit = "MiB";
 		scale = "1.2207e-4";
-
-		event@118 {
-			event-name = "PM_MCS_UP_128B_DATA_XFER_MC0" ;
-			reg = <0x118 0x8>;
-			desc = "Total Read Bandwidth seen on both MCS of MC0" ;
-		};
-		event@140 {
-			event-name = "PM_MCS_UP_128B_DATA_XFER_MC0_LAST_SAMPLE" ;
-			reg = <0x140 0x8>;
-		};
-		event@198 {
-			event-name = "PM_MCS_DOWN_128B_DATA_XFER_MC0" ;
-			reg = <0x198 0x8>;
-			desc = "Total Write Bandwidth seen on both MCS of MC0" ;
-		};
-		event@1c0 {
-			event-name = "PM_MCS_DOWN_128B_DATA_XFER_MC0_LAST_SAMPLE" ;
-			reg = <0x1c0 0x8>;
-		};
+		reg = <0x100 0x8>;
+		events = < &NEST_MCS >;
 	};
 	mcs1 {
-		compatible = "ibm,ima-counters-nest";
-		ranges;
-		#address-cells = <0x1>;
-		#size-cells = <0x1>;
+		compatible = "ibm,imc-counters-nest";
+		events-prefix = "PM_MCS1_";
 		unit = "MiB";
 		scale = "1.2207e-4";
-
-		event@120 {
-			event-name = "PM_MCS_UP_128B_DATA_XFER_MC1" ;
-			reg = <0x120 0x8>;
-			desc = "Total Read Bandwidth seen on both MCS of MC1" ;
-		};
-		event@148 {
-			event-name = "PM_MCS_UP_128B_DATA_XFER_MC1_LAST_SAMPLE" ;
-			reg = <0x148 0x8>;
-		};
-		event@1a0 {
-			event-name = "PM_MCS_DOWN_128B_DATA_XFER_MC1" ;
-			reg = <0x1a0 0x8>;
-			desc = "Total Write Bandwidth seen on both MCS of MC1" ;
-		};
-		event@1c8 {
-			event-name = "PM_MCS_DOWN_128B_DATA_XFER_MC1_LAST_SAMPLE" ;
-			reg = <0x1c8 0x8>;
-		};
+		reg = <0x108 0x8>;
+		events = < &NEST_MCS >;
 	};
 	mcs2 {
-		compatible = "ibm,ima-counters-nest";
-		ranges;
-		#address-cells = <0x1>;
-		#size-cells = <0x1>;
+		compatible = "ibm,imc-counters-nest";
+		events-prefix = "PM_MCS2_";
 		unit = "MiB";
 		scale = "1.2207e-4";
-
-		event@128 {
-			event-name = "PM_MCS_UP_128B_DATA_XFER_MC2" ;
-			reg = <0x128 0x8>;
-			desc = "Total Read Bandwidth seen on both MCS of MC2" ;
-		};
-		event@150 {
-			event-name = "PM_MCS_UP_128B_DATA_XFER_MC2_LAST_SAMPLE" ;
-			reg = <0x150 0x8>;
-		};
-		event@1a8 {
-			event-name = "PM_MCS_DOWN_128B_DATA_XFER_MC2" ;
-			reg = <0x1a8 0x8>;
-			desc = "Total Write Bandwidth seen on both MCS of MC2" ;
-		};
-		event@1d0 {
-			event-name = "PM_MCS_DOWN_128B_DATA_XFER_MC2_LAST_SAMPLE" ;
-			reg = <0x1d0 0x8>;
-		};
+		reg = <0x110 0x8>;
+		events = < &NEST_MCS >;
 	};
 	mcs3 {
-		compatible = "ibm,ima-counters-nest";
-		ranges;
-		#address-cells = <0x1>;
-		#size-cells = <0x1>;
+		compatible = "ibm,imc-counters-nest";
+		events-prefix = "PM_MCS3_";
 		unit = "MiB";
 		scale = "1.2207e-4";
-
-		event@130 {
-			event-name = "PM_MCS_UP_128B_DATA_XFER_MC3" ;
-			reg = <0x130 0x8>;
-			desc = "Total Read Bandwidth seen on both MCS of MC3" ;
-		};
-		event@158 {
-			event-name = "PM_MCS_UP_128B_DATA_XFER_MC3_LAST_SAMPLE" ;
-			reg = <0x158 0x8>;
-		};
-		event@1b0 {
-			event-name = "PM_MCS_DOWN_128B_DATA_XFER_MC3" ;
-			reg = <0x1b0 0x8>;
-			desc = "Total Write Bandwidth seen on both MCS of MC3" ;
-		};
-		event@1d8 {
-			event-name = "PM_MCS_DOWN_128B_DATA_XFER_MC3_LAST_SAMPLE" ;
-			reg = <0x1d8 0x8>;
-		};
+		reg = <0x118 0x8>;
+		events = < &NEST_MCS >;
 	};
+
 };
