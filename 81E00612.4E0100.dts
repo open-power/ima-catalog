@@ -191,12 +191,6 @@ NEST_XLINK: nest-xlink-events {
 		reg = <0x618 0x8>;
 		events = < &NEST_XLINK >;
 	};
-	xlink3 {
-		compatible = "ibm,imc-counters-nest";
-		events-prefix = "PM_XLINK3_";
-		reg = <0x698 0x8>;
-		events = < &NEST_XLINK >;
-	};
 NEST_PHB: nest-phb-events {
 		#address-cells = <0x1>;
 		#size-cells = <0x1>;
