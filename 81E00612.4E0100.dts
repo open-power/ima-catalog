@@ -657,7 +657,7 @@ NEST_NX: nest-nx-events {
 			desc = "One of the master engines (read" ;
 		};
 	};
-	nx0 {
+	nx {
 		compatible = "ibm,imc-counters-nest";
 		events-prefix = "PM_NX_";
 		reg = <0xd18 0x8>;
