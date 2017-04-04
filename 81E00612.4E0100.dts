@@ -6,8 +6,8 @@
 	compatible = "ibm,opal-in-memory-counters";
 	#address-cells = <0x1>;
 	#size-cells = <0x1>;
-	imc-nest-offset = <0x320000>;
-	imc-nest-size = <0x30000>;
+	imc-nest-offset = <0x180000>;
+	imc-nest-size = <0x40000>;
 	version-id = <0xd>;
 
 NEST_MCS: nest-mcs-events {
