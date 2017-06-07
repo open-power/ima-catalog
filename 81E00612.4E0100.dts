@@ -6,8 +6,6 @@
 	compatible = "ibm,opal-in-memory-counters";
 	#address-cells = <0x1>;
 	#size-cells = <0x1>;
-	imc-nest-offset = <0x180000>;
-	imc-nest-size = <0x40000>;
 	version-id = <0xd>;
 
 NEST_MCS: nest-mcs-events {
@@ -46,36 +44,48 @@ NEST_MCS: nest-mcs-events {
 		};
 	};
 	mcs0 {
-		compatible = "ibm,imc-counters-nest";
+		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MCS0_";
 		unit = "MiB";
 		scale = "1.2207e-4";
 		reg = <0x118 0x8>;
 		events = < &NEST_MCS >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
 	};
 	mcs1 {
-		compatible = "ibm,imc-counters-nest";
+		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MCS1_";
 		unit = "MiB";
 		scale = "1.2207e-4";
 		reg = <0x198 0x8>;
 		events = < &NEST_MCS >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
 	};
 	mcs2 {
-		compatible = "ibm,imc-counters-nest";
+		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MCS2_";
 		unit = "MiB";
 		scale = "1.2207e-4";
 		reg = <0x218 0x8>;
 		events = < &NEST_MCS >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
 	};
 	mcs3 {
-		compatible = "ibm,imc-counters-nest";
+		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MCS3_";
 		unit = "MiB";
 		scale = "1.2207e-4";
 		reg = <0x298 0x8>;
 		events = < &NEST_MCS >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
 	};
 NEST_POWERBUS: nest-powerbus-events {
 		#address-cells = <0x1>;
@@ -123,10 +133,13 @@ NEST_POWERBUS: nest-powerbus-events {
 		};
 	};
 	powerbus0 {
-		compatible = "ibm,imc-counters-nest";
+		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PB_";
 		reg = <0x18 0x8>;
 		events = < &NEST_POWERBUS >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
 	};
 NEST_XLINK: nest-xlink-events {
 		#address-cells = <0x1>;
@@ -174,22 +187,31 @@ NEST_XLINK: nest-xlink-events {
 		};
 	};
 	xlink0 {
-		compatible = "ibm,imc-counters-nest";
+		compatible = "ibm,imc-counters";
 		events-prefix = "PM_XLINK0_";
 		reg = <0x518 0x8>;
 		events = < &NEST_XLINK >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
 	};
 	xlink1 {
-		compatible = "ibm,imc-counters-nest";
+		compatible = "ibm,imc-counters";
 		events-prefix = "PM_XLINK1_";
 		reg = <0x598 0x8>;
 		events = < &NEST_XLINK >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
 	};
 	xlink2 {
-		compatible = "ibm,imc-counters-nest";
+		compatible = "ibm,imc-counters";
 		events-prefix = "PM_XLINK2_";
 		reg = <0x618 0x8>;
 		events = < &NEST_XLINK >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
 	};
 NEST_PHB: nest-phb-events {
 		#address-cells = <0x1>;
@@ -217,22 +239,31 @@ NEST_PHB: nest-phb-events {
 		};
 	};
 	phb0 {
-		compatible = "ibm,imc-counters-nest";
+		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB0_";
 		reg = <0x818 0x8>;
 		events = < &NEST_PHB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
 	};
 	phb1 {
-		compatible = "ibm,imc-counters-nest";
+		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB1_";
 		reg = <0x898 0x8>;
 		events = < &NEST_PHB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
 	};
 	phb2 {
-		compatible = "ibm,imc-counters-nest";
+		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB2_";
 		reg = <0x918 0x8>;
 		events = < &NEST_PHB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
 	};
 NEST_MBA: nest-mba-events {
 		#address-cells = <0x1>;
@@ -270,28 +301,40 @@ NEST_MBA: nest-mba-events {
 		};
 	};
 	mba0 {
-		compatible = "ibm,imc-counters-nest";
+		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA0_";
 		reg = <0x318 0x8>;
 		events = < &NEST_MBA >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
 	};
 	mba1 {
-		compatible = "ibm,imc-counters-nest";
+		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA1_";
 		reg = <0x398 0x8>;
 		events = < &NEST_MBA >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
 	};
 	mba2 {
-		compatible = "ibm,imc-counters-nest";
+		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA2_";
 		reg = <0x418 0x8>;
 		events = < &NEST_MBA >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
 	};
 	mba3 {
-		compatible = "ibm,imc-counters-nest";
+		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA3_";
 		reg = <0x498 0x8>;
 		events = < &NEST_MBA >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
 	};
 NEST_MCD: nest-mcd-events {
 		#address-cells = <0x1>;
@@ -319,16 +362,22 @@ NEST_MCD: nest-mcd-events {
 		};
 	};
 	mcd0 {
-		compatible = "ibm,imc-counters-nest";
+		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MCD0_";
 		reg = <0x718 0x8>;
 		events = < &NEST_MCD >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
 	};
 	mcd1 {
-		compatible = "ibm,imc-counters-nest";
+		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MCD1_";
 		reg = <0x798 0x8>;
 		events = < &NEST_MCD >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
 	};
 NEST_CAPP: nest-capp-events {
 		#address-cells = <0x1>;
@@ -376,10 +425,13 @@ NEST_CAPP: nest-capp-events {
 		};
 	};
 	capp0 {
-		compatible = "ibm,imc-counters-nest";
+		compatible = "ibm,imc-counters";
 		events-prefix = "PM_CAPP_";
 		reg = <0x998 0x8>;
 		events = < &NEST_CAPP >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
 	};
 NEST_NVLINK: nest-nvlink-events {
 		#address-cells = <0x1>;
@@ -607,10 +659,13 @@ NEST_NVLINK: nest-nvlink-events {
 		};
 	};
 	nvlink0 {
-		compatible = "ibm,imc-counters-nest";
+		compatible = "ibm,imc-counters";
 		events-prefix = "PM_NPU_";
 		reg = <0xa18 0x8>;
 		events = < &NEST_NVLINK >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
 	};
 NEST_NX: nest-nx-events {
 		#address-cells = <0x1>;
@@ -658,10 +713,13 @@ NEST_NX: nest-nx-events {
 		};
 	};
 	nx {
-		compatible = "ibm,imc-counters-nest";
+		compatible = "ibm,imc-counters";
 		events-prefix = "PM_NX_";
 		reg = <0xd18 0x8>;
 		events = < &NEST_NX >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
 	};
 CORE_THREAD: core-thread-events {
 		#address-cells = <0x1>;
@@ -1914,17 +1972,21 @@ CORE_THREAD: core-thread-events {
 		};
 	};
 	core {
-		compatible = "ibm,imc-counters-core";
+		compatible = "ibm,imc-counters";
 		events-prefix = "CPM_";
 		scale = "512";
 		reg = <0x18 0x8>;
 		events = < &CORE_THREAD >;
+		type = <0x4>;
+		size = <0x2000>;
 	};
 	thread {
-		compatible = "ibm,imc-counters-thread";
+		compatible = "ibm,imc-counters";
 		events-prefix = "CPM_";
 		scale = "512";
 		reg = <0x18 0x8>;
 		events = < &CORE_THREAD >;
+		type = <0x1>;
+		size = <0x2000>;
 	};
 };
