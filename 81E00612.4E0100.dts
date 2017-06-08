@@ -34,11 +34,15 @@ NEST_MCS: nest-mcs-events {
 		};
 		event@28 {
 			event-name = "64B_RD_DISP" ;
+			unit = "MiB/s" ;
+			scale = "4" ;
 			reg = <0x28 0x8>;
 			desc = "Total Read 64-byte data blocks for MCS" ;
 		};
 		event@30 {
 			event-name = "64B_WR_DISP" ;
+			unit = "MiB/s" ;
+			scale = "4" ;
 			reg = <0x30 0x8>;
 			desc = "Total Write 64-byte data blocks for MCS" ;
 		};
@@ -46,8 +50,6 @@ NEST_MCS: nest-mcs-events {
 	mcs0 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MCS0_";
-		unit = "MiB";
-		scale = "1.2207e-4";
 		reg = <0x118 0x8>;
 		events = < &NEST_MCS >;
 		type = <0x10>;
@@ -57,8 +59,6 @@ NEST_MCS: nest-mcs-events {
 	mcs1 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MCS1_";
-		unit = "MiB";
-		scale = "1.2207e-4";
 		reg = <0x198 0x8>;
 		events = < &NEST_MCS >;
 		type = <0x10>;
@@ -68,8 +68,6 @@ NEST_MCS: nest-mcs-events {
 	mcs2 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MCS2_";
-		unit = "MiB";
-		scale = "1.2207e-4";
 		reg = <0x218 0x8>;
 		events = < &NEST_MCS >;
 		type = <0x10>;
@@ -79,8 +77,6 @@ NEST_MCS: nest-mcs-events {
 	mcs3 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MCS3_";
-		unit = "MiB";
-		scale = "1.2207e-4";
 		reg = <0x298 0x8>;
 		events = < &NEST_MCS >;
 		type = <0x10>;
