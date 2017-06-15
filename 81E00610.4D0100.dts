@@ -2,59 +2,65 @@
 /dts-v1/;
 
 / {
-        name = "";
-        compatible = "ibm,opal-in-memory-counters";
-        #address-cells = <0x1>;
-        #size-cells = <0x1>;
-        imc-nest-offset = <0x320000>;
-        imc-nest-size = <0x30000>;
-        version-id = <0xd>;
+	name = "";
+	compatible = "ibm,opal-in-memory-counters";
+	#address-cells = <0x1>;
+	#size-cells = <0x1>;
+	version-id = <0x8>;
 
 NEST_MCS: nest-mcs-events {
 		#address-cells = <0x1>;
 		#size-cells = <0x1>;
 
-		event@18 {
+		event@0 {
 			event-name = "UP_128B_DATA_XFER" ;
-			reg = <0x18 0x8>;
+			unit = "MiB" ;
+			scale = "1.2207e-4" ;
+			reg = <0x0 0x8>;
 			desc = "Total Read Bandwidth seen on both MCS" ;
 		};
-		event@98 {
+		event@80 {
 			event-name = "DOWN_128B_DATA_XFER" ;
-			reg = <0x98 0x8>;
+			unit = "MiB" ;
+			scale = "1.2207e-4" ;
+			reg = <0x80 0x8>;
 			desc = "Total Write Bandwidth seen on both MCS" ;
 		};
 	};
 	mcs0 {
-		compatible = "ibm,imc-counters-nest";
+		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MCS0_";
-		unit = "MiB";
-		scale = "1.2207e-4";
-		reg = <0x100 0x8>;
-		events = < &NEST_MCS >;
-	};
-	mcs1 {
-		compatible = "ibm,imc-counters-nest";
-		events-prefix = "PM_MCS1_";
-		unit = "MiB";
-		scale = "1.2207e-4";
-		reg = <0x108 0x8>;
-		events = < &NEST_MCS >;
-	};
-	mcs2 {
-		compatible = "ibm,imc-counters-nest";
-		events-prefix = "PM_MCS2_";
-		unit = "MiB";
-		scale = "1.2207e-4";
-		reg = <0x110 0x8>;
-		events = < &NEST_MCS >;
-	};
-	mcs3 {
-		compatible = "ibm,imc-counters-nest";
-		events-prefix = "PM_MCS3_";
-		unit = "MiB";
-		scale = "1.2207e-4";
 		reg = <0x118 0x8>;
 		events = < &NEST_MCS >;
+		type = <0x10>;
+		size = <0x80000>;
+		offset = <0x320000>;
+	};
+	mcs1 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_MCS1_";
+		reg = <0x120 0x8>;
+		events = < &NEST_MCS >;
+		type = <0x10>;
+		size = <0x80000>;
+		offset = <0x320000>;
+	};
+	mcs2 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_MCS2_";
+		reg = <0x128 0x8>;
+		events = < &NEST_MCS >;
+		type = <0x10>;
+		size = <0x80000>;
+		offset = <0x320000>;
+	};
+	mcs3 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_MCS3_";
+		reg = <0x130 0x8>;
+		events = < &NEST_MCS >;
+		type = <0x10>;
+		size = <0x80000>;
+		offset = <0x320000>;
 	};
 };
