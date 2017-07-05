@@ -2,721 +2,414 @@
 /dts-v1/;
 
 / {
-	name = "";
-	compatible = "ibm,opal-in-memory-counters";
-	#address-cells = <0x1>;
-	#size-cells = <0x1>;
-	version-id = <0xd>;
+        name = "";
+        compatible = "ibm,opal-in-memory-counters";
+        #address-cells = <0x1>;
+        #size-cells = <0x1>;
+        version-id = <0xd>;
 
 NEST_MCS: nest-mcs-events {
-		#address-cells = <0x1>;
-		#size-cells = <0x1>;
+                #address-cells = <0x1>;
+                #size-cells = <0x1>;
 
-		event@0 {
-			event-name = "RRTO_QFULL_NO_DISP" ;
-			reg = <0x0 0x8>;
-			desc = "RRTO not dispatched in MCS due to capacity - pulses once for each time a valid RRTO op is not dispatched due to a command list full condition" ;
-		};
-		event@8 {
-			event-name = "WRTO_QFULL_NO_DISP" ;
-			reg = <0x8 0x8>;
-			desc = "WRTO not dispatched in MCS due to capacity - pulses once for each time a valid WRTO op is not dispatched due to a command list full condition" ;
-		};
-		event@10 {
-			event-name = "AMO_OP_DISP" ;
-			reg = <0x10 0x8>;
-			desc = "AMO op dispatches in MCS" ;
-		};
-		event@18 {
-			event-name = "PWR_QFULL_NO_DISP" ;
-			reg = <0x18 0x8>;
-			desc = "Partial Write not dispatched in MCS due to capacity - pulses once for each time a valid WRTO op is not dispatched due to a command list full condition" ;
-		};
-		event@28 {
-			event-name = "64B_RD_DISP" ;
-			unit = "MiB/s" ;
-			scale = "4" ;
-			reg = <0x28 0x8>;
-			desc = "Total Read 64-byte data blocks for MCS" ;
-		};
-		event@30 {
-			event-name = "64B_WR_DISP" ;
-			unit = "MiB/s" ;
-			scale = "4" ;
-			reg = <0x30 0x8>;
-			desc = "Total Write 64-byte data blocks for MCS" ;
-		};
-	};
-	mcs0 {
-		compatible = "ibm,imc-counters";
-		events-prefix = "PM_MCS0_";
-		reg = <0x118 0x8>;
-		events = < &NEST_MCS >;
-		type = <0x10>;
-		size = <0x40000>;
-		offset = <0x180000>;
-	};
-	mcs1 {
-		compatible = "ibm,imc-counters";
-		events-prefix = "PM_MCS1_";
-		reg = <0x198 0x8>;
-		events = < &NEST_MCS >;
-		type = <0x10>;
-		size = <0x40000>;
-		offset = <0x180000>;
-	};
-	mcs2 {
-		compatible = "ibm,imc-counters";
-		events-prefix = "PM_MCS2_";
-		reg = <0x218 0x8>;
-		events = < &NEST_MCS >;
-		type = <0x10>;
-		size = <0x40000>;
-		offset = <0x180000>;
-	};
-	mcs3 {
-		compatible = "ibm,imc-counters";
-		events-prefix = "PM_MCS3_";
-		reg = <0x298 0x8>;
-		events = < &NEST_MCS >;
-		type = <0x10>;
-		size = <0x40000>;
-		offset = <0x180000>;
-	};
+                event@0 {
+                        event-name = "64B_RD_OR_WR_DISP_PORT01" ;
+                        unit = "MiB/s" ;
+                        scale = "4" ;
+                        reg = <0x0 0x8>;
+                        desc = "" ;
+                };
+                event@8 {
+                        event-name = "64B_RD_DISP_PORT01" ;
+                        unit = "MiB/s" ;
+                        scale = "4" ;
+                        reg = <0x8 0x8>;
+                        desc = "" ;
+                };
+                event@10 {
+                        event-name = "64B_WR_DISP_PORT01" ;
+                        unit = "MiB/s" ;
+                        scale = "4" ;
+                        reg = <0x10 0x8>;
+                        desc = "" ;
+                };
+                event@18 {
+                        event-name = "AMO_OP_DISP_PORT01" ;
+                        reg = <0x18 0x8>;
+                        desc = "" ;
+                };
+                event@20 {
+                        event-name = "64B_RD_OR_WR_DISP_PORT23" ;
+                        unit = "MiB/s" ;
+                        scale = "4" ;
+                        reg = <0x20 0x8>;
+                        desc = "" ;
+                };
+                event@28 {
+                        event-name = "64B_RD_DISP_PORT23" ;
+                        unit = "MiB/s" ;
+                        scale = "4" ;
+                        reg = <0x28 0x8>;
+                        desc = "" ;
+                };
+                event@30 {
+                        event-name = "64B_WR_DISP_PORT23" ;
+                        unit = "MiB/s" ;
+                        scale = "4" ;
+                        reg = <0x30 0x8>;
+                        desc = "" ;
+                };
+        };
+        mcs01 {
+                compatible = "ibm,imc-counters";
+                events-prefix = "PM_MCS01_";
+	        scale = "256";
+                reg = <0xc8 0x8>;
+                events = < &NEST_MCS >;
+                type = <0x10>;
+                size = <0x40000>;
+                offset = <0x180000>;
+        };
+        mcs23 {
+                compatible = "ibm,imc-counters";
+                events-prefix = "PM_MCS23_";
+	        scale = "256";
+                reg = <0x48 0x8>;
+                events = < &NEST_MCS >;
+                type = <0x10>;
+                size = <0x40000>;
+                offset = <0x180000>;
+        };
+
 NEST_POWERBUS: nest-powerbus-events {
-		#address-cells = <0x1>;
-		#size-cells = <0x1>;
+                #address-cells = <0x1>;
+                #size-cells = <0x1>;
 
-		event@0 {
-			event-name = "EVENT_VG_PUMP" ;
-			reg = <0x0 0x8>;
-			desc = "Vg Scope operation (locally mastered) on port n" ;
-		};
-		event@8 {
-			event-name = "EVENT_LNS_PUMP" ;
-			reg = <0x8 0x8>;
-			desc = "Local Nodal Scope operation (locally mastered) on port n" ;
-		};
-		event@10 {
-			event-name = "EVENT_RTY_VG_PUMP" ;
-			reg = <0x10 0x8>;
-			desc = "Retry of a Vg Scope operation (locally mastered) - Retry due to (rty_dropped_rcmd;rty_lpc;rty_other)" ;
-		};
-		event@18 {
-			event-name = "EVENT_RTY_LNS_PUMP" ;
-			reg = <0x18 0x8>;
-			desc = "Retry of a Nodal Scope operation (locally mastered) - Retry due to (rty_dropped_rcmd;rty_lpc;rty_other;etc.)" ;
-		};
-		event@28 {
-			event-name = "EVENT_INTERNAL_DATA_XFER" ;
-			reg = <0x28 0x8>;
-			desc = "16x 32B OW Data transfer on a PB horizontal bus" ;
-		};
-		event@30 {
-			event-name = "EVENT_DATA_XFER" ;
-			reg = <0x30 0x8>;
-			desc = "16x 32B OW Data transfer" ;
-		};
-		event@38 {
-			event-name = "EVENT_EXTERNAL_DATA_XFER_S" ;
-			reg = <0x38 0x8>;
-			desc = "16x 32B OW Data transfer sent on a PB X/A bus" ;
-		};
-		event@40 {
-			event-name = "EVENT_EXTERNAL_DATA_XFER_R" ;
-			reg = <0x40 0x8>;
-			desc = "16x 32B OW Data transfer received on a PB X/A bus" ;
-		};
-	};
-	powerbus0 {
-		compatible = "ibm,imc-counters";
-		events-prefix = "PM_PB_";
-		reg = <0x18 0x8>;
-		events = < &NEST_POWERBUS >;
-		type = <0x10>;
-		size = <0x40000>;
-		offset = <0x180000>;
-	};
-NEST_XLINK: nest-xlink-events {
-		#address-cells = <0x1>;
-		#size-cells = <0x1>;
+                event@0 {
+                        event-name = "EVENT_VG_PUMP" ;
+                        reg = <0x0 0x8>;
+                        desc = "Vg Scope operation (locally mastered) on port n" ;
+                };
+                event@8 {
+                        event-name = "EVENT_LNS_PUMP" ;
+                        reg = <0x8 0x8>;
+                        desc = "Local Nodal Scope operation (locally mastered) on port n" ;
+                };
+                event@10 {
+                        event-name = "EVENT_GROUP_PUMP" ;
+                        reg = <0x10 0x8>;
+                        desc = "" ;
+                };
+                event@18 {
+                        event-name = "EVENT_RNS_PUMP" ;
+                        reg = <0x18 0x8>;
+                        desc = "" ;
+                };
+                event@20 {
+                        event-name = "EVENT_RTY_VG_PUMP" ;
+                        reg = <0x20 0x8>;
+                        desc = "Retry of a Vg Scope operation (locally mastered) - Retry due to (rty_dropped_rcmd;rty_lpc;rty_other)" ;
+                };
+                event@28 {
+                        event-name = "EVENT_RTY_LNS_PUMP" ;
+                        reg = <0x28 0x8>;
+                        desc = "Retry of a Nodal Scope operation (locally mastered) - Retry due to (rty_dropped_rcmd;rty_lpc;rty_other;etc.)" ;
+                };
+                event@30 {
+                        event-name = "EVENT_RTY_GROUP_PUMP" ;
+                        reg = <0x30 0x8>;
+                        desc = "" ;
+                };
+                event@38 {
+                        event-name = "EVENT_RTY_RNS_PUMP" ;
+                        reg = <0x38 0x8>;
+                        desc = "" ;
+                };
+                event@78 {
+                        event-name = "CYC" ;
+                        reg = <0x78 0x8>;
+                        desc = "" ;
+                };
+                event@80 {
+                        event-name = "VG_PUMP_P01" ;
+                        reg = <0x80 0x8>;
+                        desc = "" ;
+                };
+                event@88 {
+                        event-name = "LNS_PUMP_P01" ;
+                        reg = <0x88 0x8>;
+                        desc = "" ;
+                };
+                event@90 {
+                        event-name = "GROUP_PUMP_P01" ;
+                        reg = <0x90 0x8>;
+                        desc = "" ;
+                };
+                event@98 {
+                        event-name = "RNS_PUMP_P01" ;
+                        reg = <0x98 0x8>;
+                        desc = "" ;
+                };
+                event@a0 {
+                        event-name = "INT_DATA_XFER" ;
+                        reg = <0xa0 0x8>;
+                        desc = "16x 32B OW Data transfer on a PB horizontal bus" ;
+                };
+                event@a8 {
+                        event-name = "EXT_DATA_XFER" ;
+                        reg = <0xa8 0x8>;
+                        desc = "16x 32B OW Data transfer" ;
+                };
+                event@b0 {
+                        event-name = "NNS_PUMP" ;
+                        reg = <0xb0 0x8>;
+                        desc = "" ;
+                };
+                event@b8 {
+                        event-name = "RTY_NNS_PUMP_P01" ;
+                        reg = <0xb8 0x8>;
+                        desc = "" ;
+                };
+                event@f8 {
+                        event-name = "CYC2" ;
+                        reg = <0xf8 0x8>;
+                        desc = "" ;
+                };
+        };
+        powerbus0 {
+                compatible = "ibm,imc-counters";
+                events-prefix = "PM_PB_";
+	        scale = "256";
+                reg = <0x8 0x8>;
+                events = < &NEST_POWERBUS >;
+                type = <0x10>;
+                size = <0x40000>;
+                offset = <0x180000>;
+        };
 
-		event@0 {
-			event-name = "IN_CMD_UTIL" ;
-			reg = <0x0 0x8>;
-			desc = "cmd utilization - 1 count per 16B used per available cycle" ;
-		};
-		event@8 {
-			event-name = "IN_PRESP_UTIL" ;
-			reg = <0x8 0x8>;
-			desc = "presp util - 1 count per 16B used per available cycle" ;
-		};
-		event@10 {
-			event-name = "IN_DHDR_DATA_UTIL" ;
-			reg = <0x10 0x8>;
-			desc = "dhdr+data util - 1 count per 16B used per available cycle" ;
-		};
-		event@18 {
-			event-name = "IN_DATA_COUNT" ;
-			reg = <0x18 0x8>;
-			desc = "data - event" ;
-		};
-		event@28 {
-			event-name = "OUT_CMD_UTIL" ;
-			reg = <0x28 0x8>;
-			desc = "cmd utilization - 1 count per 16B used per available cycle" ;
-		};
-		event@30 {
-			event-name = "OUT_PRESP_UTIL" ;
-			reg = <0x30 0x8>;
-			desc = "presp util - 1 count per 16B used per available cycle" ;
-		};
-		event@38 {
-			event-name = "OUT_DHDR_DATA_UTIL" ;
-			reg = <0x38 0x8>;
-			desc = "dhdr+data util - 1 count per 16B used per available cycle" ;
-		};
-		event@40 {
-			event-name = "OUT_DATA_COUNT" ;
-			reg = <0x40 0x8>;
-			desc = "data - event" ;
-		};
-	};
-	xlink0 {
-		compatible = "ibm,imc-counters";
-		events-prefix = "PM_XLINK0_";
-		reg = <0x518 0x8>;
-		events = < &NEST_XLINK >;
-		type = <0x10>;
-		size = <0x40000>;
-		offset = <0x180000>;
-	};
-	xlink1 {
-		compatible = "ibm,imc-counters";
-		events-prefix = "PM_XLINK1_";
-		reg = <0x598 0x8>;
-		events = < &NEST_XLINK >;
-		type = <0x10>;
-		size = <0x40000>;
-		offset = <0x180000>;
-	};
-	xlink2 {
-		compatible = "ibm,imc-counters";
-		events-prefix = "PM_XLINK2_";
-		reg = <0x618 0x8>;
-		events = < &NEST_XLINK >;
-		type = <0x10>;
-		size = <0x40000>;
-		offset = <0x180000>;
-	};
-NEST_PHB: nest-phb-events {
-		#address-cells = <0x1>;
-		#size-cells = <0x1>;
+NEST_XLINK_OUT: nest-xlink-out-events {
+                #address-cells = <0x1>;
+                #size-cells = <0x1>;
 
-		event@0 {
-			event-name = "P2P_CI_STORE_ANY_MMIO_RCVD" ;
-			reg = <0x0 0x8>;
-			desc = "Peer-to-Peer CI Store for ANY MMIO Space Received (Enhancement pending)" ;
-		};
-		event@8 {
-			event-name = "ANY_DMA_FROM_PCIE" ;
-			reg = <0x8 0x8>;
-			desc = "DMA (any or read or write) received from the PCIE link" ;
-		};
-		event@10 {
-			event-name = "TCE_MISS_ANY" ;
-			reg = <0x10 0x8>;
-			desc = "TCE Cache Miss (any)" ;
-		};
-		event@18 {
-			event-name = "CYC_CNT" ;
-			reg = <0x18 0x8>;
-			desc = "PHB Cycles count" ;
-		};
-	};
-	phb0 {
-		compatible = "ibm,imc-counters";
-		events-prefix = "PM_PHB0_";
-		reg = <0x818 0x8>;
-		events = < &NEST_PHB >;
-		type = <0x10>;
-		size = <0x40000>;
-		offset = <0x180000>;
-	};
-	phb1 {
-		compatible = "ibm,imc-counters";
-		events-prefix = "PM_PHB1_";
-		reg = <0x898 0x8>;
-		events = < &NEST_PHB >;
-		type = <0x10>;
-		size = <0x40000>;
-		offset = <0x180000>;
-	};
-	phb2 {
-		compatible = "ibm,imc-counters";
-		events-prefix = "PM_PHB2_";
-		reg = <0x918 0x8>;
-		events = < &NEST_PHB >;
-		type = <0x10>;
-		size = <0x40000>;
-		offset = <0x180000>;
-	};
+                event@0 {
+                        event-name = "OUT_EVEN_CYC" ;
+                        reg = <0x0 0x8>;
+                        desc = "" ;
+                };
+                event@8 {
+                        event-name = "OUT_EVEN_ANY_RCMD" ;
+                        reg = <0x8 0x8>;
+                        desc = "" ;
+                };
+                event@10 {
+                        event-name = "OUT_EVEN_DATA_COUNT" ;
+                        reg = <0x10 0x8>;
+                        desc = "" ;
+                };
+                event@18 {
+                        event-name = "OUT_EVEN_TOTAL_UTIL" ;
+                        reg = <0x18 0x8>;
+                        desc = "" ;
+                };
+                event@20 {
+                        event-name = "OUT_ODD_CYC" ;
+                        reg = <0x20 0x8>;
+                        desc = "" ;
+                };
+                event@28 {
+                        event-name = "OUT_ODD_ANY_RCMD" ;
+                        reg = <0x28 0x8>;
+                        desc = "" ;
+                };
+                event@30 {
+                        event-name = "OUT_ODD_DATA_COUNT" ;
+                        reg = <0x30 0x8>;
+                        desc = "" ;
+                };
+                event@38 {
+                        event-name = "OUT_ODD_TOTAL_UTIL" ;
+                        reg = <0x38 0x8>;
+                        desc = "" ;
+                };
+        };
+        xlink1 {
+                compatible = "ibm,imc-counters";
+                events-prefix = "PM_XLINK1_";
+	        scale = "256";
+                reg = <0x118 0x8>;
+                events = < &NEST_XLINK_OUT >;
+                type = <0x10>;
+                size = <0x40000>;
+                offset = <0x180000>;
+        };
+        xlink2 {
+                compatible = "ibm,imc-counters";
+                events-prefix = "PM_XLINK2_";
+	        scale = "256";
+                reg = <0x198 0x8>;
+                events = < &NEST_XLINK_OUT >;
+                type = <0x10>;
+                size = <0x40000>;
+                offset = <0x180000>;
+        };
+
+NEST_XLINK_IN: nest-xlink-in-events {
+                #address-cells = <0x1>;
+                #size-cells = <0x1>;
+
+                event@0 {
+                        event-name = "IN_EVEN_CYC" ;
+                        reg = <0x0 0x8>;
+                        desc = "" ;
+                };
+                event@8 {
+                        event-name = "IN_EVEN_ANY_RCMD" ;
+                        reg = <0x8 0x8>;
+                        desc = "" ;
+                };
+                event@10 {
+                        event-name = "IN_EVEN_DATA_COUNT" ;
+                        reg = <0x10 0x8>;
+                        desc = "" ;
+                };
+                event@18 {
+                        event-name = "IN_EVEN_TOTAL_UTIL" ;
+                        reg = <0x18 0x8>;
+                        desc = "" ;
+                };
+                event@20 {
+                        event-name = "IN_ODD_CYC" ;
+                        reg = <0x20 0x8>;
+                        desc = "" ;
+                };
+                event@28 {
+                        event-name = "IN_ODD_ANY_RCMD" ;
+                        reg = <0x28 0x8>;
+                        desc = "" ;
+                };
+                event@30 {
+                        event-name = "IN_ODD_DATA_COUNT" ;
+                        reg = <0x30 0x8>;
+                        desc = "" ;
+                };
+                event@38 {
+                        event-name = "IN_ODD_TOTAL_UTIL" ;
+                        reg = <0x38 0x8>;
+                        desc = "" ;
+                };
+        };
+        xlink0 {
+                compatible = "ibm,imc-counters";
+                events-prefix = "PM_XLINK0_";
+	        scale = "256";
+                reg = <0x158 0x8>;
+                events = < &NEST_XLINK_IN >;
+                type = <0x10>;
+                size = <0x40000>;
+                offset = <0x180000>;
+        };
+
 NEST_MBA: nest-mba-events {
-		#address-cells = <0x1>;
-		#size-cells = <0x1>;
+                #address-cells = <0x1>;
+                #size-cells = <0x1>;
 
-		event@0 {
-			event-name = "ACT_READ" ;
-			reg = <0x0 0x8>;
-			desc = "ACT for read in MBA" ;
-		};
-		event@8 {
-			event-name = "ACT_WRITE" ;
-			reg = <0x8 0x8>;
-			desc = "ACT for write in MBA" ;
-		};
-		event@10 {
-			event-name = "CAS_READ" ;
-			reg = <0x10 0x8>;
-			desc = "CAS for read in MBA" ;
-		};
-		event@18 {
-			event-name = "CAS_WRITE" ;
-			reg = <0x18 0x8>;
-			desc = "CAS for write in MBA" ;
-		};
-		event@28 {
-			event-name = "RRQ_FULL" ;
-			reg = <0x28 0x8>;
-			desc = "RRQ full in MBA" ;
-		};
-		event@30 {
-			event-name = "REF_ALL" ;
-			reg = <0x30 0x8>;
-			desc = "Total number of Refresh (HP and LP) in MBA" ;
-		};
+                event@0 {
+                        event-name = "READ_BYTES" ;
+                        reg = <0x0 0x8>;
+                        desc = "" ;
+                };
+                event@8 {
+                        event-name = "WRITE_BYTES" ;
+                        reg = <0x8 0x8>;
+                        desc = "" ;
+                };
+                event@10 {
+                        event-name = "DRAM_CLK_CYC" ;
+                        reg = <0x10 0x8>;
+                        desc = "" ;
+                };
 	};
 	mba0 {
-		compatible = "ibm,imc-counters";
-		events-prefix = "PM_MBA0_";
-		reg = <0x318 0x8>;
-		events = < &NEST_MBA >;
-		type = <0x10>;
-		size = <0x40000>;
-		offset = <0x180000>;
-	};
+                compatible = "ibm,imc-counters";
+                events-prefix = "PM_MBA0_";
+	        scale = "256";
+                reg = <0x448 0x8>;
+                events = < &NEST_MBA >;
+                type = <0x10>;
+                size = <0x40000>;
+                offset = <0x180000>;
+        };
 	mba1 {
-		compatible = "ibm,imc-counters";
-		events-prefix = "PM_MBA1_";
-		reg = <0x398 0x8>;
-		events = < &NEST_MBA >;
-		type = <0x10>;
-		size = <0x40000>;
-		offset = <0x180000>;
-	};
+                compatible = "ibm,imc-counters";
+                events-prefix = "PM_MBA1_";
+	        scale = "256";
+                reg = <0x468 0x8>;
+                events = < &NEST_MBA >;
+                type = <0x10>;
+                size = <0x40000>;
+                offset = <0x180000>;
+        };
 	mba2 {
-		compatible = "ibm,imc-counters";
-		events-prefix = "PM_MBA2_";
-		reg = <0x418 0x8>;
-		events = < &NEST_MBA >;
-		type = <0x10>;
-		size = <0x40000>;
-		offset = <0x180000>;
-	};
+                compatible = "ibm,imc-counters";
+                events-prefix = "PM_MBA2_";
+	        scale = "256";
+                reg = <0x488 0x8>;
+                events = < &NEST_MBA >;
+                type = <0x10>;
+                size = <0x40000>;
+                offset = <0x180000>;
+        };
 	mba3 {
-		compatible = "ibm,imc-counters";
-		events-prefix = "PM_MBA3_";
-		reg = <0x498 0x8>;
-		events = < &NEST_MBA >;
-		type = <0x10>;
-		size = <0x40000>;
-		offset = <0x180000>;
-	};
-NEST_MCD: nest-mcd-events {
-		#address-cells = <0x1>;
-		#size-cells = <0x1>;
+                compatible = "ibm,imc-counters";
+                events-prefix = "PM_MBA3_";
+	        scale = "256";
+                reg = <0x4a8 0x8>;
+                events = < &NEST_MBA >;
+                type = <0x10>;
+                size = <0x40000>;
+                offset = <0x180000>;
+        };
+	mba4 {
+                compatible = "ibm,imc-counters";
+                events-prefix = "PM_MBA4_";
+	        scale = "256";
+                reg = <0x558 0x8>;
+                events = < &NEST_MBA >;
+                type = <0x10>;
+                size = <0x40000>;
+                offset = <0x180000>;
+        };
+	mba5 {
+                compatible = "ibm,imc-counters";
+                events-prefix = "PM_MBA5_";
+	        scale = "256";
+                reg = <0x578 0x8>;
+                events = < &NEST_MBA >;
+                type = <0x10>;
+                size = <0x40000>;
+                offset = <0x180000>;
+        };
+	mba6 {
+                compatible = "ibm,imc-counters";
+                events-prefix = "PM_MBA6_";
+	        scale = "256";
+                reg = <0x598 0x8>;
+                events = < &NEST_MBA >;
+                type = <0x10>;
+                size = <0x40000>;
+                offset = <0x180000>;
+        };
+	mba7 {
+                compatible = "ibm,imc-counters";
+                events-prefix = "PM_MBA7_";
+	        scale = "256";
+                reg = <0x5b8 0x8>;
+                events = < &NEST_MBA >;
+                type = <0x10>;
+                size = <0x40000>;
+                offset = <0x180000>;
+        };
 
-		event@0 {
-			event-name = "SLICE0_RTYDINC" ;
-			reg = <0x0 0x8>;
-			desc = "A check type command on PowerBus port 0 where a rty_dinc is issued" ;
-		};
-		event@8 {
-			event-name = "SLICE2_RTYDINC" ;
-			reg = <0x8 0x8>;
-			desc = "check type command on PowerBus port 2 where a rty_dinc is issued" ;
-		};
-		event@10 {
-			event-name = "RECOVERY_SKIP" ;
-			reg = <0x10 0x8>;
-			desc = "Recovery of a granule/ group vector was skipped because no dirty granules were found data read" ;
-		};
-		event@18 {
-			event-name = "RECOVERY_SET_HIT" ;
-			reg = <0x18 0x8>;
-			desc = "Set type powerbus command from a vector hit a cache line in the granule(s) being recovered" ;
-		};
-	};
-	mcd0 {
-		compatible = "ibm,imc-counters";
-		events-prefix = "PM_MCD0_";
-		reg = <0x718 0x8>;
-		events = < &NEST_MCD >;
-		type = <0x10>;
-		size = <0x40000>;
-		offset = <0x180000>;
-	};
-	mcd1 {
-		compatible = "ibm,imc-counters";
-		events-prefix = "PM_MCD1_";
-		reg = <0x798 0x8>;
-		events = < &NEST_MCD >;
-		type = <0x10>;
-		size = <0x40000>;
-		offset = <0x180000>;
-	};
-NEST_CAPP: nest-capp-events {
-		#address-cells = <0x1>;
-		#size-cells = <0x1>;
-
-		event@0 {
-			event-name = "APC_SN_HIT_APC" ;
-			reg = <0x0 0x8>;
-			desc = "snoop on either addr pipeline hits an apcfsm" ;
-		};
-		event@8 {
-			event-name = "APC_UOP_SEND_PB_CMD" ;
-			reg = <0x8 0x8>;
-			desc = "APC uOP command for sending PB Command" ;
-		};
-		event@10 {
-			event-name = "APC_UOP_LCO" ;
-			reg = <0x10 0x8>;
-			desc = "APC uOP command for LCO" ;
-		};
-		event@18 {
-			event-name = "APC_UOP_DATA_XFER" ;
-			reg = <0x18 0x8>;
-			desc = "APC uOP command for Data transfer" ;
-		};
-		event@28 {
-			event-name = "XPT_MSG_SENT" ;
-			reg = <0x28 0x8>;
-			desc = "Message buffer sent due to timer expired and Buffer Threshold not hit" ;
-		};
-		event@30 {
-			event-name = "XPT_MSG_SENT_LE_16" ;
-			reg = <0x30 0x8>;
-			desc = "Message buffer of tsize less than or equal to 16 bytes sent" ;
-		};
-		event@38 {
-			event-name = "XPT_MSG_SENT_GT_16_LE_64" ;
-			reg = <0x38 0x8>;
-			desc = "Message buffer of tsize greater than 16 bytes but less than or equal to 64 bytes sent" ;
-		};
-		event@40 {
-			event-name = "XPT_MSG_SENT_GT_64_LE_128" ;
-			reg = <0x40 0x8>;
-			desc = "Message buffer of tsize greater than 64 bytes but less than or equal to 128 bytes sent" ;
-		};
-	};
-	capp0 {
-		compatible = "ibm,imc-counters";
-		events-prefix = "PM_CAPP_";
-		reg = <0x998 0x8>;
-		events = < &NEST_CAPP >;
-		type = <0x10>;
-		size = <0x40000>;
-		offset = <0x180000>;
-	};
-NEST_NVLINK: nest-nvlink-events {
-		#address-cells = <0x1>;
-		#size-cells = <0x1>;
-
-		event@0 {
-			event-name = "ATS_TCE_TRANS_REQ" ;
-			reg = <0x0 0x8>;
-			desc = "TCE Translation Request" ;
-		};
-		event@8 {
-			event-name = "ATS_TCE_MISS" ;
-			reg = <0x8 0x8>;
-			desc = "TCE Miss" ;
-		};
-		event@10 {
-			event-name = "ATS_NOTRANS_TCE_TRANS" ;
-			reg = <0x10 0x8>;
-			desc = "No-Translate Mode TCE Translation" ;
-		};
-		event@18 {
-			event-name = "ATS_CACHE_RERUN_MISS" ;
-			reg = <0x18 0x8>;
-			desc = "TCE Cache Rerun Miss" ;
-		};
-		event@28 {
-			event-name = "ATR_CHECKOUT_D" ;
-			reg = <0x28 0x8>;
-			desc = "ATR Demand Checkout" ;
-		};
-		event@30 {
-			event-name = "ATR_CHECKOUT_P" ;
-			reg = <0x30 0x8>;
-			desc = "ATR Prefetch Checkout" ;
-		};
-		event@38 {
-			event-name = "ATR_ATSD_TLBI_RVCD" ;
-			reg = <0x38 0x8>;
-			desc = "ATSD TLBI Received" ;
-		};
-		event@40 {
-			event-name = "ATR_ATSD_SENT" ;
-			reg = <0x40 0x8>;
-			desc = "ATSD Sent" ;
-		};
-		event@80 {
-			event-name = "NPCQ0_DWNGRD_REQ0" ;
-			reg = <0x80 0x8>;
-			desc = "Downgrade Request to Brick 0" ;
-		};
-		event@88 {
-			event-name = "NPCQ0_ATSD_REQ0" ;
-			reg = <0x88 0x8>;
-			desc = "ATSD Request to Brick 0" ;
-		};
-		event@90 {
-			event-name = "NPCQ0_DWNGRD_REQ1" ;
-			reg = <0x90 0x8>;
-			desc = "Downgrade Request to Brick 1" ;
-		};
-		event@98 {
-			event-name = "NPCQ0_ATSD_REQ1" ;
-			reg = <0x98 0x8>;
-			desc = "ATSD Request to Brick 1" ;
-		};
-		event@a8 {
-			event-name = "NPCQ1_DWNGRD_REQ0" ;
-			reg = <0xa8 0x8>;
-			desc = "Downgrade Request to Brick 0" ;
-		};
-		event@b0 {
-			event-name = "NPCQ1_ATSD_REQ0" ;
-			reg = <0xb0 0x8>;
-			desc = "ATSD Request to Brick 0" ;
-		};
-		event@b8 {
-			event-name = "NPCQ1_DWNGRD_REQ1" ;
-			reg = <0xb8 0x8>;
-			desc = "Downgrade Request to Brick 1" ;
-		};
-		event@c0 {
-			event-name = "NPCQ1_ATSD_REQ1" ;
-			reg = <0xc0 0x8>;
-			desc = "ATSD Request to Brick 1" ;
-		};
-		event@100 {
-			event-name = "NPCQ2_DWNGRD_REQ0" ;
-			reg = <0x100 0x8>;
-			desc = "Downgrade Request to Brick 0" ;
-		};
-		event@108 {
-			event-name = "NPCQ2_ATSD_REQ0" ;
-			reg = <0x108 0x8>;
-			desc = "ATSD Request to Brick 0" ;
-		};
-		event@110 {
-			event-name = "NPCQ2_DWNGRD_REQ1" ;
-			reg = <0x110 0x8>;
-			desc = "Downgrade Request to Brick 1" ;
-		};
-		event@118 {
-			event-name = "NPCQ2_ATSD_REQ1" ;
-			reg = <0x118 0x8>;
-			desc = "ATSD Request to Brick 1" ;
-		};
-		event@180 {
-			event-name = "NTL1_DATA_FLIT_SENT" ;
-			reg = <0x180 0x8>;
-			desc = "Data FLIT Sent" ;
-		};
-		event@188 {
-			event-name = "NTL1_PROBE_RESP_DATA" ;
-			reg = <0x188 0x8>;
-			desc = "Probe Response w/ Data Sent" ;
-		};
-		event@190 {
-			event-name = "NTL1_TRANS_RESP_DATA" ;
-			reg = <0x190 0x8>;
-			desc = "Transdone Response w/ Data Sent" ;
-		};
-		event@198 {
-			event-name = "NTL1_DATA_FLIT_RCVD" ;
-			reg = <0x198 0x8>;
-			desc = "Data FLIT Received " ;
-		};
-		event@1a8 {
-			event-name = "NTL2_DATA_FLIT_SENT" ;
-			reg = <0x1a8 0x8>;
-			desc = "Data FLIT Sent" ;
-		};
-		event@1b0 {
-			event-name = "NTL2_PROBE_RESP_DATA" ;
-			reg = <0x1b0 0x8>;
-			desc = "Probe Response w/ Data Sent" ;
-		};
-		event@1b8 {
-			event-name = "NTL2_TRANS_RESP_DATA" ;
-			reg = <0x1b8 0x8>;
-			desc = "Transdone Response w/ Data Sent" ;
-		};
-		event@1c0 {
-			event-name = "NTL2_DATA_FLIT_RCVD" ;
-			reg = <0x1c0 0x8>;
-			desc = "Data FLIT Received " ;
-		};
-		event@200 {
-			event-name = "NTL3_DATA_FLIT_SENT" ;
-			reg = <0x200 0x8>;
-			desc = "Data FLIT Sent" ;
-		};
-		event@208 {
-			event-name = "NTL3_PROBE_RESP_DATA" ;
-			reg = <0x208 0x8>;
-			desc = "Probe Response w/ Data Sent" ;
-		};
-		event@210 {
-			event-name = "NTL3_TRANS_RESP_DATA" ;
-			reg = <0x210 0x8>;
-			desc = "Transdone Response w/ Data Sent" ;
-		};
-		event@218 {
-			event-name = "NTL3_DATA_FLIT_RCVD" ;
-			reg = <0x218 0x8>;
-			desc = "Data FLIT Received " ;
-		};
-		event@228 {
-			event-name = "NTL4_DATA_FLIT_SENT" ;
-			reg = <0x228 0x8>;
-			desc = "Data FLIT Sent" ;
-		};
-		event@230 {
-			event-name = "NTL4_PROBE_RESP_DATA" ;
-			reg = <0x230 0x8>;
-			desc = "Probe Response w/ Data Sent" ;
-		};
-		event@238 {
-			event-name = "NTL4_TRANS_RESP_DATA" ;
-			reg = <0x238 0x8>;
-			desc = "Transdone Response w/ Data Sent" ;
-		};
-		event@240 {
-			event-name = "NTL4_DATA_FLIT_RCVD" ;
-			reg = <0x240 0x8>;
-			desc = "Data FLIT Received " ;
-		};
-		event@280 {
-			event-name = "NTL5_DATA_FLIT_SENT" ;
-			reg = <0x280 0x8>;
-			desc = "Data FLIT Sent" ;
-		};
-		event@288 {
-			event-name = "NTL5_PROBE_RESP_DATA" ;
-			reg = <0x288 0x8>;
-			desc = "Probe Response w/ Data Sent" ;
-		};
-		event@290 {
-			event-name = "NTL5_TRANS_RESP_DATA" ;
-			reg = <0x290 0x8>;
-			desc = "Transdone Response w/ Data Sent" ;
-		};
-		event@298 {
-			event-name = "NTL5_DATA_FLIT_RCVD" ;
-			reg = <0x298 0x8>;
-			desc = "Data FLIT Received " ;
-		};
-		event@2a8 {
-			event-name = "NTL6_DATA_FLIT_SENT" ;
-			reg = <0x2a8 0x8>;
-			desc = "Data FLIT Sent" ;
-		};
-		event@2b0 {
-			event-name = "NTL6_PROBE_RESP_DATA" ;
-			reg = <0x2b0 0x8>;
-			desc = "Probe Response w/ Data Sent" ;
-		};
-		event@2b8 {
-			event-name = "NTL6_TRANS_RESP_DATA" ;
-			reg = <0x2b8 0x8>;
-			desc = "Transdone Response w/ Data Sent" ;
-		};
-		event@2c0 {
-			event-name = "NTL6_DATA_FLIT_RCVD" ;
-			reg = <0x2c0 0x8>;
-			desc = "Data FLIT Received " ;
-		};
-	};
-	nvlink0 {
-		compatible = "ibm,imc-counters";
-		events-prefix = "PM_NPU_";
-		reg = <0xa18 0x8>;
-		events = < &NEST_NVLINK >;
-		type = <0x10>;
-		size = <0x40000>;
-		offset = <0x180000>;
-	};
-NEST_NX: nest-nx-events {
-		#address-cells = <0x1>;
-		#size-cells = <0x1>;
-
-		event@0 {
-			event-name = "ERAT_LOOKUP" ;
-			reg = <0x0 0x8>;
-			desc = "Number of ERAT lookups" ;
-		};
-		event@8 {
-			event-name = "ERAT_MISS" ;
-			reg = <0x8 0x8>;
-			desc = "Number of ERAT misses" ;
-		};
-		event@10 {
-			event-name = "ERAT_STALLED_CICO_BUFFERS" ;
-			reg = <0x10 0x8>;
-			desc = "ERAT stalled due to Checkin/Checkout buffers full" ;
-		};
-		event@18 {
-			event-name = "DMA_STALL" ;
-			reg = <0x18 0x8>;
-			desc = "number of DMA stalls" ;
-		};
-		event@28 {
-			event-name = "PBI_RD_SENT" ;
-			reg = <0x28 0x8>;
-			desc = "PBI command to Read from the Write SM sent" ;
-		};
-		event@30 {
-			event-name = "PBI_WR_SENT" ;
-			reg = <0x30 0x8>;
-			desc = "PBI command to write from the Write SM sent" ;
-		};
-		event@38 {
-			event-name = "PBI_RCV_RETRY01" ;
-			reg = <0x38 0x8>;
-			desc = "One of the master engines (read" ;
-		};
-		event@40 {
-			event-name = "PBI_RCV_RETRY23" ;
-			reg = <0x40 0x8>;
-			desc = "One of the master engines (read" ;
-		};
-	};
-	nx {
-		compatible = "ibm,imc-counters";
-		events-prefix = "PM_NX_";
-		reg = <0xd18 0x8>;
-		events = < &NEST_NX >;
-		type = <0x10>;
-		size = <0x40000>;
-		offset = <0x180000>;
-	};
 CORE_THREAD: core-thread-events {
 		#address-cells = <0x1>;
 		#size-cells = <0x1>;
@@ -1597,32 +1290,32 @@ CORE_THREAD: core-thread-events {
 			desc = "The number of processor cycles in privileged mode with MSR HV=0 & PR=0" ;
 		};
 		event@e08 {
-			event-name = "CS_CPM_CS_ST_FIN" ;
+			event-name = "CS_" ;
 			reg = <0xe08 0x8>;
 			desc = "The number of all store instructions finished" ;
 		};
 		event@1dc8 {
-			event-name = "CS_CPM_CS_ST_FIN_KERNEL" ;
+			event-name = "CS_" ;
 			reg = <0x1dc8 0x8>;
 			desc = "The number of all store instructions finished in kernel state" ;
 		};
 		event@1608 {
-			event-name = "CS_CPM_CS_ST_FIN_USER" ;
+			event-name = "CS_" ;
 			reg = <0x1608 0x8>;
 			desc = "The number of all store instructions finished in user state" ;
 		};
 		event@c80 {
-			event-name = "CS_CPM_MISS_L1_LDATA" ;
+			event-name = "CS_" ;
 			reg = <0xc80 0x8>;
 			desc = "The number of level 1 data misses" ;
 		};
 		event@1c80 {
-			event-name = "CS_CPM_MISS_L1_LDATA_KERNEL" ;
+			event-name = "CS_" ;
 			reg = <0x1c80 0x8>;
 			desc = "The number of level 1 data misses in kernel state" ;
 		};
 		event@1480 {
-			event-name = "CS_CPM_MISS_L1_LDATA_USER" ;
+			event-name = "CS_" ;
 			reg = <0x1480 0x8>;
 			desc = "The number of level 1 data misses in user state" ;
 		};
@@ -1968,7 +1661,7 @@ CORE_THREAD: core-thread-events {
 		};
 	};
 	core {
-		compatible = "ibm,imc-counters";
+		compatible = "ibm,imc-counters-core";
 		events-prefix = "CPM_";
 		scale = "512";
 		reg = <0x18 0x8>;
@@ -1977,7 +1670,7 @@ CORE_THREAD: core-thread-events {
 		size = <0x2000>;
 	};
 	thread {
-		compatible = "ibm,imc-counters";
+		compatible = "ibm,imc-counters-thread";
 		events-prefix = "CPM_";
 		scale = "512";
 		reg = <0x18 0x8>;
@@ -1985,4 +1678,5 @@ CORE_THREAD: core-thread-events {
 		type = <0x1>;
 		size = <0x2000>;
 	};
+
 };
