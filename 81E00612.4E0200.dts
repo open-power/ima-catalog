@@ -1661,7 +1661,7 @@ CORE_THREAD: core-thread-events {
 		};
 	};
 	core {
-		compatible = "ibm,imc-counters-core";
+		compatible = "ibm,imc-counters";
 		events-prefix = "CPM_";
 		scale = "512";
 		reg = <0x18 0x8>;
@@ -1670,7 +1670,7 @@ CORE_THREAD: core-thread-events {
 		size = <0x2000>;
 	};
 	thread {
-		compatible = "ibm,imc-counters-thread";
+		compatible = "ibm,imc-counters";
 		events-prefix = "CPM_";
 		scale = "512";
 		reg = <0x18 0x8>;
