@@ -146,5 +146,15 @@ for i in $(seq $sections) ; do
 done
 
 mv $TMPFILE ima_catalog.bin
-rm -rf $TMPFILE
 
+if [ "$3" == "dev" ]; then
+   if [ "$2" == "POWER8" ]; then
+      dd if=./ima_catalog.bin bs=32K count=1 > ./ima_catalog.temp.bin
+      $1/ecc --inject ./ima_catalog.temp.bin --output ./ima_catalog.bin.ecc --p8
+   elif [ "$2" == "POWER9" ]; then
+      dd if=./ima_catalog.bin bs=256K count=1 > ./ima_catalog.temp.bin
+      $1/ecc --inject ./ima_catalog.temp.bin --output ./ima_catalog.bin.ecc --p8
+   fi
+fi
+
+rm -rf $TMPFILE
