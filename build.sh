@@ -93,7 +93,7 @@ fi
 #Create a tmp file for manipulation
 TMPFILE=$(mktemp)
 
-EYECATCHER=$(( 0x494D4143 )) # ascii 'IMAC'
+EYECATCHER=$(( 0x494D4343 )) # ascii 'IMCC'
 VERSION=1
 NUMBEROFTOCENTRIES=$entries
 
