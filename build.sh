@@ -148,3 +148,12 @@ done
 mv $TMPFILE ima_catalog.bin
 rm -rf $TMPFILE
 
+if [ "$3" == "dev" ]; then
+    if [ "$2" == "POWER8" ]; then
+	$bs_value=32
+    else
+	$bs_value=256
+    fi
+$1/dd if=./ima_catalog.bin bs=${bs_value}K count=1 > ./ima_catalog.temp.bin
+$1/ecc --inject ./ima_catalog.temp.bin --output ./ima_catalog.bin.ecc --p8
+fi
