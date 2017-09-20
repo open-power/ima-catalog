@@ -14,22 +14,16 @@ NEST_MCS: nest-mcs-events {
 
                 event@0 {
                         event-name = "64B_RD_OR_WR_DISP_PORT01" ;
-                        unit = "MiB/s" ;
-                        scale = "4" ;
                         reg = <0x0 0x8>;
                         desc = "" ;
                 };
                 event@8 {
                         event-name = "64B_RD_DISP_PORT01" ;
-                        unit = "MiB/s" ;
-                        scale = "4" ;
                         reg = <0x8 0x8>;
                         desc = "" ;
                 };
                 event@10 {
                         event-name = "64B_WR_DISP_PORT01" ;
-                        unit = "MiB/s" ;
-                        scale = "4" ;
                         reg = <0x10 0x8>;
                         desc = "" ;
                 };
@@ -40,22 +34,16 @@ NEST_MCS: nest-mcs-events {
                 };
                 event@20 {
                         event-name = "64B_RD_OR_WR_DISP_PORT23" ;
-                        unit = "MiB/s" ;
-                        scale = "4" ;
                         reg = <0x20 0x8>;
                         desc = "" ;
                 };
                 event@28 {
                         event-name = "64B_RD_DISP_PORT23" ;
-                        unit = "MiB/s" ;
-                        scale = "4" ;
                         reg = <0x28 0x8>;
                         desc = "" ;
                 };
                 event@30 {
                         event-name = "64B_WR_DISP_PORT23" ;
-                        unit = "MiB/s" ;
-                        scale = "4" ;
                         reg = <0x30 0x8>;
                         desc = "" ;
                 };
