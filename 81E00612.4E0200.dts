@@ -44,6 +44,7 @@ NEST_MCS: nest-mcs-events {
 	mcs01 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MCS01_";
+		scale = "256";
 		reg = <0xc8 0x8>;
 		events = < &NEST_MCS >;
 		type = <0x10>;
@@ -53,6 +54,7 @@ NEST_MCS: nest-mcs-events {
 	mcs23 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MCS23_";
+		scale = "256";
 		reg = <0x48 0x8>;
 		events = < &NEST_MCS >;
 		type = <0x10>;
@@ -143,6 +145,7 @@ NEST_POWERBUS: nest-powerbus-events {
 	powerbus0 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PB_";
+		scale = "256";
 		reg = <0x8 0x8>;
 		events = < &NEST_POWERBUS >;
 		type = <0x10>;
@@ -189,6 +192,7 @@ NEST_XLINK_IN: nest-xlink-in-events {
 	xlink0 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_XLINK0_";
+		scale = "256";
 		reg = <0x158 0x8>;
 		events = < &NEST_XLINK_IN >;
 		type = <0x10>;
@@ -235,6 +239,7 @@ NEST_XLINK_OUT: nest-xlink-out-events {
 	xlink1 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_XLINK1_";
+		scale = "256";
 		reg = <0x118 0x8>;
 		events = < &NEST_XLINK_OUT >;
 		type = <0x10>;
@@ -244,6 +249,7 @@ NEST_XLINK_OUT: nest-xlink-out-events {
 	xlink2 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_XLINK2_";
+		scale = "256";
 		reg = <0x198 0x8>;
 		events = < &NEST_XLINK_OUT >;
 		type = <0x10>;
@@ -274,6 +280,7 @@ NEST_PHB: nest-phb-events {
 	phb0 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB0_";
+		scale = "256";
 		reg = <0x338 0x8>;
 		events = < &NEST_PHB >;
 		type = <0x10>;
@@ -283,6 +290,7 @@ NEST_PHB: nest-phb-events {
 	phb1 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB1_";
+		scale = "256";
 		reg = <0x358 0x8>;
 		events = < &NEST_PHB >;
 		type = <0x10>;
@@ -292,6 +300,7 @@ NEST_PHB: nest-phb-events {
 	phb2 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB2_";
+		scale = "256";
 		reg = <0x378 0x8>;
 		events = < &NEST_PHB >;
 		type = <0x10>;
@@ -301,6 +310,7 @@ NEST_PHB: nest-phb-events {
 	phb3 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB3_";
+		scale = "256";
 		reg = <0x398 0x8>;
 		events = < &NEST_PHB >;
 		type = <0x10>;
@@ -310,6 +320,7 @@ NEST_PHB: nest-phb-events {
 	phb4 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB4_";
+		scale = "256";
 		reg = <0x3b8 0x8>;
 		events = < &NEST_PHB >;
 		type = <0x10>;
@@ -319,6 +330,7 @@ NEST_PHB: nest-phb-events {
 	phb5 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB5_";
+		scale = "256";
 		reg = <0x3d8 0x8>;
 		events = < &NEST_PHB >;
 		type = <0x10>;
@@ -345,6 +357,7 @@ NEST_MBA: nest-mba-events {
 	mba0 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA0_";
+		scale = "256";
 		reg = <0x448 0x8>;
 		events = < &NEST_MBA >;
 		type = <0x10>;
@@ -354,6 +367,7 @@ NEST_MBA: nest-mba-events {
 	mba1 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA1_";
+		scale = "256";
 		reg = <0x460 0x8>;
 		events = < &NEST_MBA >;
 		type = <0x10>;
@@ -363,6 +377,7 @@ NEST_MBA: nest-mba-events {
 	mba2 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA2_";
+		scale = "256";
 		reg = <0x478 0x8>;
 		events = < &NEST_MBA >;
 		type = <0x10>;
@@ -372,6 +387,7 @@ NEST_MBA: nest-mba-events {
 	mba3 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA3_";
+		scale = "256";
 		reg = <0x490 0x8>;
 		events = < &NEST_MBA >;
 		type = <0x10>;
@@ -381,6 +397,7 @@ NEST_MBA: nest-mba-events {
 	mba4 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA4_";
+		scale = "256";
 		reg = <0x558 0x8>;
 		events = < &NEST_MBA >;
 		type = <0x10>;
@@ -390,6 +407,7 @@ NEST_MBA: nest-mba-events {
 	mba5 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA5_";
+		scale = "256";
 		reg = <0x570 0x8>;
 		events = < &NEST_MBA >;
 		type = <0x10>;
@@ -399,6 +417,7 @@ NEST_MBA: nest-mba-events {
 	mba6 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA6_";
+		scale = "256";
 		reg = <0x588 0x8>;
 		events = < &NEST_MBA >;
 		type = <0x10>;
@@ -408,6 +427,7 @@ NEST_MBA: nest-mba-events {
 	mba7 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA7_";
+		scale = "256";
 		reg = <0x5a0 0x8>;
 		events = < &NEST_MBA >;
 		type = <0x10>;
@@ -454,6 +474,7 @@ NEST_CAPP: nest-capp-events {
 	capp0 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_CAPP1_";
+		scale = "256";
 		reg = <0x6c8 0x8>;
 		events = < &NEST_CAPP >;
 		type = <0x10>;
@@ -463,6 +484,7 @@ NEST_CAPP: nest-capp-events {
 	capp1 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_CAPP2_";
+		scale = "256";
 		reg = <0x708 0x8>;
 		events = < &NEST_CAPP >;
 		type = <0x10>;
@@ -923,6 +945,7 @@ NEST_NX: nest-nx-events {
 	nx {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_NX_";
+		scale = "256";
 		reg = <0x1d8 0x8>;
 		events = < &NEST_NX >;
 		type = <0x10>;
