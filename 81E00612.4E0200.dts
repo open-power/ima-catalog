@@ -560,6 +560,16 @@ NEST_NVLINK3: nest-nvlink3-events {
 			reg = <0x320 0x8>;
 		};
 	};
+	nvlink3 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "";
+		scale = "256";
+		reg = <0x0 0x8>;
+		events = < &NEST_NVLINK3 >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+	};
 NEST_NVLINK2: nest-nvlink2-events {
 		#address-cells = <0x1>;
 		#size-cells = <0x1>;
@@ -628,6 +638,16 @@ NEST_NVLINK2: nest-nvlink2-events {
 			event-name = "PM_XTS_ATSD_SENT" ;
 			reg = <0x320 0x8>;
 		};
+	};
+	nvlink2 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "";
+		scale = "256";
+		reg = <0x0 0x8>;
+		events = < &NEST_NVLINK2 >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
 	};
 NEST_NVLINK1: nest-nvlink1-events {
 		#address-cells = <0x1>;
@@ -698,6 +718,16 @@ NEST_NVLINK1: nest-nvlink1-events {
 			reg = <0x320 0x8>;
 		};
 	};
+	nvlink1 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "";
+		scale = "256";
+		reg = <0x0 0x8>;
+		events = < &NEST_NVLINK1 >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+	};
 NEST_NVLINK0: nest-nvlink0-events {
 		#address-cells = <0x1>;
 		#size-cells = <0x1>;
@@ -766,6 +796,16 @@ NEST_NVLINK0: nest-nvlink0-events {
 			event-name = "PM_XTS_ATSD_SENT" ;
 			reg = <0x320 0x8>;
 		};
+	};
+	nvlink0 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "";
+		scale = "256";
+		reg = <0x0 0x8>;
+		events = < &NEST_NVLINK0 >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
 	};
 NEST_NVLINK5: nest-nvlink5-events {
 		#address-cells = <0x1>;
@@ -836,6 +876,16 @@ NEST_NVLINK5: nest-nvlink5-events {
 			reg = <0x320 0x8>;
 		};
 	};
+	nvlink5 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "";
+		scale = "256";
+		reg = <0x0 0x8>;
+		events = < &NEST_NVLINK5 >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+	};
 NEST_NVLINK4: nest-nvlink4-events {
 		#address-cells = <0x1>;
 		#size-cells = <0x1>;
@@ -904,6 +954,16 @@ NEST_NVLINK4: nest-nvlink4-events {
 			event-name = "PM_XTS_ATSD_SENT" ;
 			reg = <0x320 0x8>;
 		};
+	};
+	nvlink4 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "";
+		scale = "256";
+		reg = <0x0 0x8>;
+		events = < &NEST_NVLINK4 >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
 	};
 NEST_NX: nest-nx-events {
 		#address-cells = <0x1>;
