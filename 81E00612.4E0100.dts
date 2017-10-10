@@ -6,7 +6,7 @@
 	compatible = "ibm,opal-in-memory-counters";
 	#address-cells = <0x1>;
 	#size-cells = <0x1>;
-	version-id = <0x10>;
+	version-id = <0x11>;
 
 NEST_MCS: nest-mcs-events {
 		#address-cells = <0x1>;
@@ -1066,16 +1066,6 @@ CORE_THREAD: core-thread-events {
 			reg = <0x1c0 0x8>;
 			desc = "The number of PPC instructions completed when exactly four SMT threads are executing non-idle instructions" ;
 		};
-		event@4c0 {
-			event-name = "EXT_INT_EBB" ;
-			reg = <0x4c0 0x8>;
-			desc = "The sum of external event based branch interrupts across all SMT threads (DD2 only)" ;
-		};
-		event@500 {
-			event-name = "EXT_INT_HYP" ;
-			reg = <0x500 0x8>;
-			desc = "The sum of hypervisor virtualization interrupts across all SMT threads (DD2 only)" ;
-		};
 		event@9c0 {
 			event-name = "CS_DTLB_MISS_2M" ;
 			reg = <0x9c0 0x8>;
@@ -1111,9 +1101,9 @@ CORE_THREAD: core-thread-events {
 			reg = <0x280 0x8>;
 			desc = "Number of TM transactions that passed" ;
 		};
-		event@2c0 {
+		event@4c8 {
 			event-name = "TM_ABORTS" ;
-			reg = <0x2c0 0x8>;
+			reg = <0x4c8 0x8>;
 			desc = "Number of TM transactions aborted" ;
 		};
 		event@40 {
@@ -1295,16 +1285,6 @@ CORE_THREAD: core-thread-events {
 			event-name = "L2L3_NODAL_PB_REQ" ;
 			reg = <0x2c8 0x8>;
 			desc = "The number of Power Bus Requests by Level 2 or Level 3 cache using Nodal (neither X-Bus or A-Bus)" ;
-		};
-		event@388 {
-			event-name = "EXT_INT_DOORBELL" ;
-			reg = <0x388 0x8>;
-			desc = "The sum of doorbell interrupts across all SMT threads (DD2 only)" ;
-		};
-		event@4c8 {
-			event-name = "THREAD_NAP_STATE_SAVE_CCYC" ;
-			reg = <0x4c8 0x8>;
-			desc = "The sum of all constant clock cycles across all SMT threads in Power Saving mode where the thread state is saved (DD2 only)" ;
 		};
 		event@840 {
 			event-name = "CS_CORE_MODE_ST_CCYC" ;
@@ -2086,10 +2066,10 @@ CORE_THREAD: core-thread-events {
 			reg = <0x1600 0x8>;
 			desc = "The number of stores that missed level 1 cache in user state" ;
 		};
-		event@540 {
-			event-name = "EXT_INT_OS" ;
-			reg = <0x540 0x8>;
-			desc = "The sum of operating system external interrupts across all SMT threads (DD2 only). The sum of external interrupts across all SMT threads (DD1). The event name is for DD2. On DD1 the event is called CPM_EXT_INT" ;
+		event@388 {
+			event-name = "EXT_INT" ;
+			reg = <0x388 0x8>;
+			desc = "The sum of external interrupts across all SMT threads (DD1)" ;
 		};
 		event@8 {
 			event-name = "INST" ;
@@ -2146,11 +2126,6 @@ CORE_THREAD: core-thread-events {
 			reg = <0x640 0x8>;
 			desc = "The number of non-idle instructions completed in problem state with MSR HV=0 & PR=1" ;
 		};
-		event@888 {
-			event-name = "SMT_MODE_SWITCH" ;
-			reg = <0x888 0x8>;
-			desc = "The number of SMT mode switches during the measurement period (DD2 only)" ;
-		};
 		event@708 {
 			event-name = "MSR_TA_LIC_PCYC" ;
 			reg = <0x708 0x8>;
@@ -2166,11 +2141,6 @@ CORE_THREAD: core-thread-events {
 			reg = <0x740 0x8>;
 			desc = "The number of non-idle instructions completed with MSR US=0 & PR=1" ;
 		};
-		event@1888 {
-			event-name = "SMT_MODE_SWITCH_KERNEL" ;
-			reg = <0x1888 0x8>;
-			desc = "The number of SMT mode switches during the measurement period in kernel state(DD2 only)" ;
-		};
 		event@748 {
 			event-name = "MSR_TA_SYS_PCYC" ;
 			reg = <0x748 0x8>;
@@ -2185,11 +2155,6 @@ CORE_THREAD: core-thread-events {
 			event-name = "MSR_TA_USER_INST" ;
 			reg = <0x780 0x8>;
 			desc = "The number of non-idle instructions completed with MSR US=1 & PR=1" ;
-		};
-		event@1088 {
-			event-name = "SMT_MODE_SWITCH_USER" ;
-			reg = <0x1088 0x8>;
-			desc = "The number of SMT mode switches during the measurement period in user state(DD2 only)" ;
 		};
 		event@588 {
 			event-name = "MSR_TRANSMEM_PCYC" ;
@@ -2257,9 +2222,9 @@ CORE_THREAD: core-thread-events {
 			desc = "The number of processor cycles the ICT was empty in kernel state" ;
 		};
 		event@5c0 {
-			event-name = "THREAD_NAP_STATE_LOSS_CCYC" ;
+			event-name = "THREAD_NAP_CCYC" ;
 			reg = <0x5c0 0x8>;
-			desc = "The sum of all constant clock cycles across all SMT threads in Power Savings mode (DD1). The sum of all constant clock cycles across all SMT threads in Power Saving mode where the thread state is not saved (DD2 only). The current event name is for DD2. The event name is CPM_THREAD_NAP_CCYC for DD1" ;
+			desc = "The sum of all constant clock cycles across all SMT threads in Power Savings mode (DD1)" ;
 		};
 	};
 	core {
