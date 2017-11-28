@@ -6,22 +6,22 @@
 	compatible = "ibm,opal-in-memory-counters";
 	#address-cells = <0x1>;
 	#size-cells = <0x1>;
-	version-id = <0x11>;
+	version-id = <0x13>;
 
 NEST_MCS: nest-mcs-events {
 		#address-cells = <0x1>;
 		#size-cells = <0x1>;
 
 		event@0 {
-			event-name = "64B_RD_OR_WR_DISP_PORT01" ;
+			event-name = "64B_RD_DISP_PORT01" ;
 			reg = <0x0 0x8>;
 		};
 		event@8 {
-			event-name = "64B_RD_DISP_PORT01" ;
+			event-name = "128B_RD_DISP_PORT01" ;
 			reg = <0x8 0x8>;
 		};
 		event@10 {
-			event-name = "64B_WR_DISP_PORT01" ;
+			event-name = "128B_WR_DISP_PORT01" ;
 			reg = <0x10 0x8>;
 		};
 		event@18 {
@@ -29,15 +29,15 @@ NEST_MCS: nest-mcs-events {
 			reg = <0x18 0x8>;
 		};
 		event@20 {
-			event-name = "64B_RD_OR_WR_DISP_PORT23" ;
+			event-name = "64B_RD_DISP_PORT23" ;
 			reg = <0x20 0x8>;
 		};
 		event@28 {
-			event-name = "64B_RD_DISP_PORT23" ;
+			event-name = "128B_RD_DISP_PORT23" ;
 			reg = <0x28 0x8>;
 		};
 		event@30 {
-			event-name = "64B_WR_DISP_PORT23" ;
+			event-name = "128B_WR_DISP_PORT23" ;
 			reg = <0x30 0x8>;
 		};
 	};
@@ -50,6 +50,7 @@ NEST_MCS: nest-mcs-events {
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 	mcs23 {
 		compatible = "ibm,imc-counters";
@@ -60,6 +61,7 @@ NEST_MCS: nest-mcs-events {
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 NEST_POWERBUS: nest-powerbus-events {
 		#address-cells = <0x1>;
@@ -151,53 +153,55 @@ NEST_POWERBUS: nest-powerbus-events {
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 NEST_XLINK_IN: nest-xlink-in-events {
 		#address-cells = <0x1>;
 		#size-cells = <0x1>;
 
 		event@0 {
-			event-name = "IN_EVEN_CYC" ;
+			event-name = "OUT_EVEN_CYC" ;
 			reg = <0x0 0x8>;
 		};
 		event@8 {
-			event-name = "IN_EVEN_ANY_RCMD" ;
+			event-name = "OUT_EVEN_ANY_RCMD" ;
 			reg = <0x8 0x8>;
 		};
 		event@10 {
-			event-name = "IN_EVEN_DATA_COUNT" ;
+			event-name = "OUT_EVEN_DATA_COUNT" ;
 			reg = <0x10 0x8>;
 		};
 		event@18 {
-			event-name = "IN_EVEN_TOTAL_UTIL" ;
+			event-name = "OUT_EVEN_TOTAL_UTIL" ;
 			reg = <0x18 0x8>;
 		};
 		event@20 {
-			event-name = "IN_ODD_CYC" ;
+			event-name = "OUT_ODD_CYC" ;
 			reg = <0x20 0x8>;
 		};
 		event@28 {
-			event-name = "IN_ODD_ANY_RCMD" ;
+			event-name = "OUT_ODD_ANY_RCMD" ;
 			reg = <0x28 0x8>;
 		};
 		event@30 {
-			event-name = "IN_ODD_DATA_COUNT" ;
+			event-name = "OUT_ODD_DATA_COUNT" ;
 			reg = <0x30 0x8>;
 		};
 		event@38 {
-			event-name = "IN_ODD_TOTAL_UTIL" ;
+			event-name = "OUT_ODD_TOTAL_UTIL" ;
 			reg = <0x38 0x8>;
 		};
 	};
 	xlink0 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_XLINK0_";
-		scale = "256";
+		scale = "4096";
 		reg = <0x158 0x8>;
 		events = < &NEST_XLINK_IN >;
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 NEST_XLINK_OUT: nest-xlink-out-events {
 		#address-cells = <0x1>;
@@ -239,22 +243,24 @@ NEST_XLINK_OUT: nest-xlink-out-events {
 	xlink1 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_XLINK1_";
-		scale = "256";
+		scale = "4096";
 		reg = <0x118 0x8>;
 		events = < &NEST_XLINK_OUT >;
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 	xlink2 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_XLINK2_";
-		scale = "256";
+		scale = "4096";
 		reg = <0x198 0x8>;
 		events = < &NEST_XLINK_OUT >;
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 NEST_PHB: nest-phb-events {
 		#address-cells = <0x1>;
@@ -280,62 +286,68 @@ NEST_PHB: nest-phb-events {
 	phb0 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB0_";
-		scale = "256";
+		scale = "1";
 		reg = <0x338 0x8>;
 		events = < &NEST_PHB >;
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 	phb1 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB1_";
-		scale = "256";
+		scale = "1";
 		reg = <0x358 0x8>;
 		events = < &NEST_PHB >;
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 	phb2 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB2_";
-		scale = "256";
+		scale = "1";
 		reg = <0x378 0x8>;
 		events = < &NEST_PHB >;
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 	phb3 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB3_";
-		scale = "256";
+		scale = "1";
 		reg = <0x398 0x8>;
 		events = < &NEST_PHB >;
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 	phb4 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB4_";
-		scale = "256";
+		scale = "1";
 		reg = <0x3b8 0x8>;
 		events = < &NEST_PHB >;
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 	phb5 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB5_";
-		scale = "256";
+		scale = "1";
 		reg = <0x3d8 0x8>;
 		events = < &NEST_PHB >;
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 NEST_MBA: nest-mba-events {
 		#address-cells = <0x1>;
@@ -350,89 +362,97 @@ NEST_MBA: nest-mba-events {
 			reg = <0x8 0x8>;
 		};
 		event@10 {
-			event-name = "DRAM_CLK_CYC" ;
+			event-name = "CLK_CYC" ;
 			reg = <0x10 0x8>;
 		};
 	};
 	mba0 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA0_";
-		scale = "256";
+		scale = "1";
 		reg = <0x448 0x8>;
 		events = < &NEST_MBA >;
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 	mba1 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA1_";
-		scale = "256";
+		scale = "1";
 		reg = <0x460 0x8>;
 		events = < &NEST_MBA >;
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 	mba2 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA2_";
-		scale = "256";
+		scale = "1";
 		reg = <0x478 0x8>;
 		events = < &NEST_MBA >;
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 	mba3 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA3_";
-		scale = "256";
+		scale = "1";
 		reg = <0x490 0x8>;
 		events = < &NEST_MBA >;
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 	mba4 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA4_";
-		scale = "256";
+		scale = "1";
 		reg = <0x558 0x8>;
 		events = < &NEST_MBA >;
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 	mba5 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA5_";
-		scale = "256";
+		scale = "1";
 		reg = <0x570 0x8>;
 		events = < &NEST_MBA >;
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 	mba6 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA6_";
-		scale = "256";
+		scale = "1";
 		reg = <0x588 0x8>;
 		events = < &NEST_MBA >;
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 	mba7 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA7_";
-		scale = "256";
+		scale = "1";
 		reg = <0x5a0 0x8>;
 		events = < &NEST_MBA >;
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 NEST_CAPP: nest-capp-events {
 		#address-cells = <0x1>;
@@ -480,6 +500,7 @@ NEST_CAPP: nest-capp-events {
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 	capp1 {
 		compatible = "ibm,imc-counters";
@@ -490,6 +511,7 @@ NEST_CAPP: nest-capp-events {
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 NEST_NVLINK3: nest-nvlink3-events {
 		#address-cells = <0x1>;
@@ -569,6 +591,7 @@ NEST_NVLINK3: nest-nvlink3-events {
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 NEST_NVLINK2: nest-nvlink2-events {
 		#address-cells = <0x1>;
@@ -648,6 +671,7 @@ NEST_NVLINK2: nest-nvlink2-events {
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 NEST_NVLINK1: nest-nvlink1-events {
 		#address-cells = <0x1>;
@@ -727,6 +751,7 @@ NEST_NVLINK1: nest-nvlink1-events {
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 NEST_NVLINK0: nest-nvlink0-events {
 		#address-cells = <0x1>;
@@ -806,6 +831,7 @@ NEST_NVLINK0: nest-nvlink0-events {
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 NEST_NVLINK5: nest-nvlink5-events {
 		#address-cells = <0x1>;
@@ -885,6 +911,7 @@ NEST_NVLINK5: nest-nvlink5-events {
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 NEST_NVLINK4: nest-nvlink4-events {
 		#address-cells = <0x1>;
@@ -964,6 +991,7 @@ NEST_NVLINK4: nest-nvlink4-events {
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 NEST_NX: nest-nx-events {
 		#address-cells = <0x1>;
@@ -1011,6 +1039,7 @@ NEST_NX: nest-nx-events {
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
 	};
 CORE_THREAD: core-thread-events {
 		#address-cells = <0x1>;

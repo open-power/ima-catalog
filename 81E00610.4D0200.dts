@@ -6,7 +6,7 @@
 	compatible = "ibm,opal-in-memory-counters";
 	#address-cells = <0x1>;
 	#size-cells = <0x1>;
-	version-id = <0x8>;
+	version-id = <0xa>;
 
 NEST_MCS: nest-mcs-events {
 		#address-cells = <0x1>;
@@ -35,6 +35,7 @@ NEST_MCS: nest-mcs-events {
 		type = <0x10>;
 		size = <0x80000>;
 		offset = <0x320000>;
+		cb_offset = <0x3fc00>;
 	};
 	mcs1 {
 		compatible = "ibm,imc-counters";
@@ -44,6 +45,7 @@ NEST_MCS: nest-mcs-events {
 		type = <0x10>;
 		size = <0x80000>;
 		offset = <0x320000>;
+		cb_offset = <0x3fc00>;
 	};
 	mcs2 {
 		compatible = "ibm,imc-counters";
@@ -53,6 +55,7 @@ NEST_MCS: nest-mcs-events {
 		type = <0x10>;
 		size = <0x80000>;
 		offset = <0x320000>;
+		cb_offset = <0x3fc00>;
 	};
 	mcs3 {
 		compatible = "ibm,imc-counters";
@@ -62,5 +65,6 @@ NEST_MCS: nest-mcs-events {
 		type = <0x10>;
 		size = <0x80000>;
 		offset = <0x320000>;
+		cb_offset = <0x3fc00>;
 	};
 };
