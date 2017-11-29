@@ -155,7 +155,7 @@ NEST_POWERBUS: nest-powerbus-events {
 		offset = <0x180000>;
 		cb_offset = <0x3fc00>;
 	};
-NEST_XLINK_IN: nest-xlink-in-events {
+NEST_XLINK_OUT: nest-xlink-out-events {
 		#address-cells = <0x1>;
 		#size-cells = <0x1>;
 
@@ -197,48 +197,11 @@ NEST_XLINK_IN: nest-xlink-in-events {
 		events-prefix = "PM_XLINK0_";
 		scale = "4096";
 		reg = <0x158 0x8>;
-		events = < &NEST_XLINK_IN >;
+		events = < &NEST_XLINK_OUT >;
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
 		cb_offset = <0x3fc00>;
-	};
-NEST_XLINK_OUT: nest-xlink-out-events {
-		#address-cells = <0x1>;
-		#size-cells = <0x1>;
-
-		event@0 {
-			event-name = "OUT_EVEN_CYC" ;
-			reg = <0x0 0x8>;
-		};
-		event@8 {
-			event-name = "OUT_EVEN_ANY_RCMD" ;
-			reg = <0x8 0x8>;
-		};
-		event@10 {
-			event-name = "OUT_EVEN_DATA_COUNT" ;
-			reg = <0x10 0x8>;
-		};
-		event@18 {
-			event-name = "OUT_EVEN_TOTAL_UTIL" ;
-			reg = <0x18 0x8>;
-		};
-		event@20 {
-			event-name = "OUT_ODD_CYC" ;
-			reg = <0x20 0x8>;
-		};
-		event@28 {
-			event-name = "OUT_ODD_ANY_RCMD" ;
-			reg = <0x28 0x8>;
-		};
-		event@30 {
-			event-name = "OUT_ODD_DATA_COUNT" ;
-			reg = <0x30 0x8>;
-		};
-		event@38 {
-			event-name = "OUT_ODD_TOTAL_UTIL" ;
-			reg = <0x38 0x8>;
-		};
 	};
 	xlink1 {
 		compatible = "ibm,imc-counters";
