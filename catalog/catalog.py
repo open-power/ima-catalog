@@ -1,14 +1,16 @@
 #!/usr/bin/python
+#/*
+# *
+# * Generate IMA performance events catalog
 #
-# Generate IMA performance events catalog
+# * Copyright (C) 2017 Santosh Sivaraj <santosiv@in.ibm.com>, IBM
+# * Copyright (C) 2017 Rajarshi Das <drajarshi@in.ibm.com>, IBM
+# * Copyright (C) 2017 IBM Corporation
 #
-# Copyright (C) 2016 Santosh Sivaraj <santosiv@in.ibm.com>
-# Copyright (C) 2016 Rajarshi Das <drajarshi@in.ibm.com>
-# Copyright (C) 2016 IBM Corporation
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
+# * Licensed under the Apache License, Version 2.0 (the "License");
+# * you may not use this file except in compliance with the License.
+# * You may obtain a copy of the License at
+# */
 
 import struct
 import time
@@ -18,7 +20,7 @@ from common import *
 from events import pack_events
 from groups import pack_groups
 from formulae import pack_formulae
-from generate_dts import gen_dts
+from generate_dts import gen_dts,gen_dtb
 
 def dump_schema(cat_file):
     f = open(cat_file)
@@ -44,6 +46,7 @@ def create_catalog(version, old_lid):
     formulae_offset = groups_offset + len(groups) / PAGE_SIZE
     formulae_length = len(formulae) / PAGE_SIZE
     # WARNING: schema len and offset is hardcoded here
+    print 'version: {}'.format(version)
     header = struct.pack(">IIQ16s32xHHHxxHHHxxHHHxxHHHxx", 0x32347837, 64,
                          version,
                          datetime.fromtimestamp(time.time()).strftime('%Y%m%d%H%M%S'),
@@ -69,40 +72,51 @@ if __name__ == "__main__":
     threadimaflag = ''
 
     if len(sys.argv) <= 3:
-        print "In order to generate a new catalog LID and new DTS file:\n"
+	print "In order to generate a new catalog LID and new DTS file:\n"
+#	print "Usage: ./%s version old_lid out_file" % (sys.argv[0])
+#       print "Usage: ./%s version old_lid new_prefix\n" % (sys.argv[0])
         print "Usage: ./%s version old_lid new_prefix <unitname> <pvrname> <threadima> <coreima> \n" % (sys.argv[0])
-        print "e.g. ./%s        8  v8.3.lid  e8100910 mcs 4D0200 yes yes \n" % (sys.argv[0])
-        print "The arguments marked in <> are optional. \n"
-        print "The new LID and DTS files will be named as <new_prefix>.lid and <new_prefix>.dts"
+	print "e.g. ./%s 	8  v8.3.lid  e8100910 mcs 4D0200 yes yes \n" % (sys.argv[0])
+	print "The arguments marked in <> are optional. \n"
+	print "The new LID and DTS files will be named as <new_prefix>.lid and <new_prefix>.dts"
         exit(1)
 
     print 'Arguments specified:\n'
     print 'Version: ' + str(sys.argv[1]) + ' Old LID file: ' + str(sys.argv[2])
 
-    lid_filename = str(sys.argv[3]) + '.lid'
-    print 'New LID file: {}'.format(lid_filename)
+    new_lid_filename = str(sys.argv[3]) + '.lid'
+    print 'New LID file: {}'.format(new_lid_filename)
     dts_filename = str(sys.argv[3]) + '.dts'
     print 'DTS file: {}'.format(dts_filename)
 
-    if len(sys.argv) == 5:
-        unitname = str(sys.argv[4])
-    if len(sys.argv) == 6:
-        pvr  = str(sys.argv[5])
-    if len(sys.argv) == 7:
-        coreimaflag  = str(sys.argv[6])
-    if len(sys.argv) == 8:
-        threadimaflag = str(sys.argv[7])
+    if len(sys.argv) >= 5: 
+    	unitname = str(sys.argv[4])
+    if len(sys.argv) >= 6: 
+    	pvr  = str(sys.argv[5])
+    if len(sys.argv) >= 7: 
+    	coreimaflag  = str(sys.argv[6])
+    if len(sys.argv) == 8: 
+    	threadimaflag = str(sys.argv[7])
 
     # get the version for the new build, and older catalog file to extract the
     # schema data
-    c = create_catalog(int(sys.argv[1]), sys.argv[2])
+#    c = create_catalog(int(sys.argv[1]), sys.argv[2])
+    # Handle the LID# and the LID version# in the 'version' field
+    c = create_catalog(int(sys.argv[1], 0), sys.argv[2])
     padlen = 64 - len(c) / PAGE_SIZE
     c += struct.pack('%dx' % (padlen * PAGE_SIZE))
 
-    f = open(lid_filename, 'wt')
+#   f = open(sys.argv[3], 'wt')
+    f = open(new_lid_filename, 'wt')
     f.write(c)
     f.close()
+	
+    # Specify input filename (new lid), verbose flag, and dts output filename 
+#   gen_dts(new_lid_filename, False, dts_filename)
+    # Specify input filename (new lid), verbose flag, dts output filename , unit to fetch, pvr id, core ima (yes or no), thread ima (yes or no)
+    gen_dts(new_lid_filename, False, dts_filename, unitname, pvr, coreimaflag, threadimaflag)
 
-    # Specify input filename (new lid), verbose flag, dts output filename ,
-    # unit to fetch, pvr id, core ima (yes or no), thread ima (yes or no)
-    gen_dts(lid_filename, False, dts_filename, unitname, pvr, coreimaflag, threadimaflag)
+    # Generate the dtb binary
+    dtb_filename = str(sys.argv[3])+'.dtb.bin'
+    print 'DTB file: {}'.format(dtb_filename)
+    gen_dtb(dts_filename, dtb_filename)
