@@ -6,7 +6,7 @@
 	compatible = "ibm,opal-in-memory-counters";
 	#address-cells = <0x1>;
 	#size-cells = <0x1>;
-	version-id = <0x13>;
+	version-id = <0x14>;
 
 NEST_MCS: nest-mcs-events {
 		#address-cells = <0x1>;
@@ -196,7 +196,7 @@ NEST_XLINK_OUT: nest-xlink-out-events {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_XLINK0_";
 		scale = "4096";
-		reg = <0x158 0x8>;
+		reg = <0x118 0x8>;
 		events = < &NEST_XLINK_OUT >;
 		type = <0x10>;
 		size = <0x40000>;
@@ -207,7 +207,7 @@ NEST_XLINK_OUT: nest-xlink-out-events {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_XLINK1_";
 		scale = "4096";
-		reg = <0x118 0x8>;
+		reg = <0x158 0x8>;
 		events = < &NEST_XLINK_OUT >;
 		type = <0x10>;
 		size = <0x40000>;
