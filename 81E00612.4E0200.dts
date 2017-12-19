@@ -6,7 +6,7 @@
 	compatible = "ibm,opal-in-memory-counters";
 	#address-cells = <0x1>;
 	#size-cells = <0x1>;
-	version-id = <0x14>;
+	version-id = <0x15>;
 
 NEST_MCS: nest-mcs-events {
 		#address-cells = <0x1>;
@@ -15,30 +15,37 @@ NEST_MCS: nest-mcs-events {
 		event@0 {
 			event-name = "64B_RD_DISP_PORT01" ;
 			reg = <0x0 0x8>;
+			desc = "Total 64 byte reads/writes dispatched for mcs01 on port01. (These are 64Byte request and not get counted in 128byte read request)" ;
 		};
 		event@8 {
 			event-name = "128B_RD_DISP_PORT01" ;
 			reg = <0x8 0x8>;
+			desc = "Total Read 128-byte data blocks for mcs01 on port01" ;
 		};
 		event@10 {
 			event-name = "128B_WR_DISP_PORT01" ;
 			reg = <0x10 0x8>;
+			desc = "Total Write 128-byte data blocks for mcs01 on port01" ;
 		};
 		event@18 {
 			event-name = "AMO_OP_DISP_PORT01" ;
 			reg = <0x18 0x8>;
+			desc = "AMO (Atomic Memory Operation) command dispatched in mcs01" ;
 		};
 		event@20 {
 			event-name = "64B_RD_DISP_PORT23" ;
 			reg = <0x20 0x8>;
+			desc = "Total 64 byte reads dispatched for mcs01 on port23. (These are 64Byte request and not get counted in 128byte read request)" ;
 		};
 		event@28 {
 			event-name = "128B_RD_DISP_PORT23" ;
 			reg = <0x28 0x8>;
+			desc = "Total Read 128-byte data blocks for mcs01 on port23" ;
 		};
 		event@30 {
 			event-name = "128B_WR_DISP_PORT23" ;
 			reg = <0x30 0x8>;
+			desc = "Total Write 128-byte data blocks for mcs01 on port23" ;
 		};
 	};
 	mcs01 {
@@ -80,10 +87,12 @@ NEST_POWERBUS: nest-powerbus-events {
 		event@10 {
 			event-name = "EVENT_GROUP_PUMP" ;
 			reg = <0x10 0x8>;
+			desc = "Group Scope operation (locally mastered) on port n" ;
 		};
 		event@18 {
 			event-name = "EVENT_RNS_PUMP" ;
 			reg = <0x18 0x8>;
+			desc = "Remote Nodal Scope operation (locally mastered) on port n" ;
 		};
 		event@20 {
 			event-name = "EVENT_RTY_VG_PUMP" ;
@@ -98,18 +107,22 @@ NEST_POWERBUS: nest-powerbus-events {
 		event@30 {
 			event-name = "EVENT_RTY_GROUP_PUMP" ;
 			reg = <0x30 0x8>;
+			desc = "Retry of a Group Scope operation (locally mastered) - Retry due to (rty_dropped_rcmd; rty_lpc; rty_other)" ;
 		};
 		event@38 {
 			event-name = "EVENT_RTY_RNS_PUMP" ;
 			reg = <0x38 0x8>;
+			desc = "Retry of a Remote Nodal Scope op (locally mastered)- Retry due to (rty_dropped_rcmd; rty_lpc; rty_other)" ;
 		};
 		event@a0 {
 			event-name = "INT_DATA_XFER" ;
 			reg = <0xa0 0x8>;
+			desc = "16x 32B OW Internal Data transfer on a PB horizontal bus" ;
 		};
 		event@a8 {
 			event-name = "EXT_DATA_XFER" ;
 			reg = <0xa8 0x8>;
+			desc = "16x 32B OW External Data transfer on a PB X/A horizontal bus" ;
 		};
 		event@78 {
 			event-name = "CYC" ;
@@ -134,10 +147,12 @@ NEST_POWERBUS: nest-powerbus-events {
 		event@b0 {
 			event-name = "NNS_PUMP" ;
 			reg = <0xb0 0x8>;
+			desc = "Near Nodal Scope operation (locally mastered)" ;
 		};
 		event@b8 {
 			event-name = "RTY_NNS_PUMP_P01" ;
 			reg = <0xb8 0x8>;
+			desc = "Retry of a Near Nodal Scope op (locally mastered)- Retry due to (rty_dropped_rcmd; rty_lpc; rty_other)" ;
 		};
 		event@f8 {
 			event-name = "CYC2" ;
