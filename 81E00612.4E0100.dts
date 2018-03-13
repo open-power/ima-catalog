@@ -6,7 +6,7 @@
 	compatible = "ibm,opal-in-memory-counters";
 	#address-cells = <0x1>;
 	#size-cells = <0x1>;
-	version-id = <0x15>;
+	version-id = <0x16>;
 
 NEST_MCS: nest-mcs-events {
 		#address-cells = <0x1>;
@@ -48,7 +48,7 @@ NEST_MCS: nest-mcs-events {
 			desc = "Total Write 128-byte data blocks for mcs01 on port23" ;
 		};
 	};
-	mcs01 {
+	mcs01@c8 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MCS01_";
 		scale = "256";
@@ -59,7 +59,7 @@ NEST_MCS: nest-mcs-events {
 		offset = <0x180000>;
 		cb_offset = <0x3fc00>;
 	};
-	mcs23 {
+	mcs23@48 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MCS23_";
 		scale = "256";
@@ -159,7 +159,7 @@ NEST_POWERBUS: nest-powerbus-events {
 			reg = <0xf8 0x8>;
 		};
 	};
-	powerbus0 {
+	powerbus0@8 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PB_";
 		scale = "256";
@@ -207,7 +207,7 @@ NEST_XLINK_OUT: nest-xlink-out-events {
 			reg = <0x38 0x8>;
 		};
 	};
-	xlink0 {
+	xlink0@118 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_XLINK0_";
 		scale = "4096";
@@ -218,7 +218,7 @@ NEST_XLINK_OUT: nest-xlink-out-events {
 		offset = <0x180000>;
 		cb_offset = <0x3fc00>;
 	};
-	xlink1 {
+	xlink1@158 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_XLINK1_";
 		scale = "4096";
@@ -229,7 +229,7 @@ NEST_XLINK_OUT: nest-xlink-out-events {
 		offset = <0x180000>;
 		cb_offset = <0x3fc00>;
 	};
-	xlink2 {
+	xlink2@198 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_XLINK2_";
 		scale = "4096";
@@ -261,7 +261,7 @@ NEST_PHB: nest-phb-events {
 			reg = <0x18 0x8>;
 		};
 	};
-	phb0 {
+	phb0@338 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB0_";
 		scale = "1";
@@ -272,7 +272,7 @@ NEST_PHB: nest-phb-events {
 		offset = <0x180000>;
 		cb_offset = <0x3fc00>;
 	};
-	phb1 {
+	phb1@358 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB1_";
 		scale = "1";
@@ -283,7 +283,7 @@ NEST_PHB: nest-phb-events {
 		offset = <0x180000>;
 		cb_offset = <0x3fc00>;
 	};
-	phb2 {
+	phb2@378 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB2_";
 		scale = "1";
@@ -294,7 +294,7 @@ NEST_PHB: nest-phb-events {
 		offset = <0x180000>;
 		cb_offset = <0x3fc00>;
 	};
-	phb3 {
+	phb3@398 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB3_";
 		scale = "1";
@@ -305,7 +305,7 @@ NEST_PHB: nest-phb-events {
 		offset = <0x180000>;
 		cb_offset = <0x3fc00>;
 	};
-	phb4 {
+	phb4@3b8 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB4_";
 		scale = "1";
@@ -316,7 +316,7 @@ NEST_PHB: nest-phb-events {
 		offset = <0x180000>;
 		cb_offset = <0x3fc00>;
 	};
-	phb5 {
+	phb5@3d8 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB5_";
 		scale = "1";
@@ -344,7 +344,7 @@ NEST_MBA: nest-mba-events {
 			reg = <0x10 0x8>;
 		};
 	};
-	mba0 {
+	mba0@448 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA0_";
 		scale = "1";
@@ -355,7 +355,7 @@ NEST_MBA: nest-mba-events {
 		offset = <0x180000>;
 		cb_offset = <0x3fc00>;
 	};
-	mba1 {
+	mba1@460 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA1_";
 		scale = "1";
@@ -366,7 +366,7 @@ NEST_MBA: nest-mba-events {
 		offset = <0x180000>;
 		cb_offset = <0x3fc00>;
 	};
-	mba2 {
+	mba2@478 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA2_";
 		scale = "1";
@@ -377,7 +377,7 @@ NEST_MBA: nest-mba-events {
 		offset = <0x180000>;
 		cb_offset = <0x3fc00>;
 	};
-	mba3 {
+	mba3@490 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA3_";
 		scale = "1";
@@ -388,7 +388,7 @@ NEST_MBA: nest-mba-events {
 		offset = <0x180000>;
 		cb_offset = <0x3fc00>;
 	};
-	mba4 {
+	mba4@558 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA4_";
 		scale = "1";
@@ -399,7 +399,7 @@ NEST_MBA: nest-mba-events {
 		offset = <0x180000>;
 		cb_offset = <0x3fc00>;
 	};
-	mba5 {
+	mba5@570 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA5_";
 		scale = "1";
@@ -410,7 +410,7 @@ NEST_MBA: nest-mba-events {
 		offset = <0x180000>;
 		cb_offset = <0x3fc00>;
 	};
-	mba6 {
+	mba6@588 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA6_";
 		scale = "1";
@@ -421,7 +421,7 @@ NEST_MBA: nest-mba-events {
 		offset = <0x180000>;
 		cb_offset = <0x3fc00>;
 	};
-	mba7 {
+	mba7@5a0 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MBA7_";
 		scale = "1";
@@ -469,7 +469,7 @@ NEST_CAPP: nest-capp-events {
 			reg = <0x38 0x8>;
 		};
 	};
-	capp0 {
+	capp0@6c8 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_CAPP1_";
 		scale = "256";
@@ -480,7 +480,7 @@ NEST_CAPP: nest-capp-events {
 		offset = <0x180000>;
 		cb_offset = <0x3fc00>;
 	};
-	capp1 {
+	capp1@708 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_CAPP2_";
 		scale = "256";
@@ -560,7 +560,7 @@ NEST_NVLINK3: nest-nvlink3-events {
 			reg = <0x320 0x8>;
 		};
 	};
-	nvlink3 {
+	nvlink3@0 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "";
 		scale = "256";
@@ -640,7 +640,7 @@ NEST_NVLINK2: nest-nvlink2-events {
 			reg = <0x320 0x8>;
 		};
 	};
-	nvlink2 {
+	nvlink2@0 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "";
 		scale = "256";
@@ -720,7 +720,7 @@ NEST_NVLINK1: nest-nvlink1-events {
 			reg = <0x320 0x8>;
 		};
 	};
-	nvlink1 {
+	nvlink1@0 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "";
 		scale = "256";
@@ -800,7 +800,7 @@ NEST_NVLINK0: nest-nvlink0-events {
 			reg = <0x320 0x8>;
 		};
 	};
-	nvlink0 {
+	nvlink0@0 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "";
 		scale = "256";
@@ -880,7 +880,7 @@ NEST_NVLINK5: nest-nvlink5-events {
 			reg = <0x320 0x8>;
 		};
 	};
-	nvlink5 {
+	nvlink5@0 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "";
 		scale = "256";
@@ -960,7 +960,7 @@ NEST_NVLINK4: nest-nvlink4-events {
 			reg = <0x320 0x8>;
 		};
 	};
-	nvlink4 {
+	nvlink4@0 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "";
 		scale = "256";
@@ -2234,7 +2234,7 @@ CORE_THREAD: core-thread-events {
 			desc = "The sum of all constant clock cycles across all SMT threads in Power Savings mode (DD1)" ;
 		};
 	};
-	core {
+	core@18 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "CPM_";
 		scale = "512";
@@ -2243,7 +2243,7 @@ CORE_THREAD: core-thread-events {
 		type = <0x4>;
 		size = <0x2000>;
 	};
-	thread {
+	thread@18 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "CPM_";
 		scale = "512";
