@@ -1,12 +1,11 @@
 
-/dts-v1/;
-
-/ {
-	name = "";
-	compatible = "ibm,opal-in-memory-counters";
-	#address-cells = <0x1>;
-	#size-cells = <0x1>;
-	version-id = <0x16>;
+   /dts-v1/;
+   / {
+   	name = "";
+   	compatible = "ibm,opal-in-memory-counters";
+   	#address-cells = <0x1>;
+   	#size-cells = <0x1>;
+   	version-id = <0x17>;
 
 NEST_MCS: nest-mcs-events {
 		#address-cells = <0x1>;
@@ -205,6 +204,14 @@ NEST_XLINK_OUT: nest-xlink-out-events {
 		event@38 {
 			event-name = "OUT_ODD_TOTAL_UTIL" ;
 			reg = <0x38 0x8>;
+		};
+		event@c0 {
+			event-name = "OUT_EVEN_AVLBL_CYC" ;
+			reg = <0xc0 0x8>;
+		};
+		event@c8 {
+			event-name = "OUT_ODD_AVLBL_CYC" ;
+			reg = <0xc8 0x8>;
 		};
 	};
 	xlink0@118 {
@@ -1012,8 +1019,89 @@ NEST_NX: nest-nx-events {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_NX_";
 		scale = "256";
-		reg = <0x1d8 0x8>;
+		reg = <0x3f8 0x8>;
 		events = < &NEST_NX >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+NEST_ALINK_OUT: nest-alink-out-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@0 {
+			event-name = "OUT_EVEN_AVLBL_CYC" ;
+			reg = <0x0 0x8>;
+		};
+		event@8 {
+			event-name = "OUT_EVEN_ANY_RCMD" ;
+			reg = <0x8 0x8>;
+		};
+		event@10 {
+			event-name = "OUT_EVEN_DATA_COUNT" ;
+			reg = <0x10 0x8>;
+		};
+		event@18 {
+			event-name = "OUT_EVEN_TOTAL_UTIL" ;
+			reg = <0x18 0x8>;
+		};
+		event@20 {
+			event-name = "OUT_ODD_AVLBL_CYC" ;
+			reg = <0x20 0x8>;
+		};
+		event@28 {
+			event-name = "OUT_ODD_ANY_RCMD" ;
+			reg = <0x28 0x8>;
+		};
+		event@30 {
+			event-name = "OUT_ODD_DATA_COUNT" ;
+			reg = <0x30 0x8>;
+		};
+		event@38 {
+			event-name = "OUT_ODD_TOTAL_UTIL" ;
+			reg = <0x38 0x8>;
+		};
+	};
+	alink0@4a8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_ALINK0_";
+		scale = "4096";
+		reg = <0x4a8 0x8>;
+		events = < &NEST_ALINK_OUT >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	alink1@4e8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_ALINK1_";
+		scale = "4096";
+		reg = <0x4e8 0x8>;
+		events = < &NEST_ALINK_OUT >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	alink2@5b8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_ALINK2_";
+		scale = "4096";
+		reg = <0x5b8 0x8>;
+		events = < &NEST_ALINK_OUT >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	alink3@5f8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_ALINK3_";
+		scale = "4096";
+		reg = <0x5f8 0x8>;
+		events = < &NEST_ALINK_OUT >;
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
