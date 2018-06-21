@@ -5,7 +5,7 @@
    	compatible = "ibm,opal-in-memory-counters";
    	#address-cells = <0x1>;
    	#size-cells = <0x1>;
-   	version-id = <0x17>;
+   	version-id = <0x18>;
 
 NEST_MCS: nest-mcs-events {
 		#address-cells = <0x1>;
@@ -1015,7 +1015,7 @@ NEST_NX: nest-nx-events {
 			reg = <0x38 0x8>;
 		};
 	};
-	nx {
+	nx@3f8 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_NX_";
 		scale = "256";
