@@ -5,7 +5,7 @@
    	compatible = "ibm,opal-in-memory-counters";
    	#address-cells = <0x1>;
    	#size-cells = <0x1>;
-   	version-id = <0x18>;
+   	version-id = <0x19>;
 
 NEST_MCS: nest-mcs-events {
 		#address-cells = <0x1>;
@@ -1102,6 +1102,123 @@ NEST_ALINK_OUT: nest-alink-out-events {
 		scale = "4096";
 		reg = <0x5f8 0x8>;
 		events = < &NEST_ALINK_OUT >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+NEST_CENTAUR: nest-centaur-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@0 {
+			event-name = "PORT0_READ_BYTES" ;
+			reg = <0x0 0x8>;
+		};
+		event@8 {
+			event-name = "PORT0_WRITE_BYTES" ;
+			reg = <0x8 0x8>;
+		};
+		event@10 {
+			event-name = "PORT0_DRAM_CLK_CYC" ;
+			reg = <0x10 0x8>;
+		};
+		event@18 {
+			event-name = "PORT1_READ_BYTES" ;
+			reg = <0x18 0x8>;
+		};
+		event@20 {
+			event-name = "PORT1_WRITE_BYTES" ;
+			reg = <0x20 0x8>;
+		};
+		event@28 {
+			event-name = "PORT1_DRAM_CLK_CYC" ;
+			reg = <0x28 0x8>;
+		};
+	};
+	centaur0@778 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_CEN0_";
+		scale = "1";
+		reg = <0x778 0x8>;
+		events = < &NEST_CENTAUR >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	centaur1@7a8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_CEN1_";
+		scale = "1";
+		reg = <0x7a8 0x8>;
+		events = < &NEST_CENTAUR >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	centaur2@7d8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_CEN2_";
+		scale = "1";
+		reg = <0x7d8 0x8>;
+		events = < &NEST_CENTAUR >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	centaur3@808 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_CEN3_";
+		scale = "1";
+		reg = <0x808 0x8>;
+		events = < &NEST_CENTAUR >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	centaur4@888 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_CEN4_";
+		scale = "1";
+		reg = <0x888 0x8>;
+		events = < &NEST_CENTAUR >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	centaur5@8b8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_CEN5_";
+		scale = "1";
+		reg = <0x8b8 0x8>;
+		events = < &NEST_CENTAUR >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	centaur6@8e8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_CEN6_";
+		scale = "1";
+		reg = <0x8e8 0x8>;
+		events = < &NEST_CENTAUR >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	centaur7@918 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_CEN7_";
+		scale = "1";
+		reg = <0x918 0x8>;
+		events = < &NEST_CENTAUR >;
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
