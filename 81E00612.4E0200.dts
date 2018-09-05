@@ -2492,4 +2492,21 @@ CORE_THREAD: core-thread-events {
 		type = <0x1>;
 		size = <0x2000>;
 	};
+TRACE_IMC: trace-events {
+            #address-cells = <0x1>;
+            #size-cells = <0x1>;
+            event@10200000 {
+                event-name = "cycles" ;
+                reg = <0x10200000 0x8>;
+                desc = "Reference cycles" ;
+            };
+	};
+	trace {
+		compatible = "ibm,imc-counters";
+		events-prefix = "trace_";
+		reg = <0x0 0x8>;
+		events = < &TRACE_IMC >;
+		type = <0x2>;
+		size = <0x40000>;
+	};
 };
