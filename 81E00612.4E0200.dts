@@ -2500,13 +2500,13 @@ TRACE_IMC: trace-events {
                 reg = <0x10200000 0x8>;
                 desc = "Reference cycles" ;
             };
-	};
-	trace@0 {
-		compatible = "ibm,imc-counters";
-		events-prefix = "trace_";
-		reg = <0x0 0x8>;
-		events = < &TRACE_IMC >;
-		type = <0x2>;
-		size = <0x40000>;
-	};
+    };
+    trace@0 {
+        compatible = "ibm,imc-counters";
+        events-prefix = "trace_";
+        reg = <0x0 0x8>;
+        events = < &TRACE_IMC >;
+        type = <0x2>;
+        size = <0x40000>;
+    };
 };
