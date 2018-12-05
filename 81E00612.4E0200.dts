@@ -2483,15 +2483,6 @@ CORE_THREAD: core-thread-events {
 		type = <0x4>;
 		size = <0x2000>;
 	};
-	thread@18 {
-		compatible = "ibm,imc-counters";
-		events-prefix = "CPM_";
-		scale = "512";
-		reg = <0x18 0x8>;
-		events = < &CORE_THREAD >;
-		type = <0x1>;
-		size = <0x2000>;
-	};
 TRACE_IMC: trace-events {
             #address-cells = <0x1>;
             #size-cells = <0x1>;
