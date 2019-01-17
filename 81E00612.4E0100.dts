@@ -1224,7 +1224,7 @@ NEST_CENTAUR: nest-centaur-events {
 		offset = <0x180000>;
 		cb_offset = <0x3fc00>;
 	};
-CORE_THREAD: core-thread-events {
+CORE: core-events {
 		#address-cells = <0x1>;
 		#size-cells = <0x1>;
 
@@ -2444,16 +2444,326 @@ CORE_THREAD: core-thread-events {
 		events-prefix = "CPM_";
 		scale = "512";
 		reg = <0x18 0x8>;
-		events = < &CORE_THREAD >;
+		events = < &CORE >;
 		type = <0x4>;
 		size = <0x2000>;
+	};
+THREAD: thread-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+		event@11c0 {
+                         event-name = "CS_DTLB_MISS_2M_USER" ;
+                         reg = <0x11c0 0x8>;
+                         desc = "The number of data TLB misses for 2M page size in user state" ;
+                };
+		event@12c0 {
+                         event-name = "CS_1PLUS_PPC_CMPL_USER" ;
+                         reg = <0x12c0 0x8>;
+                         desc = "The user sum of completed PPC instructions across all SMT threads of the core" ;
+		};
+		event@10c8 {
+                         event-name = "CS_32MHZ_CYC_USER" ;
+                         reg = <0x10c8 0x8>;
+                         desc = "The number of 32 MHz clock ticks in user space" ;
+		};
+		event@1148 {
+                         event-name = "CS_BRU_CMPL_USER" ;
+                         reg = <0x1148 0x8>;
+                         desc = "The number of branch instructions completed in user space" ;
+		};
+		event@1180 {
+                         event-name = "CS_BR_MPRED_USER" ;
+                         reg = <0x1180 0x8>;
+                         desc = "The sum of branch misdirection across all SMT threads of the core in user space" ;
+		};
+		event@1188 {
+                         event-name = "CS_BR_TAKEN_USER" ;
+                         reg = <0x1188 0x8>;
+                         desc = "The number of branches taken in user space" ;
+		};
+		event@12c8 {
+                         event-name = "CS_CMPLU_STALL_PCYC_USER" ;
+                         reg = <0x12c8 0x8>;
+                         desc = "The user sum of all processor cycles across all SMT threads where no instruction completed and ICT was not empty" ;
+		};
+		event@1048 {
+                         event-name = "CS_CORE_MODE_SMT2_CCYC_USER" ;
+                         reg = <0x1048 0x8>;
+                         desc = "The number of constant clock cycles in user state while the core is running in SMT2 mode" ;
+		};
+		event@1080 {
+                        event-name = "CS_CORE_MODE_SMT4_CCYC_USER" ;
+                        reg = <0x1080 0x8>;
+                        desc = "Count of constant clock transitions in user state while core mode is SMT4" ;
+		};
+		event@1040 {
+                         event-name = "CS_CORE_MODE_ST_CCYC_USER" ;
+                         reg = <0x1040 0x8>;
+                         desc = "The number of processor cycles in the user state while the core is running in ST mode" ;
+		};
+		event@10c0 {
+                         event-name = "CS_CORE_PCYC_USER" ;
+                         reg = <0x10c0 0x8>;
+                         desc = "The number of processor cycles in user state during the measurement interval" ;
+		};
+		event@1280 {
+                         event-name = "CS_DATA_TABLEWALK_PCYC_USER" ;
+                         reg = <0x1280 0x8>;
+                         desc = "The sum of table walk processor cycles across all SMT threads of the core in user state" ;
+		};
+		event@16c0 {
+                         event-name = "CS_DERAT_MISS_USER" ;
+                         reg = <0x16c0 0x8>;
+                         desc = "The number of DERAT misses in user state" ;
+		};
+		event@1208 {
+                         event-name = "CS_DISP_HELD_PCYC_USER" ;
+                         reg = <0x1208 0x8>;
+                         desc = "The number of processor cycles the dispatch unit was held in user state" ;
+		};
+		event@1748 {
+                         event-name = "CS_DTLB_MISS_16G_USER" ;
+                         reg = <0x1748 0x8>;
+                         desc = "The number of data TLB misses for 16G page size in user state" ;
+		};
+		event@1740 {
+			event-name = "CS_DTLB_MISS_16M_USER" ;
+			reg = <0x1740 0x8>;
+			desc = "The number of data TLB misses for 16M page size in user state" ;
+		};
+		event@1708 {
+			event-name = "CS_DTLB_MISS_64K_USER" ;
+			reg = <0x1708 0x8>;
+			desc = "The number of data TLB misses for 64K page size in user state" ;
+		};
+		event@16c8 {
+			event-name = "CS_DTLB_RELOAD_USER" ;
+			reg = <0x16c8 0x8>;
+			desc = "The number of data TLB reloads in user state" ;
+		};
+		event@1140 {
+			event-name = "CS_FLOP_USER" ;
+			reg = <0x1140 0x8>;
+			desc = "The number of all completed floating point operations in user state" ;
+		};
+		event@1288 {
+			event-name = "CS_FLUSH_USER" ;
+			reg = <0x1288 0x8>;
+			desc = "The number of core flushes in the user state" ;
+		};
+		event@1340 {
+			event-name = "CS_FROM_L2_IFETCH_USER" ;
+			reg = <0x1340 0x8>;
+			desc = "The number of instruction fetches from local level 2 cache in user state" ;
+		};
+		event@1588 {
+			event-name = "CS_FROM_L2_L3_A_LDATA_USER" ;
+			reg = <0x1588 0x8>;
+			desc = "The number of data loads from level 2 or level 3 cache through A-link in user state" ;
+		};
+		event@1400 {
+			event-name = "CS_FROM_L2_L3_X_IFETCH_USER" ;
+			reg = <0x1400 0x8>;
+			desc = "The number of instruction fetches from level 2 or level 3 cache across X-link in user state" ;
+		};
+		event@1580 {
+			event-name = "CS_FROM_L2_L3_X_LDATA_USER" ;
+			reg = <0x1580 0x8>;
+			desc = "The number of data loads from a level 2 or level 3 cache across X-link in user state" ;
+		};
+		event@1348 {
+			event-name = "CS_FROM_L3_IFETCH_USER" ;
+			reg = <0x1348 0x8>;
+			desc = "The number of instruction fetches from the cores level 3 cache in user state" ;
+		};
+		event@14c8 {
+			event-name = "CS_FROM_L3_LDATA_USER" ;
+			reg = <0x14c8 0x8>;
+			desc = "The number of data loads from the cores level 3 cache in user state" ;
+		};
+		event@13c0 {
+			event-name = "CS_FROM_L4_IFETCH_USER" ;
+			reg = <0x13c0 0x8>;
+			desc = "The number of instruction fetches from local level 4 cache in user state" ;
+		};
+		event@1248 {
+			event-name = "CS_CORE_ICT_EMPTY_PCYC_USER" ;
+			reg = <0x1248 0x8>;
+			desc = "The number of processor cycles the ICT was empty in user state" ;
+		};
+		event@1540 {
+			event-name = "CS_FROM_L4_LDATA_USER" ;
+			reg = <0x1540 0x8>;
+			desc = "The number of level 4 data loads from local level 4 cache in user state" ;
+		};
+		event@1788 {
+			event-name = "CS_FROM_L4_MEM_A_DPTEG_USER" ;
+			reg = <0x1788 0x8>;
+			desc = "The number of data PTEG misses that are satisfied from level 4 cache of memory across A-link in user state" ;
+		};
+		event@1448 {
+			event-name = "CS_FROM_L4_MEM_A_IFETCH_USER" ;
+			reg = <0x1448 0x8>;
+			desc = "The number of instruction fetches from level 4 cache or memory across A-link in user state" ;
+		};
+		event@1688 {
+			event-name = "CS_FROM_L4_MEM_A_IPTEG_USER" ;
+			reg = <0x1688 0x8>;
+			desc = "The number of instruction PTEG misses that are satisfied from level 4 cache of memory across A-link in user state" ;
+		};
+		event@15c8 {
+			event-name = "CS_FROM_L4_MEM_A_LDATA_USER" ;
+			reg = <0x15c8 0x8>;
+			desc = "The number of data loads from level 4 cache or memory across A-link in user state" ;
+		};
+		event@1780 {
+			event-name = "CS_FROM_L4_MEM_X_DPTEG_USER" ;
+			reg = <0x1780 0x8>;
+			desc = "The number of instruction PTEG L3 misses that are satisfied by off-chip but node-local source in user state" ;
+		};
+		event@1440 {
+			event-name = "CS_FROM_L4_MEM_X_IFETCH_USER" ;
+			reg = <0x1440 0x8>;
+			desc = "The number of instruction fetches from a level 4 cache or memory across X-link in user state" ;
+		};
+		event@1680 {
+			event-name = "CS_FROM_L4_MEM_X_IPTEG_USER" ;
+			reg = <0x1680 0x8>;
+			desc = "The number of instruction PTEG L3 misses that are satisfied by off-chip- but node-local source in user state" ;
+		};
+		event@15c0 {
+			event-name = "CS_FROM_L4_MEM_X_LDATA_USER" ;
+			reg = <0x15c0 0x8>;
+			desc = "The number of data load from a level 4 cache or memory across X-link in user state" ;
+		};
+		event@13c8 {
+			event-name = "CS_FROM_MEM_IFETCH_USER" ;
+			reg = <0x13c8 0x8>;
+			desc = "The number of instruction fetches from local memory in user state" ;
+		};
+		event@1548 {
+			event-name = "CS_FROM_MEM_LDATA_USER" ;
+			reg = <0x1548 0x8>;
+			desc = "The number of data loads from local memory in user state" ;
+		};
+		event@17c8 {
+			event-name = "CS_FROM_MEM_LOCAL_USER" ;
+			reg = <0x17c8 0x8>;
+			desc = "The number of data and instruction misses that are satisfied by local memory in user state" ;
+		};
+		event@17c0 {
+			event-name = "CS_FROM_MEM_NON_LOCAL_USER" ;
+			reg = <0x17c0 0x8>;
+			desc = "The number of all data and instruction cache misses that are satisfied by Off-Chip Memory in user state" ;
+		};
+		event@1380 {
+			event-name = "CS_FROM_ON_CHIP_L2_IFETCH_USER" ;
+			reg = <0x1380 0x8>;
+			desc = "The number of instruction fetches from a level 2 cache from the same POWER9 chip in user state" ;
+		};
+		event@1500 {
+			event-name = "CS_FROM_ON_CHIP_L2_LDATA_USER" ;
+			reg = <0x1500 0x8>;
+			desc = "The number of data loads from a level 2 cache from the same POWER9 chip in user state" ;
+		};
+		event@1388 {
+			event-name = "CS_FROM_ON_CHIP_L3_IFETCH_USER" ;
+			reg = <0x1388 0x8>;
+			desc = "The number of instruction fetches from level 3 cache on the same POWER9 chip in user state" ;
+		};
+		event@1508 {
+			event-name = "CS_FROM_ON_CHIP_L3_LDATA_USER" ;
+			reg = <0x1508 0x8>;
+			desc = "The number of data loads from a level 3 cache from the same POWER9 chip in user state" ;
+		};
+		event@1608 {
+			event-name = "CS_ST_FIN_USER" ;
+			reg = <0x1608 0x8>;
+			desc = "The number of all store instructions finished in user state" ;
+		};
+		event@1480 {
+			event-name = "CS_MISS_L1_LDATA_USER" ;
+			reg = <0x1480 0x8>;
+			desc = "The number of level 1 data misses in user state" ;
+		};
+		event@1640 {
+			event-name = "CS_IERAT_MISS_USER" ;
+			reg = <0x1640 0x8>;
+			desc = "The number of IERAT reloads in user state" ;
+		};
+		event@1308 {
+			event-name = "CS_IFETCH_DEMAND_PCYC_USER" ;
+			reg = <0x1308 0x8>;
+			desc = "The sum of all processor cycles across all SMT threads when a demand ifetch was pending in user state" ;
+		};
+		event@1008 {
+			event-name = "CS_INST_USER" ;
+			reg = <0x1008 0x8>;
+			desc = "The sum of all completed PPC instructions across all SMT threads of the core in user state" ;
+		};
+		event@1648 {
+			event-name = "CS_ITLB_RELOAD_USER" ;
+			reg = <0x1648 0x8>;
+			desc = "The number of instruction TLB reloads in user state" ;
+		};
+		event@1300 {
+			event-name = "CS_L1_MISS_IFETCH_USER" ;
+			reg = <0x1300 0x8>;
+			desc = "The number of level 1 instruction misses in user state" ;
+		};
+		event@1240 {
+			event-name = "CS_LSU_EMPTY_PCYC_USER" ;
+			reg = <0x1240 0x8>;
+			desc = "The sum of processor cycles where the LSU is empty across all SMT threads of the core in user state" ;
+		};
+		event@1000 {
+			event-name = "CS_PCYC_USER" ;
+			reg = <0x1000 0x8>;
+			desc = "The sum of all processor cycles across all SMT threads in user state" ;
+		};
+
+		event@1200 {
+			event-name = "CS_PPC_DISP_USER" ;
+			reg = <0x1200 0x8>;
+			desc = "The sum of PPC instruction dispatches across all SMT threads of the core in user state" ;
+		};
+		event@1108 {
+			event-name = "CS_PURR_USER" ;
+			reg = <0x1108 0x8>;
+			desc = "The sum of all constant clock PURR increments across all SMT threads in user state" ;
+		};
+		event@1100 {
+			event-name = "CS_SPURR_USER" ;
+			reg = <0x1100 0x8>;
+			desc = "The number of SPURR cycles in user state" ;
+		};
+		event@1600 {
+			event-name = "CS_ST_MISS_L1_USER" ;
+			reg = <0x1600 0x8>;
+			desc = "The number of stores that missed level 1 cache in user state" ;
+		};
+		event@788 {
+			event-name = "MSR_TA_USER_PCYC" ;
+			reg = <0x788 0x8>;
+			desc = "The number of processor cycles in Tags-Active user State (MSR US=1 & PR=1)" ;
+		};
+		event@780 {
+			event-name = "MSR_TA_USER_INST" ;
+			reg = <0x780 0x8>;
+			desc = "The number of non-idle instructions completed with MSR US=1 & PR=1" ;
+		};
+		event@11c8 {
+			event-name = "CS_DTLB_MISS_1G_USER" ;
+			reg = <0x11c8 0x8>;
+			desc = "The number of data TLB misses for 1G page size in user state" ;
+		};
 	};
 	thread@18 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "CPM_";
 		scale = "512";
 		reg = <0x18 0x8>;
-		events = < &CORE_THREAD >;
+		events = < &THREAD >;
 		type = <0x1>;
 		size = <0x2000>;
 	};
