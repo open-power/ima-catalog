@@ -2486,80 +2486,81 @@ CORE: core-events {
 THREAD: thread-events {
 		#address-cells = <0x1>;
 		#size-cells = <0x1>;
+
 		event@11c0 {
-                         event-name = "CS_DTLB_MISS_2M_USER" ;
-                         reg = <0x11c0 0x8>;
-                         desc = "The number of data TLB misses for 2M page size in user state" ;
-                };
+			event-name = "CS_DTLB_MISS_2M_USER" ;
+			reg = <0x11c0 0x8>;
+			desc = "The number of data TLB misses for 2M page size in user state" ;
+		};
 		event@12c0 {
-                         event-name = "CS_1PLUS_PPC_CMPL_USER" ;
-                         reg = <0x12c0 0x8>;
-                         desc = "The user sum of completed PPC instructions across all SMT threads of the core" ;
+			event-name = "CS_1PLUS_PPC_CMPL_USER" ;
+			reg = <0x12c0 0x8>;
+			desc = "The user sum of completed PPC instructions across all SMT threads of the core" ;
 		};
 		event@10c8 {
-                         event-name = "CS_32MHZ_CYC_USER" ;
-                         reg = <0x10c8 0x8>;
-                         desc = "The number of 32 MHz clock ticks in user space" ;
+			event-name = "CS_32MHZ_CYC_USER" ;
+			reg = <0x10c8 0x8>;
+			desc = "The number of 32 MHz clock ticks in user space" ;
 		};
 		event@1148 {
-                         event-name = "CS_BRU_CMPL_USER" ;
-                         reg = <0x1148 0x8>;
-                         desc = "The number of branch instructions completed in user space" ;
+			event-name = "CS_BRU_CMPL_USER" ;
+			reg = <0x1148 0x8>;
+			desc = "The number of branch instructions completed in user space" ;
 		};
 		event@1180 {
-                         event-name = "CS_BR_MPRED_USER" ;
-                         reg = <0x1180 0x8>;
-                         desc = "The sum of branch misdirection across all SMT threads of the core in user space" ;
+			event-name = "CS_BR_MPRED_USER" ;
+			reg = <0x1180 0x8>;
+			desc = "The sum of branch misdirection across all SMT threads of the core in user space" ;
 		};
 		event@1188 {
-                         event-name = "CS_BR_TAKEN_USER" ;
-                         reg = <0x1188 0x8>;
-                         desc = "The number of branches taken in user space" ;
+			event-name = "CS_BR_TAKEN_USER" ;
+			reg = <0x1188 0x8>;
+			desc = "The number of branches taken in user space" ;
 		};
 		event@12c8 {
-                         event-name = "CS_CMPLU_STALL_PCYC_USER" ;
-                         reg = <0x12c8 0x8>;
-                         desc = "The user sum of all processor cycles across all SMT threads where no instruction completed and ICT was not empty" ;
+			event-name = "CS_CMPLU_STALL_PCYC_USER" ;
+			reg = <0x12c8 0x8>;
+			desc = "The user sum of all processor cycles across all SMT threads where no instruction completed and ICT was not empty" ;
 		};
 		event@1048 {
-                         event-name = "CS_CORE_MODE_SMT2_CCYC_USER" ;
-                         reg = <0x1048 0x8>;
-                         desc = "The number of constant clock cycles in user state while the core is running in SMT2 mode" ;
+			event-name = "CS_CORE_MODE_SMT2_CCYC_USER" ;
+			reg = <0x1048 0x8>;
+			desc = "The number of constant clock cycles in user state while the core is running in SMT2 mode" ;
 		};
 		event@1080 {
-                        event-name = "CS_CORE_MODE_SMT4_CCYC_USER" ;
-                        reg = <0x1080 0x8>;
-                        desc = "Count of constant clock transitions in user state while core mode is SMT4" ;
+			event-name = "CS_CORE_MODE_SMT4_CCYC_USER" ;
+			reg = <0x1080 0x8>;
+			desc = "Count of constant clock transitions in user state while core mode is SMT4" ;
 		};
 		event@1040 {
-                         event-name = "CS_CORE_MODE_ST_CCYC_USER" ;
-                         reg = <0x1040 0x8>;
-                         desc = "The number of processor cycles in the user state while the core is running in ST mode" ;
+			event-name = "CS_CORE_MODE_ST_CCYC_USER" ;
+			reg = <0x1040 0x8>;
+			desc = "The number of processor cycles in the user state while the core is running in ST mode" ;
 		};
 		event@10c0 {
-                         event-name = "CS_CORE_PCYC_USER" ;
-                         reg = <0x10c0 0x8>;
-                         desc = "The number of processor cycles in user state during the measurement interval" ;
+			event-name = "CS_CORE_PCYC_USER" ;
+			reg = <0x10c0 0x8>;
+			desc = "The number of processor cycles in user state during the measurement interval" ;
 		};
 		event@1280 {
-                         event-name = "CS_DATA_TABLEWALK_PCYC_USER" ;
-                         reg = <0x1280 0x8>;
-                         desc = "The sum of table walk processor cycles across all SMT threads of the core in user state" ;
+			event-name = "CS_DATA_TABLEWALK_PCYC_USER" ;
+			reg = <0x1280 0x8>;
+			desc = "The sum of table walk processor cycles across all SMT threads of the core in user state" ;
 		};
 		event@16c0 {
-                         event-name = "CS_DERAT_MISS_USER" ;
-                         reg = <0x16c0 0x8>;
-                         desc = "The number of DERAT misses in user state" ;
+			event-name = "CS_DERAT_MISS_USER" ;
+			reg = <0x16c0 0x8>;
+			desc = "The number of DERAT misses in user state" ;
 		};
 		event@1208 {
-                         event-name = "CS_DISP_HELD_PCYC_USER" ;
-                         reg = <0x1208 0x8>;
-                         desc = "The number of processor cycles the dispatch unit was held in user state" ;
+			event-name = "CS_DISP_HELD_PCYC_USER" ;
+			reg = <0x1208 0x8>;
+			desc = "The number of processor cycles the dispatch unit was held in user state" ;
 		};
 		event@1748 {
-                         event-name = "CS_DTLB_MISS_16G_USER" ;
-                         reg = <0x1748 0x8>;
-                         desc = "The number of data TLB misses for 16G page size in user state" ;
+			event-name = "CS_DTLB_MISS_16G_USER" ;
+			reg = <0x1748 0x8>;
+			desc = "The number of data TLB misses for 16G page size in user state" ;
 		};
 		event@1740 {
 			event-name = "CS_DTLB_MISS_16M_USER" ;
@@ -2756,7 +2757,6 @@ THREAD: thread-events {
 			reg = <0x1000 0x8>;
 			desc = "The sum of all processor cycles across all SMT threads in user state" ;
 		};
-
 		event@1200 {
 			event-name = "CS_PPC_DISP_USER" ;
 			reg = <0x1200 0x8>;
