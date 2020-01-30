@@ -5,7 +5,7 @@
    	compatible = "ibm,opal-in-memory-counters";
    	#address-cells = <0x1>;
    	#size-cells = <0x1>;
-   	version-id = <0x19>;
+   	version-id = <0x20>;
 
 NEST_MCS: nest-mcs-events {
 		#address-cells = <0x1>;
@@ -567,11 +567,11 @@ NEST_NVLINK3: nest-nvlink3-events {
 			reg = <0x320 0x8>;
 		};
 	};
-	nvlink3@0 {
+	nvlink3@288 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "";
 		scale = "256";
-		reg = <0x0 0x8>;
+		reg = <0x288 0x8>;
 		events = < &NEST_NVLINK3 >;
 		type = <0x10>;
 		size = <0x40000>;
@@ -647,11 +647,11 @@ NEST_NVLINK2: nest-nvlink2-events {
 			reg = <0x320 0x8>;
 		};
 	};
-	nvlink2@0 {
+	nvlink2@268 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "";
 		scale = "256";
-		reg = <0x0 0x8>;
+		reg = <0x268 0x8>;
 		events = < &NEST_NVLINK2 >;
 		type = <0x10>;
 		size = <0x40000>;
@@ -727,11 +727,11 @@ NEST_NVLINK1: nest-nvlink1-events {
 			reg = <0x320 0x8>;
 		};
 	};
-	nvlink1@0 {
+	nvlink1@248 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "";
 		scale = "256";
-		reg = <0x0 0x8>;
+		reg = <0x248 0x8>;
 		events = < &NEST_NVLINK1 >;
 		type = <0x10>;
 		size = <0x40000>;
@@ -807,11 +807,11 @@ NEST_NVLINK0: nest-nvlink0-events {
 			reg = <0x320 0x8>;
 		};
 	};
-	nvlink0@0 {
+	nvlink0@228 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "";
 		scale = "256";
-		reg = <0x0 0x8>;
+		reg = <0x228 0x8>;
 		events = < &NEST_NVLINK0 >;
 		type = <0x10>;
 		size = <0x40000>;
@@ -887,11 +887,11 @@ NEST_NVLINK5: nest-nvlink5-events {
 			reg = <0x320 0x8>;
 		};
 	};
-	nvlink5@0 {
+	nvlink5@2c8 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "";
 		scale = "256";
-		reg = <0x0 0x8>;
+		reg = <0x2c8 0x8>;
 		events = < &NEST_NVLINK5 >;
 		type = <0x10>;
 		size = <0x40000>;
@@ -967,11 +967,11 @@ NEST_NVLINK4: nest-nvlink4-events {
 			reg = <0x320 0x8>;
 		};
 	};
-	nvlink4@0 {
+	nvlink4@2a8 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "";
 		scale = "256";
-		reg = <0x0 0x8>;
+		reg = <0x2a8 0x8>;
 		events = < &NEST_NVLINK4 >;
 		type = <0x10>;
 		size = <0x40000>;
