@@ -1,0 +1,1319 @@
+/dts-v1/;
+/ {
+name = "";
+compatible = "ibm,opal-in-memory-counters";
+#address-cells = <0x1>;
+#size-cells = <0x1>;
+version-id = <0x03>;
+	NEST_POWERBUS1: nest-powerbus1-events  {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+		event@0 {
+				event-name = "PB_INT_DATA_XFER" ;
+				reg = <0x0 0x8>;
+				desc = "pm_pb_int_data_xfer";
+		};
+		event@8 {
+				event-name = "PB_EXT_DATA_XFER" ;
+				reg = <0x8 0x8>;
+				desc = "pm_pb_ext_data_xfer";
+		};
+		event@10 {
+				event-name = "PB_NNS_PUMP23" ;
+				reg = <0x10 0x8>;
+				desc = "pm_pb_nns_pump23";
+		};
+		event@18 {
+				event-name = "PB_RTY_NNS_PUMP23" ;
+				reg = <0x18 0x8>;
+				desc = "pm_pb_rty_nns_pump23";
+		};
+		event@20 {
+				event-name = "PB_LOCAL_DATA_X" ;
+				reg = <0x20 0x8>;
+				desc = "pm_pb_local_data_x";
+		};
+		event@28 {
+				event-name = "PB_LOCAL_DATA_A_S" ;
+				reg = <0x28 0x8>;
+				desc = "pm_pb_local_data_a_s";
+		};
+		event@40 {
+				event-name = "PB_VG_PUMP23" ;
+				reg = <0x40 0x8>;
+				desc = "pm_pb_vg_pump23";
+		};
+		event@48 {
+				event-name = "PB_LNS_PUMP23" ;
+				reg = <0x48 0x8>;
+				desc = "pm_pb_lns_pump23";
+		};
+		event@50 {
+				event-name = "PB_GROUP_PUMP23" ;
+				reg = <0x50 0x8>;
+				desc = "pm_pb_group_pump23";
+		};
+		event@58 {
+				event-name = "PB_RNS_PUMP23" ;
+				reg = <0x58 0x8>;
+				desc = "pm_pb_rns_pump23";
+		};
+		event@60 {
+				event-name = "PB_RTY_VG_PUMP23" ;
+				reg = <0x60 0x8>;
+				desc = "pm_pb_rty_vg_pump23";
+		};
+		event@68 {
+				event-name = "PB_RTY_LNS_PUMP23" ;
+				reg = <0x68 0x8>;
+				desc = "pm_pb_rty_lns_pump23";
+		};
+		event@70 {
+				event-name = "PB_RTY_GROUP_PUMP23" ;
+				reg = <0x70 0x8>;
+				desc = "pm_pb_rty_group_pump23";
+		};
+		event@78 {
+				event-name = "PB_RTY_RNS_PUMP23" ;
+				reg = <0x78 0x8>;
+				desc = "pm_pb_rty_rns_pump23";
+		};
+	};
+	pb@118 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_";
+		scale = "1024";
+		reg = <0x118 0x8>;
+		events = < &NEST_POWERBUS1 >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	NEST_POWERBUS2: nest-powerbus2-events  {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+		event@0 {
+				event-name = "PB_VG_PUMP01" ;
+				reg = <0x0 0x8>;
+				desc = "pm_pb_vg_pump01";
+		};
+		event@8 {
+				event-name = "PB_LNS_PUMP01" ;
+				reg = <0x8 0x8>;
+				desc = "pm_pb_lns_pump01";
+		};
+		event@10 {
+				event-name = "PB_GROUP_PUMP01" ;
+				reg = <0x10 0x8>;
+				desc = "pm_pb_group_pump01";
+		};
+		event@18 {
+				event-name = "PB_RNS_PUMP01" ;
+				reg = <0x18 0x8>;
+				desc = "pm_pb_rns_pump01";
+		};
+		event@20 {
+				event-name = "PB_RTY_VG_PUMP01" ;
+				reg = <0x20 0x8>;
+				desc = "pm_pb_rty_vg_pump01";
+		};
+		event@28 {
+				event-name = "PB_RTY_LNS_PUMP01" ;
+				reg = <0x28 0x8>;
+				desc = "pm_pb_rty_lns_pump01";
+		};
+		event@30 {
+				event-name = "PB_RTY_GROUP_PUMP01" ;
+				reg = <0x30 0x8>;
+				desc = "pm_pb_rty_group_pump01";
+		};
+		event@38 {
+				event-name = "PB_RTY_RNS_PUMP01" ;
+				reg = <0x38 0x8>;
+				desc = "pm_pb_rty_rns_pump01";
+		};
+		event@50 {
+				event-name = "PB_NNS_PUMP01" ;
+				reg = <0x50 0x8>;
+				desc = "pm_pb_nns_pump01";
+		};
+		event@58 {
+				event-name = "PB_RTY_NNS_PUMP01" ;
+				reg = <0x58 0x8>;
+				desc = "pm_pb_rty_nns_pump01";
+		};
+	};
+	pb@198 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_";
+		scale = "1024";
+		reg = <0x198 0x8>;
+		events = < &NEST_POWERBUS2 >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	NEST_CYCLE: nest-cycle-events  {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+		event@0 {
+				event-name = "CYC" ;
+				reg = <0x0 0x8>;
+				desc = "pm_pau_cyc";
+		};
+	};
+	pau@8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_PAU_";
+		scale = "256";
+		reg = <0x8 0x8>;
+		events = < &NEST_CYCLE >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	NEST_MCS01: nest-mcs01-events  {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+		event@0 {
+				event-name = "128B_RD_DATA_BLOCKS_MC0_CHAN01" ;
+				reg = <0x0 0x8>;
+				desc = "pm_mcs_128b_rd_data_blocks_mc0_chan01";
+		};
+		event@8 {
+				event-name = "64B_WR_DATA_BLOCKS_MC0_CHAN01" ;
+				reg = <0x8 0x8>;
+				desc = "pm_mcs_64b_wr_data_blocks_mc0_chan01";
+		};
+		event@20 {
+				event-name = "128B_RD_DATA_BLOCKS_MC1_CHAN01" ;
+				reg = <0x20 0x8>;
+				desc = "pm_mcs_128b_rd_data_blocks_mc1_chan01";
+		};
+		event@28 {
+				event-name = "64B_WR_DATA_BLOCKS_MC1_CHAN01" ;
+				reg = <0x28 0x8>;
+				desc = "pm_mcs_64b_wr_data_blocks_mc1_chan01";
+		};
+	};
+	mcs@10 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_MCS_";
+		scale = "4096";
+		reg = <0x10 0x8>;
+		events = < &NEST_MCS01 >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	NEST_MCS23: nest-mcs23-events  {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+		event@0 {
+				event-name = "128B_RD_DATA_BLOCKS_MC2_CHAN01" ;
+				reg = <0x0 0x8>;
+				desc = "pm_mcs_128b_rd_data_blocks_mc2_chan01";
+		};
+		event@8 {
+				event-name = "64B_WR_DATA_BLOCKS_MC2_CHAN01" ;
+				reg = <0x8 0x8>;
+				desc = "pm_mcs_64b_wr_data_blocks_mc2_chan01";
+		};
+		event@20 {
+				event-name = "128B_RD_DATA_BLOCKS_MC3_CHAN01" ;
+				reg = <0x20 0x8>;
+				desc = "pm_mcs_128b_rd_data_blocks_mc3_chan01";
+		};
+		event@28 {
+				event-name = "64B_WR_DATA_BLOCKS_MC3_CHAN01" ;
+				reg = <0x28 0x8>;
+				desc = "pm_mcs_64b_wr_data_blocks_mc3_chan01";
+		};
+	};
+	mcs@90 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_MCS_";
+		scale = "4096";
+		reg = <0x90 0x8>;
+		events = < &NEST_MCS23 >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	NEST_PCI: nest-pci-events  {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+		event@0 {
+				event-name = "32B_INOUT" ;
+				reg = <0x0 0x8>;
+				desc = "pm_pci0_32b_inout";
+		};
+	};
+	pci0@20 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_PCI0_";
+		scale = "1024";
+		reg = <0x20 0x8>;
+		events = < &NEST_PCI >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	pci1@a0 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_PCI1_";
+		scale = "1024";
+		reg = <0xa0 0x8>;
+		events = < &NEST_PCI >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	NEST_XLINK: nest-xlink-events  {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+		event@0 {
+				event-name = "AVLBL_CYCLES" ;
+				reg = <0x0 0x8>;
+				desc = "pm_xlink0_avlbl_cycles";
+		};
+		event@8 {
+				event-name = "OUT_EVEN_ANY_RCMD" ;
+				reg = <0x8 0x8>;
+				desc = "pm_xlink0_out_even_any_rcmd";
+		};
+		event@10 {
+				event-name = "OUT_EVEN_DATA" ;
+				reg = <0x10 0x8>;
+				desc = "pm_xlink0_out_even_data";
+		};
+		event@18 {
+				event-name = "OUT_EVEN_TOTAL_UTIL" ;
+				reg = <0x18 0x8>;
+				desc = "pm_xlink0_out_even_total_util";
+		};
+		event@20 {
+				event-name = "CYC" ;
+				reg = <0x20 0x8>;
+				desc = "pm_xlink0_cyc";
+		};
+		event@28 {
+				event-name = "OUT_ODD_ANY_RCMD" ;
+				reg = <0x28 0x8>;
+				desc = "pm_xlink0_out_odd_any_rcmd";
+		};
+		event@30 {
+				event-name = "OUT_ODD_DATA" ;
+				reg = <0x30 0x8>;
+				desc = "pm_xlink0_out_odd_data";
+		};
+		event@38 {
+				event-name = "OUT_ODD_TOTAL_UTIL" ;
+				reg = <0x38 0x8>;
+				desc = "pm_xlink0_out_odd_total_util";
+		};
+	};
+	xlink0@228 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_XLINK0_";
+		scale = "65536";
+		reg = <0x228 0x8>;
+		events = < &NEST_XLINK >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	xlink1@268 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_XLINK1_";
+		scale = "65536";
+		reg = <0x268 0x8>;
+		events = < &NEST_XLINK >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	xlink2@2a8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_XLINK2_";
+		scale = "65536";
+		reg = <0x2a8 0x8>;
+		events = < &NEST_XLINK >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	xlink3@2e8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_XLINK3_";
+		scale = "65536";
+		reg = <0x2e8 0x8>;
+		events = < &NEST_XLINK >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	xlink4@338 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_XLINK4_";
+		scale = "65536";
+		reg = <0x338 0x8>;
+		events = < &NEST_XLINK >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	xlink5@378 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_XLINK5_";
+		scale = "65536";
+		reg = <0x378 0x8>;
+		events = < &NEST_XLINK >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	xlink6@3b8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_XLINK6_";
+		scale = "65536";
+		reg = <0x3b8 0x8>;
+		events = < &NEST_XLINK >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	xlink7@3f8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_XLINK7_";
+		scale = "65536";
+		reg = <0x3f8 0x8>;
+		events = < &NEST_XLINK >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	NEST_ALINK: nest-alink-events  {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+		event@0 {
+				event-name = "AVLBL_CYCLES" ;
+				reg = <0x0 0x8>;
+				desc = "pm_alink0_avlbl_cycles";
+		};
+		event@8 {
+				event-name = "OUT_EVEN_ANY_RCMD" ;
+				reg = <0x8 0x8>;
+				desc = "pm_alink0_out_even_any_rcmd";
+		};
+		event@10 {
+				event-name = "OUT_EVEN_DATA" ;
+				reg = <0x10 0x8>;
+				desc = "pm_alink0_out_even_data";
+		};
+		event@18 {
+				event-name = "OUT_EVEN_TOTAL_UTIL" ;
+				reg = <0x18 0x8>;
+				desc = "pm_alink0_out_even_total_util";
+		};
+		event@20 {
+				event-name = "CYC" ;
+				reg = <0x20 0x8>;
+				desc = "pm_alink0_cyc";
+		};
+		event@28 {
+				event-name = "OUT_ODD_ANY_RCMD" ;
+				reg = <0x28 0x8>;
+				desc = "pm_alink0_out_odd_any_rcmd";
+		};
+		event@30 {
+				event-name = "OUT_ODD_DATA" ;
+				reg = <0x30 0x8>;
+				desc = "pm_alink0_out_odd_data";
+		};
+		event@38 {
+				event-name = "OUT_ODD_TOTAL_UTIL" ;
+				reg = <0x38 0x8>;
+				desc = "pm_alink0_out_odd_total_util";
+		};
+	};
+	alink0@448 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_ALINK0_";
+		scale = "65536";
+		reg = <0x448 0x8>;
+		events = < &NEST_ALINK >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	alink1@488 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_ALINK1_";
+		scale = "65536";
+		reg = <0x488 0x8>;
+		events = < &NEST_ALINK >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	alink2@4c8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_ALINK2_";
+		scale = "65536";
+		reg = <0x4c8 0x8>;
+		events = < &NEST_ALINK >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	alink3@508 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_ALINK3_";
+		scale = "65536";
+		reg = <0x508 0x8>;
+		events = < &NEST_ALINK >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	alink4@558 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_ALINK4_";
+		scale = "65536";
+		reg = <0x558 0x8>;
+		events = < &NEST_ALINK >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	alink5@598 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_ALINK5_";
+		scale = "65536";
+		reg = <0x598 0x8>;
+		events = < &NEST_ALINK >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	alink6@5d8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_ALINK6_";
+		scale = "65536";
+		reg = <0x5d8 0x8>;
+		events = < &NEST_ALINK >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	alink7@618 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_ALINK7_";
+		scale = "65536";
+		reg = <0x618 0x8>;
+		events = < &NEST_ALINK >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	NEST_OTL: nest-otl-events  {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+		event@0 {
+				event-name = "CYC" ;
+				reg = <0x0 0x8>;
+				desc = "pm_otl0_0_cyc";
+		};
+		event@8 {
+				event-name = "TX_DATA_FLIT" ;
+				reg = <0x8 0x8>;
+				desc = "pm_otl0_0_tx_data_flit";
+		};
+		event@10 {
+				event-name = "RX_DATA_FLIT" ;
+				reg = <0x10 0x8>;
+				desc = "pm_otl0_0_rx_data_flit";
+		};
+		event@18 {
+				event-name = "TX_CNTRL_FLIT" ;
+				reg = <0x18 0x8>;
+				desc = "pm_otl0_0_tx_cntrl_flit";
+		};
+	};
+	otl0_0@668 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OTL0_0_";
+		scale = "65536";
+		reg = <0x668 0x8>;
+		events = < &NEST_OTL >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	otl0_1@688 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OTL0_1_";
+		scale = "65536";
+		reg = <0x688 0x8>;
+		events = < &NEST_OTL >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	otl3_0@6a8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OTL3_0_";
+		scale = "65536";
+		reg = <0x6a8 0x8>;
+		events = < &NEST_OTL >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	otl3_1@6c8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OTL3_1_";
+		scale = "65536";
+		reg = <0x6c8 0x8>;
+		events = < &NEST_OTL >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	otl4_0@6e8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OTL4_0_";
+		scale = "65536";
+		reg = <0x6e8 0x8>;
+		events = < &NEST_OTL >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	otl4_1@708 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OTL4_1_";
+		scale = "65536";
+		reg = <0x708 0x8>;
+		events = < &NEST_OTL >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	otl5_0@728 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OTL5_0_";
+		scale = "65536";
+		reg = <0x728 0x8>;
+		events = < &NEST_OTL >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	otl5_1@748 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OTL5_1_";
+		scale = "65536";
+		reg = <0x748 0x8>;
+		events = < &NEST_OTL >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	otl6_0@778 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OTL6_0_";
+		scale = "65536";
+		reg = <0x778 0x8>;
+		events = < &NEST_OTL >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	otl6_1@798 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OTL6_1_";
+		scale = "65536";
+		reg = <0x798 0x8>;
+		events = < &NEST_OTL >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	otl7_0@7b8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OTL7_0_";
+		scale = "65536";
+		reg = <0x7b8 0x8>;
+		events = < &NEST_OTL >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	otl7_1@7d8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OTL7_1_";
+		scale = "65536";
+		reg = <0x7d8 0x8>;
+		events = < &NEST_OTL >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	NEST_PHB: nest-phb-events  {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+		event@0 {
+				event-name = "CYC" ;
+				reg = <0x0 0x8>;
+				desc = "pm_phb0_0_cyc";
+		};
+		event@8 {
+				event-name = "DMA_RD_FROM_PCIE" ;
+				reg = <0x8 0x8>;
+				desc = "pm_phb0_0_dma_rd_from_pcie";
+		};
+		event@10 {
+				event-name = "IPD_BUFF_POP" ;
+				reg = <0x10 0x8>;
+				desc = "pm_phb0_0_ipd_buff_pop";
+		};
+		event@18 {
+				event-name = "ICPLD_BUFF_POP" ;
+				reg = <0x18 0x8>;
+				desc = "pm_phb0_0_icpld_buff_pop";
+		};
+	};
+	phb0_0@888 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_PHB0_0_";
+		scale = "65536";
+		reg = <0x888 0x8>;
+		events = < &NEST_PHB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	phb0_1@8a8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_PHB0_1_";
+		scale = "65536";
+		reg = <0x8a8 0x8>;
+		events = < &NEST_PHB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	phb0_2@8c8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_PHB0_2_";
+		scale = "65536";
+		reg = <0x8c8 0x8>;
+		events = < &NEST_PHB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	phb1_0@8e8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_PHB1_0_";
+		scale = "65536";
+		reg = <0x8e8 0x8>;
+		events = < &NEST_PHB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	phb1_1@908 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_PHB1_1_";
+		scale = "65536";
+		reg = <0x908 0x8>;
+		events = < &NEST_PHB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	phb1_2@928 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_PHB1_2_";
+		scale = "65536";
+		reg = <0x928 0x8>;
+		events = < &NEST_PHB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	NEST_NX: nest-nx-events  {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+		event@0 {
+				event-name = "IDLE_CH01" ;
+				reg = <0x0 0x8>;
+				desc = "pm_nx_idle_ch01";
+		};
+		event@8 {
+				event-name = "IDLE_CH23" ;
+				reg = <0x8 0x8>;
+				desc = "pm_nx_idle_ch23";
+		};
+		event@10 {
+				event-name = "IDLE_CH4" ;
+				reg = <0x10 0x8>;
+				desc = "pm_nx_idle_ch4";
+		};
+		event@18 {
+				event-name = "TIMEBASE_CYC" ;
+				reg = <0x18 0x8>;
+				desc = "pm_nx_timebase_cyc";
+		};
+		event@20 {
+				event-name = "ERAT_LOOKUP" ;
+				reg = <0x20 0x8>;
+				desc = "pm_nx_erat_lookup";
+		};
+		event@28 {
+				event-name = "ERAT_MISS" ;
+				reg = <0x28 0x8>;
+				desc = "pm_nx_erat_miss";
+		};
+		event@30 {
+				event-name = "ERAT_STALLED_CICO_BUFFERS" ;
+				reg = <0x30 0x8>;
+				desc = "pm_nx_erat_stalled_cico_buffers";
+		};
+		event@38 {
+				event-name = "DMA_STALLED" ;
+				reg = <0x38 0x8>;
+				desc = "pm_nx_dma_stalled";
+		};
+	};
+	nx@948 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_NX_";
+		scale = "65536";
+		reg = <0x948 0x8>;
+		events = < &NEST_NX >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	NEST_OCMB: nest-ocmb-events  {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+		event@0 {
+				event-name = "ACT_ALL" ;
+				reg = <0x0 0x8>;
+				desc = "pm_ocmb0_act_all";
+		};
+		event@8 {
+				event-name = "CAS_RD" ;
+				reg = <0x8 0x8>;
+				desc = "pm_ocmb0_cas_rd";
+		};
+		event@10 {
+				event-name = "CAS_WR" ;
+				reg = <0x10 0x8>;
+				desc = "pm_ocmb0_cas_wr";
+		};
+		event@18 {
+				event-name = "COMMAND_CLOCKS" ;
+				reg = <0x18 0x8>;
+				desc = "pm_ocmb0_command_clocks";
+		};
+	};
+	ocmb0@998 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OCMB0_";
+		scale = "65536";
+		reg = <0x998 0x8>;
+		events = < &NEST_OCMB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	ocmb1@9b8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OCMB1_";
+		scale = "65536";
+		reg = <0x9b8 0x8>;
+		events = < &NEST_OCMB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	ocmb2@9d8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OCMB2_";
+		scale = "65536";
+		reg = <0x9d8 0x8>;
+		events = < &NEST_OCMB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	ocmb3@9f8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OCMB3_";
+		scale = "65536";
+		reg = <0x9f8 0x8>;
+		events = < &NEST_OCMB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	ocmb4@aa8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OCMB4_";
+		scale = "65536";
+		reg = <0xaa8 0x8>;
+		events = < &NEST_OCMB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	ocmb5@ac8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OCMB5_";
+		scale = "65536";
+		reg = <0xac8 0x8>;
+		events = < &NEST_OCMB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	ocmb6@ae8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OCMB6_";
+		scale = "65536";
+		reg = <0xae8 0x8>;
+		events = < &NEST_OCMB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	ocmb7@b08 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OCMB7_";
+		scale = "65536";
+		reg = <0xb08 0x8>;
+		events = < &NEST_OCMB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	ocmb8@bb8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OCMB8_";
+		scale = "65536";
+		reg = <0xbb8 0x8>;
+		events = < &NEST_OCMB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	ocmb9@bd8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OCMB9_";
+		scale = "65536";
+		reg = <0xbd8 0x8>;
+		events = < &NEST_OCMB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	ocmb10@bf8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OCMB10_";
+		scale = "65536";
+		reg = <0xbf8 0x8>;
+		events = < &NEST_OCMB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	ocmb11@c18 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OCMB11_";
+		scale = "65536";
+		reg = <0xc18 0x8>;
+		events = < &NEST_OCMB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	ocmb12@cc8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OCMB12_";
+		scale = "65536";
+		reg = <0xcc8 0x8>;
+		events = < &NEST_OCMB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	ocmb13@ce8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OCMB13_";
+		scale = "65536";
+		reg = <0xce8 0x8>;
+		events = < &NEST_OCMB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	ocmb14@d08 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OCMB14_";
+		scale = "65536";
+		reg = <0xd08 0x8>;
+		events = < &NEST_OCMB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	ocmb15@d28 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_OCMB15_";
+		scale = "65536";
+		reg = <0xd28 0x8>;
+		events = < &NEST_OCMB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	P10_CORE: p10-core-events  {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+		event@0 {
+				event-name = "RUN_CYC_ST_MODE" ;
+				reg = <0x0 0x8>;
+				desc = "cpm_run_cyc_st_mode";
+		};
+		event@8 {
+				event-name = "INST_FROM_DMEM" ;
+				reg = <0x8 0x8>;
+				desc = "cpm_inst_from_dmem";
+		};
+		event@10 {
+				event-name = "NON_IDLE_INST" ;
+				reg = <0x10 0x8>;
+				desc = "cpm_non_idle_inst";
+		};
+		event@18 {
+				event-name = "NON_IDLE_PCYC" ;
+				reg = <0x18 0x8>;
+				desc = "cpm_non_idle_pcyc";
+		};
+		event@40 {
+				event-name = "RUN_CYC_SMT2_MODE" ;
+				reg = <0x40 0x8>;
+				desc = "cpm_run_cyc_smt2_mode";
+		};
+		event@48 {
+				event-name = "L1_ICACHE_MISS" ;
+				reg = <0x48 0x8>;
+				desc = "cpm_l1_icache_miss";
+		};
+		event@80 {
+				event-name = "RUN_CYC_SMT4_MODE" ;
+				reg = <0x80 0x8>;
+				desc = "cpm_run_cyc_smt4_mode";
+		};
+		event@88 {
+				event-name = "DERAT_MISS" ;
+				reg = <0x88 0x8>;
+				desc = "cpm_derat_miss";
+		};
+		event@c8 {
+				event-name = "IERAT_MISS" ;
+				reg = <0xc8 0x8>;
+				desc = "cpm_ierat_miss";
+		};
+		event@100 {
+				event-name = "NEST_REF_CLK" ;
+				reg = <0x100 0x8>;
+				desc = "cpm_nest_ref_clk";
+		};
+		event@108 {
+				event-name = "DTLB_MISS" ;
+				reg = <0x108 0x8>;
+				desc = "cpm_dtlb_miss";
+		};
+		event@140 {
+				event-name = "EXT_INT_EBB" ;
+				reg = <0x140 0x8>;
+				desc = "cpm_ext_int_ebb";
+		};
+		event@148 {
+				event-name = "ITLB_MISS" ;
+				reg = <0x148 0x8>;
+				desc = "cpm_itlb_miss";
+		};
+		event@180 {
+				event-name = "EXT_INT_HYP" ;
+				reg = <0x180 0x8>;
+				desc = "cpm_ext_int_hyp";
+		};
+		event@188 {
+				event-name = "TLBIE_FIN" ;
+				reg = <0x188 0x8>;
+				desc = "cpm_tlbie_fin";
+		};
+		event@1c0 {
+				event-name = "EXT_INT_OS" ;
+				reg = <0x1c0 0x8>;
+				desc = "cpm_ext_int_os";
+		};
+		event@1c8 {
+				event-name = "LARX_FIN" ;
+				reg = <0x1c8 0x8>;
+				desc = "cpm_larx_fin";
+		};
+		event@200 {
+				event-name = "INT_DOORBELL" ;
+				reg = <0x200 0x8>;
+				desc = "cpm_int_doorbell";
+		};
+		event@208 {
+				event-name = "STCX_FIN" ;
+				reg = <0x208 0x8>;
+				desc = "cpm_stcx_fin";
+		};
+		event@240 {
+				event-name = "DATA_FROM_L2MISS" ;
+				reg = <0x240 0x8>;
+				desc = "cpm_data_from_l2miss";
+		};
+		event@248 {
+				event-name = "STCX_FAIL_FIN" ;
+				reg = <0x248 0x8>;
+				desc = "cpm_stcx_fail_fin";
+		};
+		event@280 {
+				event-name = "DATA_FROM_L3MISS" ;
+				reg = <0x280 0x8>;
+				desc = "cpm_data_from_l3miss";
+		};
+		event@288 {
+				event-name = "PROB_PCYC" ;
+				reg = <0x288 0x8>;
+				desc = "cpm_prob_pcyc";
+		};
+		event@2c0 {
+				event-name = "DATA_FROM_MEMORY" ;
+				reg = <0x2c0 0x8>;
+				desc = "cpm_data_from_memory";
+		};
+		event@2c8 {
+				event-name = "PROB_INST" ;
+				reg = <0x2c8 0x8>;
+				desc = "cpm_prob_inst";
+		};
+		event@308 {
+				event-name = "PRIV_PCYC" ;
+				reg = <0x308 0x8>;
+				desc = "cpm_priv_pcyc";
+		};
+		event@340 {
+				event-name = "DATA_FROM_L3.1" ;
+				reg = <0x340 0x8>;
+				desc = "cpm_data_from_l3.1";
+		};
+		event@348 {
+				event-name = "PRIV_INST" ;
+				reg = <0x348 0x8>;
+				desc = "cpm_priv_inst";
+		};
+		event@380 {
+				event-name = "DATA_FROM_LMEM" ;
+				reg = <0x380 0x8>;
+				desc = "cpm_data_from_lmem";
+		};
+		event@388 {
+				event-name = "HV_PCYC" ;
+				reg = <0x388 0x8>;
+				desc = "cpm_hv_pcyc";
+		};
+		event@3c0 {
+				event-name = "DATA_FROM_RMEM" ;
+				reg = <0x3c0 0x8>;
+				desc = "cpm_data_from_rmem";
+		};
+		event@3c8 {
+				event-name = "HV_INST" ;
+				reg = <0x3c8 0x8>;
+				desc = "cpm_hv_inst";
+		};
+		event@400 {
+				event-name = "DATA_FROM_DMEM" ;
+				reg = <0x400 0x8>;
+				desc = "cpm_data_from_dmem";
+		};
+		event@408 {
+				event-name = "ADJUNCT_PCYC" ;
+				reg = <0x408 0x8>;
+				desc = "cpm_adjunct_pcyc";
+		};
+		event@440 {
+				event-name = "INST_FROM_L2MISS" ;
+				reg = <0x440 0x8>;
+				desc = "cpm_inst_from_l2miss";
+		};
+		event@448 {
+				event-name = "ADJUNCT_INST" ;
+				reg = <0x448 0x8>;
+				desc = "cpm_adjunct_inst";
+		};
+		event@480 {
+				event-name = "INST_FROM_L3MISS" ;
+				reg = <0x480 0x8>;
+				desc = "cpm_inst_from_l3miss";
+		};
+		event@488 {
+				event-name = "ULTRAVISOR_PCYC" ;
+				reg = <0x488 0x8>;
+				desc = "cpm_ultravisor_pcyc";
+		};
+		event@4c0 {
+				event-name = "INST_FROM_MEMORY" ;
+				reg = <0x4c0 0x8>;
+				desc = "cpm_inst_from_memory";
+		};
+		event@4c8 {
+				event-name = "ULTRAVISOR_INST" ;
+				reg = <0x4c8 0x8>;
+				desc = "cpm_ultravisor_inst";
+		};
+		event@508 {
+				event-name = "TM_ABORTS" ;
+				reg = <0x508 0x8>;
+				desc = "cpm_tm_aborts";
+		};
+		event@540 {
+				event-name = "INST_FROM_L3.1" ;
+				reg = <0x540 0x8>;
+				desc = "cpm_inst_from_l3.1";
+		};
+		event@548 {
+				event-name = "TM_PASSES" ;
+				reg = <0x548 0x8>;
+				desc = "cpm_tm_passes";
+		};
+		event@580 {
+				event-name = "INST_FROM_LMEM" ;
+				reg = <0x580 0x8>;
+				desc = "cpm_inst_from_lmem";
+		};
+		event@588 {
+				event-name = "RUN_PURR" ;
+				reg = <0x588 0x8>;
+				desc = "cpm_run_purr";
+		};
+		event@5c0 {
+				event-name = "INST_FROM_RMEM" ;
+				reg = <0x5c0 0x8>;
+				desc = "cpm_inst_from_rmem";
+		};
+		event@5c8 {
+				event-name = "RUN_SPURR" ;
+				reg = <0x5c8 0x8>;
+				desc = "cpm_run_spurr";
+		};
+		event@608 {
+				event-name = "VSU_FIN" ;
+				reg = <0x608 0x8>;
+				desc = "cpm_vsu_fin";
+		};
+		event@648 {
+				event-name = "VSU_FSQRT_FDIV" ;
+				reg = <0x648 0x8>;
+				desc = "cpm_vsu_fsqrt_fdiv";
+		};
+	};
+	core@18 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "CPM_";
+		scale = "1";
+		reg = <0x18 0x8>;
+		events = < &P10_CORE >;
+		type = <0x4>;
+		size = <0x20000>;
+	};
+	TRACE_IMC: trace-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+		event@10200000 {
+				event-name = "cycles";
+				reg = <0x10200000 0x8>;
+				desc = "Reference cycles";
+		};
+	};
+	trace@0 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "trace_";
+		reg = <0x0 0x8>;
+		events = < &TRACE_IMC >;
+		type = <0x2>;
+		size = <0x40000>;
+	};
+};
