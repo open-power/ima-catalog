@@ -549,19 +549,19 @@ version-id = <0x03>;
 				desc = "pm_otl0_0_cyc";
 		};
 		event@8 {
-				event-name = "TX_DATA_FLIT" ;
-				reg = <0x8 0x8>;
-				desc = "pm_otl0_0_tx_data_flit";
-		};
-		event@10 {
 				event-name = "RX_DATA_FLIT" ;
-				reg = <0x10 0x8>;
+				reg = <0x8 0x8>;
 				desc = "pm_otl0_0_rx_data_flit";
 		};
-		event@18 {
+		event@10 {
 				event-name = "TX_CNTRL_FLIT" ;
-				reg = <0x18 0x8>;
+				reg = <0x10 0x8>;
 				desc = "pm_otl0_0_tx_cntrl_flit";
+		};
+		event@18 {
+				event-name = "TX_FLTRD_DATA_FLIT" ;
+				reg = <0x18 0x8>;
+				desc = "pm_otl0_0_tx_fltrd_data_flit";
 		};
 	};
 	otl0_0@668 {
