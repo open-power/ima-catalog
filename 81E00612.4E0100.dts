@@ -1,0 +1,2770 @@
+
+   /dts-v1/;
+   / {
+   	name = "";
+   	compatible = "ibm,opal-in-memory-counters";
+   	#address-cells = <0x1>;
+   	#size-cells = <0x1>;
+   	version-id = <0x20>;
+
+NEST_MCS: nest-mcs-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@0 {
+			event-name = "64B_RD_DISP_PORT01" ;
+			reg = <0x0 0x8>;
+			desc = "Total 64 byte reads/writes dispatched for mcs01 on port01. (These are 64Byte request and not get counted in 128byte read request)" ;
+		};
+		event@8 {
+			event-name = "128B_RD_DISP_PORT01" ;
+			reg = <0x8 0x8>;
+			desc = "Total Read 128-byte data blocks for mcs01 on port01" ;
+		};
+		event@10 {
+			event-name = "128B_WR_DISP_PORT01" ;
+			reg = <0x10 0x8>;
+			desc = "Total Write 128-byte data blocks for mcs01 on port01" ;
+		};
+		event@18 {
+			event-name = "AMO_OP_DISP_PORT01" ;
+			reg = <0x18 0x8>;
+			desc = "AMO (Atomic Memory Operation) command dispatched in mcs01" ;
+		};
+		event@20 {
+			event-name = "64B_RD_DISP_PORT23" ;
+			reg = <0x20 0x8>;
+			desc = "Total 64 byte reads dispatched for mcs01 on port23. (These are 64Byte request and not get counted in 128byte read request)" ;
+		};
+		event@28 {
+			event-name = "128B_RD_DISP_PORT23" ;
+			reg = <0x28 0x8>;
+			desc = "Total Read 128-byte data blocks for mcs01 on port23" ;
+		};
+		event@30 {
+			event-name = "128B_WR_DISP_PORT23" ;
+			reg = <0x30 0x8>;
+			desc = "Total Write 128-byte data blocks for mcs01 on port23" ;
+		};
+	};
+	mcs01@c8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_MCS01_";
+		scale = "256";
+		reg = <0xc8 0x8>;
+		events = < &NEST_MCS >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	mcs23@48 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_MCS23_";
+		scale = "256";
+		reg = <0x48 0x8>;
+		events = < &NEST_MCS >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+NEST_POWERBUS: nest-powerbus-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@0 {
+			event-name = "EVENT_VG_PUMP" ;
+			reg = <0x0 0x8>;
+			desc = "Vg Scope operation (locally mastered) on port n" ;
+		};
+		event@8 {
+			event-name = "EVENT_LNS_PUMP" ;
+			reg = <0x8 0x8>;
+			desc = "Local Nodal Scope operation (locally mastered) on port n" ;
+		};
+		event@10 {
+			event-name = "EVENT_GROUP_PUMP" ;
+			reg = <0x10 0x8>;
+			desc = "Group Scope operation (locally mastered) on port n" ;
+		};
+		event@18 {
+			event-name = "EVENT_RNS_PUMP" ;
+			reg = <0x18 0x8>;
+			desc = "Remote Nodal Scope operation (locally mastered) on port n" ;
+		};
+		event@20 {
+			event-name = "EVENT_RTY_VG_PUMP" ;
+			reg = <0x20 0x8>;
+			desc = "Retry of a Vg Scope operation (locally mastered) - Retry due to (rty_dropped_rcmd;rty_lpc;rty_other)" ;
+		};
+		event@28 {
+			event-name = "EVENT_RTY_LNS_PUMP" ;
+			reg = <0x28 0x8>;
+			desc = "Retry of a Nodal Scope operation (locally mastered) - Retry due to (rty_dropped_rcmd;rty_lpc;rty_other;etc)" ;
+		};
+		event@30 {
+			event-name = "EVENT_RTY_GROUP_PUMP" ;
+			reg = <0x30 0x8>;
+			desc = "Retry of a Group Scope operation (locally mastered) - Retry due to (rty_dropped_rcmd; rty_lpc; rty_other)" ;
+		};
+		event@38 {
+			event-name = "EVENT_RTY_RNS_PUMP" ;
+			reg = <0x38 0x8>;
+			desc = "Retry of a Remote Nodal Scope op (locally mastered)- Retry due to (rty_dropped_rcmd; rty_lpc; rty_other)" ;
+		};
+		event@a0 {
+			event-name = "INT_DATA_XFER" ;
+			reg = <0xa0 0x8>;
+			desc = "16x 32B OW Internal Data transfer on a PB horizontal bus" ;
+		};
+		event@a8 {
+			event-name = "EXT_DATA_XFER" ;
+			reg = <0xa8 0x8>;
+			desc = "16x 32B OW External Data transfer on a PB X/A horizontal bus" ;
+		};
+		event@78 {
+			event-name = "CYC" ;
+			reg = <0x78 0x8>;
+		};
+		event@80 {
+			event-name = "VG_PUMP_P01" ;
+			reg = <0x80 0x8>;
+		};
+		event@88 {
+			event-name = "LNS_PUMP_P01" ;
+			reg = <0x88 0x8>;
+		};
+		event@90 {
+			event-name = "GROUP_PUMP_P01" ;
+			reg = <0x90 0x8>;
+		};
+		event@98 {
+			event-name = "RNS_PUMP_P01" ;
+			reg = <0x98 0x8>;
+		};
+		event@b0 {
+			event-name = "NNS_PUMP" ;
+			reg = <0xb0 0x8>;
+			desc = "Near Nodal Scope operation (locally mastered)" ;
+		};
+		event@b8 {
+			event-name = "RTY_NNS_PUMP_P01" ;
+			reg = <0xb8 0x8>;
+			desc = "Retry of a Near Nodal Scope op (locally mastered)- Retry due to (rty_dropped_rcmd; rty_lpc; rty_other)" ;
+		};
+		event@f8 {
+			event-name = "CYC2" ;
+			reg = <0xf8 0x8>;
+		};
+	};
+	powerbus0@8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_PB_";
+		scale = "256";
+		reg = <0x8 0x8>;
+		events = < &NEST_POWERBUS >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+NEST_XLINK_OUT: nest-xlink-out-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@0 {
+			event-name = "OUT_EVEN_CYC" ;
+			reg = <0x0 0x8>;
+		};
+		event@8 {
+			event-name = "OUT_EVEN_ANY_RCMD" ;
+			reg = <0x8 0x8>;
+		};
+		event@10 {
+			event-name = "OUT_EVEN_DATA_COUNT" ;
+			reg = <0x10 0x8>;
+		};
+		event@18 {
+			event-name = "OUT_EVEN_TOTAL_UTIL" ;
+			reg = <0x18 0x8>;
+		};
+		event@20 {
+			event-name = "OUT_ODD_CYC" ;
+			reg = <0x20 0x8>;
+		};
+		event@28 {
+			event-name = "OUT_ODD_ANY_RCMD" ;
+			reg = <0x28 0x8>;
+		};
+		event@30 {
+			event-name = "OUT_ODD_DATA_COUNT" ;
+			reg = <0x30 0x8>;
+		};
+		event@38 {
+			event-name = "OUT_ODD_TOTAL_UTIL" ;
+			reg = <0x38 0x8>;
+		};
+		event@c0 {
+			event-name = "OUT_EVEN_AVLBL_CYC" ;
+			reg = <0xc0 0x8>;
+		};
+		event@c8 {
+			event-name = "OUT_ODD_AVLBL_CYC" ;
+			reg = <0xc8 0x8>;
+		};
+	};
+	xlink0@118 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_XLINK0_";
+		scale = "4096";
+		reg = <0x118 0x8>;
+		events = < &NEST_XLINK_OUT >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	xlink1@158 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_XLINK1_";
+		scale = "4096";
+		reg = <0x158 0x8>;
+		events = < &NEST_XLINK_OUT >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	xlink2@198 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_XLINK2_";
+		scale = "4096";
+		reg = <0x198 0x8>;
+		events = < &NEST_XLINK_OUT >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+NEST_PHB: nest-phb-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@0 {
+			event-name = "CYC" ;
+			reg = <0x0 0x8>;
+		};
+		event@8 {
+			event-name = "DMA_RD_FROM_PCIE" ;
+			reg = <0x8 0x8>;
+		};
+		event@10 {
+			event-name = "DMA_WR_FROM_PCIE" ;
+			reg = <0x10 0x8>;
+		};
+		event@18 {
+			event-name = "LD_RESP_FROM_PCIE" ;
+			reg = <0x18 0x8>;
+		};
+	};
+	phb0@338 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_PHB0_";
+		scale = "1";
+		reg = <0x338 0x8>;
+		events = < &NEST_PHB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	phb1@358 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_PHB1_";
+		scale = "1";
+		reg = <0x358 0x8>;
+		events = < &NEST_PHB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	phb2@378 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_PHB2_";
+		scale = "1";
+		reg = <0x378 0x8>;
+		events = < &NEST_PHB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	phb3@398 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_PHB3_";
+		scale = "1";
+		reg = <0x398 0x8>;
+		events = < &NEST_PHB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	phb4@3b8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_PHB4_";
+		scale = "1";
+		reg = <0x3b8 0x8>;
+		events = < &NEST_PHB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	phb5@3d8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_PHB5_";
+		scale = "1";
+		reg = <0x3d8 0x8>;
+		events = < &NEST_PHB >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+NEST_MBA: nest-mba-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@0 {
+			event-name = "READ_BYTES" ;
+			reg = <0x0 0x8>;
+		};
+		event@8 {
+			event-name = "WRITE_BYTES" ;
+			reg = <0x8 0x8>;
+		};
+		event@10 {
+			event-name = "CLK_CYC" ;
+			reg = <0x10 0x8>;
+		};
+	};
+	mba0@448 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_MBA0_";
+		scale = "1";
+		reg = <0x448 0x8>;
+		events = < &NEST_MBA >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	mba1@460 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_MBA1_";
+		scale = "1";
+		reg = <0x460 0x8>;
+		events = < &NEST_MBA >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	mba2@478 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_MBA2_";
+		scale = "1";
+		reg = <0x478 0x8>;
+		events = < &NEST_MBA >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	mba3@490 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_MBA3_";
+		scale = "1";
+		reg = <0x490 0x8>;
+		events = < &NEST_MBA >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	mba4@558 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_MBA4_";
+		scale = "1";
+		reg = <0x558 0x8>;
+		events = < &NEST_MBA >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	mba5@570 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_MBA5_";
+		scale = "1";
+		reg = <0x570 0x8>;
+		events = < &NEST_MBA >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	mba6@588 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_MBA6_";
+		scale = "1";
+		reg = <0x588 0x8>;
+		events = < &NEST_MBA >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	mba7@5a0 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_MBA7_";
+		scale = "1";
+		reg = <0x5a0 0x8>;
+		events = < &NEST_MBA >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+NEST_CAPP: nest-capp-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@0 {
+			event-name = "CYC_A" ;
+			reg = <0x0 0x8>;
+		};
+		event@8 {
+			event-name = "APC_UOP_SEND_PB_CMD" ;
+			reg = <0x8 0x8>;
+		};
+		event@10 {
+			event-name = "APC_UOP_LCO" ;
+			reg = <0x10 0x8>;
+		};
+		event@18 {
+			event-name = "APC_UOP_DATA_XFER" ;
+			reg = <0x18 0x8>;
+		};
+		event@20 {
+			event-name = "CYC_B" ;
+			reg = <0x20 0x8>;
+		};
+		event@28 {
+			event-name = "XPT_MSG_SENT_LE_16" ;
+			reg = <0x28 0x8>;
+		};
+		event@30 {
+			event-name = "XPT_MSG_SENT_GT_16_LE_64" ;
+			reg = <0x30 0x8>;
+		};
+		event@38 {
+			event-name = "XPT_MSG_SENT_TSIZE_GT_64_LE_128" ;
+			reg = <0x38 0x8>;
+		};
+	};
+	capp0@6c8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_CAPP1_";
+		scale = "256";
+		reg = <0x6c8 0x8>;
+		events = < &NEST_CAPP >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	capp1@708 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_CAPP2_";
+		scale = "256";
+		reg = <0x708 0x8>;
+		events = < &NEST_CAPP >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+NEST_NVLINK3: nest-nvlink3-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@288 {
+			event-name = "PM_NTL3_CLK_CYC" ;
+			reg = <0x288 0x8>;
+		};
+		event@290 {
+			event-name = "PM_NTL3_TX_DATA_FLIT" ;
+			reg = <0x290 0x8>;
+		};
+		event@298 {
+			event-name = "PM_NTL3_RX_ANY_FLIT" ;
+			reg = <0x298 0x8>;
+		};
+		event@2a0 {
+			event-name = "PM_NTL3_RX_DATA_FLIT" ;
+			reg = <0x2a0 0x8>;
+		};
+		event@688 {
+			event-name = "PM_NPCQ1_CREQ_BRICK0" ;
+			reg = <0x688 0x8>;
+		};
+		event@690 {
+			event-name = "PM_NPCQ1_DOWNGRADE_REQ_BRICK0" ;
+			reg = <0x690 0x8>;
+		};
+		event@698 {
+			event-name = "PM_NPCQ1_CREQ_BRICK1" ;
+			reg = <0x698 0x8>;
+		};
+		event@6a0 {
+			event-name = "PM_NPCQ1_DOWNGRADE_REQ_BRICK1" ;
+			reg = <0x6a0 0x8>;
+		};
+		event@2e8 {
+			event-name = "PM_ATS_TCE_TRANS_REQ" ;
+			reg = <0x2e8 0x8>;
+		};
+		event@2f0 {
+			event-name = "PM_ATS_TCE_MISS" ;
+			reg = <0x2f0 0x8>;
+		};
+		event@2f8 {
+			event-name = "PM_ATS_NO_TRANS_TCE" ;
+			reg = <0x2f8 0x8>;
+		};
+		event@300 {
+			event-name = "PM_ATS_CACHE_RERUN" ;
+			reg = <0x300 0x8>;
+		};
+		event@308 {
+			event-name = "PM_XTS_ATR_DEMAND_CHECKOUT_MISS" ;
+			reg = <0x308 0x8>;
+		};
+		event@310 {
+			event-name = "PM_XTS_ATR_DEMAND_CHECKOUT" ;
+			reg = <0x310 0x8>;
+		};
+		event@318 {
+			event-name = "PM_XTS_ATSD_TLBI_RCV" ;
+			reg = <0x318 0x8>;
+		};
+		event@320 {
+			event-name = "PM_XTS_ATSD_SENT" ;
+			reg = <0x320 0x8>;
+		};
+	};
+	nvlink3@288 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "";
+		scale = "256";
+		reg = <0x288 0x8>;
+		events = < &NEST_NVLINK3 >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+NEST_NVLINK2: nest-nvlink2-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@268 {
+			event-name = "PM_NTL2_CLK_CYC" ;
+			reg = <0x268 0x8>;
+		};
+		event@270 {
+			event-name = "PM_NTL2_TX_DATA_FLIT" ;
+			reg = <0x270 0x8>;
+		};
+		event@278 {
+			event-name = "PM_NTL2_RX_ANY_FLIT" ;
+			reg = <0x278 0x8>;
+		};
+		event@280 {
+			event-name = "PM_NTL2_RX_DATA_FLIT" ;
+			reg = <0x280 0x8>;
+		};
+		event@688 {
+			event-name = "PM_NPCQ1_CREQ_BRICK0" ;
+			reg = <0x688 0x8>;
+		};
+		event@690 {
+			event-name = "PM_NPCQ1_DOWNGRADE_REQ_BRICK0" ;
+			reg = <0x690 0x8>;
+		};
+		event@698 {
+			event-name = "PM_NPCQ1_CREQ_BRICK1" ;
+			reg = <0x698 0x8>;
+		};
+		event@6a0 {
+			event-name = "PM_NPCQ1_DOWNGRADE_REQ_BRICK1" ;
+			reg = <0x6a0 0x8>;
+		};
+		event@2e8 {
+			event-name = "PM_ATS_TCE_TRANS_REQ" ;
+			reg = <0x2e8 0x8>;
+		};
+		event@2f0 {
+			event-name = "PM_ATS_TCE_MISS" ;
+			reg = <0x2f0 0x8>;
+		};
+		event@2f8 {
+			event-name = "PM_ATS_NO_TRANS_TCE" ;
+			reg = <0x2f8 0x8>;
+		};
+		event@300 {
+			event-name = "PM_ATS_CACHE_RERUN" ;
+			reg = <0x300 0x8>;
+		};
+		event@308 {
+			event-name = "PM_XTS_ATR_DEMAND_CHECKOUT_MISS" ;
+			reg = <0x308 0x8>;
+		};
+		event@310 {
+			event-name = "PM_XTS_ATR_DEMAND_CHECKOUT" ;
+			reg = <0x310 0x8>;
+		};
+		event@318 {
+			event-name = "PM_XTS_ATSD_TLBI_RCV" ;
+			reg = <0x318 0x8>;
+		};
+		event@320 {
+			event-name = "PM_XTS_ATSD_SENT" ;
+			reg = <0x320 0x8>;
+		};
+	};
+	nvlink2@268 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "";
+		scale = "256";
+		reg = <0x268 0x8>;
+		events = < &NEST_NVLINK2 >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+NEST_NVLINK1: nest-nvlink1-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@248 {
+			event-name = "PM_NTL1_CLK_CYC" ;
+			reg = <0x248 0x8>;
+		};
+		event@250 {
+			event-name = "PM_NTL1_TX_DATA_FLIT" ;
+			reg = <0x250 0x8>;
+		};
+		event@258 {
+			event-name = "PM_NTL1_RX_ANY_FLIT" ;
+			reg = <0x258 0x8>;
+		};
+		event@260 {
+			event-name = "PM_NTL1_RX_DATA_FLIT" ;
+			reg = <0x260 0x8>;
+		};
+		event@668 {
+			event-name = "PM_NPCQ0_CREQ_BRICK0" ;
+			reg = <0x668 0x8>;
+		};
+		event@670 {
+			event-name = "PM_NPCQ0_DOWNGRADE_REQ_BRICK0" ;
+			reg = <0x670 0x8>;
+		};
+		event@678 {
+			event-name = "PM_NPCQ0_CREQ_BRICK1" ;
+			reg = <0x678 0x8>;
+		};
+		event@680 {
+			event-name = "PM_NPCQ0_DOWNGRADE_REQ_BRICK1" ;
+			reg = <0x680 0x8>;
+		};
+		event@2e8 {
+			event-name = "PM_ATS_TCE_TRANS_REQ" ;
+			reg = <0x2e8 0x8>;
+		};
+		event@2f0 {
+			event-name = "PM_ATS_TCE_MISS" ;
+			reg = <0x2f0 0x8>;
+		};
+		event@2f8 {
+			event-name = "PM_ATS_NO_TRANS_TCE" ;
+			reg = <0x2f8 0x8>;
+		};
+		event@300 {
+			event-name = "PM_ATS_CACHE_RERUN" ;
+			reg = <0x300 0x8>;
+		};
+		event@308 {
+			event-name = "PM_XTS_ATR_DEMAND_CHECKOUT_MISS" ;
+			reg = <0x308 0x8>;
+		};
+		event@310 {
+			event-name = "PM_XTS_ATR_DEMAND_CHECKOUT" ;
+			reg = <0x310 0x8>;
+		};
+		event@318 {
+			event-name = "PM_XTS_ATSD_TLBI_RCV" ;
+			reg = <0x318 0x8>;
+		};
+		event@320 {
+			event-name = "PM_XTS_ATSD_SENT" ;
+			reg = <0x320 0x8>;
+		};
+	};
+	nvlink1@248 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "";
+		scale = "256";
+		reg = <0x248 0x8>;
+		events = < &NEST_NVLINK1 >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+NEST_NVLINK0: nest-nvlink0-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@228 {
+			event-name = "PM_NTL0_CLK_CYC" ;
+			reg = <0x228 0x8>;
+		};
+		event@230 {
+			event-name = "PM_NTL0_TX_DATA_FLIT" ;
+			reg = <0x230 0x8>;
+		};
+		event@238 {
+			event-name = "PM_NTL0_RX_ANY_FLIT" ;
+			reg = <0x238 0x8>;
+		};
+		event@240 {
+			event-name = "PM_NTL0_RX_DATA_FLIT" ;
+			reg = <0x240 0x8>;
+		};
+		event@668 {
+			event-name = "PM_NPCQ0_CREQ_BRICK0" ;
+			reg = <0x668 0x8>;
+		};
+		event@670 {
+			event-name = "PM_NPCQ0_DOWNGRADE_REQ_BRICK0" ;
+			reg = <0x670 0x8>;
+		};
+		event@678 {
+			event-name = "PM_NPCQ0_CREQ_BRICK1" ;
+			reg = <0x678 0x8>;
+		};
+		event@680 {
+			event-name = "PM_NPCQ0_DOWNGRADE_REQ_BRICK1" ;
+			reg = <0x680 0x8>;
+		};
+		event@2e8 {
+			event-name = "PM_ATS_TCE_TRANS_REQ" ;
+			reg = <0x2e8 0x8>;
+		};
+		event@2f0 {
+			event-name = "PM_ATS_TCE_MISS" ;
+			reg = <0x2f0 0x8>;
+		};
+		event@2f8 {
+			event-name = "PM_ATS_NO_TRANS_TCE" ;
+			reg = <0x2f8 0x8>;
+		};
+		event@300 {
+			event-name = "PM_ATS_CACHE_RERUN" ;
+			reg = <0x300 0x8>;
+		};
+		event@308 {
+			event-name = "PM_XTS_ATR_DEMAND_CHECKOUT_MISS" ;
+			reg = <0x308 0x8>;
+		};
+		event@310 {
+			event-name = "PM_XTS_ATR_DEMAND_CHECKOUT" ;
+			reg = <0x310 0x8>;
+		};
+		event@318 {
+			event-name = "PM_XTS_ATSD_TLBI_RCV" ;
+			reg = <0x318 0x8>;
+		};
+		event@320 {
+			event-name = "PM_XTS_ATSD_SENT" ;
+			reg = <0x320 0x8>;
+		};
+	};
+	nvlink0@228 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "";
+		scale = "256";
+		reg = <0x228 0x8>;
+		events = < &NEST_NVLINK0 >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+NEST_NVLINK5: nest-nvlink5-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@2c8 {
+			event-name = "PM_NTL5_CLK_CYC" ;
+			reg = <0x2c8 0x8>;
+		};
+		event@2d0 {
+			event-name = "PM_NTL5_TX_DATA_FLIT" ;
+			reg = <0x2d0 0x8>;
+		};
+		event@2d8 {
+			event-name = "PM_NTL5_RX_ANY_FLIT" ;
+			reg = <0x2d8 0x8>;
+		};
+		event@2e0 {
+			event-name = "PM_NTL5_RX_DATA_FLIT" ;
+			reg = <0x2e0 0x8>;
+		};
+		event@6a8 {
+			event-name = "PM_NPCQ2_CREQ_BRICK0" ;
+			reg = <0x6a8 0x8>;
+		};
+		event@6b0 {
+			event-name = "PM_NPCQ2_DOWNGRADE_REQ_BRICK0" ;
+			reg = <0x6b0 0x8>;
+		};
+		event@6b8 {
+			event-name = "PM_NPCQ2_CREQ_BRICK1" ;
+			reg = <0x6b8 0x8>;
+		};
+		event@6c0 {
+			event-name = "PM_NPCQ2_DOWNGRADE_REQ_BRICK1" ;
+			reg = <0x6c0 0x8>;
+		};
+		event@2e8 {
+			event-name = "PM_ATS_TCE_TRANS_REQ" ;
+			reg = <0x2e8 0x8>;
+		};
+		event@2f0 {
+			event-name = "PM_ATS_TCE_MISS" ;
+			reg = <0x2f0 0x8>;
+		};
+		event@2f8 {
+			event-name = "PM_ATS_NO_TRANS_TCE" ;
+			reg = <0x2f8 0x8>;
+		};
+		event@300 {
+			event-name = "PM_ATS_CACHE_RERUN" ;
+			reg = <0x300 0x8>;
+		};
+		event@308 {
+			event-name = "PM_XTS_ATR_DEMAND_CHECKOUT_MISS" ;
+			reg = <0x308 0x8>;
+		};
+		event@310 {
+			event-name = "PM_XTS_ATR_DEMAND_CHECKOUT" ;
+			reg = <0x310 0x8>;
+		};
+		event@318 {
+			event-name = "PM_XTS_ATSD_TLBI_RCV" ;
+			reg = <0x318 0x8>;
+		};
+		event@320 {
+			event-name = "PM_XTS_ATSD_SENT" ;
+			reg = <0x320 0x8>;
+		};
+	};
+	nvlink5@2c8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "";
+		scale = "256";
+		reg = <0x2c8 0x8>;
+		events = < &NEST_NVLINK5 >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+NEST_NVLINK4: nest-nvlink4-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@2a8 {
+			event-name = "PM_NTL4_CLK_CYC" ;
+			reg = <0x2a8 0x8>;
+		};
+		event@2b0 {
+			event-name = "PM_NTL4_TX_DATA_FLIT" ;
+			reg = <0x2b0 0x8>;
+		};
+		event@2b8 {
+			event-name = "PM_NTL4_RX_ANY_FLIT" ;
+			reg = <0x2b8 0x8>;
+		};
+		event@2c0 {
+			event-name = "PM_NTL4_RX_DATA_FLIT" ;
+			reg = <0x2c0 0x8>;
+		};
+		event@6a8 {
+			event-name = "PM_NPCQ2_CREQ_BRICK0" ;
+			reg = <0x6a8 0x8>;
+		};
+		event@6b0 {
+			event-name = "PM_NPCQ2_DOWNGRADE_REQ_BRICK0" ;
+			reg = <0x6b0 0x8>;
+		};
+		event@6b8 {
+			event-name = "PM_NPCQ2_CREQ_BRICK1" ;
+			reg = <0x6b8 0x8>;
+		};
+		event@6c0 {
+			event-name = "PM_NPCQ2_DOWNGRADE_REQ_BRICK1" ;
+			reg = <0x6c0 0x8>;
+		};
+		event@2e8 {
+			event-name = "PM_ATS_TCE_TRANS_REQ" ;
+			reg = <0x2e8 0x8>;
+		};
+		event@2f0 {
+			event-name = "PM_ATS_TCE_MISS" ;
+			reg = <0x2f0 0x8>;
+		};
+		event@2f8 {
+			event-name = "PM_ATS_NO_TRANS_TCE" ;
+			reg = <0x2f8 0x8>;
+		};
+		event@300 {
+			event-name = "PM_ATS_CACHE_RERUN" ;
+			reg = <0x300 0x8>;
+		};
+		event@308 {
+			event-name = "PM_XTS_ATR_DEMAND_CHECKOUT_MISS" ;
+			reg = <0x308 0x8>;
+		};
+		event@310 {
+			event-name = "PM_XTS_ATR_DEMAND_CHECKOUT" ;
+			reg = <0x310 0x8>;
+		};
+		event@318 {
+			event-name = "PM_XTS_ATSD_TLBI_RCV" ;
+			reg = <0x318 0x8>;
+		};
+		event@320 {
+			event-name = "PM_XTS_ATSD_SENT" ;
+			reg = <0x320 0x8>;
+		};
+	};
+	nvlink4@2a8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "";
+		scale = "256";
+		reg = <0x2a8 0x8>;
+		events = < &NEST_NVLINK4 >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+NEST_NX: nest-nx-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@0 {
+			event-name = "IDLE_CH0" ;
+			reg = <0x0 0x8>;
+		};
+		event@8 {
+			event-name = "IDLE_CH2" ;
+			reg = <0x8 0x8>;
+		};
+		event@10 {
+			event-name = "IDLE_CH4" ;
+			reg = <0x10 0x8>;
+		};
+		event@18 {
+			event-name = "STALL_IN_CH4" ;
+			reg = <0x18 0x8>;
+		};
+		event@20 {
+			event-name = "ERAT_LOOKUP" ;
+			reg = <0x20 0x8>;
+		};
+		event@28 {
+			event-name = "ERAT_MISS" ;
+			reg = <0x28 0x8>;
+		};
+		event@30 {
+			event-name = "ERAT_STALLED_CICO_BUFFERS" ;
+			reg = <0x30 0x8>;
+		};
+		event@38 {
+			event-name = "DMA_STALLED" ;
+			reg = <0x38 0x8>;
+		};
+	};
+	nx@3f8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_NX_";
+		scale = "256";
+		reg = <0x3f8 0x8>;
+		events = < &NEST_NX >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+NEST_ALINK_OUT: nest-alink-out-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@0 {
+			event-name = "OUT_EVEN_AVLBL_CYC" ;
+			reg = <0x0 0x8>;
+		};
+		event@8 {
+			event-name = "OUT_EVEN_ANY_RCMD" ;
+			reg = <0x8 0x8>;
+		};
+		event@10 {
+			event-name = "OUT_EVEN_DATA_COUNT" ;
+			reg = <0x10 0x8>;
+		};
+		event@18 {
+			event-name = "OUT_EVEN_TOTAL_UTIL" ;
+			reg = <0x18 0x8>;
+		};
+		event@20 {
+			event-name = "OUT_ODD_AVLBL_CYC" ;
+			reg = <0x20 0x8>;
+		};
+		event@28 {
+			event-name = "OUT_ODD_ANY_RCMD" ;
+			reg = <0x28 0x8>;
+		};
+		event@30 {
+			event-name = "OUT_ODD_DATA_COUNT" ;
+			reg = <0x30 0x8>;
+		};
+		event@38 {
+			event-name = "OUT_ODD_TOTAL_UTIL" ;
+			reg = <0x38 0x8>;
+		};
+	};
+	alink0@4a8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_ALINK0_";
+		scale = "4096";
+		reg = <0x4a8 0x8>;
+		events = < &NEST_ALINK_OUT >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	alink1@4e8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_ALINK1_";
+		scale = "4096";
+		reg = <0x4e8 0x8>;
+		events = < &NEST_ALINK_OUT >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	alink2@5b8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_ALINK2_";
+		scale = "4096";
+		reg = <0x5b8 0x8>;
+		events = < &NEST_ALINK_OUT >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	alink3@5f8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_ALINK3_";
+		scale = "4096";
+		reg = <0x5f8 0x8>;
+		events = < &NEST_ALINK_OUT >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+NEST_CENTAUR: nest-centaur-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@0 {
+			event-name = "PORT0_READ_BYTES" ;
+			reg = <0x0 0x8>;
+		};
+		event@8 {
+			event-name = "PORT0_WRITE_BYTES" ;
+			reg = <0x8 0x8>;
+		};
+		event@10 {
+			event-name = "PORT0_DRAM_CLK_CYC" ;
+			reg = <0x10 0x8>;
+		};
+		event@18 {
+			event-name = "PORT1_READ_BYTES" ;
+			reg = <0x18 0x8>;
+		};
+		event@20 {
+			event-name = "PORT1_WRITE_BYTES" ;
+			reg = <0x20 0x8>;
+		};
+		event@28 {
+			event-name = "PORT1_DRAM_CLK_CYC" ;
+			reg = <0x28 0x8>;
+		};
+	};
+	centaur0@778 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_CEN0_";
+		scale = "1";
+		reg = <0x778 0x8>;
+		events = < &NEST_CENTAUR >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	centaur1@7a8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_CEN1_";
+		scale = "1";
+		reg = <0x7a8 0x8>;
+		events = < &NEST_CENTAUR >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	centaur2@7d8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_CEN2_";
+		scale = "1";
+		reg = <0x7d8 0x8>;
+		events = < &NEST_CENTAUR >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	centaur3@808 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_CEN3_";
+		scale = "1";
+		reg = <0x808 0x8>;
+		events = < &NEST_CENTAUR >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	centaur4@888 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_CEN4_";
+		scale = "1";
+		reg = <0x888 0x8>;
+		events = < &NEST_CENTAUR >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	centaur5@8b8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_CEN5_";
+		scale = "1";
+		reg = <0x8b8 0x8>;
+		events = < &NEST_CENTAUR >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	centaur6@8e8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_CEN6_";
+		scale = "1";
+		reg = <0x8e8 0x8>;
+		events = < &NEST_CENTAUR >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+	centaur7@918 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_CEN7_";
+		scale = "1";
+		reg = <0x918 0x8>;
+		events = < &NEST_CENTAUR >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
+CORE: core-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@c8 {
+			event-name = "0THRD_NON_IDLE_PCYC" ;
+			reg = <0xc8 0x8>;
+			desc = "The number of processor cycles when all threads are idle" ;
+		};
+		event@108 {
+			event-name = "1THRD_NON_IDLE_PCYC" ;
+			reg = <0x108 0x8>;
+			desc = "The number of processor cycles when exactly one SMT thread is executing non-idle code" ;
+		};
+		event@100 {
+			event-name = "1THRD_NON_IDLE_INST" ;
+			reg = <0x100 0x8>;
+			desc = "The number of PPC instructions completed when exactly one  SMT thread is executing non-idle instructions" ;
+		};
+		event@148 {
+			event-name = "2THRD_NON_IDLE_PCYC" ;
+			reg = <0x148 0x8>;
+			desc = "The number of processor cycles when exactly two SMT threads are executing non-idle code. The cycles are only counted for threads that execute non-idle code within an LPAR" ;
+		};
+		event@140 {
+			event-name = "2THRD_NON_IDLE_INST" ;
+			reg = <0x140 0x8>;
+			desc = "The number of PPC instructions completed when exactly two SMT threads are executing non-idle instructions" ;
+		};
+		event@88 {
+			event-name = "32MHZ_CYC" ;
+			reg = <0x88 0x8>;
+			desc = "The number of constant 32 MHZ clock ticks (Time calibration)" ;
+		};
+		event@188 {
+			event-name = "3THRD_NON_IDLE_PCYC" ;
+			reg = <0x188 0x8>;
+			desc = "The number of processor cycles when exactly three SMT threads are executing non-idle code. The cycles are only counted for threads that execute non-idle code within an LPAR" ;
+		};
+		event@180 {
+			event-name = "3THRD_NON_IDLE_INST" ;
+			reg = <0x180 0x8>;
+			desc = "The number of PPC instruction completed when exactly three SMT threads are executing non-idle instructions" ;
+		};
+		event@1c8 {
+			event-name = "4THRD_NON_IDLE_PCYC" ;
+			reg = <0x1c8 0x8>;
+			desc = "The number of processor cycles when exactly four SMT threads are executing non-idle code. The cycles are only counted for threads that execute non-idle code within an LPAR" ;
+		};
+		event@1c0 {
+			event-name = "4THRD_NON_IDLE_INST" ;
+			reg = <0x1c0 0x8>;
+			desc = "The number of PPC instructions completed when exactly four SMT threads are executing non-idle instructions" ;
+		};
+		event@9c0 {
+			event-name = "CS_DTLB_MISS_2M" ;
+			reg = <0x9c0 0x8>;
+			desc = "The number of data TLB misses for 2M page size" ;
+		};
+		event@19c0 {
+			event-name = "CS_DTLB_MISS_2M_KERNEL" ;
+			reg = <0x19c0 0x8>;
+			desc = "The number of data TLB misses for 2M page size in kernel state" ;
+		};
+		event@11c0 {
+			event-name = "CS_DTLB_MISS_2M_USER" ;
+			reg = <0x11c0 0x8>;
+			desc = "The number of data TLB misses for 2M page size in user state" ;
+		};
+		event@c0 {
+			event-name = "TLB_RELOAD_L2" ;
+			reg = <0xc0 0x8>;
+			desc = "Radix or HPT reloads found in L2" ;
+		};
+		event@200 {
+			event-name = "TLB_RELOAD_L3" ;
+			reg = <0x200 0x8>;
+			desc = "Radix or HPT reloads found in L3" ;
+		};
+		event@240 {
+			event-name = "TLB_RELOAD_L3_MISS" ;
+			reg = <0x240 0x8>;
+			desc = "Radix or HPT reloads found beyond L3" ;
+		};
+		event@280 {
+			event-name = "TM_PASSED" ;
+			reg = <0x280 0x8>;
+			desc = "Number of TM transactions that passed" ;
+		};
+		event@4c8 {
+			event-name = "TM_ABORTS" ;
+			reg = <0x4c8 0x8>;
+			desc = "Number of TM transactions aborted" ;
+		};
+		event@40 {
+			event-name = "ANY_THRD_NON_IDLE_PCYC" ;
+			reg = <0x40 0x8>;
+			desc = "The number of processor cycles when one or more SMT threads is running non-idle instructions" ;
+		};
+		event@408 {
+			event-name = "BUS_PUMP_CHIP_CORRECT_PRED" ;
+			reg = <0x408 0x8>;
+			desc = "The number of times chip pump was correctly predicted" ;
+		};
+		event@400 {
+			event-name = "BUS_PUMP_GROUP_CORRECT_PRED" ;
+			reg = <0x400 0x8>;
+			desc = "The number of times group pump was correctly predicted" ;
+		};
+		event@448 {
+			event-name = "BUS_PUMP_GROUP_TOO_LARGE" ;
+			reg = <0x448 0x8>;
+			desc = "The number of times group pump was predicted where chip pump was sufficient" ;
+		};
+		event@440 {
+			event-name = "BUS_PUMP_GROUP_TOO_SMALL" ;
+			reg = <0x440 0x8>;
+			desc = "The number of times of incorrectly predicted pump where group pump was needed but a smaller pump was predicted" ;
+		};
+		event@3c8 {
+			event-name = "BUS_PUMP_NON_FABRIC_OP" ;
+			reg = <0x3c8 0x8>;
+			desc = "The number of time the data source was local Level 2 or Level 3 cache (non fabric)" ;
+		};
+		event@3c0 {
+			event-name = "BUS_PUMP_SYSTEM_CORRECT_PRED" ;
+			reg = <0x3c0 0x8>;
+			desc = "The number of times system pump was correctly predicted" ;
+		};
+		event@488 {
+			event-name = "BUS_PUMP_SYSTEM_TOO_LARGE" ;
+			reg = <0x488 0x8>;
+			desc = "The number of times system pump was predicted where node pump was sufficient" ;
+		};
+		event@480 {
+			event-name = "BUS_PUMP_SYSTEM_TOO_SMALL" ;
+			reg = <0x480 0x8>;
+			desc = "The number of times of incorrectly predicted pump where system pump was needed but a smaller pump was predicted" ;
+		};
+		event@80 {
+			event-name = "CCYC" ;
+			reg = <0x80 0x8>;
+			desc = "The number of constant clock ticks used for the measurement interval. The clock frequency is constant at 32MHz and is set at CEC power on time" ;
+		};
+		event@48 {
+			event-name = "CORE_ALL_THRD_NON_IDLE_PCYC" ;
+			reg = <0x48 0x8>;
+			desc = "The number of processor cycles when all threads are executing non-idle instructions" ;
+		};
+		event@ac0 {
+			event-name = "CS_1PLUS_PPC_CMPL" ;
+			reg = <0xac0 0x8>;
+			desc = "The sum of completed PPC instructions across all SMT threads of the core" ;
+		};
+		event@1ac0 {
+			event-name = "CS_1PLUS_PPC_CMPL_KERNEL" ;
+			reg = <0x1ac0 0x8>;
+			desc = "The kernel sum of completed PPC instructions across all SMT threads of the core " ;
+		};
+		event@12c0 {
+			event-name = "CS_1PLUS_PPC_CMPL_USER" ;
+			reg = <0x12c0 0x8>;
+			desc = "The user sum of completed PPC instructions across all SMT threads of the core" ;
+		};
+		event@8c8 {
+			event-name = "CS_32MHZ_CYC" ;
+			reg = <0x8c8 0x8>;
+			desc = "The number of 32 MHz clock ticks" ;
+		};
+		event@18c8 {
+			event-name = "CS_32MHZ_CYC_KERNEL" ;
+			reg = <0x18c8 0x8>;
+			desc = "The number of 32 MHz clock ticks in the kernel" ;
+		};
+		event@10c8 {
+			event-name = "CS_32MHZ_CYC_USER" ;
+			reg = <0x10c8 0x8>;
+			desc = "The number of 32 MHz clock ticks in user space" ;
+		};
+		event@948 {
+			event-name = "CS_BRU_CMPL" ;
+			reg = <0x948 0x8>;
+			desc = "The number of branch instructions completed" ;
+		};
+		event@1948 {
+			event-name = "CS_BRU_CMPL_KERNEL" ;
+			reg = <0x1948 0x8>;
+			desc = "The number of branch instructions completed in the kernel" ;
+		};
+		event@1148 {
+			event-name = "CS_BRU_CMPL_USER" ;
+			reg = <0x1148 0x8>;
+			desc = "The number of branch instructions completed in user space" ;
+		};
+		event@980 {
+			event-name = "CS_BR_MPRED" ;
+			reg = <0x980 0x8>;
+			desc = "The sum of branch misdirection across all SMT threads of the core" ;
+		};
+		event@1980 {
+			event-name = "CS_BR_MPRED_KERNEL" ;
+			reg = <0x1980 0x8>;
+			desc = "The sum of branch misdirection across all SMT threads of the core in the kernel" ;
+		};
+		event@1180 {
+			event-name = "CS_BR_MPRED_USER" ;
+			reg = <0x1180 0x8>;
+			desc = "The sum of branch misdirection across all SMT threads of the core in user space" ;
+		};
+		event@988 {
+			event-name = "CS_BR_TAKEN" ;
+			reg = <0x988 0x8>;
+			desc = "The number of branches taken" ;
+		};
+		event@1988 {
+			event-name = "CS_BR_TAKEN_KERNEL" ;
+			reg = <0x1988 0x8>;
+			desc = "The number of branches taken in kernel" ;
+		};
+		event@1188 {
+			event-name = "CS_BR_TAKEN_USER" ;
+			reg = <0x1188 0x8>;
+			desc = "The number of branches taken in user space" ;
+		};
+		event@ac8 {
+			event-name = "CS_CMPLU_STALL_PCYC" ;
+			reg = <0xac8 0x8>;
+			desc = "The sum of all processor cycles across all SMT threads where no instruction completed and ICT was not empty" ;
+		};
+		event@1ac8 {
+			event-name = "CS_CMPLU_STALL_PCYC_KERNEL" ;
+			reg = <0x1ac8 0x8>;
+			desc = "The kernel sum of all processor cycles across all SMT threads where no instruction completed and ICT was not empty" ;
+		};
+		event@12c8 {
+			event-name = "CS_CMPLU_STALL_PCYC_USER" ;
+			reg = <0x12c8 0x8>;
+			desc = "The user sum of all processor cycles across all SMT threads where no instruction completed and ICT was not empty" ;
+		};
+		event@848 {
+			event-name = "CS_CORE_MODE_SMT2_CCYC" ;
+			reg = <0x848 0x8>;
+			desc = "The number of constant clock cycles while the core is running in SMT2 mode" ;
+		};
+		event@1848 {
+			event-name = "CS_CORE_MODE_SMT2_CCYC_KERNEL" ;
+			reg = <0x1848 0x8>;
+			desc = "The number of constant clock cycles in the kernel while the core is running in SMT2 mode" ;
+		};
+		event@1048 {
+			event-name = "CS_CORE_MODE_SMT2_CCYC_USER" ;
+			reg = <0x1048 0x8>;
+			desc = "The number of constant clock cycles in user state while the core is running in SMT2 mode" ;
+		};
+		event@880 {
+			event-name = "CS_CORE_MODE_SMT4_CCYC" ;
+			reg = <0x880 0x8>;
+			desc = "Count of constant clock transitions while core mode is SMT4" ;
+		};
+		event@1880 {
+			event-name = "CS_CORE_MODE_SMT4_CCYC_KERNEL" ;
+			reg = <0x1880 0x8>;
+			desc = "Count of constant clock transitions in kernel state while core mode is SMT4" ;
+		};
+		event@1080 {
+			event-name = "CS_CORE_MODE_SMT4_CCYC_USER" ;
+			reg = <0x1080 0x8>;
+			desc = "Count of constant clock transitions in user state while core mode is SMT4" ;
+		};
+		event@2c8 {
+			event-name = "L2L3_NODAL_PB_REQ" ;
+			reg = <0x2c8 0x8>;
+			desc = "The number of Power Bus Requests by Level 2 or Level 3 cache using Nodal (neither X-Bus or A-Bus)" ;
+		};
+		event@840 {
+			event-name = "CS_CORE_MODE_ST_CCYC" ;
+			reg = <0x840 0x8>;
+			desc = "The number of processor cycles while the core is running in ST mode" ;
+		};
+		event@1840 {
+			event-name = "CS_CORE_MODE_ST_CCYC_KERNEL" ;
+			reg = <0x1840 0x8>;
+			desc = "The number of processor cycles in the kernel while the core is running in ST mode" ;
+		};
+		event@1040 {
+			event-name = "CS_CORE_MODE_ST_CCYC_USER" ;
+			reg = <0x1040 0x8>;
+			desc = "The number of processor cycles in the user state while the core is running in ST mode" ;
+		};
+		event@8c0 {
+			event-name = "CS_CORE_PCYC" ;
+			reg = <0x8c0 0x8>;
+			desc = "The number of processor cycles during the measurement interval" ;
+		};
+		event@18c0 {
+			event-name = "CS_CORE_PCYC_KERNEL" ;
+			reg = <0x18c0 0x8>;
+			desc = "The number of processor cycles in kernel state during the measurement interval" ;
+		};
+		event@10c0 {
+			event-name = "CS_CORE_PCYC_USER" ;
+			reg = <0x10c0 0x8>;
+			desc = "The number of processor cycles in user state during the measurement interval" ;
+		};
+		event@a80 {
+			event-name = "CS_DATA_TABLEWALK_PCYC" ;
+			reg = <0xa80 0x8>;
+			desc = "The sum of table walk processor cycles across all SMT threads of the core" ;
+		};
+		event@1a80 {
+			event-name = "CS_DATA_TABLEWALK_PCYC_KERNEL" ;
+			reg = <0x1a80 0x8>;
+			desc = "The sum of table walk processor cycles across all SMT threads of the core in kernel state" ;
+		};
+		event@1280 {
+			event-name = "CS_DATA_TABLEWALK_PCYC_USER" ;
+			reg = <0x1280 0x8>;
+			desc = "The sum of table walk processor cycles across all SMT threads of the core in user state" ;
+		};
+		event@ec0 {
+			event-name = "CS_DERAT_MISS" ;
+			reg = <0xec0 0x8>;
+			desc = "The number of DERAT misses" ;
+		};
+		event@1e80 {
+			event-name = "CS_DERAT_MISS_KERNEL" ;
+			reg = <0x1e80 0x8>;
+			desc = "The number of DERAT misses in kernel state" ;
+		};
+		event@16c0 {
+			event-name = "CS_DERAT_MISS_USER" ;
+			reg = <0x16c0 0x8>;
+			desc = "The number of DERAT misses in user state" ;
+		};
+		event@a08 {
+			event-name = "CS_DISP_HELD_PCYC" ;
+			reg = <0xa08 0x8>;
+			desc = "The number of processor cycles the dispatch unit was held" ;
+		};
+		event@1a08 {
+			event-name = "CS_DISP_HELD_PCYC_KERNEL" ;
+			reg = <0x1a08 0x8>;
+			desc = "The number of processor cycles the dispatch unit was held in kernel state" ;
+		};
+		event@1208 {
+			event-name = "CS_DISP_HELD_PCYC_USER" ;
+			reg = <0x1208 0x8>;
+			desc = "The number of processor cycles the dispatch unit was held in user state" ;
+		};
+		event@f48 {
+			event-name = "CS_DTLB_MISS_16G" ;
+			reg = <0xf48 0x8>;
+			desc = "The number of data TLB misses for 16G page size" ;
+		};
+		event@1f08 {
+			event-name = "CS_DTLB_MISS_16G_KERNEL" ;
+			reg = <0x1f08 0x8>;
+			desc = "The number of data TLB misses for 16G page size in kernel state" ;
+		};
+		event@1748 {
+			event-name = "CS_DTLB_MISS_16G_USER" ;
+			reg = <0x1748 0x8>;
+			desc = "The number of data TLB misses for 16G page size in user state" ;
+		};
+		event@f40 {
+			event-name = "CS_DTLB_MISS_16M" ;
+			reg = <0xf40 0x8>;
+			desc = "The number of data TLB misses for 16M page size" ;
+		};
+		event@1f00 {
+			event-name = "CS_DTLB_MISS_16M_KERNEL" ;
+			reg = <0x1f00 0x8>;
+			desc = "The number of data TLB misses for 16M page size in kernel state" ;
+		};
+		event@1740 {
+			event-name = "CS_DTLB_MISS_16M_USER" ;
+			reg = <0x1740 0x8>;
+			desc = "The number of data TLB misses for 16M page size in user state" ;
+		};
+		event@f00 {
+			event-name = "CS_DTLB_MISS_4K" ;
+			reg = <0xf00 0x8>;
+			desc = "The number of data TLB misses for 4K page size" ;
+		};
+		event@1ec0 {
+			event-name = "CS_DTLB_MISS_4K_KERNEL" ;
+			reg = <0x1ec0 0x8>;
+			desc = "The number of data TLB misses for 4K page size in kernel state" ;
+		};
+		event@1700 {
+			event-name = "CS_DTLB_MISS_4K_USER" ;
+			reg = <0x1700 0x8>;
+			desc = "The number of data TLB misses for 4K page size in user state" ;
+		};
+		event@f08 {
+			event-name = "CS_DTLB_MISS_64K" ;
+			reg = <0xf08 0x8>;
+			desc = "The number of data TLB misses for 64K page size" ;
+		};
+		event@1ec8 {
+			event-name = "CS_DTLB_MISS_64K_KERNEL" ;
+			reg = <0x1ec8 0x8>;
+			desc = "The number of data TLB misses for 64K page size in kernel state" ;
+		};
+		event@1708 {
+			event-name = "CS_DTLB_MISS_64K_USER" ;
+			reg = <0x1708 0x8>;
+			desc = "The number of data TLB misses for 64K page size in user state" ;
+		};
+		event@ec8 {
+			event-name = "CS_DTLB_RELOAD" ;
+			reg = <0xec8 0x8>;
+			desc = "The number of data TLB reloads" ;
+		};
+		event@1e88 {
+			event-name = "CS_DTLB_RELOAD_KERNEL" ;
+			reg = <0x1e88 0x8>;
+			desc = "The number of data TLB reloads in kernel state" ;
+		};
+		event@16c8 {
+			event-name = "CS_DTLB_RELOAD_USER" ;
+			reg = <0x16c8 0x8>;
+			desc = "The number of data TLB reloads in user state" ;
+		};
+		event@940 {
+			event-name = "CS_FLOP" ;
+			reg = <0x940 0x8>;
+			desc = "The number of all completed floating point operations" ;
+		};
+		event@1940 {
+			event-name = "CS_FLOP_KERNEL" ;
+			reg = <0x1940 0x8>;
+			desc = "The number of all completed floating point operations in kernel state" ;
+		};
+		event@1140 {
+			event-name = "CS_FLOP_USER" ;
+			reg = <0x1140 0x8>;
+			desc = "The number of all completed floating point operations in user state" ;
+		};
+		event@a88 {
+			event-name = "CS_FLUSH" ;
+			reg = <0xa88 0x8>;
+			desc = "The number of core flushes" ;
+		};
+		event@1a88 {
+			event-name = "CS_FLUSH_KERNEL" ;
+			reg = <0x1a88 0x8>;
+			desc = "The number of core flushes in the kernel state" ;
+		};
+		event@1288 {
+			event-name = "CS_FLUSH_USER" ;
+			reg = <0x1288 0x8>;
+			desc = "The number of core flushes in the user state" ;
+		};
+		event@b40 {
+			event-name = "CS_FROM_L2_IFETCH" ;
+			reg = <0xb40 0x8>;
+			desc = "The number of instruction fetches from local level 2 cache" ;
+		};
+		event@1b40 {
+			event-name = "CS_FROM_L2_IFETCH_KERNEL" ;
+			reg = <0x1b40 0x8>;
+			desc = "The number of instruction fetches from local level 2 cache in kernel state" ;
+		};
+		event@1340 {
+			event-name = "CS_FROM_L2_IFETCH_USER" ;
+			reg = <0x1340 0x8>;
+			desc = "The number of instruction fetches from local level 2 cache in user state" ;
+		};
+		event@c08 {
+			event-name = "CS_FROM_L2_L3_A_IFETCH" ;
+			reg = <0xc08 0x8>;
+			desc = "The number of instruction fetches from level 2 or level 3 across A-link" ;
+		};
+		event@1c08 {
+			event-name = "CS_FROM_L2_L3_A_IFETCH_KERNEL" ;
+			reg = <0x1c08 0x8>;
+			desc = "The number of instruction fetches from level 2 or level 3 across A-link in kernel state" ;
+		};
+		event@1408 {
+			event-name = "CS_FROM_L2_L3_A_IFETCH_USER" ;
+			reg = <0x1408 0x8>;
+			desc = "The number of instruction fetches from level 2 or level 3 across A-link in user state" ;
+		};
+		event@d88 {
+			event-name = "CS_FROM_L2_L3_A_LDATA" ;
+			reg = <0xd88 0x8>;
+			desc = "The number of data loads from level 2 or level 3 cache through A-link" ;
+		};
+		event@1d48 {
+			event-name = "CS_FROM_L2_L3_A_LDATA_KERNEL" ;
+			reg = <0x1d48 0x8>;
+			desc = "The number of data loads from level 2 or level 3 cache through A-link in kernel state" ;
+		};
+		event@1588 {
+			event-name = "CS_FROM_L2_L3_A_LDATA_USER" ;
+			reg = <0x1588 0x8>;
+			desc = "The number of data loads from level 2 or level 3 cache through A-link in user state" ;
+		};
+		event@c00 {
+			event-name = "CS_FROM_L2_L3_X_IFETCH" ;
+			reg = <0xc00 0x8>;
+			desc = "The number of instruction fetches from level 2 or level 3 cache across X-link" ;
+		};
+		event@1c00 {
+			event-name = "CS_FROM_L2_L3_X_IFETCH_KERNEL" ;
+			reg = <0x1c00 0x8>;
+			desc = "The number of instruction fetches from level 2 or level 3 cache across X-link in kernel state" ;
+		};
+		event@1400 {
+			event-name = "CS_FROM_L2_L3_X_IFETCH_USER" ;
+			reg = <0x1400 0x8>;
+			desc = "The number of instruction fetches from level 2 or level 3 cache across X-link in user state" ;
+		};
+		event@d80 {
+			event-name = "CS_FROM_L2_L3_X_LDATA" ;
+			reg = <0xd80 0x8>;
+			desc = "The number of data loads from a level 2 or level 3 cache across X-link" ;
+		};
+		event@1d40 {
+			event-name = "CS_FROM_L2_L3_X_LDATA_KERNEL" ;
+			reg = <0x1d40 0x8>;
+			desc = "The number of data loads from a level 2 or level 3 cache across X-link in kernel state" ;
+		};
+		event@1580 {
+			event-name = "CS_FROM_L2_L3_X_LDATA_USER" ;
+			reg = <0x1580 0x8>;
+			desc = "The number of data loads from a level 2 or level 3 cache across X-link in user state" ;
+		};
+		event@cc0 {
+			event-name = "CS_FROM_L2_LDATA" ;
+			reg = <0xcc0 0x8>;
+			desc = "The number of local level 2 data loads" ;
+		};
+		event@1cc0 {
+			event-name = "CS_FROM_L2_LDATA_KERNEL" ;
+			reg = <0x1cc0 0x8>;
+			desc = "The number of local level 2 data loads in kernel state" ;
+		};
+		event@14c0 {
+			event-name = "CS_FROM_L2_LDATA_USER" ;
+			reg = <0x14c0 0x8>;
+			desc = "The number of local level 2 data loads in user state" ;
+		};
+		event@b48 {
+			event-name = "CS_FROM_L3_IFETCH" ;
+			reg = <0xb48 0x8>;
+			desc = "The number of instruction fetches from the cores level 3 cache" ;
+		};
+		event@1b48 {
+			event-name = "CS_FROM_L3_IFETCH_KERNEL" ;
+			reg = <0x1b48 0x8>;
+			desc = "The number of instruction fetches from the cores level 3 cache in kernel state" ;
+		};
+		event@1348 {
+			event-name = "CS_FROM_L3_IFETCH_USER" ;
+			reg = <0x1348 0x8>;
+			desc = "The number of instruction fetches from the cores level 3 cache in user state" ;
+		};
+		event@cc8 {
+			event-name = "CS_FROM_L3_LDATA" ;
+			reg = <0xcc8 0x8>;
+			desc = "The number of data loads from the cores level 3 cache" ;
+		};
+		event@1cc8 {
+			event-name = "CS_FROM_L3_LDATA_KERNEL" ;
+			reg = <0x1cc8 0x8>;
+			desc = "The number of data loads from the cores level 3 cache in kernel state" ;
+		};
+		event@14c8 {
+			event-name = "CS_FROM_L3_LDATA_USER" ;
+			reg = <0x14c8 0x8>;
+			desc = "The number of data loads from the cores level 3 cache in user state" ;
+		};
+		event@bc0 {
+			event-name = "CS_FROM_L4_IFETCH" ;
+			reg = <0xbc0 0x8>;
+			desc = "The number of instruction fetches from local level 4 cache" ;
+		};
+		event@1bc0 {
+			event-name = "CS_FROM_L4_IFETCH_KERNEL" ;
+			reg = <0x1bc0 0x8>;
+			desc = "The number of instruction fetches from local level 4 cache in kernel state" ;
+		};
+		event@13c0 {
+			event-name = "CS_FROM_L4_IFETCH_USER" ;
+			reg = <0x13c0 0x8>;
+			desc = "The number of instruction fetches from local level 4 cache in user state" ;
+		};
+		event@d40 {
+			event-name = "CS_FROM_L4_LDATA" ;
+			reg = <0xd40 0x8>;
+			desc = "The number of level 4 data loads from local level 4 cache" ;
+		};
+		event@1248 {
+			event-name = "CS_CORE_ICT_EMPTY_PCYC_USER" ;
+			reg = <0x1248 0x8>;
+			desc = "The number of processor cycles the ICT was empty in user state" ;
+		};
+		event@1540 {
+			event-name = "CS_FROM_L4_LDATA_USER" ;
+			reg = <0x1540 0x8>;
+			desc = "The number of level 4 data loads from local level 4 cache in user state" ;
+		};
+		event@f88 {
+			event-name = "CS_FROM_L4_MEM_A_DPTEG" ;
+			reg = <0xf88 0x8>;
+			desc = "The number of data PTEG misses that are satisfied from level 4 cache of memory across A-link" ;
+		};
+		event@1f48 {
+			event-name = "CS_FROM_L4_MEM_A_DPTEG_KERNEL" ;
+			reg = <0x1f48 0x8>;
+			desc = "The number of data PTEG misses that are satisfied from level 4 cache of memory across A-link in kernel state" ;
+		};
+		event@1788 {
+			event-name = "CS_FROM_L4_MEM_A_DPTEG_USER" ;
+			reg = <0x1788 0x8>;
+			desc = "The number of data PTEG misses that are satisfied from level 4 cache of memory across A-link in user state" ;
+		};
+		event@c48 {
+			event-name = "CS_FROM_L4_MEM_A_IFETCH" ;
+			reg = <0xc48 0x8>;
+			desc = "The number of instruction fetches from level 4 cache or memory across A-link" ;
+		};
+		event@1c48 {
+			event-name = "CS_FROM_L4_MEM_A_IFETCH_KERNEL" ;
+			reg = <0x1c48 0x8>;
+			desc = "The number of instruction fetches from level 4 cache or memory across A-link in kernel state" ;
+		};
+		event@1448 {
+			event-name = "CS_FROM_L4_MEM_A_IFETCH_USER" ;
+			reg = <0x1448 0x8>;
+			desc = "The number of instruction fetches from level 4 cache or memory across A-link in user state" ;
+		};
+		event@e88 {
+			event-name = "CS_FROM_L4_MEM_A_IPTEG" ;
+			reg = <0xe88 0x8>;
+			desc = "The number of instruction PTEG misses that are satisfied from level 4 cache of memory across A-link" ;
+		};
+		event@1e48 {
+			event-name = "CS_FROM_L4_MEM_A_IPTEG_KERNEL" ;
+			reg = <0x1e48 0x8>;
+			desc = "The number of instruction PTEG misses that are satisfied from level 4 cache of memory across A-link in kernel state" ;
+		};
+		event@1688 {
+			event-name = "CS_FROM_L4_MEM_A_IPTEG_USER" ;
+			reg = <0x1688 0x8>;
+			desc = "The number of instruction PTEG misses that are satisfied from level 4 cache of memory across A-link in user state" ;
+		};
+		event@dc8 {
+			event-name = "CS_FROM_L4_MEM_A_LDATA" ;
+			reg = <0xdc8 0x8>;
+			desc = "The number of data loads from level 4 cache or memory across A-link" ;
+		};
+		event@1d88 {
+			event-name = "CS_FROM_L4_MEM_A_LDATA_KERNEL" ;
+			reg = <0x1d88 0x8>;
+			desc = "The number of data loads from level 4 cache or memory across A-link in kernel state" ;
+		};
+		event@15c8 {
+			event-name = "CS_FROM_L4_MEM_A_LDATA_USER" ;
+			reg = <0x15c8 0x8>;
+			desc = "The number of data loads from level 4 cache or memory across A-link in user state" ;
+		};
+		event@f80 {
+			event-name = "CS_FROM_L4_MEM_X_DPTEG" ;
+			reg = <0xf80 0x8>;
+			desc = "The number of instruction PTEG L3 misses that are satisfied by off-chip but node-local source" ;
+		};
+		event@1f40 {
+			event-name = "CS_FROM_L4_MEM_X_DPTEG_KERNEL" ;
+			reg = <0x1f40 0x8>;
+			desc = "The number of instruction PTEG L3 misses that are satisfied by off-chip but node-local source in kernel state" ;
+		};
+		event@1780 {
+			event-name = "CS_FROM_L4_MEM_X_DPTEG_USER" ;
+			reg = <0x1780 0x8>;
+			desc = "The number of instruction PTEG L3 misses that are satisfied by off-chip but node-local source in user state" ;
+		};
+		event@c40 {
+			event-name = "CS_FROM_L4_MEM_X_IFETCH" ;
+			reg = <0xc40 0x8>;
+			desc = "The number of instruction fetches from a level 4 cache or memory across X-link" ;
+		};
+		event@1c40 {
+			event-name = "CS_FROM_L4_MEM_X_IFETCH_KERNEL" ;
+			reg = <0x1c40 0x8>;
+			desc = "The number of instruction fetches from a level 4 cache or memory across X-link in kernel state" ;
+		};
+		event@1440 {
+			event-name = "CS_FROM_L4_MEM_X_IFETCH_USER" ;
+			reg = <0x1440 0x8>;
+			desc = "The number of instruction fetches from a level 4 cache or memory across X-link in user state" ;
+		};
+		event@e80 {
+			event-name = "CS_FROM_L4_MEM_X_IPTEG" ;
+			reg = <0xe80 0x8>;
+			desc = "The number of instruction PTEG L3 misses that are satisfied by off-chip- but node-local source" ;
+		};
+		event@1e40 {
+			event-name = "CS_FROM_L4_MEM_X_IPTEG_KERNEL" ;
+			reg = <0x1e40 0x8>;
+			desc = "The number of instruction PTEG L3 misses that are satisfied by off-chip- but node-local source in kernel state" ;
+		};
+		event@1680 {
+			event-name = "CS_FROM_L4_MEM_X_IPTEG_USER" ;
+			reg = <0x1680 0x8>;
+			desc = "The number of instruction PTEG L3 misses that are satisfied by off-chip- but node-local source in user state" ;
+		};
+		event@dc0 {
+			event-name = "CS_FROM_L4_MEM_X_LDATA" ;
+			reg = <0xdc0 0x8>;
+			desc = "The number of data load from a level 4 cache or memory across X-link" ;
+		};
+		event@1d80 {
+			event-name = "CS_FROM_L4_MEM_X_LDATA_KERNEL" ;
+			reg = <0x1d80 0x8>;
+			desc = "The number of data load from a level 4 cache or memory across X-link in kernel state" ;
+		};
+		event@15c0 {
+			event-name = "CS_FROM_L4_MEM_X_LDATA_USER" ;
+			reg = <0x15c0 0x8>;
+			desc = "The number of data load from a level 4 cache or memory across X-link in user state" ;
+		};
+		event@bc8 {
+			event-name = "CS_FROM_MEM_IFETCH" ;
+			reg = <0xbc8 0x8>;
+			desc = "The number of instruction fetches from local memory" ;
+		};
+		event@1bc8 {
+			event-name = "CS_FROM_MEM_IFETCH_KERNEL" ;
+			reg = <0x1bc8 0x8>;
+			desc = "The number of instruction fetches from local memory in kernel state" ;
+		};
+		event@13c8 {
+			event-name = "CS_FROM_MEM_IFETCH_USER" ;
+			reg = <0x13c8 0x8>;
+			desc = "The number of instruction fetches from local memory in user state" ;
+		};
+		event@d48 {
+			event-name = "CS_FROM_MEM_LDATA" ;
+			reg = <0xd48 0x8>;
+			desc = "The number of data loads from local memory" ;
+		};
+		event@340 {
+			event-name = "TLBIE" ;
+			reg = <0x340 0x8>;
+			desc = "The number of TLBIE instructions that finished" ;
+		};
+		event@1548 {
+			event-name = "CS_FROM_MEM_LDATA_USER" ;
+			reg = <0x1548 0x8>;
+			desc = "The number of data loads from local memory in user state" ;
+		};
+		event@fc8 {
+			event-name = "CS_FROM_MEM_LOCAL" ;
+			reg = <0xfc8 0x8>;
+			desc = "The number of data and instruction misses that are satisfied by local memory" ;
+		};
+		event@1f88 {
+			event-name = "CS_FROM_MEM_LOCAL_KERNEL" ;
+			reg = <0x1f88 0x8>;
+			desc = "The number of data and instruction misses that are satisfied by local memory in kernel state" ;
+		};
+		event@17c8 {
+			event-name = "CS_FROM_MEM_LOCAL_USER" ;
+			reg = <0x17c8 0x8>;
+			desc = "The number of data and instruction misses that are satisfied by local memory in user state" ;
+		};
+		event@fc0 {
+			event-name = "CS_FROM_MEM_NON_LOCAL" ;
+			reg = <0xfc0 0x8>;
+			desc = "The number of all data and instruction cache misses that are satisfied by Off-Chip Memory" ;
+		};
+		event@1fc0 {
+			event-name = "CS_FROM_MEM_NON_LOCAL_KERNEL" ;
+			reg = <0x1fc0 0x8>;
+			desc = "The number of all data and instruction cache misses that are satisfied by Off-Chip Memory in kernel state" ;
+		};
+		event@17c0 {
+			event-name = "CS_FROM_MEM_NON_LOCAL_USER" ;
+			reg = <0x17c0 0x8>;
+			desc = "The number of all data and instruction cache misses that are satisfied by Off-Chip Memory in user state" ;
+		};
+		event@b80 {
+			event-name = "CS_FROM_ON_CHIP_L2_IFETCH" ;
+			reg = <0xb80 0x8>;
+			desc = "The number of instruction fetches from a level 2 cache from the same POWER9 chip" ;
+		};
+		event@1b80 {
+			event-name = "CS_FROM_ON_CHIP_L2_IFETCH_KERNEL" ;
+			reg = <0x1b80 0x8>;
+			desc = "The number of instruction fetches from a level 2 cache from the same POWER9 chip in kernel state" ;
+		};
+		event@1380 {
+			event-name = "CS_FROM_ON_CHIP_L2_IFETCH_USER" ;
+			reg = <0x1380 0x8>;
+			desc = "The number of instruction fetches from a level 2 cache from the same POWER9 chip in user state" ;
+		};
+		event@d00 {
+			event-name = "CS_FROM_ON_CHIP_L2_LDATA" ;
+			reg = <0xd00 0x8>;
+			desc = "The number of data loads from a level 2 cache from the same POWER9 chip" ;
+		};
+		event@1d00 {
+			event-name = "CS_FROM_ON_CHIP_L2_LDATA_KERNEL" ;
+			reg = <0x1d00 0x8>;
+			desc = "The number of data loads from a level 2 cache from the same POWER9 chip in kernel state" ;
+		};
+		event@1500 {
+			event-name = "CS_FROM_ON_CHIP_L2_LDATA_USER" ;
+			reg = <0x1500 0x8>;
+			desc = "The number of data loads from a level 2 cache from the same POWER9 chip in user state" ;
+		};
+		event@b88 {
+			event-name = "CS_FROM_ON_CHIP_L3_IFETCH" ;
+			reg = <0xb88 0x8>;
+			desc = "The number of instruction fetches from level 3 cache on the same POWER9 chip" ;
+		};
+		event@1b88 {
+			event-name = "CS_FROM_ON_CHIP_L3_IFETCH_KERNEL" ;
+			reg = <0x1b88 0x8>;
+			desc = "The number of instruction fetches from level 3 cache on the same POWER9 chip in kernel state" ;
+		};
+		event@1388 {
+			event-name = "CS_FROM_ON_CHIP_L3_IFETCH_USER" ;
+			reg = <0x1388 0x8>;
+			desc = "The number of instruction fetches from level 3 cache on the same POWER9 chip in user state" ;
+		};
+		event@d08 {
+			event-name = "CS_FROM_ON_CHIP_L3_LDATA" ;
+			reg = <0xd08 0x8>;
+			desc = "The number of data loads from a level 3 cache from the same POWER9 chip" ;
+		};
+		event@1d08 {
+			event-name = "CS_FROM_ON_CHIP_L3_LDATA_KERNEL" ;
+			reg = <0x1d08 0x8>;
+			desc = "The number of data loads from a level 3 cache from the same POWER9 chip in kernel state" ;
+		};
+		event@1508 {
+			event-name = "CS_FROM_ON_CHIP_L3_LDATA_USER" ;
+			reg = <0x1508 0x8>;
+			desc = "The number of data loads from a level 3 cache from the same POWER9 chip in user state" ;
+		};
+		event@508 {
+			event-name = "L2L3_GROUP_PB_REQ" ;
+			reg = <0x508 0x8>;
+			desc = "The number of times Level 2 or Level 3 cache made a bus request using the group bus (X-Bus)" ;
+		};
+		event@5c8 {
+			event-name = "L2L3_SYS_PB_REQ" ;
+			reg = <0x5c8 0x8>;
+			desc = "The number of times the Level 2 or Level 3 cache made a request using the system bus (A-Bus)" ;
+		};
+		event@608 {
+			event-name = "MSR_PRIV_PCYC" ;
+			reg = <0x608 0x8>;
+			desc = "The number of processor cycles in privileged mode with MSR HV=0 & PR=0" ;
+		};
+		event@e08 {
+			event-name = "CS_ST_FIN" ;
+			reg = <0xe08 0x8>;
+			desc = "The number of all store instructions finished" ;
+		};
+		event@1dc8 {
+			event-name = "CS_ST_FIN_KERNEL" ;
+			reg = <0x1dc8 0x8>;
+			desc = "The number of all store instructions finished in kernel state" ;
+		};
+		event@1608 {
+			event-name = "CS_ST_FIN_USER" ;
+			reg = <0x1608 0x8>;
+			desc = "The number of all store instructions finished in user state" ;
+		};
+		event@c80 {
+			event-name = "CS_MISS_L1_LDATA" ;
+			reg = <0xc80 0x8>;
+			desc = "The number of level 1 data misses" ;
+		};
+		event@1c80 {
+			event-name = "CS_MISS_L1_LDATA_KERNEL" ;
+			reg = <0x1c80 0x8>;
+			desc = "The number of level 1 data misses in kernel state" ;
+		};
+		event@1480 {
+			event-name = "CS_MISS_L1_LDATA_USER" ;
+			reg = <0x1480 0x8>;
+			desc = "The number of level 1 data misses in user state" ;
+		};
+		event@e40 {
+			event-name = "CS_IERAT_MISS" ;
+			reg = <0xe40 0x8>;
+			desc = "The number of IERAT reloads" ;
+		};
+		event@1e00 {
+			event-name = "CS_IERAT_MISS_KERNEL" ;
+			reg = <0x1e00 0x8>;
+			desc = "The number of IERAT reloads in kernel state" ;
+		};
+		event@1640 {
+			event-name = "CS_IERAT_MISS_USER" ;
+			reg = <0x1640 0x8>;
+			desc = "The number of IERAT reloads in user state" ;
+		};
+		event@b08 {
+			event-name = "CS_IFETCH_DEMAND_PCYC" ;
+			reg = <0xb08 0x8>;
+			desc = "The sum of all processor cycles across all SMT threads when a demand ifetch was pending" ;
+		};
+		event@1b08 {
+			event-name = "CS_IFETCH_DEMAND_PCYC_KERNEL" ;
+			reg = <0x1b08 0x8>;
+			desc = "The sum of all processor cycles across all SMT threads when a demand ifetch was pending in kernel state" ;
+		};
+		event@1308 {
+			event-name = "CS_IFETCH_DEMAND_PCYC_USER" ;
+			reg = <0x1308 0x8>;
+			desc = "The sum of all processor cycles across all SMT threads when a demand ifetch was pending in user state" ;
+		};
+		event@808 {
+			event-name = "CS_INST" ;
+			reg = <0x808 0x8>;
+			desc = "The sum of all completed PPC instructions across all SMT threads of the core" ;
+		};
+		event@1808 {
+			event-name = "CS_INST_KERNEL" ;
+			reg = <0x1808 0x8>;
+			desc = "The sum of all completed PPC instructions across all SMT threads of the core in kernel state" ;
+		};
+		event@1008 {
+			event-name = "CS_INST_USER" ;
+			reg = <0x1008 0x8>;
+			desc = "The sum of all completed PPC instructions across all SMT threads of the core in user state" ;
+		};
+		event@e48 {
+			event-name = "CS_ITLB_RELOAD" ;
+			reg = <0xe48 0x8>;
+			desc = "The number of instruction TLB reloads" ;
+		};
+		event@1e08 {
+			event-name = "CS_ITLB_RELOAD_KERNEL" ;
+			reg = <0x1e08 0x8>;
+			desc = "The number of instruction TLB reloads in kernel state" ;
+		};
+		event@1648 {
+			event-name = "CS_ITLB_RELOAD_USER" ;
+			reg = <0x1648 0x8>;
+			desc = "The number of instruction TLB reloads in user state" ;
+		};
+		event@b00 {
+			event-name = "CS_L1_MISS_IFETCH" ;
+			reg = <0xb00 0x8>;
+			desc = "The number of level 1 instruction misses" ;
+		};
+		event@1b00 {
+			event-name = "CS_L1_MISS_IFETCH_KERNEL" ;
+			reg = <0x1b00 0x8>;
+			desc = "The number of level 1 instruction misses in kernel state" ;
+		};
+		event@1300 {
+			event-name = "CS_L1_MISS_IFETCH_USER" ;
+			reg = <0x1300 0x8>;
+			desc = "The number of level 1 instruction misses in user state" ;
+		};
+		event@a40 {
+			event-name = "CS_LSU_EMPTY_PCYC" ;
+			reg = <0xa40 0x8>;
+			desc = "The sum of processor cycles where the LSU is empty across all SMT threads of the core" ;
+		};
+		event@1a40 {
+			event-name = "CS_LSU_EMPTY_PCYC_KERNEL" ;
+			reg = <0x1a40 0x8>;
+			desc = "The sum of processor cycles where the LSU is empty across all SMT threads of the core in kernel state" ;
+		};
+		event@1240 {
+			event-name = "CS_LSU_EMPTY_PCYC_USER" ;
+			reg = <0x1240 0x8>;
+			desc = "The sum of processor cycles where the LSU is empty across all SMT threads of the core in user state" ;
+		};
+		event@800 {
+			event-name = "CS_PCYC" ;
+			reg = <0x800 0x8>;
+			desc = "The sum of all processor cycles across all SMT threads" ;
+		};
+		event@1800 {
+			event-name = "CS_PCYC_KERNEL" ;
+			reg = <0x1800 0x8>;
+			desc = "The sum of all processor cycles across all SMT threads in kernel state" ;
+		};
+		event@1000 {
+			event-name = "CS_PCYC_USER" ;
+			reg = <0x1000 0x8>;
+			desc = "The sum of all processor cycles across all SMT threads in user state" ;
+		};
+		event@a00 {
+			event-name = "CS_PPC_DISP" ;
+			reg = <0xa00 0x8>;
+			desc = "The sum of PPC instruction dispatches across all SMT threads of the core" ;
+		};
+		event@1a00 {
+			event-name = "CS_PPC_DISP_KERNEL" ;
+			reg = <0x1a00 0x8>;
+			desc = "The sum of PPC instruction dispatches across all SMT threads of the core in kernel state" ;
+		};
+		event@1200 {
+			event-name = "CS_PPC_DISP_USER" ;
+			reg = <0x1200 0x8>;
+			desc = "The sum of PPC instruction dispatches across all SMT threads of the core in user state" ;
+		};
+		event@908 {
+			event-name = "CS_PURR" ;
+			reg = <0x908 0x8>;
+			desc = "The sum of all constant clock PURR increments across all SMT threads" ;
+		};
+		event@1908 {
+			event-name = "CS_PURR_KERNEL" ;
+			reg = <0x1908 0x8>;
+			desc = "The sum of all constant clock PURR increments across all SMT threads in kernel state" ;
+		};
+		event@1108 {
+			event-name = "CS_PURR_USER" ;
+			reg = <0x1108 0x8>;
+			desc = "The sum of all constant clock PURR increments across all SMT threads in user state" ;
+		};
+		event@900 {
+			event-name = "CS_SPURR" ;
+			reg = <0x900 0x8>;
+			desc = "The number of SPURR cycles" ;
+		};
+		event@1900 {
+			event-name = "CS_SPURR_KERNEL" ;
+			reg = <0x1900 0x8>;
+			desc = "The number of SPURR cycles in kernel state" ;
+		};
+		event@1100 {
+			event-name = "CS_SPURR_USER" ;
+			reg = <0x1100 0x8>;
+			desc = "The number of SPURR cycles in user state" ;
+		};
+		event@e00 {
+			event-name = "CS_ST_MISS_L1" ;
+			reg = <0xe00 0x8>;
+			desc = "The number of stores that missed level 1 cache" ;
+		};
+		event@1dc0 {
+			event-name = "CS_ST_MISS_L1_KERNEL" ;
+			reg = <0x1dc0 0x8>;
+			desc = "The number of stores that missed level 1 cache in kernel state" ;
+		};
+		event@1600 {
+			event-name = "CS_ST_MISS_L1_USER" ;
+			reg = <0x1600 0x8>;
+			desc = "The number of stores that missed level 1 cache in user state" ;
+		};
+		event@388 {
+			event-name = "EXT_INT" ;
+			reg = <0x388 0x8>;
+			desc = "The sum of external interrupts across all SMT threads (DD1)" ;
+		};
+		event@8 {
+			event-name = "INST" ;
+			reg = <0x8 0x8>;
+			desc = "The sum of instructions completed across all SMT threads of the core" ;
+		};
+		event@348 {
+			event-name = "LARX_FIN" ;
+			reg = <0x348 0x8>;
+			desc = "The sum of all atomic loads (LARX instructions) across all SMT threads that finished" ;
+		};
+		event@7c0 {
+			event-name = "LWSYNC_PCYC" ;
+			reg = <0x7c0 0x8>;
+			desc = "The number of processor cycles stalled while waiting for a LWSYNC operation to complete (DD2 only)" ;
+		};
+		event@688 {
+			event-name = "MSR_HV_PCYC" ;
+			reg = <0x688 0x8>;
+			desc = "The number of processor cycles in Hypervisor mode with MSR HV=1 & PR=0" ;
+		};
+		event@6c8 {
+			event-name = "MSR_ADJUNCT_PCYC" ;
+			reg = <0x6c8 0x8>;
+			desc = "The number of processor cycles with MSR HV=1 & PR=1 (adjunct)" ;
+		};
+		event@6c0 {
+			event-name = "MSR_AJUNCT_INST" ;
+			reg = <0x6c0 0x8>;
+			desc = "The number of non-idle instructions completed with MSR HV=1 & PR=1 (adjunct)" ;
+		};
+		event@548 {
+			event-name = "MSR_EXT_INT_DIS_CCYC" ;
+			reg = <0x548 0x8>;
+			desc = "The sum of all processor cycles across all SMT threads with external interrupts disabled (MSR EE=0)" ;
+		};
+		event@680 {
+			event-name = "MSR_HV_INST" ;
+			reg = <0x680 0x8>;
+			desc = "The number of non-idle instructions in Hypervisor mode with MSR HV=1 & PR=0" ;
+		};
+		event@600 {
+			event-name = "MSR_PRIV_INST" ;
+			reg = <0x600 0x8>;
+			desc = "The number of non-idle instructions completed in privileged mode with MSR HV=0 & PR=0" ;
+		};
+		event@648 {
+			event-name = "MSR_PROB_PCYC" ;
+			reg = <0x648 0x8>;
+			desc = "The number of processor cycles in problem mode with MSR HV=0 & PR=1" ;
+		};
+		event@640 {
+			event-name = "MSR_PROB_INST" ;
+			reg = <0x640 0x8>;
+			desc = "The number of non-idle instructions completed in problem state with MSR HV=0 & PR=1" ;
+		};
+		event@708 {
+			event-name = "MSR_TA_LIC_PCYC" ;
+			reg = <0x708 0x8>;
+			desc = "The number of processor cycles in Tags Active LIC state (MSR US=0 & PR=0)" ;
+		};
+		event@700 {
+			event-name = "MSR_TA_LIC_INST" ;
+			reg = <0x700 0x8>;
+			desc = "The number of non-idle instructions completed with MSR US=0 & PR=0" ;
+		};
+		event@740 {
+			event-name = "MSR_TA_SYSTEM_INST" ;
+			reg = <0x740 0x8>;
+			desc = "The number of non-idle instructions completed with MSR US=0 & PR=1" ;
+		};
+		event@748 {
+			event-name = "MSR_TA_SYS_PCYC" ;
+			reg = <0x748 0x8>;
+			desc = "The number of processor cycles Tags-Active system State (MSR US=0 & PR=1)" ;
+		};
+		event@788 {
+			event-name = "MSR_TA_USER_PCYC" ;
+			reg = <0x788 0x8>;
+			desc = "The number of processor cycles in Tags-Active user State (MSR US=1 & PR=1)" ;
+		};
+		event@780 {
+			event-name = "MSR_TA_USER_INST" ;
+			reg = <0x780 0x8>;
+			desc = "The number of non-idle instructions completed with MSR US=1 & PR=1" ;
+		};
+		event@588 {
+			event-name = "MSR_TRANSMEM_PCYC" ;
+			reg = <0x588 0x8>;
+			desc = "The sum of all processor cycles across all SMT threads in transactional memory mode with MSR TR=1" ;
+		};
+		event@580 {
+			event-name = "MSR_TRANSMEM_INST" ;
+			reg = <0x580 0x8>;
+			desc = "The number of PPC instructions completed while the core was in transactional memory mode" ;
+		};
+		event@0 {
+			event-name = "PCYC" ;
+			reg = <0x0 0x8>;
+			desc = "The sum of processor cycles across all SMT threads of the core. Example, a 3GHz core with 4 SMT threads will report 12 billion processor cycles. Processor clock may vary dynamically" ;
+		};
+		event@308 {
+			event-name = "STCX_FAIL" ;
+			reg = <0x308 0x8>;
+			desc = "The number of atomic stores (STCX instructions) that failed" ;
+		};
+		event@300 {
+			event-name = "STCX_FIN" ;
+			reg = <0x300 0x8>;
+			desc = "The number of STCX instructions that finished" ;
+		};
+		event@9c8 {
+			event-name = "CS_DTLB_MISS_1G" ;
+			reg = <0x9c8 0x8>;
+			desc = "The number of data TLB misses for 1G page size" ;
+		};
+		event@10 {
+			event-name = "NON_IDLE_INST" ;
+			reg = <0x10 0x8>;
+			desc = "The number of completed instructions with runlatch enabled during the measurement period" ;
+		};
+		event@18 {
+			event-name = "NON_IDLE_PCYC" ;
+			reg = <0x18 0x8>;
+			desc = "The number of processor cycles with runlatch enabled during the measurement period" ;
+		};
+		event@7c8 {
+			event-name = "SYNC_PCYC" ;
+			reg = <0x7c8 0x8>;
+			desc = "The number of processor cycles stalled while waiting for a SYNC operation to complete (DD2 only)" ;
+		};
+		event@19c8 {
+			event-name = "CS_DTLB_MISS_1G_KERNEL" ;
+			reg = <0x19c8 0x8>;
+			desc = "The number of data TLB misses for 1G page size in kernel state" ;
+		};
+		event@11c8 {
+			event-name = "CS_DTLB_MISS_1G_USER" ;
+			reg = <0x11c8 0x8>;
+			desc = "The number of data TLB misses for 1G page size in user state" ;
+		};
+		event@a48 {
+			event-name = "CS_CORE_ICT_EMPTY_PCYC" ;
+			reg = <0xa48 0x8>;
+			desc = "The number of processor cycles the ICT was empty" ;
+		};
+		event@1a48 {
+			event-name = "CS_CORE_ICT_EMPTY_PCYC_KERNEL" ;
+			reg = <0x1a48 0x8>;
+			desc = "The number of processor cycles the ICT was empty in kernel state" ;
+		};
+		event@5c0 {
+			event-name = "THREAD_NAP_CCYC" ;
+			reg = <0x5c0 0x8>;
+			desc = "The sum of all constant clock cycles across all SMT threads in Power Savings mode (DD1)" ;
+		};
+	};
+	core@18 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "CPM_";
+		scale = "512";
+		reg = <0x18 0x8>;
+		events = < &CORE >;
+		type = <0x4>;
+		size = <0x2000>;
+	};
+THREAD: thread-events {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+
+		event@11c0 {
+			event-name = "CS_DTLB_MISS_2M_USER" ;
+			reg = <0x11c0 0x8>;
+			desc = "The number of data TLB misses for 2M page size in user state" ;
+		};
+		event@12c0 {
+			event-name = "CS_1PLUS_PPC_CMPL_USER" ;
+			reg = <0x12c0 0x8>;
+			desc = "The user sum of completed PPC instructions across all SMT threads of the core" ;
+		};
+		event@10c8 {
+			event-name = "CS_32MHZ_CYC_USER" ;
+			reg = <0x10c8 0x8>;
+			desc = "The number of 32 MHz clock ticks in user space" ;
+		};
+		event@1148 {
+			event-name = "CS_BRU_CMPL_USER" ;
+			reg = <0x1148 0x8>;
+			desc = "The number of branch instructions completed in user space" ;
+		};
+		event@1180 {
+			event-name = "CS_BR_MPRED_USER" ;
+			reg = <0x1180 0x8>;
+			desc = "The sum of branch misdirection across all SMT threads of the core in user space" ;
+		};
+		event@1188 {
+			event-name = "CS_BR_TAKEN_USER" ;
+			reg = <0x1188 0x8>;
+			desc = "The number of branches taken in user space" ;
+		};
+		event@12c8 {
+			event-name = "CS_CMPLU_STALL_PCYC_USER" ;
+			reg = <0x12c8 0x8>;
+			desc = "The user sum of all processor cycles across all SMT threads where no instruction completed and ICT was not empty" ;
+		};
+		event@1048 {
+			event-name = "CS_CORE_MODE_SMT2_CCYC_USER" ;
+			reg = <0x1048 0x8>;
+			desc = "The number of constant clock cycles in user state while the core is running in SMT2 mode" ;
+		};
+		event@1080 {
+			event-name = "CS_CORE_MODE_SMT4_CCYC_USER" ;
+			reg = <0x1080 0x8>;
+			desc = "Count of constant clock transitions in user state while core mode is SMT4" ;
+		};
+		event@1040 {
+			event-name = "CS_CORE_MODE_ST_CCYC_USER" ;
+			reg = <0x1040 0x8>;
+			desc = "The number of processor cycles in the user state while the core is running in ST mode" ;
+		};
+		event@10c0 {
+			event-name = "CS_CORE_PCYC_USER" ;
+			reg = <0x10c0 0x8>;
+			desc = "The number of processor cycles in user state during the measurement interval" ;
+		};
+		event@1280 {
+			event-name = "CS_DATA_TABLEWALK_PCYC_USER" ;
+			reg = <0x1280 0x8>;
+			desc = "The sum of table walk processor cycles across all SMT threads of the core in user state" ;
+		};
+		event@16c0 {
+			event-name = "CS_DERAT_MISS_USER" ;
+			reg = <0x16c0 0x8>;
+			desc = "The number of DERAT misses in user state" ;
+		};
+		event@1208 {
+			event-name = "CS_DISP_HELD_PCYC_USER" ;
+			reg = <0x1208 0x8>;
+			desc = "The number of processor cycles the dispatch unit was held in user state" ;
+		};
+		event@1748 {
+			event-name = "CS_DTLB_MISS_16G_USER" ;
+			reg = <0x1748 0x8>;
+			desc = "The number of data TLB misses for 16G page size in user state" ;
+		};
+		event@1740 {
+			event-name = "CS_DTLB_MISS_16M_USER" ;
+			reg = <0x1740 0x8>;
+			desc = "The number of data TLB misses for 16M page size in user state" ;
+		};
+		event@1708 {
+			event-name = "CS_DTLB_MISS_64K_USER" ;
+			reg = <0x1708 0x8>;
+			desc = "The number of data TLB misses for 64K page size in user state" ;
+		};
+		event@16c8 {
+			event-name = "CS_DTLB_RELOAD_USER" ;
+			reg = <0x16c8 0x8>;
+			desc = "The number of data TLB reloads in user state" ;
+		};
+		event@1140 {
+			event-name = "CS_FLOP_USER" ;
+			reg = <0x1140 0x8>;
+			desc = "The number of all completed floating point operations in user state" ;
+		};
+		event@1288 {
+			event-name = "CS_FLUSH_USER" ;
+			reg = <0x1288 0x8>;
+			desc = "The number of core flushes in the user state" ;
+		};
+		event@1340 {
+			event-name = "CS_FROM_L2_IFETCH_USER" ;
+			reg = <0x1340 0x8>;
+			desc = "The number of instruction fetches from local level 2 cache in user state" ;
+		};
+		event@1588 {
+			event-name = "CS_FROM_L2_L3_A_LDATA_USER" ;
+			reg = <0x1588 0x8>;
+			desc = "The number of data loads from level 2 or level 3 cache through A-link in user state" ;
+		};
+		event@1400 {
+			event-name = "CS_FROM_L2_L3_X_IFETCH_USER" ;
+			reg = <0x1400 0x8>;
+			desc = "The number of instruction fetches from level 2 or level 3 cache across X-link in user state" ;
+		};
+		event@1580 {
+			event-name = "CS_FROM_L2_L3_X_LDATA_USER" ;
+			reg = <0x1580 0x8>;
+			desc = "The number of data loads from a level 2 or level 3 cache across X-link in user state" ;
+		};
+		event@1348 {
+			event-name = "CS_FROM_L3_IFETCH_USER" ;
+			reg = <0x1348 0x8>;
+			desc = "The number of instruction fetches from the cores level 3 cache in user state" ;
+		};
+		event@14c8 {
+			event-name = "CS_FROM_L3_LDATA_USER" ;
+			reg = <0x14c8 0x8>;
+			desc = "The number of data loads from the cores level 3 cache in user state" ;
+		};
+		event@13c0 {
+			event-name = "CS_FROM_L4_IFETCH_USER" ;
+			reg = <0x13c0 0x8>;
+			desc = "The number of instruction fetches from local level 4 cache in user state" ;
+		};
+		event@1248 {
+			event-name = "CS_CORE_ICT_EMPTY_PCYC_USER" ;
+			reg = <0x1248 0x8>;
+			desc = "The number of processor cycles the ICT was empty in user state" ;
+		};
+		event@1540 {
+			event-name = "CS_FROM_L4_LDATA_USER" ;
+			reg = <0x1540 0x8>;
+			desc = "The number of level 4 data loads from local level 4 cache in user state" ;
+		};
+		event@1788 {
+			event-name = "CS_FROM_L4_MEM_A_DPTEG_USER" ;
+			reg = <0x1788 0x8>;
+			desc = "The number of data PTEG misses that are satisfied from level 4 cache of memory across A-link in user state" ;
+		};
+		event@1448 {
+			event-name = "CS_FROM_L4_MEM_A_IFETCH_USER" ;
+			reg = <0x1448 0x8>;
+			desc = "The number of instruction fetches from level 4 cache or memory across A-link in user state" ;
+		};
+		event@1688 {
+			event-name = "CS_FROM_L4_MEM_A_IPTEG_USER" ;
+			reg = <0x1688 0x8>;
+			desc = "The number of instruction PTEG misses that are satisfied from level 4 cache of memory across A-link in user state" ;
+		};
+		event@15c8 {
+			event-name = "CS_FROM_L4_MEM_A_LDATA_USER" ;
+			reg = <0x15c8 0x8>;
+			desc = "The number of data loads from level 4 cache or memory across A-link in user state" ;
+		};
+		event@1780 {
+			event-name = "CS_FROM_L4_MEM_X_DPTEG_USER" ;
+			reg = <0x1780 0x8>;
+			desc = "The number of instruction PTEG L3 misses that are satisfied by off-chip but node-local source in user state" ;
+		};
+		event@1440 {
+			event-name = "CS_FROM_L4_MEM_X_IFETCH_USER" ;
+			reg = <0x1440 0x8>;
+			desc = "The number of instruction fetches from a level 4 cache or memory across X-link in user state" ;
+		};
+		event@1680 {
+			event-name = "CS_FROM_L4_MEM_X_IPTEG_USER" ;
+			reg = <0x1680 0x8>;
+			desc = "The number of instruction PTEG L3 misses that are satisfied by off-chip- but node-local source in user state" ;
+		};
+		event@15c0 {
+			event-name = "CS_FROM_L4_MEM_X_LDATA_USER" ;
+			reg = <0x15c0 0x8>;
+			desc = "The number of data load from a level 4 cache or memory across X-link in user state" ;
+		};
+		event@13c8 {
+			event-name = "CS_FROM_MEM_IFETCH_USER" ;
+			reg = <0x13c8 0x8>;
+			desc = "The number of instruction fetches from local memory in user state" ;
+		};
+		event@1548 {
+			event-name = "CS_FROM_MEM_LDATA_USER" ;
+			reg = <0x1548 0x8>;
+			desc = "The number of data loads from local memory in user state" ;
+		};
+		event@17c8 {
+			event-name = "CS_FROM_MEM_LOCAL_USER" ;
+			reg = <0x17c8 0x8>;
+			desc = "The number of data and instruction misses that are satisfied by local memory in user state" ;
+		};
+		event@17c0 {
+			event-name = "CS_FROM_MEM_NON_LOCAL_USER" ;
+			reg = <0x17c0 0x8>;
+			desc = "The number of all data and instruction cache misses that are satisfied by Off-Chip Memory in user state" ;
+		};
+		event@1380 {
+			event-name = "CS_FROM_ON_CHIP_L2_IFETCH_USER" ;
+			reg = <0x1380 0x8>;
+			desc = "The number of instruction fetches from a level 2 cache from the same POWER9 chip in user state" ;
+		};
+		event@1500 {
+			event-name = "CS_FROM_ON_CHIP_L2_LDATA_USER" ;
+			reg = <0x1500 0x8>;
+			desc = "The number of data loads from a level 2 cache from the same POWER9 chip in user state" ;
+		};
+		event@1388 {
+			event-name = "CS_FROM_ON_CHIP_L3_IFETCH_USER" ;
+			reg = <0x1388 0x8>;
+			desc = "The number of instruction fetches from level 3 cache on the same POWER9 chip in user state" ;
+		};
+		event@1508 {
+			event-name = "CS_FROM_ON_CHIP_L3_LDATA_USER" ;
+			reg = <0x1508 0x8>;
+			desc = "The number of data loads from a level 3 cache from the same POWER9 chip in user state" ;
+		};
+		event@1608 {
+			event-name = "CS_ST_FIN_USER" ;
+			reg = <0x1608 0x8>;
+			desc = "The number of all store instructions finished in user state" ;
+		};
+		event@1480 {
+			event-name = "CS_MISS_L1_LDATA_USER" ;
+			reg = <0x1480 0x8>;
+			desc = "The number of level 1 data misses in user state" ;
+		};
+		event@1640 {
+			event-name = "CS_IERAT_MISS_USER" ;
+			reg = <0x1640 0x8>;
+			desc = "The number of IERAT reloads in user state" ;
+		};
+		event@1308 {
+			event-name = "CS_IFETCH_DEMAND_PCYC_USER" ;
+			reg = <0x1308 0x8>;
+			desc = "The sum of all processor cycles across all SMT threads when a demand ifetch was pending in user state" ;
+		};
+		event@1008 {
+			event-name = "CS_INST_USER" ;
+			reg = <0x1008 0x8>;
+			desc = "The sum of all completed PPC instructions across all SMT threads of the core in user state" ;
+		};
+		event@1648 {
+			event-name = "CS_ITLB_RELOAD_USER" ;
+			reg = <0x1648 0x8>;
+			desc = "The number of instruction TLB reloads in user state" ;
+		};
+		event@1300 {
+			event-name = "CS_L1_MISS_IFETCH_USER" ;
+			reg = <0x1300 0x8>;
+			desc = "The number of level 1 instruction misses in user state" ;
+		};
+		event@1240 {
+			event-name = "CS_LSU_EMPTY_PCYC_USER" ;
+			reg = <0x1240 0x8>;
+			desc = "The sum of processor cycles where the LSU is empty across all SMT threads of the core in user state" ;
+		};
+		event@1000 {
+			event-name = "CS_PCYC_USER" ;
+			reg = <0x1000 0x8>;
+			desc = "The sum of all processor cycles across all SMT threads in user state" ;
+		};
+		event@1200 {
+			event-name = "CS_PPC_DISP_USER" ;
+			reg = <0x1200 0x8>;
+			desc = "The sum of PPC instruction dispatches across all SMT threads of the core in user state" ;
+		};
+		event@1108 {
+			event-name = "CS_PURR_USER" ;
+			reg = <0x1108 0x8>;
+			desc = "The sum of all constant clock PURR increments across all SMT threads in user state" ;
+		};
+		event@1100 {
+			event-name = "CS_SPURR_USER" ;
+			reg = <0x1100 0x8>;
+			desc = "The number of SPURR cycles in user state" ;
+		};
+		event@1600 {
+			event-name = "CS_ST_MISS_L1_USER" ;
+			reg = <0x1600 0x8>;
+			desc = "The number of stores that missed level 1 cache in user state" ;
+		};
+		event@788 {
+			event-name = "MSR_TA_USER_PCYC" ;
+			reg = <0x788 0x8>;
+			desc = "The number of processor cycles in Tags-Active user State (MSR US=1 & PR=1)" ;
+		};
+		event@780 {
+			event-name = "MSR_TA_USER_INST" ;
+			reg = <0x780 0x8>;
+			desc = "The number of non-idle instructions completed with MSR US=1 & PR=1" ;
+		};
+		event@11c8 {
+			event-name = "CS_DTLB_MISS_1G_USER" ;
+			reg = <0x11c8 0x8>;
+			desc = "The number of data TLB misses for 1G page size in user state" ;
+		};
+	};
+	thread@18 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "CPM_";
+		scale = "512";
+		reg = <0x18 0x8>;
+		events = < &THREAD >;
+		type = <0x1>;
+		size = <0x2000>;
+	};
+};
