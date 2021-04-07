@@ -53,9 +53,9 @@ declare -a POWER9=('81E00612.4E0100.dts' '81E00612.4E0200.dts')
 declare -a POWER9_PVR=(0x4e0100 0x4e0200)
 declare -a POWER9_FILENAME=(0x4e0100.bin 0x4e0200.bin)
 
-declare -a POWER10=('81E00612.800100.dts' '81E00612.800200.dts')
-declare -a POWER10_PVR=(0x800100 0x800200)
-declare -a POWER10_FILENAME=(0x800100.bin 0x800200.bin)
+declare -a POWER10=('81E00612.800100.dts')
+declare -a POWER10_PVR=(0x800100)
+declare -a POWER10_FILENAME=(0x800100.bin)
 
 align() {
     echo $(( (($1 + ($alignment - 1))) & ~($alignment - 1) ))
