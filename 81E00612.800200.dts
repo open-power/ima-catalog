@@ -155,6 +155,41 @@ version-id = <0x03>;
 		offset = <0x180000>;
 		cb_offset = <0x3fc00>;
 	};
+	NEST_POWERBUS3: nest-powerbus3-events  {
+		#address-cells = <0x1>;
+		#size-cells = <0x1>;
+		event@0 {
+				event-name = "PB_PUMP_P1" ;
+				reg = <0x0 0x8>;
+				desc = "pm_pb_pump_p1";
+		};
+		event@8 {
+				event-name = "PB_PUMP_P3" ;
+				reg = <0x8 0x8>;
+				desc = "pm_pb_pump_p3";
+		};
+		event@20 {
+				event-name = "PB_PUMP_P0" ;
+				reg = <0x20 0x8>;
+				desc = "pm_pb_pump_p0";
+		};
+		event@28 {
+				event-name = "PB_PUMP_P2" ;
+				reg = <0x28 0x8>;
+				desc = "pm_pb_pump_p2";
+		};
+	};
+	pb@b8 {
+		compatible = "ibm,imc-counters";
+		events-prefix = "PM_";
+		scale = "1024";
+		reg = <0xb8 0x8>;
+		events = < &NEST_POWERBUS3 >;
+		type = <0x10>;
+		size = <0x40000>;
+		offset = <0x180000>;
+		cb_offset = <0x3fc00>;
+	};
 	NEST_CYCLE: nest-cycle-events  {
 		#address-cells = <0x1>;
 		#size-cells = <0x1>;
@@ -164,11 +199,11 @@ version-id = <0x03>;
 				desc = "pm_pau_cyc";
 		};
 	};
-	pau@8 {
+	pau@40 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PAU_";
 		scale = "256";
-		reg = <0x8 0x8>;
+		reg = <0x40 0x8>;
 		events = < &NEST_CYCLE >;
 		type = <0x10>;
 		size = <0x40000>;
@@ -179,31 +214,41 @@ version-id = <0x03>;
 		#address-cells = <0x1>;
 		#size-cells = <0x1>;
 		event@0 {
-				event-name = "128B_RD_DATA_BLOCKS_MC0_CHAN01" ;
+				event-name = "MDI_UPDATE_DONE_MC0_CHAN01" ;
 				reg = <0x0 0x8>;
-				desc = "pm_mcs_128b_rd_data_blocks_mc0_chan01";
+				desc = "pm_mcs_mdi_update_done_mc0_chan01";
 		};
 		event@8 {
-				event-name = "64B_WR_DATA_BLOCKS_MC0_CHAN01" ;
+				event-name = "128B_RD_DATA_BLOCKS_MC0_CHAN01" ;
 				reg = <0x8 0x8>;
+				desc = "pm_mcs_128b_rd_data_blocks_mc0_chan01";
+		};
+		event@10 {
+				event-name = "64B_WR_DATA_BLOCKS_MC0_CHAN01" ;
+				reg = <0x10 0x8>;
 				desc = "pm_mcs_64b_wr_data_blocks_mc0_chan01";
 		};
 		event@20 {
-				event-name = "128B_RD_DATA_BLOCKS_MC1_CHAN01" ;
+				event-name = "MDI_UPDATE_DONE_MC1_CHAN01" ;
 				reg = <0x20 0x8>;
-				desc = "pm_mcs_128b_rd_data_blocks_mc1_chan01";
+				desc = "pm_mcs_mdi_update_done_mc1_chan01";
 		};
 		event@28 {
-				event-name = "64B_WR_DATA_BLOCKS_MC1_CHAN01" ;
+				event-name = "128B_RD_DATA_BLOCKS_MC1_CHAN01" ;
 				reg = <0x28 0x8>;
+				desc = "pm_mcs_128b_rd_data_blocks_mc1_chan01";
+		};
+		event@30 {
+				event-name = "64B_WR_DATA_BLOCKS_MC1_CHAN01" ;
+				reg = <0x30 0x8>;
 				desc = "pm_mcs_64b_wr_data_blocks_mc1_chan01";
 		};
 	};
-	mcs@10 {
+	mcs@8 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MCS_";
 		scale = "4096";
-		reg = <0x10 0x8>;
+		reg = <0x8 0x8>;
 		events = < &NEST_MCS01 >;
 		type = <0x10>;
 		size = <0x40000>;
@@ -214,31 +259,41 @@ version-id = <0x03>;
 		#address-cells = <0x1>;
 		#size-cells = <0x1>;
 		event@0 {
-				event-name = "128B_RD_DATA_BLOCKS_MC2_CHAN01" ;
+				event-name = "MDI_UPDATE_DONE_MC2_CHAN01" ;
 				reg = <0x0 0x8>;
-				desc = "pm_mcs_128b_rd_data_blocks_mc2_chan01";
+				desc = "pm_mcs_mdi_update_done_mc2_chan01";
 		};
 		event@8 {
-				event-name = "64B_WR_DATA_BLOCKS_MC2_CHAN01" ;
+				event-name = "128B_RD_DATA_BLOCKS_MC2_CHAN01" ;
 				reg = <0x8 0x8>;
+				desc = "pm_mcs_128b_rd_data_blocks_mc2_chan01";
+		};
+		event@10 {
+				event-name = "64B_WR_DATA_BLOCKS_MC2_CHAN01" ;
+				reg = <0x10 0x8>;
 				desc = "pm_mcs_64b_wr_data_blocks_mc2_chan01";
 		};
 		event@20 {
-				event-name = "128B_RD_DATA_BLOCKS_MC3_CHAN01" ;
+				event-name = "MDI_UPDATE_DONE_MC3_CHAN01" ;
 				reg = <0x20 0x8>;
-				desc = "pm_mcs_128b_rd_data_blocks_mc3_chan01";
+				desc = "pm_mcs_mdi_update_done_mc3_chan01";
 		};
 		event@28 {
-				event-name = "64B_WR_DATA_BLOCKS_MC3_CHAN01" ;
+				event-name = "128B_RD_DATA_BLOCKS_MC3_CHAN01" ;
 				reg = <0x28 0x8>;
+				desc = "pm_mcs_128b_rd_data_blocks_mc3_chan01";
+		};
+		event@48 {
+				event-name = "64B_WR_DATA_BLOCKS_MC3_CHAN01" ;
+				reg = <0x48 0x8>;
 				desc = "pm_mcs_64b_wr_data_blocks_mc3_chan01";
 		};
 	};
-	mcs@90 {
+	mcs@88 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MCS_";
 		scale = "4096";
-		reg = <0x90 0x8>;
+		reg = <0x88 0x8>;
 		events = < &NEST_MCS23 >;
 		type = <0x10>;
 		size = <0x40000>;
@@ -252,6 +307,21 @@ version-id = <0x03>;
 				event-name = "32B_INOUT" ;
 				reg = <0x0 0x8>;
 				desc = "pm_pci0_32b_inout";
+		};
+		event@48 {
+				event-name = "DMA_32B_RD_DATA_STK0" ;
+				reg = <0x48 0x8>;
+				desc = "pm_pci0_dma_32b_rd_data_stk0";
+		};
+		event@50 {
+				event-name = "DMA_32B_RD_DATA_STK1" ;
+				reg = <0x50 0x8>;
+				desc = "pm_pci0_dma_32b_rd_data_stk1";
+		};
+		event@58 {
+				event-name = "DMA_32B_RD_DATA_STK2" ;
+				reg = <0x58 0x8>;
+				desc = "pm_pci0_dma_32b_rd_data_stk2";
 		};
 	};
 	pci0@20 {
@@ -280,9 +350,9 @@ version-id = <0x03>;
 		#address-cells = <0x1>;
 		#size-cells = <0x1>;
 		event@0 {
-				event-name = "AVLBL_CYCLES" ;
+				event-name = "OUT_EVEN_AVLBL_CYCLES" ;
 				reg = <0x0 0x8>;
-				desc = "pm_xlink0_avlbl_cycles";
+				desc = "pm_xlink0_out_even_avlbl_cycles";
 		};
 		event@8 {
 				event-name = "OUT_EVEN_ANY_RCMD" ;
@@ -300,9 +370,9 @@ version-id = <0x03>;
 				desc = "pm_xlink0_out_even_total_util";
 		};
 		event@20 {
-				event-name = "CYC" ;
+				event-name = "OUT_ODD_AVLBL_CYCLES" ;
 				reg = <0x20 0x8>;
-				desc = "pm_xlink0_cyc";
+				desc = "pm_xlink0_out_odd_avlbl_cycles";
 		};
 		event@28 {
 				event-name = "OUT_ODD_ANY_RCMD" ;
@@ -412,9 +482,9 @@ version-id = <0x03>;
 		#address-cells = <0x1>;
 		#size-cells = <0x1>;
 		event@0 {
-				event-name = "AVLBL_CYCLES" ;
+				event-name = "OUT_EVEN_AVLBL_CYCLES" ;
 				reg = <0x0 0x8>;
-				desc = "pm_alink0_avlbl_cycles";
+				desc = "pm_alink0_out_even_avlbl_cycles";
 		};
 		event@8 {
 				event-name = "OUT_EVEN_ANY_RCMD" ;
@@ -432,9 +502,9 @@ version-id = <0x03>;
 				desc = "pm_alink0_out_even_total_util";
 		};
 		event@20 {
-				event-name = "CYC" ;
+				event-name = "OUT_ODD_AVLBL_CYCLES" ;
 				reg = <0x20 0x8>;
-				desc = "pm_alink0_cyc";
+				desc = "pm_alink0_out_odd_avlbl_cycles";
 		};
 		event@28 {
 				event-name = "OUT_ODD_ANY_RCMD" ;
@@ -705,9 +775,9 @@ version-id = <0x03>;
 				desc = "pm_phb0_0_cyc";
 		};
 		event@8 {
-				event-name = "DMA_RD_FROM_PCIE" ;
+				event-name = "MMIO_WR_DATA_VALID" ;
 				reg = <0x8 0x8>;
-				desc = "pm_phb0_0_dma_rd_from_pcie";
+				desc = "pm_phb0_0_mmio_wr_data_valid";
 		};
 		event@10 {
 				event-name = "IPD_BUFF_POP" ;
@@ -1279,6 +1349,11 @@ version-id = <0x03>;
 				reg = <0x5c8 0x8>;
 				desc = "cpm_run_spurr";
 		};
+		event@600 {
+				event-name = "MMA_DISP" ;
+				reg = <0x600 0x8>;
+				desc = "cpm_mma_disp";
+		};
 		event@608 {
 				event-name = "VSU_FIN" ;
 				reg = <0x608 0x8>;
@@ -1536,6 +1611,11 @@ version-id = <0x03>;
 				event-name = "RUN_SPURR" ;
 				reg = <0x5c8 0x8>;
 				desc = "cpm_run_spurr";
+		};
+		event@600 {
+				event-name = "MMA_DISP" ;
+				reg = <0x600 0x8>;
+				desc = "cpm_mma_disp";
 		};
 		event@608 {
 				event-name = "VSU_FIN" ;
