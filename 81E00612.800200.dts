@@ -793,7 +793,7 @@ version-id = <0x03>;
 	phb0_0@888 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB0_0_";
-		scale = "65536";
+		scale = "256";
 		reg = <0x888 0x8>;
 		events = < &NEST_PHB >;
 		type = <0x10>;
@@ -804,7 +804,7 @@ version-id = <0x03>;
 	phb0_1@8a8 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB0_1_";
-		scale = "65536";
+		scale = "256";
 		reg = <0x8a8 0x8>;
 		events = < &NEST_PHB >;
 		type = <0x10>;
@@ -815,7 +815,7 @@ version-id = <0x03>;
 	phb0_2@8c8 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB0_2_";
-		scale = "65536";
+		scale = "256";
 		reg = <0x8c8 0x8>;
 		events = < &NEST_PHB >;
 		type = <0x10>;
@@ -826,7 +826,7 @@ version-id = <0x03>;
 	phb1_0@8e8 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB1_0_";
-		scale = "65536";
+		scale = "256";
 		reg = <0x8e8 0x8>;
 		events = < &NEST_PHB >;
 		type = <0x10>;
@@ -837,7 +837,7 @@ version-id = <0x03>;
 	phb1_1@908 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB1_1_";
-		scale = "65536";
+		scale = "256";
 		reg = <0x908 0x8>;
 		events = < &NEST_PHB >;
 		type = <0x10>;
@@ -848,7 +848,7 @@ version-id = <0x03>;
 	phb1_2@928 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PHB1_2_";
-		scale = "65536";
+		scale = "256";
 		reg = <0x928 0x8>;
 		events = < &NEST_PHB >;
 		type = <0x10>;
