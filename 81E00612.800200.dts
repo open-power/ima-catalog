@@ -5,157 +5,7 @@ compatible = "ibm,opal-in-memory-counters";
 #address-cells = <0x1>;
 #size-cells = <0x1>;
 version-id = <0x03>;
-	NEST_POWERBUS1: nest-powerbus1-events  {
-		#address-cells = <0x1>;
-		#size-cells = <0x1>;
-		event@0 {
-				event-name = "PB_INT_DATA_XFER" ;
-				reg = <0x0 0x8>;
-				desc = "pm_pb_int_data_xfer";
-		};
-		event@8 {
-				event-name = "PB_EXT_DATA_XFER" ;
-				reg = <0x8 0x8>;
-				desc = "pm_pb_ext_data_xfer";
-		};
-		event@10 {
-				event-name = "PB_NNS_PUMP23" ;
-				reg = <0x10 0x8>;
-				desc = "pm_pb_nns_pump23";
-		};
-		event@18 {
-				event-name = "PB_RTY_NNS_PUMP23" ;
-				reg = <0x18 0x8>;
-				desc = "pm_pb_rty_nns_pump23";
-		};
-		event@20 {
-				event-name = "PB_LOCAL_DATA_X" ;
-				reg = <0x20 0x8>;
-				desc = "pm_pb_local_data_x";
-		};
-		event@28 {
-				event-name = "PB_LOCAL_DATA_A_S" ;
-				reg = <0x28 0x8>;
-				desc = "pm_pb_local_data_a_s";
-		};
-		event@40 {
-				event-name = "PB_VG_PUMP23" ;
-				reg = <0x40 0x8>;
-				desc = "pm_pb_vg_pump23";
-		};
-		event@48 {
-				event-name = "PB_LNS_PUMP23" ;
-				reg = <0x48 0x8>;
-				desc = "pm_pb_lns_pump23";
-		};
-		event@50 {
-				event-name = "PB_GROUP_PUMP23" ;
-				reg = <0x50 0x8>;
-				desc = "pm_pb_group_pump23";
-		};
-		event@58 {
-				event-name = "PB_RNS_PUMP23" ;
-				reg = <0x58 0x8>;
-				desc = "pm_pb_rns_pump23";
-		};
-		event@60 {
-				event-name = "PB_RTY_VG_PUMP23" ;
-				reg = <0x60 0x8>;
-				desc = "pm_pb_rty_vg_pump23";
-		};
-		event@68 {
-				event-name = "PB_RTY_LNS_PUMP23" ;
-				reg = <0x68 0x8>;
-				desc = "pm_pb_rty_lns_pump23";
-		};
-		event@70 {
-				event-name = "PB_RTY_GROUP_PUMP23" ;
-				reg = <0x70 0x8>;
-				desc = "pm_pb_rty_group_pump23";
-		};
-		event@78 {
-				event-name = "PB_RTY_RNS_PUMP23" ;
-				reg = <0x78 0x8>;
-				desc = "pm_pb_rty_rns_pump23";
-		};
-	};
-	pb@118 {
-		compatible = "ibm,imc-counters";
-		events-prefix = "PM_";
-		scale = "1024";
-		reg = <0x118 0x8>;
-		events = < &NEST_POWERBUS1 >;
-		type = <0x10>;
-		size = <0x40000>;
-		offset = <0x180000>;
-		cb_offset = <0x3fc00>;
-	};
-	NEST_POWERBUS2: nest-powerbus2-events  {
-		#address-cells = <0x1>;
-		#size-cells = <0x1>;
-		event@0 {
-				event-name = "PB_VG_PUMP01" ;
-				reg = <0x0 0x8>;
-				desc = "pm_pb_vg_pump01";
-		};
-		event@8 {
-				event-name = "PB_LNS_PUMP01" ;
-				reg = <0x8 0x8>;
-				desc = "pm_pb_lns_pump01";
-		};
-		event@10 {
-				event-name = "PB_GROUP_PUMP01" ;
-				reg = <0x10 0x8>;
-				desc = "pm_pb_group_pump01";
-		};
-		event@18 {
-				event-name = "PB_RNS_PUMP01" ;
-				reg = <0x18 0x8>;
-				desc = "pm_pb_rns_pump01";
-		};
-		event@20 {
-				event-name = "PB_RTY_VG_PUMP01" ;
-				reg = <0x20 0x8>;
-				desc = "pm_pb_rty_vg_pump01";
-		};
-		event@28 {
-				event-name = "PB_RTY_LNS_PUMP01" ;
-				reg = <0x28 0x8>;
-				desc = "pm_pb_rty_lns_pump01";
-		};
-		event@30 {
-				event-name = "PB_RTY_GROUP_PUMP01" ;
-				reg = <0x30 0x8>;
-				desc = "pm_pb_rty_group_pump01";
-		};
-		event@38 {
-				event-name = "PB_RTY_RNS_PUMP01" ;
-				reg = <0x38 0x8>;
-				desc = "pm_pb_rty_rns_pump01";
-		};
-		event@50 {
-				event-name = "PB_NNS_PUMP01" ;
-				reg = <0x50 0x8>;
-				desc = "pm_pb_nns_pump01";
-		};
-		event@58 {
-				event-name = "PB_RTY_NNS_PUMP01" ;
-				reg = <0x58 0x8>;
-				desc = "pm_pb_rty_nns_pump01";
-		};
-	};
-	pb@198 {
-		compatible = "ibm,imc-counters";
-		events-prefix = "PM_";
-		scale = "1024";
-		reg = <0x198 0x8>;
-		events = < &NEST_POWERBUS2 >;
-		type = <0x10>;
-		size = <0x40000>;
-		offset = <0x180000>;
-		cb_offset = <0x3fc00>;
-	};
-	NEST_POWERBUS3: nest-powerbus3-events  {
+	NEST_POWERBUS: nest-powerbus-events  {
 		#address-cells = <0x1>;
 		#size-cells = <0x1>;
 		event@0 {
@@ -178,13 +28,133 @@ version-id = <0x03>;
 				reg = <0x28 0x8>;
 				desc = "pm_pb_pump_p2";
 		};
+		event@60 {
+				event-name = "PB_INT_DATA_XFER" ;
+				reg = <0x60 0x8>;
+				desc = "pm_pb_int_data_xfer";
+		};
+		event@68 {
+				event-name = "PB_EXT_DATA_XFER" ;
+				reg = <0x68 0x8>;
+				desc = "pm_pb_ext_data_xfer";
+		};
+		event@70 {
+				event-name = "PB_NNS_PUMP23" ;
+				reg = <0x70 0x8>;
+				desc = "pm_pb_nns_pump23";
+		};
+		event@78 {
+				event-name = "PB_RTY_NNS_PUMP23" ;
+				reg = <0x78 0x8>;
+				desc = "pm_pb_rty_nns_pump23";
+		};
+		event@80 {
+				event-name = "PB_LOCAL_DATA_X" ;
+				reg = <0x80 0x8>;
+				desc = "pm_pb_local_data_x";
+		};
+		event@88 {
+				event-name = "PB_LOCAL_DATA_A_S" ;
+				reg = <0x88 0x8>;
+				desc = "pm_pb_local_data_a_s";
+		};
+		event@a0 {
+				event-name = "PB_VG_PUMP23" ;
+				reg = <0xa0 0x8>;
+				desc = "pm_pb_vg_pump23";
+		};
+		event@a8 {
+				event-name = "PB_LNS_PUMP23" ;
+				reg = <0xa8 0x8>;
+				desc = "pm_pb_lns_pump23";
+		};
+		event@b0 {
+				event-name = "PB_GROUP_PUMP23" ;
+				reg = <0xb0 0x8>;
+				desc = "pm_pb_group_pump23";
+		};
+		event@b8 {
+				event-name = "PB_RNS_PUMP23" ;
+				reg = <0xb8 0x8>;
+				desc = "pm_pb_rns_pump23";
+		};
+		event@c0 {
+				event-name = "PB_RTY_VG_PUMP23" ;
+				reg = <0xc0 0x8>;
+				desc = "pm_pb_rty_vg_pump23";
+		};
+		event@c8 {
+				event-name = "PB_RTY_LNS_PUMP23" ;
+				reg = <0xc8 0x8>;
+				desc = "pm_pb_rty_lns_pump23";
+		};
+		event@d0 {
+				event-name = "PB_RTY_GROUP_PUMP23" ;
+				reg = <0xd0 0x8>;
+				desc = "pm_pb_rty_group_pump23";
+		};
+		event@d8 {
+				event-name = "PB_RTY_RNS_PUMP23" ;
+				reg = <0xd8 0x8>;
+				desc = "pm_pb_rty_rns_pump23";
+		};
+		event@e0 {
+				event-name = "PB_VG_PUMP01" ;
+				reg = <0xe0 0x8>;
+				desc = "pm_pb_vg_pump01";
+		};
+		event@e8 {
+				event-name = "PB_LNS_PUMP01" ;
+				reg = <0xe8 0x8>;
+				desc = "pm_pb_lns_pump01";
+		};
+		event@f0 {
+				event-name = "PB_GROUP_PUMP01" ;
+				reg = <0xf0 0x8>;
+				desc = "pm_pb_group_pump01";
+		};
+		event@f8 {
+				event-name = "PB_RNS_PUMP01" ;
+				reg = <0xf8 0x8>;
+				desc = "pm_pb_rns_pump01";
+		};
+		event@100 {
+				event-name = "PB_RTY_VG_PUMP01" ;
+				reg = <0x100 0x8>;
+				desc = "pm_pb_rty_vg_pump01";
+		};
+		event@108 {
+				event-name = "PB_RTY_LNS_PUMP01" ;
+				reg = <0x108 0x8>;
+				desc = "pm_pb_rty_lns_pump01";
+		};
+		event@110 {
+				event-name = "PB_RTY_GROUP_PUMP01" ;
+				reg = <0x110 0x8>;
+				desc = "pm_pb_rty_group_pump01";
+		};
+		event@118 {
+				event-name = "PB_RTY_RNS_PUMP01" ;
+				reg = <0x118 0x8>;
+				desc = "pm_pb_rty_rns_pump01";
+		};
+		event@130 {
+				event-name = "PB_NNS_PUMP01" ;
+				reg = <0x130 0x8>;
+				desc = "pm_pb_nns_pump01";
+		};
+		event@138 {
+				event-name = "PB_RTY_NNS_PUMP01" ;
+				reg = <0x138 0x8>;
+				desc = "pm_pb_rty_nns_pump01";
+		};
 	};
 	pb@b8 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_";
 		scale = "1024";
 		reg = <0xb8 0x8>;
-		events = < &NEST_POWERBUS3 >;
+		events = < &NEST_POWERBUS >;
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
@@ -244,7 +214,7 @@ version-id = <0x03>;
 				desc = "pm_mcs_64b_wr_data_blocks_mc1_chan01";
 		};
 	};
-	mcs@8 {
+	mcs01@8 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MCS_";
 		scale = "4096";
@@ -289,7 +259,7 @@ version-id = <0x03>;
 				desc = "pm_mcs_64b_wr_data_blocks_mc3_chan01";
 		};
 	};
-	mcs@88 {
+	mcs23@88 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_MCS_";
 		scale = "4096";
@@ -300,47 +270,47 @@ version-id = <0x03>;
 		offset = <0x180000>;
 		cb_offset = <0x3fc00>;
 	};
-	NEST_PCI: nest-pci-events  {
+	NEST_PEC: nest-pec-events  {
 		#address-cells = <0x1>;
 		#size-cells = <0x1>;
 		event@0 {
 				event-name = "32B_INOUT" ;
 				reg = <0x0 0x8>;
-				desc = "pm_pci0_32b_inout";
+				desc = "pm_pci1_32b_inout";
 		};
 		event@48 {
 				event-name = "DMA_32B_RD_DATA_STK0" ;
 				reg = <0x48 0x8>;
-				desc = "pm_pci0_dma_32b_rd_data_stk0";
+				desc = "pm_pci1_dma_32b_rd_data_stk0";
 		};
 		event@50 {
 				event-name = "DMA_32B_RD_DATA_STK1" ;
 				reg = <0x50 0x8>;
-				desc = "pm_pci0_dma_32b_rd_data_stk1";
+				desc = "pm_pci1_dma_32b_rd_data_stk1";
 		};
 		event@58 {
 				event-name = "DMA_32B_RD_DATA_STK2" ;
 				reg = <0x58 0x8>;
-				desc = "pm_pci0_dma_32b_rd_data_stk2";
+				desc = "pm_pci1_dma_32b_rd_data_stk2";
 		};
 	};
-	pci0@20 {
+	pec0@20 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PCI0_";
 		scale = "1024";
 		reg = <0x20 0x8>;
-		events = < &NEST_PCI >;
+		events = < &NEST_PEC >;
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
 		cb_offset = <0x3fc00>;
 	};
-	pci1@a0 {
+	pec1@a0 {
 		compatible = "ibm,imc-counters";
 		events-prefix = "PM_PCI1_";
 		scale = "1024";
 		reg = <0xa0 0x8>;
-		events = < &NEST_PCI >;
+		events = < &NEST_PEC >;
 		type = <0x10>;
 		size = <0x40000>;
 		offset = <0x180000>;
