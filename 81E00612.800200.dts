@@ -1087,252 +1087,252 @@ version-id = <0x03>;
 		event@0 {
 				event-name = "RUN_CYC_ST_MODE" ;
 				reg = <0x0 0x8>;
-				desc = "cpm_run_cyc_st_mode";
+				desc = "Cycles in which this thread's run latch is set and the core is in ST mode";
 		};
 		event@8 {
 				event-name = "INST_FROM_DMEM" ;
 				reg = <0x8 0x8>;
-				desc = "cpm_inst_from_dmem";
+				desc = "Reload of Icache and instructions from remote memory outside group";
 		};
 		event@10 {
 				event-name = "NON_IDLE_INST" ;
 				reg = <0x10 0x8>;
-				desc = "cpm_non_idle_inst";
+				desc = "The number of completed instructions with runlatch enabled during the measurement period";
 		};
 		event@18 {
 				event-name = "NON_IDLE_PCYC" ;
 				reg = <0x18 0x8>;
-				desc = "cpm_non_idle_pcyc";
+				desc = "The number of processor cycles with runlatch enabled during the measurement period";
 		};
 		event@40 {
 				event-name = "RUN_CYC_SMT2_MODE" ;
 				reg = <0x40 0x8>;
-				desc = "cpm_run_cyc_smt2_mode";
+				desc = "Cycles in which each thread's run latch is set and the core is in SMT2 mode";
 		};
 		event@48 {
 				event-name = "L1_ICACHE_MISS" ;
 				reg = <0x48 0x8>;
-				desc = "cpm_l1_icache_miss";
+				desc = " Demand Ifetch L1 miss";
 		};
 		event@80 {
 				event-name = "RUN_CYC_SMT4_MODE" ;
 				reg = <0x80 0x8>;
-				desc = "cpm_run_cyc_smt4_mode";
+				desc = "Cycles in which this thread's run latch is set and the core is in SMT4  mode";
 		};
 		event@88 {
 				event-name = "DERAT_MISS" ;
 				reg = <0x88 0x8>;
-				desc = "cpm_derat_miss";
+				desc = "Reload for Data ERAT";
 		};
 		event@c8 {
 				event-name = "IERAT_MISS" ;
 				reg = <0xc8 0x8>;
-				desc = "cpm_ierat_miss";
+				desc = "Reload for Instruction ERAT";
 		};
 		event@100 {
 				event-name = "NEST_REF_CLK" ;
 				reg = <0x100 0x8>;
-				desc = "cpm_nest_ref_clk";
+				desc = "Constant 32Mz Tod clock";
 		};
 		event@108 {
 				event-name = "DTLB_MISS" ;
 				reg = <0x108 0x8>;
-				desc = "cpm_dtlb_miss";
+				desc = "Reload for Data TLB";
 		};
 		event@140 {
 				event-name = "EXT_INT_EBB" ;
 				reg = <0x140 0x8>;
-				desc = "cpm_ext_int_ebb";
+				desc = "The sum of external event based branch interrupts";
 		};
 		event@148 {
 				event-name = "ITLB_MISS" ;
 				reg = <0x148 0x8>;
-				desc = "cpm_itlb_miss";
+				desc = "Reload for Instruction TLB";
 		};
 		event@180 {
 				event-name = "EXT_INT_HYP" ;
 				reg = <0x180 0x8>;
-				desc = "cpm_ext_int_hyp";
+				desc = "The sum of hypervisor virtualization interrupts";
 		};
 		event@188 {
 				event-name = "TLBIE_FIN" ;
 				reg = <0x188 0x8>;
-				desc = "cpm_tlbie_fin";
+				desc = "The sum of all  TLBIE instructions that finished";
 		};
 		event@1c0 {
 				event-name = "EXT_INT_OS" ;
 				reg = <0x1c0 0x8>;
-				desc = "cpm_ext_int_os";
+				desc = "The sum of operating system external interrupts";
 		};
 		event@1c8 {
 				event-name = "LARX_FIN" ;
 				reg = <0x1c8 0x8>;
-				desc = "cpm_larx_fin";
+				desc = "The sum of all atomic loads (LARX instructions)  that finished";
 		};
 		event@200 {
 				event-name = "INT_DOORBELL" ;
 				reg = <0x200 0x8>;
-				desc = "cpm_int_doorbell";
+				desc = "The sum of all Doorbell Interrupts";
 		};
 		event@208 {
 				event-name = "STCX_FIN" ;
 				reg = <0x208 0x8>;
-				desc = "cpm_stcx_fin";
+				desc = "The sum of all  STCX instructions that finished";
 		};
 		event@240 {
 				event-name = "DATA_FROM_L2MISS" ;
 				reg = <0x240 0x8>;
-				desc = "cpm_data_from_l2miss";
+				desc = "Reload of Data was from a L2 Miss";
 		};
 		event@248 {
 				event-name = "STCX_FAIL_FIN" ;
 				reg = <0x248 0x8>;
-				desc = "cpm_stcx_fail_fin";
+				desc = "The sum of all failing STCX that finished";
 		};
 		event@280 {
 				event-name = "DATA_FROM_L3MISS" ;
 				reg = <0x280 0x8>;
-				desc = "cpm_data_from_l3miss";
+				desc = "Reload of Data was from a L3  Miss";
 		};
 		event@288 {
 				event-name = "PROB_PCYC" ;
 				reg = <0x288 0x8>;
-				desc = "cpm_prob_pcyc";
+				desc = "The number of processor cycles in problem mode with MSR HV=0 and PR=1";
 		};
 		event@2c0 {
 				event-name = "DATA_FROM_MEMORY" ;
 				reg = <0x2c0 0x8>;
-				desc = "cpm_data_from_memory";
+				desc = "Reload of Data from any  Memory";
 		};
 		event@2c8 {
 				event-name = "PROB_INST" ;
 				reg = <0x2c8 0x8>;
-				desc = "cpm_prob_inst";
+				desc = "The number of non-idle instructions completed in problem state with MSR HV=0 and PR=1";
 		};
 		event@308 {
 				event-name = "PRIV_PCYC" ;
 				reg = <0x308 0x8>;
-				desc = "cpm_priv_pcyc";
+				desc = "The number of processor cycles in privileged mode with MSR HV=0 and PR=0";
 		};
 		event@340 {
 				event-name = "DATA_FROM_L3.1" ;
 				reg = <0x340 0x8>;
-				desc = "cpm_data_from_l3.1";
+				desc = "The number of data loads from a level 3 cache from the same POWER10 chip";
 		};
 		event@348 {
 				event-name = "PRIV_INST" ;
 				reg = <0x348 0x8>;
-				desc = "cpm_priv_inst";
+				desc = "The number of non-idle instructions completed in privileged mode with MSR HV=0 and PR=0";
 		};
 		event@380 {
 				event-name = "DATA_FROM_LMEM" ;
 				reg = <0x380 0x8>;
-				desc = "cpm_data_from_lmem";
+				desc = "Reload of Date from Local Memory (same chip)";
 		};
 		event@388 {
 				event-name = "HV_PCYC" ;
 				reg = <0x388 0x8>;
-				desc = "cpm_hv_pcyc";
+				desc = "The number of processor cycles in Hypervisor mode with MSR HV=1 and PR=0";
 		};
 		event@3c0 {
 				event-name = "DATA_FROM_RMEM" ;
 				reg = <0x3c0 0x8>;
-				desc = "cpm_data_from_rmem";
+				desc = "Reload of Date from Near Memory (same group off chip)";
 		};
 		event@3c8 {
 				event-name = "HV_INST" ;
 				reg = <0x3c8 0x8>;
-				desc = "cpm_hv_inst";
+				desc = "The number of non-idle instructions in Hypervisor mode with MSR HV=1 and PR=0";
 		};
 		event@400 {
 				event-name = "DATA_FROM_DMEM" ;
 				reg = <0x400 0x8>;
-				desc = "cpm_data_from_dmem";
+				desc = "Reload of Date from Remote Memory (different group)";
 		};
 		event@408 {
 				event-name = "ADJUNCT_PCYC" ;
 				reg = <0x408 0x8>;
-				desc = "cpm_adjunct_pcyc";
+				desc = "The number of processor cycles with MSR HV=1 and PR=1 (adjunct)";
 		};
 		event@440 {
 				event-name = "INST_FROM_L2MISS" ;
 				reg = <0x440 0x8>;
-				desc = "cpm_inst_from_l2miss";
+				desc = "Reload of Instructions was from a L2 Miss";
 		};
 		event@448 {
 				event-name = "ADJUNCT_INST" ;
 				reg = <0x448 0x8>;
-				desc = "cpm_adjunct_inst";
+				desc = "The number of non-idle instructions completed with MSR HV=1 and PR=1 (adjunct)";
 		};
 		event@480 {
 				event-name = "INST_FROM_L3MISS" ;
 				reg = <0x480 0x8>;
-				desc = "cpm_inst_from_l3miss";
+				desc = "Reload of Instructions was from a L3 Miss";
 		};
 		event@488 {
 				event-name = "ULTRAVISOR_PCYC" ;
 				reg = <0x488 0x8>;
-				desc = "cpm_ultravisor_pcyc";
+				desc = "The number of processor cycles with MSR S=1 HV=1 and PR=0 (Ultravisor)";
 		};
 		event@4c0 {
 				event-name = "INST_FROM_MEMORY" ;
 				reg = <0x4c0 0x8>;
-				desc = "cpm_inst_from_memory";
+				desc = "Reload of Instructions from any  Memory";
 		};
 		event@4c8 {
 				event-name = "ULTRAVISOR_INST" ;
 				reg = <0x4c8 0x8>;
-				desc = "cpm_ultravisor_inst";
+				desc = "The number of instructions with MSR S=1 HV=1 and PR=0 (Ultravisor)";
 		};
 		event@508 {
 				event-name = "TM_ABORTS" ;
 				reg = <0x508 0x8>;
-				desc = "cpm_tm_aborts";
+				desc = "Number of TM transactions aborted";
 		};
 		event@540 {
 				event-name = "INST_FROM_L3.1" ;
 				reg = <0x540 0x8>;
-				desc = "cpm_inst_from_l3.1";
+				desc = "The number of instruction fetches from level 3 cache on the same POWER10 chip";
 		};
 		event@548 {
 				event-name = "TM_PASSES" ;
 				reg = <0x548 0x8>;
-				desc = "cpm_tm_passes";
+				desc = "Number of TM transactions that passed";
 		};
 		event@580 {
 				event-name = "INST_FROM_LMEM" ;
 				reg = <0x580 0x8>;
-				desc = "cpm_inst_from_lmem";
+				desc = "The number of instruction fetches from local memory";
 		};
 		event@588 {
 				event-name = "RUN_PURR" ;
 				reg = <0x588 0x8>;
-				desc = "cpm_run_purr";
+				desc = "The sum of all constant clock PURR increments across all SMT threads (PURR(59))";
 		};
 		event@5c0 {
 				event-name = "INST_FROM_RMEM" ;
 				reg = <0x5c0 0x8>;
-				desc = "cpm_inst_from_rmem";
+				desc = "Reload of Instructions from Near Memory (same group off chip)";
 		};
 		event@5c8 {
 				event-name = "RUN_SPURR" ;
 				reg = <0x5c8 0x8>;
-				desc = "cpm_run_spurr";
+				desc = "The sum of all constant clock SPURR increments across all SMT threads (SPURR(59))";
 		};
 		event@600 {
 				event-name = "MMA_DISP" ;
 				reg = <0x600 0x8>;
-				desc = "cpm_mma_disp";
+				desc = "The sum of instructions dispatched that destine VSR with 512b";
 		};
 		event@608 {
 				event-name = "VSU_FIN" ;
 				reg = <0x608 0x8>;
-				desc = "cpm_vsu_fin";
+				desc = "The sum of Instructions finished by VSU";
 		};
 		event@648 {
 				event-name = "VSU_FSQRT_FDIV" ;
 				reg = <0x648 0x8>;
-				desc = "cpm_vsu_fsqrt_fdiv";
+				desc = "The sum of fsqrt or fdiv instructions issued";
 		};
 	};
 	core@18 {
@@ -1350,252 +1350,252 @@ version-id = <0x03>;
 		event@0 {
 				event-name = "RUN_CYC_ST_MODE" ;
 				reg = <0x0 0x8>;
-				desc = "cpm_run_cyc_st_mode";
+				desc = "Cycles in which this thread's run latch is set and the core is in ST mode";
 		};
 		event@8 {
 				event-name = "INST_FROM_DMEM" ;
 				reg = <0x8 0x8>;
-				desc = "cpm_inst_from_dmem";
+				desc = "Reload of Icache and instructions from remote memory outside group";
 		};
 		event@10 {
 				event-name = "NON_IDLE_INST" ;
 				reg = <0x10 0x8>;
-				desc = "cpm_non_idle_inst";
+				desc = "The number of completed instructions with runlatch enabled during the measurement period";
 		};
 		event@18 {
 				event-name = "NON_IDLE_PCYC" ;
 				reg = <0x18 0x8>;
-				desc = "cpm_non_idle_pcyc";
+				desc = "The number of processor cycles with runlatch enabled during the measurement period";
 		};
 		event@40 {
 				event-name = "RUN_CYC_SMT2_MODE" ;
 				reg = <0x40 0x8>;
-				desc = "cpm_run_cyc_smt2_mode";
+				desc = "Cycles in which each thread's run latch is set and the core is in SMT2 mode";
 		};
 		event@48 {
 				event-name = "L1_ICACHE_MISS" ;
 				reg = <0x48 0x8>;
-				desc = "cpm_l1_icache_miss";
+				desc = " Demand Ifetch L1 miss";
 		};
 		event@80 {
 				event-name = "RUN_CYC_SMT4_MODE" ;
 				reg = <0x80 0x8>;
-				desc = "cpm_run_cyc_smt4_mode";
+				desc = "Cycles in which this thread's run latch is set and the core is in SMT4  mode";
 		};
 		event@88 {
 				event-name = "DERAT_MISS" ;
 				reg = <0x88 0x8>;
-				desc = "cpm_derat_miss";
+				desc = "Reload for Data ERAT";
 		};
 		event@c8 {
 				event-name = "IERAT_MISS" ;
 				reg = <0xc8 0x8>;
-				desc = "cpm_ierat_miss";
+				desc = "Reload for Instruction ERAT";
 		};
 		event@100 {
 				event-name = "NEST_REF_CLK" ;
 				reg = <0x100 0x8>;
-				desc = "cpm_nest_ref_clk";
+				desc = "Constant 32Mz Tod clock";
 		};
 		event@108 {
 				event-name = "DTLB_MISS" ;
 				reg = <0x108 0x8>;
-				desc = "cpm_dtlb_miss";
+				desc = "Reload for Data TLB";
 		};
 		event@140 {
 				event-name = "EXT_INT_EBB" ;
 				reg = <0x140 0x8>;
-				desc = "cpm_ext_int_ebb";
+				desc = "The sum of external event based branch interrupts";
 		};
 		event@148 {
 				event-name = "ITLB_MISS" ;
 				reg = <0x148 0x8>;
-				desc = "cpm_itlb_miss";
+				desc = "Reload for Instruction TLB";
 		};
 		event@180 {
 				event-name = "EXT_INT_HYP" ;
 				reg = <0x180 0x8>;
-				desc = "cpm_ext_int_hyp";
+				desc = "The sum of hypervisor virtualization interrupts";
 		};
 		event@188 {
 				event-name = "TLBIE_FIN" ;
 				reg = <0x188 0x8>;
-				desc = "cpm_tlbie_fin";
+				desc = "The sum of all  TLBIE instructions that finished";
 		};
 		event@1c0 {
 				event-name = "EXT_INT_OS" ;
 				reg = <0x1c0 0x8>;
-				desc = "cpm_ext_int_os";
+				desc = "The sum of operating system external interrupts";
 		};
 		event@1c8 {
 				event-name = "LARX_FIN" ;
 				reg = <0x1c8 0x8>;
-				desc = "cpm_larx_fin";
+				desc = "The sum of all atomic loads (LARX instructions)  that finished";
 		};
 		event@200 {
 				event-name = "INT_DOORBELL" ;
 				reg = <0x200 0x8>;
-				desc = "cpm_int_doorbell";
+				desc = "The sum of all Doorbell Interrupts";
 		};
 		event@208 {
 				event-name = "STCX_FIN" ;
 				reg = <0x208 0x8>;
-				desc = "cpm_stcx_fin";
+				desc = "The sum of all  STCX instructions that finished";
 		};
 		event@240 {
 				event-name = "DATA_FROM_L2MISS" ;
 				reg = <0x240 0x8>;
-				desc = "cpm_data_from_l2miss";
+				desc = "Reload of Data was from a L2 Miss";
 		};
 		event@248 {
 				event-name = "STCX_FAIL_FIN" ;
 				reg = <0x248 0x8>;
-				desc = "cpm_stcx_fail_fin";
+				desc = "The sum of all failing STCX that finished";
 		};
 		event@280 {
 				event-name = "DATA_FROM_L3MISS" ;
 				reg = <0x280 0x8>;
-				desc = "cpm_data_from_l3miss";
+				desc = "Reload of Data was from a L3  Miss";
 		};
 		event@288 {
 				event-name = "PROB_PCYC" ;
 				reg = <0x288 0x8>;
-				desc = "cpm_prob_pcyc";
+				desc = "The number of processor cycles in problem mode with MSR HV=0 and PR=1";
 		};
 		event@2c0 {
 				event-name = "DATA_FROM_MEMORY" ;
 				reg = <0x2c0 0x8>;
-				desc = "cpm_data_from_memory";
+				desc = "Reload of Data from any  Memory";
 		};
 		event@2c8 {
 				event-name = "PROB_INST" ;
 				reg = <0x2c8 0x8>;
-				desc = "cpm_prob_inst";
+				desc = "The number of non-idle instructions completed in problem state with MSR HV=0 and PR=1";
 		};
 		event@308 {
 				event-name = "PRIV_PCYC" ;
 				reg = <0x308 0x8>;
-				desc = "cpm_priv_pcyc";
+				desc = "The number of processor cycles in privileged mode with MSR HV=0 and PR=0";
 		};
 		event@340 {
 				event-name = "DATA_FROM_L3.1" ;
 				reg = <0x340 0x8>;
-				desc = "cpm_data_from_l3.1";
+				desc = "The number of data loads from a level 3 cache from the same POWER10 chip";
 		};
 		event@348 {
 				event-name = "PRIV_INST" ;
 				reg = <0x348 0x8>;
-				desc = "cpm_priv_inst";
+				desc = "The number of non-idle instructions completed in privileged mode with MSR HV=0 and PR=0";
 		};
 		event@380 {
 				event-name = "DATA_FROM_LMEM" ;
 				reg = <0x380 0x8>;
-				desc = "cpm_data_from_lmem";
+				desc = "Reload of Date from Local Memory (same chip)";
 		};
 		event@388 {
 				event-name = "HV_PCYC" ;
 				reg = <0x388 0x8>;
-				desc = "cpm_hv_pcyc";
+				desc = "The number of processor cycles in Hypervisor mode with MSR HV=1 and PR=0";
 		};
 		event@3c0 {
 				event-name = "DATA_FROM_RMEM" ;
 				reg = <0x3c0 0x8>;
-				desc = "cpm_data_from_rmem";
+				desc = "Reload of Date from Near Memory (same group off chip)";
 		};
 		event@3c8 {
 				event-name = "HV_INST" ;
 				reg = <0x3c8 0x8>;
-				desc = "cpm_hv_inst";
+				desc = "The number of non-idle instructions in Hypervisor mode with MSR HV=1 and PR=0";
 		};
 		event@400 {
 				event-name = "DATA_FROM_DMEM" ;
 				reg = <0x400 0x8>;
-				desc = "cpm_data_from_dmem";
+				desc = "Reload of Date from Remote Memory (different group)";
 		};
 		event@408 {
 				event-name = "ADJUNCT_PCYC" ;
 				reg = <0x408 0x8>;
-				desc = "cpm_adjunct_pcyc";
+				desc = "The number of processor cycles with MSR HV=1 and PR=1 (adjunct)";
 		};
 		event@440 {
 				event-name = "INST_FROM_L2MISS" ;
 				reg = <0x440 0x8>;
-				desc = "cpm_inst_from_l2miss";
+				desc = "Reload of Instructions was from a L2 Miss";
 		};
 		event@448 {
 				event-name = "ADJUNCT_INST" ;
 				reg = <0x448 0x8>;
-				desc = "cpm_adjunct_inst";
+				desc = "The number of non-idle instructions completed with MSR HV=1 and PR=1 (adjunct)";
 		};
 		event@480 {
 				event-name = "INST_FROM_L3MISS" ;
 				reg = <0x480 0x8>;
-				desc = "cpm_inst_from_l3miss";
+				desc = "Reload of Instructions was from a L3 Miss";
 		};
 		event@488 {
 				event-name = "ULTRAVISOR_PCYC" ;
 				reg = <0x488 0x8>;
-				desc = "cpm_ultravisor_pcyc";
+				desc = "The number of processor cycles with MSR S=1 HV=1 and PR=0 (Ultravisor)";
 		};
 		event@4c0 {
 				event-name = "INST_FROM_MEMORY" ;
 				reg = <0x4c0 0x8>;
-				desc = "cpm_inst_from_memory";
+				desc = "Reload of Instructions from any  Memory";
 		};
 		event@4c8 {
 				event-name = "ULTRAVISOR_INST" ;
 				reg = <0x4c8 0x8>;
-				desc = "cpm_ultravisor_inst";
+				desc = "The number of instructions with MSR S=1 HV=1 and PR=0 (Ultravisor)";
 		};
 		event@508 {
 				event-name = "TM_ABORTS" ;
 				reg = <0x508 0x8>;
-				desc = "cpm_tm_aborts";
+				desc = "Number of TM transactions aborted";
 		};
 		event@540 {
 				event-name = "INST_FROM_L3.1" ;
 				reg = <0x540 0x8>;
-				desc = "cpm_inst_from_l3.1";
+				desc = "The number of instruction fetches from level 3 cache on the same POWER10 chip";
 		};
 		event@548 {
 				event-name = "TM_PASSES" ;
 				reg = <0x548 0x8>;
-				desc = "cpm_tm_passes";
+				desc = "Number of TM transactions that passed";
 		};
 		event@580 {
 				event-name = "INST_FROM_LMEM" ;
 				reg = <0x580 0x8>;
-				desc = "cpm_inst_from_lmem";
+				desc = "The number of instruction fetches from local memory";
 		};
 		event@588 {
 				event-name = "RUN_PURR" ;
 				reg = <0x588 0x8>;
-				desc = "cpm_run_purr";
+				desc = "The sum of all constant clock PURR increments across all SMT threads (PURR(59))";
 		};
 		event@5c0 {
 				event-name = "INST_FROM_RMEM" ;
 				reg = <0x5c0 0x8>;
-				desc = "cpm_inst_from_rmem";
+				desc = "Reload of Instructions from Near Memory (same group off chip)";
 		};
 		event@5c8 {
 				event-name = "RUN_SPURR" ;
 				reg = <0x5c8 0x8>;
-				desc = "cpm_run_spurr";
+				desc = "The sum of all constant clock SPURR increments across all SMT threads (SPURR(59))";
 		};
 		event@600 {
 				event-name = "MMA_DISP" ;
 				reg = <0x600 0x8>;
-				desc = "cpm_mma_disp";
+				desc = "The sum of instructions dispatched that destine VSR with 512b";
 		};
 		event@608 {
 				event-name = "VSU_FIN" ;
 				reg = <0x608 0x8>;
-				desc = "cpm_vsu_fin";
+				desc = "The sum of Instructions finished by VSU";
 		};
 		event@648 {
 				event-name = "VSU_FSQRT_FDIV" ;
 				reg = <0x648 0x8>;
-				desc = "cpm_vsu_fsqrt_fdiv";
+				desc = "The sum of fsqrt or fdiv instructions issued";
 		};
 	};
 	thread@18 {
