@@ -57,6 +57,10 @@ declare -a POWER10=('81E00612.800100.dts' '81E00612.800200.dts')
 declare -a POWER10_PVR=(0x800100 0x800200)
 declare -a POWER10_FILENAME=(0x800100.bin 0x800200.bin)
 
+declare -a POWER11=('81E00612.820200.dts')
+declare -a POWER11_PVR=(0x820200)
+declare -a POWER11_FILENAME=(0x820200.bin)
+
 align() {
     echo $(( (($1 + ($alignment - 1))) & ~($alignment - 1) ))
 }
@@ -72,7 +76,11 @@ elif [ "$2" == "POWER9" ]; then
 elif [ "$2" == "POWER10" ]; then
    ima_arr=("${POWER10[@]}")
    ima_pvr=("${POWER10_PVR[@]}")
-   ima_file=("${POWER10_FILENAME[@]}")   
+   ima_file=("${POWER10_FILENAME[@]}")
+elif [ "$2" == "Power11" ]; then
+   ima_arr=("${POWER11[@]}")
+   ima_pvr=("${POWER11_PVR[@]}")
+   ima_file=("${POWER11_FILENAME[@]}")   
 fi
 
 entries=$((${#ima_arr[@]}))
